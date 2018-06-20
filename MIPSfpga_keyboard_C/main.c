@@ -53,17 +53,16 @@ unsigned char *promt = "Select a Brightness between 0 and 9\n\r";
 /*****************************************************************************/
 /********************** Variable Definitions *********************************/
 /*****************************************************************************/
-volatile int rxData = 0;
+// volatile int rxData = 0;
 
 //------------------
 // main()
 //------------------
 int main()
 {
-	volatile unsigned int pushbutton, count = 0xF;
+	volatile unsigned int pushbutton;
 	volatile unsigned int j = 1;
 	volatile unsigned int count = 0xF;
-	volatile unsigned int j;
 	volatile unsigned int period;
 
 	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
