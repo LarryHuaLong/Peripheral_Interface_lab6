@@ -139,9 +139,9 @@ OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
 .debug_ranges   0x0000000000000000       0x80
  .debug_ranges  0x0000000000000000       0x80 main.o
 
-.debug_line     0x0000000000000000      0x3b7
- .debug_line    0x0000000000000000      0x1c5 main.o
- .debug_line    0x00000000000001c5      0x1f2 boot.o
+.debug_line     0x0000000000000000      0x3b4
+ .debug_line    0x0000000000000000      0x1c2 main.o
+ .debug_line    0x00000000000001c2      0x1f2 boot.o
 
 .debug_str      0x0000000000000000      0x18c
  .debug_str     0x0000000000000000      0x18c main.o
