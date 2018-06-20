@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date             : Wed Jun 20 06:11:51 2018
-| Host             : DESKTOP-LARRY running 64-bit major release  (build 9200)
+| Date             : Wed Jun 20 21:24:41 2018
+| Host             : DESKTOP-9HJUUG0 running 64-bit major release  (build 9200)
 | Command          : report_power -file MIPSfpga_system_wrapper_power_routed.rpt -pb MIPSfpga_system_wrapper_power_summary_routed.pb
 | Design           : MIPSfpga_system_wrapper
 | Device           : xc7a100tcsg324-1
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.260 |
-| Dynamic (W)              | 0.159 |
+| Total On-Chip Power (W)  | 0.257 |
+| Dynamic (W)              | 0.155 |
 | Device Static (W)        | 0.102 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 83.8  |
@@ -46,27 +46,25 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+--------------------------+-----------+----------+-----------+-----------------+
-| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
-+--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.022 |       10 |       --- |             --- |
-| Slice Logic              |     0.007 |    31310 |       --- |             --- |
-|   LUT as Logic           |     0.007 |    13532 |     63400 |           21.34 |
-|   Register               |    <0.001 |    12262 |    126800 |            9.67 |
-|   CARRY4                 |    <0.001 |      259 |     15850 |            1.63 |
-|   F7/F8 Muxes            |    <0.001 |      931 |     63400 |            1.47 |
-|   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
-|   LUT as Shift Register  |    <0.001 |      249 |     19000 |            1.31 |
-|   LUT as Distributed RAM |    <0.001 |       26 |     19000 |            0.14 |
-|   Others                 |     0.000 |     1975 |       --- |             --- |
-| Signals                  |     0.010 |    23549 |       --- |             --- |
-| Block RAM                |     0.019 |       80 |       135 |           59.26 |
-| PLL                      |     0.093 |        1 |         6 |           16.67 |
-| DSPs                     |    <0.001 |        6 |       240 |            2.50 |
-| I/O                      |     0.007 |       44 |       210 |           20.95 |
-| Static Power             |     0.102 |          |           |                 |
-| Total                    |     0.260 |          |           |                 |
-+--------------------------+-----------+----------+-----------+-----------------+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.021 |       10 |       --- |             --- |
+| Slice Logic             |     0.007 |    29562 |       --- |             --- |
+|   LUT as Logic          |     0.006 |    12686 |     63400 |           20.01 |
+|   Register              |    <0.001 |    12023 |    126800 |            9.48 |
+|   CARRY4                |    <0.001 |      197 |     15850 |            1.24 |
+|   F7/F8 Muxes           |    <0.001 |      496 |     63400 |            0.78 |
+|   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
+|   LUT as Shift Register |    <0.001 |      286 |     19000 |            1.51 |
+|   Others                |     0.000 |     1948 |       --- |             --- |
+| Signals                 |     0.010 |    22793 |       --- |             --- |
+| Block RAM               |     0.018 |       79 |       135 |           58.52 |
+| PLL                     |     0.093 |        1 |         6 |           16.67 |
+| I/O                     |     0.006 |       32 |       210 |           15.24 |
+| Static Power            |     0.102 |          |           |                 |
+| Total                   |     0.257 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -75,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.082 |       0.064 |      0.018 |
+| Vccint    |       1.000 |     0.079 |       0.061 |      0.018 |
 | Vccaux    |       1.800 |     0.066 |       0.048 |      0.018 |
 | Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -84,7 +82,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.004 |       0.001 |      0.002 |
+| Vccbram   |       1.000 |     0.003 |       0.001 |      0.002 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -134,8 +132,6 @@ Table of Contents
 | CLK100MHZ                              | CLK100MHZ                                                             |            10.0 |
 | clk_out1_MIPSfpga_system_clk_wiz_0_0   | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1_MIPSfpga_system_clk_wiz_0_0 |            20.0 |
 | clk_out1_MIPSfpga_system_clk_wiz_0_0_1 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1_MIPSfpga_system_clk_wiz_0_0 |            20.0 |
-| clk_out2_MIPSfpga_system_clk_wiz_0_0   | MIPSfpga_system_i/clk_wiz_0/inst/clk_out2_MIPSfpga_system_clk_wiz_0_0 |            40.0 |
-| clk_out2_MIPSfpga_system_clk_wiz_0_0_1 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out2_MIPSfpga_system_clk_wiz_0_0 |            40.0 |
 | clkfbout_MIPSfpga_system_clk_wiz_0_0   | MIPSfpga_system_i/clk_wiz_0/inst/clkfbout_MIPSfpga_system_clk_wiz_0_0 |            10.0 |
 | clkfbout_MIPSfpga_system_clk_wiz_0_0_1 | MIPSfpga_system_i/clk_wiz_0/inst/clkfbout_MIPSfpga_system_clk_wiz_0_0 |            10.0 |
 | sys_clk_pin                            | CLK100MHZ                                                             |            10.0 |
@@ -151,14 +147,14 @@ Table of Contents
 +----------------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                               | Power (W) |
 +----------------------------------------------------------------------------------------------------+-----------+
-| MIPSfpga_system_wrapper                                                                            |     0.159 |
-|   MIPSfpga_system_i                                                                                |     0.152 |
+| MIPSfpga_system_wrapper                                                                            |     0.155 |
+|   MIPSfpga_system_i                                                                                |     0.149 |
 |     MIPS_MicroAptiv_UP_0                                                                           |     0.032 |
 |       inst                                                                                         |     0.032 |
 |         m14k_top_i                                                                                 |     0.032 |
 |           cpu                                                                                      |     0.032 |
 |             core                                                                                   |     0.018 |
-|               biu                                                                                  |     0.003 |
+|               biu                                                                                  |     0.002 |
 |                 _HADDR_31_0_                                                                       |    <0.001 |
 |                   cregister                                                                        |    <0.001 |
 |                     cregister                                                                      |    <0.001 |
@@ -1423,7 +1419,7 @@ Table of Contents
 |                         _jtlb1entry_pipe_out                                                       |    <0.001 |
 |                           cregister                                                                |    <0.001 |
 |                             cregister                                                              |    <0.001 |
-|               mpc                                                                                  |     0.001 |
+|               mpc                                                                                  |    <0.001 |
 |                 mpc_ctl                                                                            |    <0.001 |
 |                   _alu_sel_m                                                                       |    <0.001 |
 |                   _busty_ed_2_0_                                                                   |    <0.001 |
@@ -1686,12 +1682,15 @@ Table of Contents
 |                 ram__tag_inst1                                                                     |    <0.001 |
 |                 ram__tag_inst2                                                                     |    <0.001 |
 |                 ram__tag_inst3                                                                     |    <0.001 |
+|     PS2Receiver_0                                                                                  |    <0.001 |
+|       inst                                                                                         |    <0.001 |
+|         PS2Receiver_v1_0_S00_AXI_inst                                                              |    <0.001 |
+|         keyboard                                                                                   |    <0.001 |
+|           debounce                                                                                 |    <0.001 |
 |     PWM_w_Int_0                                                                                    |    <0.001 |
 |       inst                                                                                         |    <0.001 |
 |         PWM_inst                                                                                   |    <0.001 |
 |         PWM_w_Int_v1_0_S00_AXI_inst                                                                |    <0.001 |
-|     Video_Out_to_VGA_0                                                                             |    <0.001 |
-|       inst                                                                                         |    <0.001 |
 |     ahblite_axi_bridge_0                                                                           |     0.001 |
 |       U0                                                                                           |     0.001 |
 |         AHBLITE_AXI_CONTROL                                                                        |    <0.001 |
@@ -1703,10 +1702,10 @@ Table of Contents
 |           AXI_WRITE_CNT_MODULE                                                                     |    <0.001 |
 |         TIME_OUT                                                                                   |    <0.001 |
 |           GEN_WDT.WDT_COUNTER_MODULE                                                               |    <0.001 |
-|     axi_bram_ctrl_0                                                                                |     0.001 |
-|       U0                                                                                           |     0.001 |
-|         gext_inst.abcv4_0_ext_inst                                                                 |     0.001 |
-|           GEN_AXI4.I_FULL_AXI                                                                      |     0.001 |
+|     axi_bram_ctrl_0                                                                                |    <0.001 |
+|       U0                                                                                           |    <0.001 |
+|         gext_inst.abcv4_0_ext_inst                                                                 |    <0.001 |
+|           GEN_AXI4.I_FULL_AXI                                                                      |    <0.001 |
 |             GEN_ARB.I_SNG_PORT                                                                     |    <0.001 |
 |             I_RD_CHNL                                                                              |    <0.001 |
 |               I_WRAP_BRST                                                                          |    <0.001 |
@@ -1754,7 +1753,7 @@ Table of Contents
 |                 I_DECODER                                                                          |    <0.001 |
 |             X_INTERRUPT_CONTROL                                                                    |    <0.001 |
 |             X_SOFT_RESET                                                                           |    <0.001 |
-|     axi_interconnect_0                                                                             |     0.009 |
+|     axi_interconnect_0                                                                             |     0.011 |
 |       m00_couplers                                                                                 |     0.002 |
 |         auto_pc                                                                                    |     0.002 |
 |           inst                                                                                     |     0.002 |
@@ -1855,6 +1854,31 @@ Table of Contents
 |               WR.b_channel_0                                                                       |    <0.001 |
 |                 bid_fifo_0                                                                         |    <0.001 |
 |                 bresp_fifo_0                                                                       |    <0.001 |
+|       m06_couplers                                                                                 |     0.002 |
+|         auto_pc                                                                                    |     0.002 |
+|           inst                                                                                     |     0.002 |
+|             gen_axilite.gen_b2s_conv.axilite_b2s                                                   |     0.002 |
+|               RD.ar_channel_0                                                                      |    <0.001 |
+|                 ar_cmd_fsm_0                                                                       |    <0.001 |
+|                 cmd_translator_0                                                                   |    <0.001 |
+|                   incr_cmd_0                                                                       |    <0.001 |
+|                   wrap_cmd_0                                                                       |    <0.001 |
+|               RD.r_channel_0                                                                       |    <0.001 |
+|                 rd_data_fifo_0                                                                     |    <0.001 |
+|                 transaction_fifo_0                                                                 |    <0.001 |
+|               SI_REG                                                                               |    <0.001 |
+|                 ar_pipe                                                                            |    <0.001 |
+|                 aw_pipe                                                                            |    <0.001 |
+|                 b_pipe                                                                             |    <0.001 |
+|                 r_pipe                                                                             |    <0.001 |
+|               WR.aw_channel_0                                                                      |    <0.001 |
+|                 aw_cmd_fsm_0                                                                       |    <0.001 |
+|                 cmd_translator_0                                                                   |    <0.001 |
+|                   incr_cmd_0                                                                       |    <0.001 |
+|                   wrap_cmd_0                                                                       |    <0.001 |
+|               WR.b_channel_0                                                                       |    <0.001 |
+|                 bid_fifo_0                                                                         |    <0.001 |
+|                 bresp_fifo_0                                                                       |    <0.001 |
 |       xbar                                                                                         |     0.003 |
 |         inst                                                                                       |     0.003 |
 |           gen_samd.crossbar_samd                                                                   |     0.003 |
@@ -1883,9 +1907,6 @@ Table of Contents
 |               b_pipe                                                                               |    <0.001 |
 |               r_pipe                                                                               |    <0.001 |
 |             gen_master_slots[7].reg_slice_mi                                                       |    <0.001 |
-|               b_pipe                                                                               |    <0.001 |
-|               r_pipe                                                                               |    <0.001 |
-|             gen_master_slots[8].reg_slice_mi                                                       |    <0.001 |
 |               b_pipe                                                                               |    <0.001 |
 |               r_pipe                                                                               |    <0.001 |
 |             gen_slave_slots[0].gen_si_read.si_transactor_ar                                        |    <0.001 |
@@ -1922,11 +1943,11 @@ Table of Contents
 |             rx16550_1                                                                              |    <0.001 |
 |             tx16550_1                                                                              |    <0.001 |
 |             xuart_tx_load_sm_1                                                                     |    <0.001 |
-|     blk_mem_gen_0                                                                                  |     0.001 |
-|       U0                                                                                           |     0.001 |
-|         inst_blk_mem_gen                                                                           |     0.001 |
-|           gnativebmg.native_blk_mem_gen                                                            |     0.001 |
-|             valid.cstr                                                                             |     0.001 |
+|     blk_mem_gen_0                                                                                  |    <0.001 |
+|       U0                                                                                           |    <0.001 |
+|         inst_blk_mem_gen                                                                           |    <0.001 |
+|           gnativebmg.native_blk_mem_gen                                                            |    <0.001 |
+|             valid.cstr                                                                             |    <0.001 |
 |               has_mux_a.A                                                                          |    <0.001 |
 |               ramloop[0].ram.r                                                                     |    <0.001 |
 |                 prim_init.ram                                                                      |    <0.001 |
@@ -2063,61 +2084,7 @@ Table of Contents
 |       U0                                                                                           |    <0.001 |
 |     util_vector_logic_0                                                                            |    <0.001 |
 |     util_vector_logic_1                                                                            |     0.000 |
-|     v_axi4s_vid_out_0                                                                              |     0.001 |
-|       inst                                                                                         |     0.001 |
-|         out_coupler_i                                                                              |     0.001 |
-|           bridge_async_fifo_2_i                                                                    |    <0.001 |
-|         out_sync_i                                                                                 |    <0.001 |
-|     v_tc_0                                                                                         |    <0.001 |
-|       U0                                                                                           |    <0.001 |
-|         U_TC_TOP                                                                                   |    <0.001 |
-|           GEN_GENERATOR.U_TC_GEN                                                                   |    <0.001 |
-|         U_VIDEO_CTRL                                                                               |     0.000 |
-|     v_tpg_0                                                                                        |     0.003 |
-|       U0                                                                                           |     0.003 |
-|         tpg_top_inst                                                                               |     0.003 |
-|           axi_control_module_local.axi_control                                                     |    <0.001 |
-|             OutEOLDelay                                                                            |    <0.001 |
-|             OutFIFOWEDelay                                                                         |    <0.001 |
-|             OutSOFDelay                                                                            |    <0.001 |
-|           axi_out_fifo                                                                             |    <0.001 |
-|             UOSD_AXIS_SYNC_FIFO                                                                    |    <0.001 |
-|               mem1                                                                                 |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_0_0                                           |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_10_10                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_11_11                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_12_12                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_13_13                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_14_14                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_15_15                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_16_16                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_17_17                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_18_18                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_19_19                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_1_1                                           |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_20_20                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_21_21                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_22_22                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_23_23                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_24_24                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_25_25                                         |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_2_2                                           |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_3_3                                           |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_4_4                                           |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_5_5                                           |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_6_6                                           |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_7_7                                           |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_8_8                                           |    <0.001 |
-|                 GenerateDoutWriteFirstA.mem_reg_0_15_9_9                                           |    <0.001 |
-|           intcore                                                                                  |     0.002 |
-|             PRNG2                                                                                  |    <0.001 |
-|             PRNG4                                                                                  |    <0.001 |
-|             VideoOutDelay                                                                          |    <0.001 |
-|             ZPlate1                                                                                |     0.000 |
-|         video_cntrl                                                                                |     0.000 |
 |     xlconcat_0                                                                                     |     0.000 |
-|     xlconstant_4                                                                                   |     0.000 |
-|     xlconstant_5                                                                                   |     0.000 |
 |   temp_sensor_scl_iobuf                                                                            |     0.000 |
 |   temp_sensor_sda_iobuf                                                                            |     0.000 |
 +----------------------------------------------------------------------------------------------------+-----------+

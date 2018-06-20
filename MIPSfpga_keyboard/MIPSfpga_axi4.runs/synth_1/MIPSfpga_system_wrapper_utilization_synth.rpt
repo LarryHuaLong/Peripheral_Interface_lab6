@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date         : Wed Jun 20 05:55:40 2018
-| Host         : DESKTOP-LARRY running 64-bit major release  (build 9200)
+| Date         : Wed Jun 20 21:14:50 2018
+| Host         : DESKTOP-9HJUUG0 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file MIPSfpga_system_wrapper_utilization_synth.rpt -pb MIPSfpga_system_wrapper_utilization_synth.pb
 | Design       : MIPSfpga_system_wrapper
 | Device       : xc7a100t
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   43 |     0 |       210 | 20.48 |
+| Bonded IOB                  |   31 |     0 |       210 | 14.76 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -147,8 +147,8 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |   34 |                  IO |
-| IBUF     |    9 |                  IO |
+| OBUF     |   20 |                  IO |
+| IBUF     |   11 |                  IO |
 | OBUFT    |    2 |                  IO |
 +----------+------+---------------------+
 
@@ -159,17 +159,12 @@ Table of Contents
 +----------------------------------------+------+
 |                Ref Name                | Used |
 +----------------------------------------+------+
-| MIPSfpga_system_xlconstant_5_0         |    1 |
-| MIPSfpga_system_xlconstant_4_0         |    1 |
 | MIPSfpga_system_xlconstant_3_0         |    1 |
 | MIPSfpga_system_xlconstant_2_0         |    1 |
 | MIPSfpga_system_xlconstant_1_0         |    1 |
 | MIPSfpga_system_xlconstant_0_0         |    1 |
 | MIPSfpga_system_xlconcat_0_0           |    1 |
 | MIPSfpga_system_xbar_0                 |    1 |
-| MIPSfpga_system_v_tpg_0_0              |    1 |
-| MIPSfpga_system_v_tc_0_0               |    1 |
-| MIPSfpga_system_v_axi4s_vid_out_0_0    |    1 |
 | MIPSfpga_system_util_vector_logic_1_0  |    1 |
 | MIPSfpga_system_util_vector_logic_0_0  |    1 |
 | MIPSfpga_system_util_ds_buf_0_0        |    1 |
@@ -181,13 +176,14 @@ Table of Contents
 | MIPSfpga_system_axi_gpio_0_0           |    1 |
 | MIPSfpga_system_axi_bram_ctrl_1_0      |    1 |
 | MIPSfpga_system_axi_bram_ctrl_0_0      |    1 |
+| MIPSfpga_system_auto_pc_4              |    1 |
 | MIPSfpga_system_auto_pc_3              |    1 |
 | MIPSfpga_system_auto_pc_2              |    1 |
 | MIPSfpga_system_auto_pc_1              |    1 |
 | MIPSfpga_system_auto_pc_0              |    1 |
 | MIPSfpga_system_ahblite_axi_bridge_0_0 |    1 |
-| MIPSfpga_system_Video_Out_to_VGA_0_0   |    1 |
 | MIPSfpga_system_PWM_w_Int_0_0          |    1 |
+| MIPSfpga_system_PS2Receiver_0_0        |    1 |
 | MIPSfpga_system_MIPS_MicroAptiv_UP_0_0 |    1 |
 +----------------------------------------+------+
 

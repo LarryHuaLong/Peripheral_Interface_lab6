@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1529445195">
-  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1529500425">
   <File Type="RDS-DCP" Name="MIPSfpga_system_wrapper.dcp"/>
-  <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
   <File Type="RDS-UTIL-PB" Name="MIPSfpga_system_wrapper_utilization_synth.pb"/>
-  <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
-  <File Type="PA-TCL" Name="MIPSfpga_system_wrapper.tcl"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
   <File Type="RDS-PROPCONSTRS" Name="MIPSfpga_system_wrapper_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="MIPSfpga_system_wrapper.tcl"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
   <File Type="RDS-RDS" Name="MIPSfpga_system_wrapper.vds"/>
   <File Type="RDS-UTIL" Name="MIPSfpga_system_wrapper_utilization_synth.rpt"/>
   <File Type="VDS-TIMINGSUMMARY" Name="MIPSfpga_system_wrapper_timing_summary_synth.rpt"/>
@@ -34,6 +34,7 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_PWM_w_Int_0_0/MIPSfpga_system_PWM_w_Int_0_0.upgrade_log"/>
+    <File Path="$PSRCDIR/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_PS2Receiver_0_0/MIPSfpga_system_PS2Receiver_0_0.upgrade_log"/>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="MIPSfpga_system_wrapper"/>
@@ -58,34 +59,30 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_MIPS_MicroAptiv_UP_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_ahblite_axi_bridge_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_blk_mem_gen_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_util_vector_logic_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_xlconstant_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_util_ds_buf_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_blk_mem_gen_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_xlconstant_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_axi_bram_ctrl_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_xlconstant_2_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_util_vector_logic_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_axi_uart16550_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_xlconcat_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_axi_uart16550_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_xlconstant_3_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_axi_bram_ctrl_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_v_tpg_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_blk_mem_gen_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_v_axi4s_vid_out_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_PWM_w_Int_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_axi_iic_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_v_tc_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_Video_Out_to_VGA_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_xlconstant_4_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_xlconstant_5_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_PS2Receiver_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_auto_pc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_auto_pc_1"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_auto_pc_2"/>
   <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_auto_pc_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="MIPSfpga_system_auto_pc_4"/>
 </GenRun>

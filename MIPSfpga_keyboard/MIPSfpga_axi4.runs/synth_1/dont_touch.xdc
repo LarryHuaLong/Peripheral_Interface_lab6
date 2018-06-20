@@ -69,23 +69,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system
 # IP: bd/MIPSfpga_system/ip/MIPSfpga_system_axi_iic_0_0/MIPSfpga_system_axi_iic_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system_axi_iic_0_0 || ORIG_REF_NAME==MIPSfpga_system_axi_iic_0_0}]
 
-# IP: bd/MIPSfpga_system/ip/MIPSfpga_system_v_tc_0_0/MIPSfpga_system_v_tc_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system_v_tc_0_0 || ORIG_REF_NAME==MIPSfpga_system_v_tc_0_0}]
-
-# IP: bd/MIPSfpga_system/ip/MIPSfpga_system_v_tpg_0_0/MIPSfpga_system_v_tpg_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system_v_tpg_0_0 || ORIG_REF_NAME==MIPSfpga_system_v_tpg_0_0}]
-
-# IP: bd/MIPSfpga_system/ip/MIPSfpga_system_v_axi4s_vid_out_0_0/MIPSfpga_system_v_axi4s_vid_out_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system_v_axi4s_vid_out_0_0 || ORIG_REF_NAME==MIPSfpga_system_v_axi4s_vid_out_0_0}]
-
-# IP: bd/MIPSfpga_system/ip/MIPSfpga_system_Video_Out_to_VGA_0_0/MIPSfpga_system_Video_Out_to_VGA_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system_Video_Out_to_VGA_0_0 || ORIG_REF_NAME==MIPSfpga_system_Video_Out_to_VGA_0_0}]
-
-# IP: bd/MIPSfpga_system/ip/MIPSfpga_system_xlconstant_4_0/MIPSfpga_system_xlconstant_4_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system_xlconstant_4_0 || ORIG_REF_NAME==MIPSfpga_system_xlconstant_4_0}]
-
-# IP: bd/MIPSfpga_system/ip/MIPSfpga_system_xlconstant_5_0/MIPSfpga_system_xlconstant_5_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system_xlconstant_5_0 || ORIG_REF_NAME==MIPSfpga_system_xlconstant_5_0}]
+# IP: bd/MIPSfpga_system/ip/MIPSfpga_system_PS2Receiver_0_0/MIPSfpga_system_PS2Receiver_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system_PS2Receiver_0_0 || ORIG_REF_NAME==MIPSfpga_system_PS2Receiver_0_0}]
 
 # IP: bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_0/MIPSfpga_system_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system_auto_pc_0 || ORIG_REF_NAME==MIPSfpga_system_auto_pc_0}]
@@ -98,5 +83,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system
 
 # IP: bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_3/MIPSfpga_system_auto_pc_3.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system_auto_pc_3 || ORIG_REF_NAME==MIPSfpga_system_auto_pc_3}]
+
+# IP: bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_4/MIPSfpga_system_auto_pc_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MIPSfpga_system_auto_pc_4 || ORIG_REF_NAME==MIPSfpga_system_auto_pc_4}]
 
 # XDC: bd/MIPSfpga_system/MIPSfpga_system_ooc.xdc

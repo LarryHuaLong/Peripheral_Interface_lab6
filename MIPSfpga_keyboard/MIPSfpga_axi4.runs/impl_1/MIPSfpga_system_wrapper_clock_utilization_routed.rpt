@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-| Date              : Wed Jun 20 06:11:54 2018
-| Host              : DESKTOP-LARRY running 64-bit major release  (build 9200)
+| Date              : Wed Jun 20 21:24:43 2018
+| Host              : DESKTOP-9HJUUG0 running 64-bit major release  (build 9200)
 | Command           : report_clock_utilization -file MIPSfpga_system_wrapper_clock_utilization_routed.rpt
 | Design            : MIPSfpga_system_wrapper
 | Device            : 7a100t-csg324
@@ -28,6 +28,7 @@ Table of Contents
 12. Net wise resources used in clock region X0Y2
 13. Net wise resources used in clock region X1Y2
 14. Net wise resources used in clock region X0Y3
+15. Net wise resources used in clock region X1Y3
 
 1. Clock Primitive Utilization
 ------------------------------
@@ -35,7 +36,7 @@ Table of Contents
 +-------+------+-----------+-----------+
 | Type  | Used | Available | Num Fixed |
 +-------+------+-----------+-----------+
-| BUFG  |    4 |        32 |         0 |
+| BUFG  |    3 |        32 |         0 |
 | BUFH  |    0 |        96 |         0 |
 | BUFIO |    0 |        24 |         0 |
 | MMCM  |    0 |         6 |         0 |
@@ -54,9 +55,8 @@ Table of Contents
 | Index | BUFG Cell                                                      | Net Name                                                                  |  BELs | Sites | Fixed |
 +-------+----------------------------------------------------------------+---------------------------------------------------------------------------+-------+-------+-------+
 |     1 | MIPSfpga_system_i/clk_wiz_0/inst/clkf_buf                      | MIPSfpga_system_i/clk_wiz_0/inst/clkfbout_buf_MIPSfpga_system_clk_wiz_0_0 |     1 |     1 |    no |
-|     2 | MIPSfpga_system_i/util_ds_buf_0/U0/USE_BUFG.GEN_BUFG[0].BUFG_U | MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0]                              |   167 |    57 |    no |
-|     3 | MIPSfpga_system_i/clk_wiz_0/inst/clkout2_buf                   | MIPSfpga_system_i/clk_wiz_0/inst/clk_out2                                 |   802 |   280 |    no |
-|     4 | MIPSfpga_system_i/clk_wiz_0/inst/clkout1_buf                   | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1                                 | 11729 |  4443 |    no |
+|     2 | MIPSfpga_system_i/util_ds_buf_0/U0/USE_BUFG.GEN_BUFG[0].BUFG_U | MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0]                              |   167 |    56 |    no |
+|     3 | MIPSfpga_system_i/clk_wiz_0/inst/clkout1_buf                   | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1                                 | 12215 |  4492 |    no |
 +-------+----------------------------------------------------------------+---------------------------------------------------------------------------+-------+-------+-------+
 
 
@@ -66,8 +66,7 @@ Table of Contents
 | Index | PLL Cell                                        | Net Name                                                              | BELs | Sites | Fixed |
 +-------+-------------------------------------------------+-----------------------------------------------------------------------+------+-------+-------+
 |     1 | MIPSfpga_system_i/clk_wiz_0/inst/plle2_adv_inst | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1_MIPSfpga_system_clk_wiz_0_0 |    1 |     1 |    no |
-|     2 | MIPSfpga_system_i/clk_wiz_0/inst/plle2_adv_inst | MIPSfpga_system_i/clk_wiz_0/inst/clk_out2_MIPSfpga_system_clk_wiz_0_0 |    1 |     1 |    no |
-|     3 | MIPSfpga_system_i/clk_wiz_0/inst/plle2_adv_inst | MIPSfpga_system_i/clk_wiz_0/inst/clkfbout_MIPSfpga_system_clk_wiz_0_0 |    1 |     1 |    no |
+|     2 | MIPSfpga_system_i/clk_wiz_0/inst/plle2_adv_inst | MIPSfpga_system_i/clk_wiz_0/inst/clkfbout_MIPSfpga_system_clk_wiz_0_0 |    1 |     1 |    no |
 +-------+-------------------------------------------------+-----------------------------------------------------------------------+------+-------+-------+
 
 
@@ -83,6 +82,16 @@ Table of Contents
 6. Details of Local Clocks
 --------------------------
 
++-------+---------------------------------------------------------------+--------------------------------------------------------------+--------------+-------+
+|       |                                                               |                                                              |   Num Loads  |       |
++-------+---------------------------------------------------------------+--------------------------------------------------------------+------+-------+-------+
+| Index | Local Clk Src                                                 | Net Name                                                     | BELs | Sites | Fixed |
++-------+---------------------------------------------------------------+--------------------------------------------------------------+------+-------+-------+
+|     1 | MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/debounce/O0_reg | MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/debounce/kclkf |   14 |     5 |    no |
+|     2 | MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/flag_reg        | MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/CLK            |   34 |     7 |    no |
++-------+---------------------------------------------------------------+--------------------------------------------------------------+------+-------+-------+
+
+
 7. Clock Regions : Key Resource Utilization
 -------------------------------------------
 
@@ -92,13 +101,13 @@ Table of Contents
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | X0Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 20800 |    0 |  2400 |    0 |    20 |   10 |    10 |    0 |    20 |
-| X1Y0              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     0 |    0 |     0 |    0 |     0 |    0 | 12000 |    0 |  2200 |    0 |    40 |   17 |    20 |    0 |    40 |
-| X0Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2650 | 16000 |  144 |  2400 |    0 |    20 |   10 |    10 |    0 |    20 |
-| X1Y1              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2811 | 15200 |  110 |  2600 |    8 |    60 |   23 |    30 |    0 |    40 |
-| X0Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2646 | 16000 |   48 |  2400 |    1 |    20 |    6 |    10 |    2 |    20 |
-| X1Y2              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    1 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 3784 | 15200 |    6 |  2600 |   19 |    60 |    0 |    30 |    2 |    40 |
-| X0Y3              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  371 | 20800 |   28 |  2400 |    0 |    20 |    0 |    10 |    2 |    20 |
-| X1Y3              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     1 |    0 |     0 |    0 |     0 |    0 | 10800 |    0 |  2000 |    0 |    30 |    0 |    15 |    0 |    40 |
+| X1Y0              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     0 |    0 |     0 |    0 |     0 |    0 | 12000 |    0 |  2200 |    0 |    40 |   12 |    20 |    0 |    40 |
+| X0Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2087 | 16000 |  128 |  2400 |    0 |    20 |   10 |    10 |    0 |    20 |
+| X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2580 | 15200 |  164 |  2600 |    1 |    60 |   28 |    30 |    0 |    40 |
+| X0Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 2610 | 16000 |   13 |  2400 |    1 |    20 |    3 |    10 |    0 |    20 |
+| X1Y2              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    1 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 4588 | 15200 |    6 |  2600 |   26 |    60 |    2 |    30 |    0 |    40 |
+| X0Y3              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    8 | 20800 |    0 |  2400 |    0 |    20 |    0 |    10 |    0 |    20 |
+| X1Y3              |    1 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     1 |    0 |     0 |    0 |     0 |  150 | 10800 |    0 |  2000 |    0 |    30 |    0 |    15 |    0 |    40 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 * RAMB36 site can be used as two RAMB18/FIFO18 sites.
 
@@ -119,41 +128,39 @@ Table of Contents
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------+
 | Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |               Clock Net Name              |
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------+
-| BUFG        | BUFHCE_X1Y8 |   no  |         0 |        0 |       0 |        34 |       0 |       0 |   0 |     0 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1 |
+| BUFG        | BUFHCE_X1Y8 |   no  |         0 |        0 |       0 |        24 |       0 |       0 |   0 |     0 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1 |
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------+
 
 
 10. Net wise resources used in clock region X0Y1
 ------------------------------------------------
 
-+-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------+
-| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                Clock Net Name                |
-+-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------+
-| BUFG        | BUFHCE_X0Y20 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  165 |     1 |        0 | MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0] |
-| BUFG        | BUFHCE_X0Y21 |   no  |         0 |        0 |       0 |        20 |       0 |       0 | 2485 |   143 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1    |
-+-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |               Clock Net Name              |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------+
+| BUFG        | BUFHCE_X0Y20 |   no  |         0 |        0 |       0 |        20 |       0 |       0 | 2087 |   128 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1 |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------+
 
 
 11. Net wise resources used in clock region X1Y1
 ------------------------------------------------
 
-+-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------+
-| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                Clock Net Name                |
-+-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------+
-| BUFG        | BUFHCE_X1Y20 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |    1 |     0 |        0 | MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0] |
-| BUFG        | BUFHCE_X1Y21 |   no  |         0 |        0 |       0 |        54 |       0 |       0 | 2810 |   110 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1    |
-+-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |               Clock Net Name              |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------+
+| BUFG        | BUFHCE_X1Y20 |   no  |         0 |        0 |       0 |        58 |       0 |       0 | 2535 |   164 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1 |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------+
 
 
 12. Net wise resources used in clock region X0Y2
 ------------------------------------------------
 
-+-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------+
-| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |               Clock Net Name              |
-+-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------+
-| BUFG        | BUFHCE_X0Y33 |   no  |         0 |        0 |       0 |         2 |       0 |       0 |  349 |    48 |        2 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out2 |
-| BUFG        | BUFHCE_X0Y32 |   no  |         0 |        0 |       0 |        12 |       0 |       0 | 2297 |     0 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1 |
-+-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+-------------------------------------------+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                Clock Net Name                |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------+
+| BUFG        | BUFHCE_X0Y32 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  164 |     1 |        0 | MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0] |
+| BUFG        | BUFHCE_X0Y33 |   no  |         0 |        0 |       0 |         7 |       0 |       0 | 2446 |    12 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1    |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+----------------------------------------------+
 
 
 13. Net wise resources used in clock region X1Y2
@@ -162,9 +169,9 @@ Table of Contents
 +-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+---------------------------------------------------------------------------+
 | Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs |  FFs | LUTMs | DSP48E1s |                               Clock Net Name                              |
 +-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+---------------------------------------------------------------------------+
-| BUFG        | BUFHCE_X1Y33 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |    0 |     0 |        2 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out2                                 |
 | BUFG        | BUFHCE_X1Y24 |   no  |         0 |        1 |       0 |         0 |       0 |       0 |    0 |     0 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clkfbout_buf_MIPSfpga_system_clk_wiz_0_0 |
-| BUFG        | BUFHCE_X1Y32 |   no  |         0 |        0 |       0 |        19 |       0 |       0 | 3784 |     6 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1                                 |
+| BUFG        | BUFHCE_X1Y32 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |    2 |     0 |        0 | MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0]                              |
+| BUFG        | BUFHCE_X1Y33 |   no  |         0 |        0 |       0 |        30 |       0 |       0 | 4586 |     6 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1                                 |
 +-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+------+-------+----------+---------------------------------------------------------------------------+
 
 
@@ -174,16 +181,24 @@ Table of Contents
 +-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------+
 | Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |               Clock Net Name              |
 +-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------+
-| BUFG        | BUFHCE_X0Y44 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |   1 |     0 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1 |
-| BUFG        | BUFHCE_X0Y45 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 370 |    28 |        2 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out2 |
+| BUFG        | BUFHCE_X0Y44 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |   8 |     0 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1 |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------+
+
+
+15. Net wise resources used in clock region X1Y3
+------------------------------------------------
+
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------+
+| Source Type | BUFHCE Site  | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s |               Clock Net Name              |
++-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------+
+| BUFG        | BUFHCE_X1Y44 |   no  |         0 |        0 |       0 |         0 |       0 |       0 | 150 |     0 |        0 | MIPSfpga_system_i/clk_wiz_0/inst/clk_out1 |
 +-------------+--------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+-------------------------------------------+
 
 
 
 # Location of BUFG Primitives 
 set_property LOC BUFGCTRL_X0Y16 [get_cells MIPSfpga_system_i/clk_wiz_0/inst/clkout1_buf]
-set_property LOC BUFGCTRL_X0Y17 [get_cells MIPSfpga_system_i/clk_wiz_0/inst/clkout2_buf]
-set_property LOC BUFGCTRL_X0Y18 [get_cells MIPSfpga_system_i/clk_wiz_0/inst/clkf_buf]
+set_property LOC BUFGCTRL_X0Y17 [get_cells MIPSfpga_system_i/clk_wiz_0/inst/clkf_buf]
 set_property LOC BUFGCTRL_X0Y0 [get_cells MIPSfpga_system_i/util_ds_buf_0/U0/USE_BUFG.GEN_BUFG[0].BUFG_U]
 
 # Location of IO Clock Primitives
@@ -205,23 +220,30 @@ set_property LOC PLLE2_ADV_X1Y2 [get_cells MIPSfpga_system_i/clk_wiz_0/inst/plle
 set_property LOC IOB_X1Y126 [get_ports CLK100MHZ]
 set_property LOC IOB_X0Y120 [get_ports JB4]
 
+# Clock net "MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/CLK" driven by instance "MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/flag_reg" located at site "SLICE_X79Y97"
+#startgroup
+create_pblock {CLKAG_MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/CLK}
+add_cells_to_pblock [get_pblocks  {CLKAG_MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/CLK}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/CLK"}]]]
+resize_pblock [get_pblocks {CLKAG_MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/CLK}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
+# Clock net "MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/debounce/kclkf" driven by instance "MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/debounce/O0_reg" located at site "SLICE_X87Y101"
+#startgroup
+create_pblock {CLKAG_MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/debounce/kclkf}
+add_cells_to_pblock [get_pblocks  {CLKAG_MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/debounce/kclkf}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/debounce/kclkf"}]]]
+resize_pblock [get_pblocks {CLKAG_MIPSfpga_system_i/PS2Receiver_0/inst/keyboard/debounce/kclkf}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+#endgroup
+
 # Clock net "MIPSfpga_system_i/clk_wiz_0/inst/clk_out1" driven by instance "MIPSfpga_system_i/clk_wiz_0/inst/clkout1_buf" located at site "BUFGCTRL_X0Y16"
 #startgroup
 create_pblock {CLKAG_MIPSfpga_system_i/clk_wiz_0/inst/clk_out1}
 add_cells_to_pblock [get_pblocks  {CLKAG_MIPSfpga_system_i/clk_wiz_0/inst/clk_out1}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="MIPSfpga_system_i/clk_wiz_0/inst/clk_out1"}]]]
-resize_pblock [get_pblocks {CLKAG_MIPSfpga_system_i/clk_wiz_0/inst/clk_out1}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
-#endgroup
-
-# Clock net "MIPSfpga_system_i/clk_wiz_0/inst/clk_out2" driven by instance "MIPSfpga_system_i/clk_wiz_0/inst/clkout2_buf" located at site "BUFGCTRL_X0Y17"
-#startgroup
-create_pblock {CLKAG_MIPSfpga_system_i/clk_wiz_0/inst/clk_out2}
-add_cells_to_pblock [get_pblocks  {CLKAG_MIPSfpga_system_i/clk_wiz_0/inst/clk_out2}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="MIPSfpga_system_i/clk_wiz_0/inst/clk_out2"}]]]
-resize_pblock [get_pblocks {CLKAG_MIPSfpga_system_i/clk_wiz_0/inst/clk_out2}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+resize_pblock [get_pblocks {CLKAG_MIPSfpga_system_i/clk_wiz_0/inst/clk_out1}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X0Y3:CLOCKREGION_X0Y3 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2 CLOCKREGION_X1Y3:CLOCKREGION_X1Y3}
 #endgroup
 
 # Clock net "MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0]" driven by instance "MIPSfpga_system_i/util_ds_buf_0/U0/USE_BUFG.GEN_BUFG[0].BUFG_U" located at site "BUFGCTRL_X0Y0"
 #startgroup
 create_pblock {CLKAG_MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0]}
 add_cells_to_pblock [get_pblocks  {CLKAG_MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0]}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0]"}]]]
-resize_pblock [get_pblocks {CLKAG_MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0]}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+resize_pblock [get_pblocks {CLKAG_MIPSfpga_system_i/util_ds_buf_0/U0/BUFG_O[0]}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
 #endgroup

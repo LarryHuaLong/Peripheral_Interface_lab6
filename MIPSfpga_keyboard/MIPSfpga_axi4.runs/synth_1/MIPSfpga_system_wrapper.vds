@@ -2,150 +2,120 @@
 # Vivado v2015.2 (64-bit)
 # SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
 # IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
-# Start of session at: Wed Jun 20 05:53:23 2018
-# Process ID: 10168
-# Log file: E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/MIPSfpga_system_wrapper.vds
-# Journal file: E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1\vivado.jou
+# Start of session at: Wed Jun 20 21:13:52 2018
+# Process ID: 4388
+# Log file: C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/MIPSfpga_system_wrapper.vds
+# Journal file: C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source MIPSfpga_system_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Peripheral_Interface_lab/ip_repo'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2015.2/data/ip'.
-add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:27 . Memory (MB): peak = 240.703 ; gain = 50.078
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/LXP/Desktop/Peripheral_Interface_lab6/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.2/data/ip'.
+add_files: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 263.016 ; gain = 53.270
 Command: synth_design -top MIPSfpga_system_wrapper -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:25 ; elapsed = 00:00:51 . Memory (MB): peak = 295.785 ; gain = 119.621
+Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 318.152 ; gain = 145.578
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_wrapper' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system_wrapper.v:12]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:13]
-INFO: [Synth 8-638] synthesizing module 'GND' [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:3854]
-INFO: [Synth 8-256] done synthesizing module 'GND' (1#1) [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:3854]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_MIPS_MicroAptiv_UP_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_MIPS_MicroAptiv_UP_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_MIPS_MicroAptiv_UP_0_0' (2#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_MIPS_MicroAptiv_UP_0_0_stub.v:7]
-WARNING: [Synth 8-350] instance 'MIPS_MicroAptiv_UP_0' of module 'MIPSfpga_system_MIPS_MicroAptiv_UP_0_0' requires 23 connections, but only 22 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:337]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_PWM_w_Int_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_PWM_w_Int_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_PWM_w_Int_0_0' (3#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_PWM_w_Int_0_0_stub.v:7]
-WARNING: [Synth 8-350] instance 'PWM_w_Int_0' of module 'MIPSfpga_system_PWM_w_Int_0_0' requires 25 connections, but only 23 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:360]
-INFO: [Synth 8-638] synthesizing module 'VCC' [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:35496]
-INFO: [Synth 8-256] done synthesizing module 'VCC' (4#1) [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:35496]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_Video_Out_to_VGA_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_Video_Out_to_VGA_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_Video_Out_to_VGA_0_0' (5#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_Video_Out_to_VGA_0_0_stub.v:7]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_ahblite_axi_bridge_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_ahblite_axi_bridge_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_ahblite_axi_bridge_0_0' (6#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_ahblite_axi_bridge_0_0_stub.v:7]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_bram_ctrl_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_axi_bram_ctrl_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_bram_ctrl_0_0' (7#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_axi_bram_ctrl_0_0_stub.v:7]
-WARNING: [Synth 8-350] instance 'axi_bram_ctrl_0' of module 'MIPSfpga_system_axi_bram_ctrl_0_0' requires 44 connections, but only 43 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:449]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_bram_ctrl_1_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_axi_bram_ctrl_1_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_bram_ctrl_1_0' (8#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_axi_bram_ctrl_1_0_stub.v:7]
-WARNING: [Synth 8-350] instance 'axi_bram_ctrl_1' of module 'MIPSfpga_system_axi_bram_ctrl_1_0' requires 44 connections, but only 43 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:493]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_gpio_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_axi_gpio_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_gpio_0_0' (9#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_axi_gpio_0_0_stub.v:7]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_iic_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_axi_iic_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_iic_0_0' (10#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_axi_iic_0_0_stub.v:7]
-WARNING: [Synth 8-350] instance 'axi_iic_0' of module 'MIPSfpga_system_axi_iic_0_0' requires 27 connections, but only 26 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:558]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_interconnect_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:915]
-INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_QCWNXT' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2730]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_auto_pc_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_auto_pc_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_auto_pc_0' (11#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_auto_pc_0_stub.v:7]
-WARNING: [Synth 8-350] instance 'auto_pc' of module 'MIPSfpga_system_auto_pc_0' requires 60 connections, but only 58 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2969]
-INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_QCWNXT' (12#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2730]
-INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_1XRQA7Z' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3030]
-INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1XRQA7Z' (13#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3030]
-INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_1LBNQ7G' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3288]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_auto_pc_1' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_auto_pc_1_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_auto_pc_1' (14#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_auto_pc_1_stub.v:7]
-WARNING: [Synth 8-350] instance 'auto_pc' of module 'MIPSfpga_system_auto_pc_1' requires 60 connections, but only 58 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3527]
-INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_1LBNQ7G' (15#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3288]
-INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_TPIWRM' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3588]
-INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_TPIWRM' (16#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3588]
-INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_19UQ28A' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3846]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_auto_pc_2' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_auto_pc_2_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_auto_pc_2' (17#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_auto_pc_2_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_19UQ28A' (18#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3846]
-INFO: [Synth 8-638] synthesizing module 'm05_couplers_imp_7VAV8' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4156]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_auto_pc_3' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_auto_pc_3_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_auto_pc_3' (19#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_auto_pc_3_stub.v:7]
-WARNING: [Synth 8-350] instance 'auto_pc' of module 'MIPSfpga_system_auto_pc_3' requires 60 connections, but only 58 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4395]
-INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_7VAV8' (20#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4156]
-INFO: [Synth 8-638] synthesizing module 'm06_couplers_imp_EQT6S7' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4456]
-INFO: [Synth 8-256] done synthesizing module 'm06_couplers_imp_EQT6S7' (21#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4456]
-INFO: [Synth 8-638] synthesizing module 'm07_couplers_imp_14583O9' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4588]
-INFO: [Synth 8-256] done synthesizing module 'm07_couplers_imp_14583O9' (22#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4588]
-INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_Z1POH5' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4720]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_Z1POH5' (23#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4720]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xbar_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xbar_0' (24#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xbar_0_stub.v:7]
-WARNING: [Synth 8-689] width (12) of port connection 'm_axi_arburst' does not match port width (16) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2653]
-WARNING: [Synth 8-689] width (24) of port connection 'm_axi_arcache' does not match port width (32) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2654]
-WARNING: [Synth 8-689] width (24) of port connection 'm_axi_arid' does not match port width (32) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2655]
-WARNING: [Synth 8-689] width (48) of port connection 'm_axi_arlen' does not match port width (64) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2656]
-WARNING: [Synth 8-689] width (6) of port connection 'm_axi_arlock' does not match port width (8) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2657]
-WARNING: [Synth 8-689] width (18) of port connection 'm_axi_arprot' does not match port width (24) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2658]
-WARNING: [Synth 8-689] width (24) of port connection 'm_axi_arqos' does not match port width (32) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2659]
-WARNING: [Synth 8-689] width (24) of port connection 'm_axi_arregion' does not match port width (32) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2661]
-WARNING: [Synth 8-689] width (18) of port connection 'm_axi_arsize' does not match port width (24) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2662]
-WARNING: [Synth 8-689] width (12) of port connection 'm_axi_awburst' does not match port width (16) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2665]
-WARNING: [Synth 8-689] width (24) of port connection 'm_axi_awcache' does not match port width (32) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2666]
-WARNING: [Synth 8-689] width (24) of port connection 'm_axi_awid' does not match port width (32) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2667]
-WARNING: [Synth 8-689] width (48) of port connection 'm_axi_awlen' does not match port width (64) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2668]
-WARNING: [Synth 8-689] width (6) of port connection 'm_axi_awlock' does not match port width (8) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2669]
-WARNING: [Synth 8-689] width (18) of port connection 'm_axi_awprot' does not match port width (24) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2670]
-WARNING: [Synth 8-689] width (24) of port connection 'm_axi_awqos' does not match port width (32) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2671]
-WARNING: [Synth 8-689] width (24) of port connection 'm_axi_awregion' does not match port width (32) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2673]
-WARNING: [Synth 8-689] width (18) of port connection 'm_axi_awsize' does not match port width (24) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2674]
-WARNING: [Synth 8-689] width (6) of port connection 'm_axi_wlast' does not match port width (8) of module 'MIPSfpga_system_xbar_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2687]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_interconnect_0_0' (25#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:915]
-WARNING: [Synth 8-350] instance 'axi_interconnect_0' of module 'MIPSfpga_system_axi_interconnect_0_0' requires 229 connections, but only 211 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:585]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_uart16550_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_axi_uart16550_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_uart16550_0_0' (26#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_axi_uart16550_0_0_stub.v:7]
-WARNING: [Synth 8-350] instance 'axi_uart16550_0' of module 'MIPSfpga_system_axi_uart16550_0_0' requires 35 connections, but only 27 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:797]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_blk_mem_gen_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_blk_mem_gen_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_blk_mem_gen_0_0' (27#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_blk_mem_gen_0_0_stub.v:7]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_blk_mem_gen_1_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_blk_mem_gen_1_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_blk_mem_gen_1_0' (28#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_blk_mem_gen_1_0_stub.v:7]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_clk_wiz_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_clk_wiz_0_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_clk_wiz_0_0' (29#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_clk_wiz_0_0_stub.v:6]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_util_ds_buf_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_util_ds_buf_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_util_ds_buf_0_0' (30#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_util_ds_buf_0_0_stub.v:7]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_util_vector_logic_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_util_vector_logic_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_util_vector_logic_0_0' (31#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_util_vector_logic_0_0_stub.v:7]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_util_vector_logic_1_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_util_vector_logic_1_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_util_vector_logic_1_0' (32#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_util_vector_logic_1_0_stub.v:7]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_v_axi4s_vid_out_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_v_axi4s_vid_out_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_v_axi4s_vid_out_0_0' (33#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_v_axi4s_vid_out_0_0_stub.v:7]
-WARNING: [Synth 8-350] instance 'v_axi4s_vid_out_0' of module 'MIPSfpga_system_v_axi4s_vid_out_0_0' requires 29 connections, but only 19 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:852]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_v_tc_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_v_tc_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_v_tc_0_0' (34#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_v_tc_0_0_stub.v:7]
-WARNING: [Synth 8-350] instance 'v_tc_0' of module 'MIPSfpga_system_v_tc_0_0' requires 10 connections, but only 9 given [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:872]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_v_tpg_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_v_tpg_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_v_tpg_0_0' (35#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_v_tpg_0_0_stub.v:7]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconcat_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconcat_0_0_stub.v:7]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconcat_0_0' (36#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconcat_0_0_stub.v:7]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconstant_0_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_0_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconstant_0_0' (37#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_0_0_stub.v:6]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconstant_1_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_1_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconstant_1_0' (38#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_1_0_stub.v:6]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconstant_2_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_2_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconstant_2_0' (39#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_2_0_stub.v:6]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconstant_3_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_3_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconstant_3_0' (40#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_3_0_stub.v:6]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconstant_4_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_4_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconstant_4_0' (41#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_4_0_stub.v:6]
-INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconstant_5_0' [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_5_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconstant_5_0' (42#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/realtime/MIPSfpga_system_xlconstant_5_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system' (43#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:13]
-INFO: [Synth 8-638] synthesizing module 'IOBUF' [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:12936]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_wrapper' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system_wrapper.v:12]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:13]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_MIPS_MicroAptiv_UP_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_MIPS_MicroAptiv_UP_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_MIPS_MicroAptiv_UP_0_0' (1#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_MIPS_MicroAptiv_UP_0_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'MIPS_MicroAptiv_UP_0' of module 'MIPSfpga_system_MIPS_MicroAptiv_UP_0_0' requires 23 connections, but only 22 given [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:328]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_PS2Receiver_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_PS2Receiver_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_PS2Receiver_0_0' (2#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_PS2Receiver_0_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'PS2Receiver_0' of module 'MIPSfpga_system_PS2Receiver_0_0' requires 25 connections, but only 24 given [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:351]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_PWM_w_Int_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_PWM_w_Int_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_PWM_w_Int_0_0' (3#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_PWM_w_Int_0_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'PWM_w_Int_0' of module 'MIPSfpga_system_PWM_w_Int_0_0' requires 25 connections, but only 23 given [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:376]
+INFO: [Synth 8-638] synthesizing module 'VCC' [C:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:35496]
+INFO: [Synth 8-256] done synthesizing module 'VCC' (4#1) [C:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:35496]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_ahblite_axi_bridge_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_ahblite_axi_bridge_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_ahblite_axi_bridge_0_0' (5#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_ahblite_axi_bridge_0_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_bram_ctrl_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_axi_bram_ctrl_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_bram_ctrl_0_0' (6#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_axi_bram_ctrl_0_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'axi_bram_ctrl_0' of module 'MIPSfpga_system_axi_bram_ctrl_0_0' requires 44 connections, but only 43 given [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:452]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_bram_ctrl_1_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_axi_bram_ctrl_1_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_bram_ctrl_1_0' (7#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_axi_bram_ctrl_1_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'axi_bram_ctrl_1' of module 'MIPSfpga_system_axi_bram_ctrl_1_0' requires 44 connections, but only 43 given [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:496]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_gpio_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_axi_gpio_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_gpio_0_0' (8#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_axi_gpio_0_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_iic_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_axi_iic_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_iic_0_0' (9#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_axi_iic_0_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'axi_iic_0' of module 'MIPSfpga_system_axi_iic_0_0' requires 27 connections, but only 26 given [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:561]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_interconnect_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:875]
+INFO: [Synth 8-638] synthesizing module 'GND' [C:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:3854]
+INFO: [Synth 8-256] done synthesizing module 'GND' (10#1) [C:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:3854]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_QCWNXT' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2616]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_auto_pc_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_auto_pc_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_auto_pc_0' (11#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_auto_pc_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'auto_pc' of module 'MIPSfpga_system_auto_pc_0' requires 60 connections, but only 58 given [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2855]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_QCWNXT' (12#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2616]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_1XRQA7Z' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2916]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1XRQA7Z' (13#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:2916]
+INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_1LBNQ7G' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3174]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_auto_pc_1' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_auto_pc_1_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_auto_pc_1' (14#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_auto_pc_1_stub.v:7]
+WARNING: [Synth 8-350] instance 'auto_pc' of module 'MIPSfpga_system_auto_pc_1' requires 60 connections, but only 58 given [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3413]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_1LBNQ7G' (15#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3174]
+INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_TPIWRM' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3474]
+INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_TPIWRM' (16#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3474]
+INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_19UQ28A' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3732]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_auto_pc_2' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_auto_pc_2_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_auto_pc_2' (17#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_auto_pc_2_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_19UQ28A' (18#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:3732]
+INFO: [Synth 8-638] synthesizing module 'm05_couplers_imp_7VAV8' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4042]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_auto_pc_3' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_auto_pc_3_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_auto_pc_3' (19#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_auto_pc_3_stub.v:7]
+WARNING: [Synth 8-350] instance 'auto_pc' of module 'MIPSfpga_system_auto_pc_3' requires 60 connections, but only 58 given [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4281]
+INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_7VAV8' (20#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4042]
+INFO: [Synth 8-638] synthesizing module 'm06_couplers_imp_EQT6S7' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4342]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_auto_pc_4' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_auto_pc_4_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_auto_pc_4' (21#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_auto_pc_4_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'm06_couplers_imp_EQT6S7' (22#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4342]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_Z1POH5' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4652]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_Z1POH5' (23#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:4652]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xbar_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xbar_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xbar_0' (24#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xbar_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_interconnect_0_0' (25#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:875]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_axi_uart16550_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_axi_uart16550_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_axi_uart16550_0_0' (26#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_axi_uart16550_0_0_stub.v:7]
+WARNING: [Synth 8-350] instance 'axi_uart16550_0' of module 'MIPSfpga_system_axi_uart16550_0_0' requires 35 connections, but only 27 given [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:801]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_blk_mem_gen_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_blk_mem_gen_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_blk_mem_gen_0_0' (27#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_blk_mem_gen_0_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_blk_mem_gen_1_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_blk_mem_gen_1_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_blk_mem_gen_1_0' (28#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_blk_mem_gen_1_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_clk_wiz_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_clk_wiz_0_0' (29#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_clk_wiz_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'clk_wiz_0' of module 'MIPSfpga_system_clk_wiz_0_0' requires 3 connections, but only 2 given [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:843]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_util_ds_buf_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_util_ds_buf_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_util_ds_buf_0_0' (30#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_util_ds_buf_0_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_util_vector_logic_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_util_vector_logic_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_util_vector_logic_0_0' (31#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_util_vector_logic_0_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_util_vector_logic_1_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_util_vector_logic_1_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_util_vector_logic_1_0' (32#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_util_vector_logic_1_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconcat_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xlconcat_0_0_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconcat_0_0' (33#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xlconcat_0_0_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconstant_0_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconstant_0_0' (34#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconstant_1_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xlconstant_1_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconstant_1_0' (35#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xlconstant_1_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconstant_2_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xlconstant_2_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconstant_2_0' (36#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xlconstant_2_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xlconstant_3_0' [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xlconstant_3_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xlconstant_3_0' (37#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/realtime/MIPSfpga_system_xlconstant_3_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system' (38#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system.v:13]
+INFO: [Synth 8-638] synthesizing module 'IOBUF' [C:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:12936]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-256] done synthesizing module 'IOBUF' (44#1) [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:12936]
-INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_wrapper' (45#1) [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system_wrapper.v:12]
+INFO: [Synth 8-256] done synthesizing module 'IOBUF' (39#1) [C:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:12936]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_wrapper' (40#1) [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/hdl/MIPSfpga_system_wrapper.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:29 ; elapsed = 00:00:56 . Memory (MB): peak = 330.906 ; gain = 154.742
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 353.324 ; gain = 180.750
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -155,7 +125,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:56 . Memory (MB): peak = 330.906 ; gain = 154.742
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:21 . Memory (MB): peak = 353.324 ; gain = 180.750
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -164,41 +134,41 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/dcp_6/MIPSfpga_system_axi_bram_ctrl_0_0_in_context.xdc] for cell 'MIPSfpga_system_i/axi_bram_ctrl_0'
-Finished Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/dcp_6/MIPSfpga_system_axi_bram_ctrl_0_0_in_context.xdc] for cell 'MIPSfpga_system_i/axi_bram_ctrl_0'
-Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/dcp_11/MIPSfpga_system_clk_wiz_0_0_in_context.xdc] for cell 'MIPSfpga_system_i/clk_wiz_0'
-Finished Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/dcp_11/MIPSfpga_system_clk_wiz_0_0_in_context.xdc] for cell 'MIPSfpga_system_i/clk_wiz_0'
-Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/dcp_16/MIPSfpga_system_axi_bram_ctrl_1_0_in_context.xdc] for cell 'MIPSfpga_system_i/axi_bram_ctrl_1'
-Finished Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/dcp_16/MIPSfpga_system_axi_bram_ctrl_1_0_in_context.xdc] for cell 'MIPSfpga_system_i/axi_bram_ctrl_1'
-Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc]
-WARNING: [Vivado 12-507] No nets matched 'JB4_IBUF'. [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc:110]
-Finished Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/MIPSfpga_system_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/dcp_6/MIPSfpga_system_axi_bram_ctrl_0_0_in_context.xdc] for cell 'MIPSfpga_system_i/axi_bram_ctrl_0'
+Finished Parsing XDC File [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/dcp_6/MIPSfpga_system_axi_bram_ctrl_0_0_in_context.xdc] for cell 'MIPSfpga_system_i/axi_bram_ctrl_0'
+Parsing XDC File [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/dcp_11/MIPSfpga_system_clk_wiz_0_0_in_context.xdc] for cell 'MIPSfpga_system_i/clk_wiz_0'
+Finished Parsing XDC File [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/dcp_11/MIPSfpga_system_clk_wiz_0_0_in_context.xdc] for cell 'MIPSfpga_system_i/clk_wiz_0'
+Parsing XDC File [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/dcp_16/MIPSfpga_system_axi_bram_ctrl_1_0_in_context.xdc] for cell 'MIPSfpga_system_i/axi_bram_ctrl_1'
+Finished Parsing XDC File [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/dcp_16/MIPSfpga_system_axi_bram_ctrl_1_0_in_context.xdc] for cell 'MIPSfpga_system_i/axi_bram_ctrl_1'
+Parsing XDC File [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc]
+WARNING: [Vivado 12-507] No nets matched 'JB4_IBUF'. [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc:110]
+Finished Parsing XDC File [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/MIPSfpga_system_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+Parsing XDC File [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 635.715 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 657.934 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:51 ; elapsed = 00:01:33 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:39 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:51 ; elapsed = 00:01:33 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:39 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-10168-DESKTOP-LARRY/dcp_11/MIPSfpga_system_clk_wiz_0_0_in_context.xdc, line 4).
-incorrect argument "-dict" for "set_property" at line 7 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 7 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+Applied set_property IO_BUFFER_TYPE = NONE for CLK100MHZ. (constraint file  C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/.Xil/Vivado-4388-DESKTOP-9HJUUG0/dcp_11/MIPSfpga_system_clk_wiz_0_0_in_context.xdc, line 4).
+incorrect argument "-dict" for "set_property" at line 7 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 7 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -209,8 +179,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 32 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 32 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 32 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 32 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -221,8 +191,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 33 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 33 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 33 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 33 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -233,8 +203,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 34 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 34 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 34 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 34 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -245,8 +215,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 35 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 35 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 35 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 35 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -257,8 +227,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 36 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 36 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 36 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 36 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -269,8 +239,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 37 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 37 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 37 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 37 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -281,8 +251,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 38 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 38 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 38 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 38 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -293,8 +263,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 39 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 39 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 39 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 39 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -305,8 +275,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 40 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 40 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 40 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 40 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -317,8 +287,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 41 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 41 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 41 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 41 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -329,8 +299,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 42 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 42 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 42 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 42 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -341,8 +311,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 43 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 43 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 43 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 43 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -353,8 +323,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 44 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 44 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 44 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 44 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -365,8 +335,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 45 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 45 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 45 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 45 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -377,8 +347,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 46 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 46 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 46 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 46 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -389,8 +359,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 47 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 47 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 47 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 47 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -401,8 +371,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 51 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 51 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 51 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 51 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -413,8 +383,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 54 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 54 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 54 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 54 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -425,8 +395,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 80 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 80 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 80 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 80 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -437,8 +407,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 106 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 106 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 106 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 106 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -449,8 +419,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 107 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 107 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 107 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 107 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -461,8 +431,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 108 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 108 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 108 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 108 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -473,8 +443,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 109 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 109 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 109 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 109 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -485,8 +455,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 112 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 112 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 112 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 112 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -497,8 +467,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 116 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 116 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 116 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 116 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -509,8 +479,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 161 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 161 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 203 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 203 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -521,8 +491,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 162 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 162 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 204 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 204 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -533,8 +503,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 163 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 163 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 224 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 224 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -545,8 +515,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 164 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 164 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 225 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 225 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -557,8 +527,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 166 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 166 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 231 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 231 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -569,152 +539,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 167 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 167 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 168 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 168 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 169 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 169 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 171 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 171 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 172 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 172 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 173 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 173 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 174 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 174 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 176 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 176 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 177 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 177 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 203 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 203 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 204 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 204 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 224 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 224 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 225 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 225 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 232 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 232 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -727,8 +553,8 @@ Usage:
 ---------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/MIPS_MicroAptiv_UP_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/PS2Receiver_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/PWM_w_Int_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/Video_Out_to_VGA_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/ahblite_axi_bridge_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/axi_bram_ctrl_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/axi_bram_ctrl_1. (constraint file  auto generated constraint, line ).
@@ -739,6 +565,7 @@ Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/axi_interconnect_0/
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/axi_interconnect_0/m02_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/axi_interconnect_0/m04_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/axi_interconnect_0/m05_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/axi_interconnect_0/m06_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/axi_interconnect_0/xbar. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/axi_uart16550_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/blk_mem_gen_0. (constraint file  auto generated constraint, line ).
@@ -747,21 +574,16 @@ Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/clk_wiz_0. (constra
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/util_ds_buf_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/util_vector_logic_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/util_vector_logic_1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/v_axi4s_vid_out_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/v_tc_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/v_tpg_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/xlconcat_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/xlconstant_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/xlconstant_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/xlconstant_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/xlconstant_3. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/xlconstant_4. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for MIPSfpga_system_i/xlconstant_5. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:01:34 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:39 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:52 ; elapsed = 00:01:35 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:40 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -792,14 +614,14 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:53 ; elapsed = 00:01:35 . Memory (MB): peak = 635.715 ; gain = 459.551
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:40 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:01:35 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:40 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:53 ; elapsed = 00:01:35 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Parallel Reinference  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:40 . Memory (MB): peak = 657.934 ; gain = 485.359
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -810,24 +632,24 @@ Report RTL Partitions:
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:01:36 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:40 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:53 ; elapsed = 00:01:36 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:40 . Memory (MB): peak = 657.934 ; gain = 485.359
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:53 ; elapsed = 00:01:36 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:40 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 7 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 7 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 7 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 7 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -838,8 +660,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 32 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 32 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 32 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 32 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -850,8 +672,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 33 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 33 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 33 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 33 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -862,8 +684,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 34 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 34 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 34 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 34 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -874,8 +696,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 35 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 35 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 35 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 35 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -886,8 +708,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 36 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 36 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 36 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 36 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -898,8 +720,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 37 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 37 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 37 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 37 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -910,8 +732,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 38 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 38 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 38 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 38 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -922,8 +744,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 39 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 39 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 39 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 39 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -934,8 +756,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 40 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 40 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 40 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 40 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -946,8 +768,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 41 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 41 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 41 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 41 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -958,8 +780,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 42 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 42 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 42 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 42 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -970,8 +792,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 43 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 43 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 43 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 43 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -982,8 +804,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 44 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 44 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 44 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 44 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -994,8 +816,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 45 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 45 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 45 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 45 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1006,8 +828,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 46 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 46 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 46 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 46 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1018,8 +840,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 47 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 47 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 47 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 47 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1030,8 +852,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 51 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 51 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 51 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 51 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1042,8 +864,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 54 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 54 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 54 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 54 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1054,8 +876,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 80 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 80 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 80 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 80 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1066,8 +888,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 106 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 106 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 106 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 106 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1078,8 +900,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 107 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 107 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 107 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 107 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1090,8 +912,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 108 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 108 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 108 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 108 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1102,8 +924,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 109 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 109 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 109 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 109 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1114,8 +936,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 112 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 112 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 112 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 112 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1126,8 +948,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 116 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 116 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 116 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 116 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1138,8 +960,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 161 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 161 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 203 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 203 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1150,8 +972,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 162 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 162 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 204 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 204 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1162,8 +984,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 163 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 163 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 224 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 224 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1174,8 +996,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 164 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 164 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 225 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 225 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1186,8 +1008,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 166 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 166 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 231 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 231 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1198,152 +1020,8 @@ Usage:
     object
     [{>|>>} <stdoutFile>]
 ---------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 167 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 167 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 168 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 168 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 169 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 169 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 171 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 171 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 172 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 172 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 173 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 173 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 174 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 174 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 176 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 176 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 177 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 177 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 203 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 203 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 204 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 204 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 224 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 224 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
----------------------------------------------------------------------
-Usage:
-  set_property
-    [-help]
-    [-quiet]
-    attribute
-    value
-    object
-    [{>|>>} <stdoutFile>]
----------------------------------------------------------------------
-incorrect argument "-dict" for "set_property" at line 225 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
-incorrect set of required parameters for "set_property" at line 225 of file E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect argument "-dict" for "set_property" at line 232 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+incorrect set of required parameters for "set_property" at line 232 of file C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
 ---------------------------------------------------------------------
 Usage:
   set_property
@@ -1356,10 +1034,10 @@ Usage:
 ---------------------------------------------------------------------
 INFO: Moved 4 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:25 ; elapsed = 00:02:09 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:02:09 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1371,7 +1049,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:25 ; elapsed = 00:02:09 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:54 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1389,7 +1067,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:26 ; elapsed = 00:02:10 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:55 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1402,7 +1080,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:26 ; elapsed = 00:02:10 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:55 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1414,13 +1092,13 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:26 ; elapsed = 00:02:10 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:55 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Renaming Generated Ports : Time (s): cpu = 00:01:26 ; elapsed = 00:02:10 . Memory (MB): peak = 635.715 ; gain = 459.551
+Start Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:55 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:26 ; elapsed = 00:02:10 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:55 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1431,8 +1109,8 @@ Report BlackBoxes:
 |      |BlackBox name                          |Instances |
 +------+---------------------------------------+----------+
 |1     |MIPSfpga_system_MIPS_MicroAptiv_UP_0_0 |         1|
-|2     |MIPSfpga_system_PWM_w_Int_0_0          |         1|
-|3     |MIPSfpga_system_Video_Out_to_VGA_0_0   |         1|
+|2     |MIPSfpga_system_PS2Receiver_0_0        |         1|
+|3     |MIPSfpga_system_PWM_w_Int_0_0          |         1|
 |4     |MIPSfpga_system_ahblite_axi_bridge_0_0 |         1|
 |5     |MIPSfpga_system_axi_bram_ctrl_0_0      |         1|
 |6     |MIPSfpga_system_axi_bram_ctrl_1_0      |         1|
@@ -1443,23 +1121,19 @@ Report BlackBoxes:
 |11    |MIPSfpga_system_auto_pc_1              |         1|
 |12    |MIPSfpga_system_auto_pc_2              |         1|
 |13    |MIPSfpga_system_auto_pc_3              |         1|
-|14    |MIPSfpga_system_axi_uart16550_0_0      |         1|
-|15    |MIPSfpga_system_blk_mem_gen_0_0        |         1|
-|16    |MIPSfpga_system_blk_mem_gen_1_0        |         1|
-|17    |MIPSfpga_system_clk_wiz_0_0            |         1|
-|18    |MIPSfpga_system_util_ds_buf_0_0        |         1|
-|19    |MIPSfpga_system_util_vector_logic_0_0  |         1|
-|20    |MIPSfpga_system_util_vector_logic_1_0  |         1|
-|21    |MIPSfpga_system_v_axi4s_vid_out_0_0    |         1|
-|22    |MIPSfpga_system_v_tc_0_0               |         1|
-|23    |MIPSfpga_system_v_tpg_0_0              |         1|
-|24    |MIPSfpga_system_xlconcat_0_0           |         1|
-|25    |MIPSfpga_system_xlconstant_0_0         |         1|
-|26    |MIPSfpga_system_xlconstant_1_0         |         1|
-|27    |MIPSfpga_system_xlconstant_2_0         |         1|
-|28    |MIPSfpga_system_xlconstant_3_0         |         1|
-|29    |MIPSfpga_system_xlconstant_4_0         |         1|
-|30    |MIPSfpga_system_xlconstant_5_0         |         1|
+|14    |MIPSfpga_system_auto_pc_4              |         1|
+|15    |MIPSfpga_system_axi_uart16550_0_0      |         1|
+|16    |MIPSfpga_system_blk_mem_gen_0_0        |         1|
+|17    |MIPSfpga_system_blk_mem_gen_1_0        |         1|
+|18    |MIPSfpga_system_clk_wiz_0_0            |         1|
+|19    |MIPSfpga_system_util_ds_buf_0_0        |         1|
+|20    |MIPSfpga_system_util_vector_logic_0_0  |         1|
+|21    |MIPSfpga_system_util_vector_logic_1_0  |         1|
+|22    |MIPSfpga_system_xlconcat_0_0           |         1|
+|23    |MIPSfpga_system_xlconstant_0_0         |         1|
+|24    |MIPSfpga_system_xlconstant_1_0         |         1|
+|25    |MIPSfpga_system_xlconstant_2_0         |         1|
+|26    |MIPSfpga_system_xlconstant_3_0         |         1|
 +------+---------------------------------------+----------+
 
 Report Cell Usage: 
@@ -1467,62 +1141,59 @@ Report Cell Usage:
 |      |Cell                                   |Count |
 +------+---------------------------------------+------+
 |1     |MIPSfpga_system_MIPS_MicroAptiv_UP_0_0 |     1|
-|2     |MIPSfpga_system_PWM_w_Int_0_0          |     1|
-|3     |MIPSfpga_system_Video_Out_to_VGA_0_0   |     1|
+|2     |MIPSfpga_system_PS2Receiver_0_0        |     1|
+|3     |MIPSfpga_system_PWM_w_Int_0_0          |     1|
 |4     |MIPSfpga_system_ahblite_axi_bridge_0_0 |     1|
 |5     |MIPSfpga_system_auto_pc_0              |     1|
 |6     |MIPSfpga_system_auto_pc_1              |     1|
 |7     |MIPSfpga_system_auto_pc_2              |     1|
 |8     |MIPSfpga_system_auto_pc_3              |     1|
-|9     |MIPSfpga_system_axi_bram_ctrl_0_0      |     1|
-|10    |MIPSfpga_system_axi_bram_ctrl_1_0      |     1|
-|11    |MIPSfpga_system_axi_gpio_0_0           |     1|
-|12    |MIPSfpga_system_axi_iic_0_0            |     1|
-|13    |MIPSfpga_system_axi_uart16550_0_0      |     1|
-|14    |MIPSfpga_system_blk_mem_gen_0_0        |     1|
-|15    |MIPSfpga_system_blk_mem_gen_1_0        |     1|
-|16    |MIPSfpga_system_clk_wiz_0_0            |     1|
-|17    |MIPSfpga_system_util_ds_buf_0_0        |     1|
-|18    |MIPSfpga_system_util_vector_logic_0_0  |     1|
-|19    |MIPSfpga_system_util_vector_logic_1_0  |     1|
-|20    |MIPSfpga_system_v_axi4s_vid_out_0_0    |     1|
-|21    |MIPSfpga_system_v_tc_0_0               |     1|
-|22    |MIPSfpga_system_v_tpg_0_0              |     1|
-|23    |MIPSfpga_system_xbar_0                 |     1|
-|24    |MIPSfpga_system_xlconcat_0_0           |     1|
-|25    |MIPSfpga_system_xlconstant_0_0         |     1|
-|26    |MIPSfpga_system_xlconstant_1_0         |     1|
-|27    |MIPSfpga_system_xlconstant_2_0         |     1|
-|28    |MIPSfpga_system_xlconstant_3_0         |     1|
-|29    |MIPSfpga_system_xlconstant_4_0         |     1|
-|30    |MIPSfpga_system_xlconstant_5_0         |     1|
-|31    |GND                                    |     2|
-|32    |VCC                                    |     1|
-|33    |IBUF                                   |     7|
-|34    |IOBUF                                  |     2|
-|35    |OBUF                                   |    34|
+|9     |MIPSfpga_system_auto_pc_4              |     1|
+|10    |MIPSfpga_system_axi_bram_ctrl_0_0      |     1|
+|11    |MIPSfpga_system_axi_bram_ctrl_1_0      |     1|
+|12    |MIPSfpga_system_axi_gpio_0_0           |     1|
+|13    |MIPSfpga_system_axi_iic_0_0            |     1|
+|14    |MIPSfpga_system_axi_uart16550_0_0      |     1|
+|15    |MIPSfpga_system_blk_mem_gen_0_0        |     1|
+|16    |MIPSfpga_system_blk_mem_gen_1_0        |     1|
+|17    |MIPSfpga_system_clk_wiz_0_0            |     1|
+|18    |MIPSfpga_system_util_ds_buf_0_0        |     1|
+|19    |MIPSfpga_system_util_vector_logic_0_0  |     1|
+|20    |MIPSfpga_system_util_vector_logic_1_0  |     1|
+|21    |MIPSfpga_system_xbar_0                 |     1|
+|22    |MIPSfpga_system_xlconcat_0_0           |     1|
+|23    |MIPSfpga_system_xlconstant_0_0         |     1|
+|24    |MIPSfpga_system_xlconstant_1_0         |     1|
+|25    |MIPSfpga_system_xlconstant_2_0         |     1|
+|26    |MIPSfpga_system_xlconstant_3_0         |     1|
+|27    |GND                                    |     1|
+|28    |VCC                                    |     1|
+|29    |IBUF                                   |     9|
+|30    |IOBUF                                  |     2|
+|31    |OBUF                                   |    20|
 +------+---------------------------------------+------+
 
 Report Instance Areas: 
 +------+-----------------------+-------------------------------------+------+
 |      |Instance               |Module                               |Cells |
 +------+-----------------------+-------------------------------------+------+
-|1     |top                    |                                     |  2972|
-|2     |  MIPSfpga_system_i    |MIPSfpga_system                      |  2929|
-|3     |    axi_interconnect_0 |MIPSfpga_system_axi_interconnect_0_0 |  2033|
+|1     |top                    |                                     |  2938|
+|2     |  MIPSfpga_system_i    |MIPSfpga_system                      |  2907|
+|3     |    axi_interconnect_0 |MIPSfpga_system_axi_interconnect_0_0 |  2022|
 |4     |      m00_couplers     |m00_couplers_imp_QCWNXT              |   161|
 |5     |      m02_couplers     |m02_couplers_imp_1LBNQ7G             |   123|
 |6     |      m04_couplers     |m04_couplers_imp_19UQ28A             |   161|
 |7     |      m05_couplers     |m05_couplers_imp_7VAV8               |   161|
+|8     |      m06_couplers     |m06_couplers_imp_EQT6S7              |   161|
 +------+-----------------------+-------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:26 ; elapsed = 00:02:10 . Memory (MB): peak = 635.715 ; gain = 459.551
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:55 . Memory (MB): peak = 657.934 ; gain = 485.359
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:56 . Memory (MB): peak = 635.715 ; gain = 78.691
-Synthesis Optimization Complete : Time (s): cpu = 00:01:26 ; elapsed = 00:02:11 . Memory (MB): peak = 635.715 ; gain = 459.551
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 657.934 ; gain = 82.051
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:55 . Memory (MB): peak = 657.934 ; gain = 485.359
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -1531,8 +1202,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-106 Infos, 33 Warnings, 0 Critical Warnings and 0 Errors encountered.
+96 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:37 . Memory (MB): peak = 635.715 ; gain = 395.012
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.126 . Memory (MB): peak = 635.715 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Jun 20 05:55:40 2018...
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:48 . Memory (MB): peak = 657.934 ; gain = 394.918
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.083 . Memory (MB): peak = 657.934 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 20 21:14:50 2018...

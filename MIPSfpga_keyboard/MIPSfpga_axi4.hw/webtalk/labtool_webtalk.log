@@ -4,6 +4,9 @@
   **** IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 
-source C:/workspace/Peripheral_course_2018/MIPSfpga_ADT7420/MIPSfpga_axi4.hw/webtalk/labtool_webtalk.tcl -notrace
-INFO: [Common 17-186] 'C:/workspace/Peripheral_course_2018/MIPSfpga_ADT7420/MIPSfpga_axi4.hw/webtalk/usage_statistics_ext_labtool.xml' has been successfully sent to Xilinx on Fri Mar 09 09:02:47 2018. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2015.2/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Fri Mar 09 09:02:47 2018...
+source C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.hw/webtalk/labtool_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 1680427926 -regid "" -xml C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.hw/webtalk/usage_s..."
+    (file "C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.hw/webtalk/labtool_webtalk.tcl" line 28)
+INFO: [Common 17-206] Exiting Webtalk at Wed Jun 20 21:21:34 2018...
