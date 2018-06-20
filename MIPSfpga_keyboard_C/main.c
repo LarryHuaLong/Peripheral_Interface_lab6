@@ -35,7 +35,7 @@
 
 #define IS_UART_INTR (1 << 15)
 #define IS_PWM_INTR (1 << 14)
-#define IS_PS2_INTR (1 << 12)
+#define IS_PS2_INTR (1 << 13)
 #define IS_TIMER_INTR (1 << 30)
 
 void delay();
