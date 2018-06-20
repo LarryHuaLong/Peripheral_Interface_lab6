@@ -43,8 +43,8 @@ extern char *my_itoa(int n);
 extern void delay_ms(unsigned int ms_count);
 
 // The following is for ADT7420
-#include "i2c.h"
-#include "ADT7420.h"
+//#include "i2c.h"
+//#include "ADT7420.h"
 
 /*****************************************************************************/
 /********************** Variable Definitions *********************************/
@@ -72,62 +72,8 @@ int main() {
 		
 	*WRITE_IO(UART_BASE + ier) = 0x00000001; // IER register. Enables Receiver Line Status and Received Data Interrupts
 	delay();
+
 	
-	// Begin ADT7420 test
-	// Initialize ADT7420 Device
-	ADT7420_Init();
-    
-	// Display Main Menu on UART
-	ADT7420_DisplayMainMenu();
-	
-	while(rxData != 'q')
-    {
-    	uart_print("rxData = ");
-		uart_print(my_itoa(rxData));
-		uart_print("\n\r");
-		
-		Display_Temp(ADT7420_ReadTemp());
-		
-		switch(rxData)
-    	{
-    	case 't':
-    		Display_Temp(ADT7420_ReadTemp());
-    		break;
-    	case 'r':
-    		ADT7420_SetResolution();
-    		break;
-    	case 'h':
-    		ADT7420_DisplaySetTHighMenu();
-    		break;
-    	case 'l':
-    		ADT7420_DisplaySetTLowMenu();
-    		break;
-    	case 'c':
-    		ADT7420_DisplaySetTCritMenu();
-    		break;
-        case 'y':
-        	ADT7420_DisplaySetTHystMenu();
-    		break;
-    	case 'f':
-    		ADT7420_DisplaySetFaultQueueMenu();
-    		break;
-    	case 's':
-			ADT7420_DisplaySettings();
-			break;
-    	case 'm':
-    		ADT7420_DisplayMenu();
-    		break;
-    	case 0:
-    		break;
-    	default:
-    		uart_print("\n\rWrong option! Please select one of the options below.");
-    		ADT7420_DisplayMenu();
-    		break;
-    	}
-    }
-	
-	uart_print("Exiting ADT7420 test application!\n\r");
-	return 0;
 }
 
 void delay() {
