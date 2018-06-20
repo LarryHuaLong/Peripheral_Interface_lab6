@@ -1,7 +1,7 @@
 //Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-//Date        : Wed Jun 20 20:18:06 2018
+//Date        : Wed Jun 20 23:33:43 2018
 //Host        : DESKTOP-LARRY running 64-bit major release  (build 9200)
 //Command     : generate_target MIPSfpga_system_wrapper.bd
 //Design      : MIPSfpga_system_wrapper
@@ -24,6 +24,8 @@ module MIPSfpga_system_wrapper
     PWMs,
     UART_RXD_OUT,
     UART_TXD_IN,
+    anodes,
+    cathodes,
     temp_sensor_scl_io,
     temp_sensor_sda_io);
   input CLK100MHZ;
@@ -38,8 +40,10 @@ module MIPSfpga_system_wrapper
   input PS2_CLK;
   input PS2_DATA;
   output [1:0]PWMs;
-  output UART_RXD_OUT;
+  output [0:0]UART_RXD_OUT;
   input UART_TXD_IN;
+  output [7:0]anodes;
+  output [7:0]cathodes;
   inout temp_sensor_scl_io;
   inout temp_sensor_sda_io;
 
@@ -55,8 +59,10 @@ module MIPSfpga_system_wrapper
   wire PS2_CLK;
   wire PS2_DATA;
   wire [1:0]PWMs;
-  wire UART_RXD_OUT;
+  wire [0:0]UART_RXD_OUT;
   wire UART_TXD_IN;
+  wire [7:0]anodes;
+  wire [7:0]cathodes;
   wire temp_sensor_scl_i;
   wire temp_sensor_scl_io;
   wire temp_sensor_scl_o;
@@ -86,7 +92,9 @@ module MIPSfpga_system_wrapper
         .TEMP_SENSOR_sda_o(temp_sensor_sda_o),
         .TEMP_SENSOR_sda_t(temp_sensor_sda_t),
         .UART_RXD_OUT(UART_RXD_OUT),
-        .UART_TXD_IN(UART_TXD_IN));
+        .UART_TXD_IN(UART_TXD_IN),
+        .anodes(anodes),
+        .cathodes(cathodes));
   IOBUF temp_sensor_scl_iobuf
        (.I(temp_sensor_scl_o),
         .IO(temp_sensor_scl_io),

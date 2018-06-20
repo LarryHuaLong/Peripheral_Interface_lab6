@@ -50,81 +50,32 @@ set rc [catch {
   create_msg_db init_design.pb
   debug::add_scope template.lib 1
   set_property design_mode GateLvl [current_fileset]
-  set_property webtalk.parent_dir C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.cache/wt [current_project]
-  set_property parent.project_path C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.xpr [current_project]
+  set_property webtalk.parent_dir E:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.cache/wt [current_project]
+  set_property parent.project_path E:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.xpr [current_project]
   set_property ip_repo_paths {
-  c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.cache/ip
-  C:/Users/LXP/Desktop/Peripheral_Interface_lab6/ip_repo
+  e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.cache/ip
+  e:/Peripheral_Interface_lab6/ip_repo
 } [current_project]
-  set_property ip_output_repo c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.cache/ip [current_project]
-  add_files -quiet C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/MIPSfpga_system_wrapper.dcp
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_MIPS_MicroAptiv_UP_0_0/MIPSfpga_system_MIPS_MicroAptiv_UP_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_MIPS_MicroAptiv_UP_0_0/MIPSfpga_system_MIPS_MicroAptiv_UP_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_ahblite_axi_bridge_0_0/MIPSfpga_system_ahblite_axi_bridge_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_ahblite_axi_bridge_0_0/MIPSfpga_system_ahblite_axi_bridge_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xlconstant_0_0/MIPSfpga_system_xlconstant_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xlconstant_0_0/MIPSfpga_system_xlconstant_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/MIPSfpga_system_xbar_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/MIPSfpga_system_xbar_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_gpio_0_0/MIPSfpga_system_axi_gpio_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_gpio_0_0/MIPSfpga_system_axi_gpio_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_bram_ctrl_0_0/MIPSfpga_system_axi_bram_ctrl_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_bram_ctrl_0_0/MIPSfpga_system_axi_bram_ctrl_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_blk_mem_gen_0_0/MIPSfpga_system_blk_mem_gen_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_blk_mem_gen_0_0/MIPSfpga_system_blk_mem_gen_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_util_ds_buf_0_0/MIPSfpga_system_util_ds_buf_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_util_ds_buf_0_0/MIPSfpga_system_util_ds_buf_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xlconstant_1_0/MIPSfpga_system_xlconstant_1_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xlconstant_1_0/MIPSfpga_system_xlconstant_1_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xlconstant_2_0/MIPSfpga_system_xlconstant_2_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xlconstant_2_0/MIPSfpga_system_xlconstant_2_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_clk_wiz_0_0/MIPSfpga_system_clk_wiz_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_clk_wiz_0_0/MIPSfpga_system_clk_wiz_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_util_vector_logic_0_0/MIPSfpga_system_util_vector_logic_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_util_vector_logic_0_0/MIPSfpga_system_util_vector_logic_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_util_vector_logic_1_0/MIPSfpga_system_util_vector_logic_1_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_util_vector_logic_1_0/MIPSfpga_system_util_vector_logic_1_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_uart16550_0_0/MIPSfpga_system_axi_uart16550_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_uart16550_0_0/MIPSfpga_system_axi_uart16550_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xlconstant_3_0/MIPSfpga_system_xlconstant_3_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xlconstant_3_0/MIPSfpga_system_xlconstant_3_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_bram_ctrl_1_0/MIPSfpga_system_axi_bram_ctrl_1_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_bram_ctrl_1_0/MIPSfpga_system_axi_bram_ctrl_1_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_blk_mem_gen_1_0/MIPSfpga_system_blk_mem_gen_1_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_blk_mem_gen_1_0/MIPSfpga_system_blk_mem_gen_1_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_PWM_w_Int_0_0/MIPSfpga_system_PWM_w_Int_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_PWM_w_Int_0_0/MIPSfpga_system_PWM_w_Int_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xlconcat_0_0/MIPSfpga_system_xlconcat_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xlconcat_0_0/MIPSfpga_system_xlconcat_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_iic_0_0/MIPSfpga_system_axi_iic_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_iic_0_0/MIPSfpga_system_axi_iic_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_PS2Receiver_0_0/MIPSfpga_system_PS2Receiver_0_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_PS2Receiver_0_0/MIPSfpga_system_PS2Receiver_0_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_0/MIPSfpga_system_auto_pc_0.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_0/MIPSfpga_system_auto_pc_0.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_1/MIPSfpga_system_auto_pc_1.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_1/MIPSfpga_system_auto_pc_1.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_2/MIPSfpga_system_auto_pc_2.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_2/MIPSfpga_system_auto_pc_2.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_3/MIPSfpga_system_auto_pc_3.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_3/MIPSfpga_system_auto_pc_3.dcp]
-  add_files -quiet c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_4/MIPSfpga_system_auto_pc_4.dcp
-  set_property netlist_only true [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_4/MIPSfpga_system_auto_pc_4.dcp]
-  read_xdc -prop_thru_buffers -ref MIPSfpga_system_axi_gpio_0_0 -cells U0 c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_gpio_0_0/MIPSfpga_system_axi_gpio_0_0_board.xdc
-  set_property processing_order EARLY [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_gpio_0_0/MIPSfpga_system_axi_gpio_0_0_board.xdc]
-  read_xdc -ref MIPSfpga_system_axi_gpio_0_0 -cells U0 c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_gpio_0_0/MIPSfpga_system_axi_gpio_0_0.xdc
-  set_property processing_order EARLY [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_gpio_0_0/MIPSfpga_system_axi_gpio_0_0.xdc]
-  read_xdc -prop_thru_buffers -ref MIPSfpga_system_clk_wiz_0_0 -cells inst c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_clk_wiz_0_0/MIPSfpga_system_clk_wiz_0_0_board.xdc
-  set_property processing_order EARLY [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_clk_wiz_0_0/MIPSfpga_system_clk_wiz_0_0_board.xdc]
-  read_xdc -ref MIPSfpga_system_clk_wiz_0_0 -cells inst c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_clk_wiz_0_0/MIPSfpga_system_clk_wiz_0_0.xdc
-  set_property processing_order EARLY [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_clk_wiz_0_0/MIPSfpga_system_clk_wiz_0_0.xdc]
-  read_xdc -prop_thru_buffers -ref MIPSfpga_system_axi_uart16550_0_0 -cells U0 c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_uart16550_0_0/MIPSfpga_system_axi_uart16550_0_0_board.xdc
-  set_property processing_order EARLY [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_uart16550_0_0/MIPSfpga_system_axi_uart16550_0_0_board.xdc]
-  read_xdc -ref MIPSfpga_system_axi_uart16550_0_0 -cells U0 c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_uart16550_0_0/MIPSfpga_system_axi_uart16550_0_0.xdc
-  set_property processing_order EARLY [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_uart16550_0_0/MIPSfpga_system_axi_uart16550_0_0.xdc]
-  read_xdc -prop_thru_buffers -ref MIPSfpga_system_axi_iic_0_0 c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_iic_0_0/MIPSfpga_system_axi_iic_0_0_board.xdc
-  set_property processing_order EARLY [get_files c:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_iic_0_0/MIPSfpga_system_axi_iic_0_0_board.xdc]
-  read_xdc C:/Users/LXP/Desktop/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+  set_property ip_output_repo e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.cache/ip [current_project]
+  add_files -quiet E:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/synth_1/MIPSfpga_system_wrapper.dcp
+  add_files -quiet E:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/MIPSfpga_system_synth_1/MIPSfpga_system.dcp
+  set_property netlist_only true [get_files E:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/MIPSfpga_system_synth_1/MIPSfpga_system.dcp]
+  read_xdc -prop_thru_buffers -ref MIPSfpga_system_axi_gpio_0_0 -cells U0 e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_gpio_0_0/MIPSfpga_system_axi_gpio_0_0_board.xdc
+  set_property processing_order EARLY [get_files e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_gpio_0_0/MIPSfpga_system_axi_gpio_0_0_board.xdc]
+  read_xdc -ref MIPSfpga_system_axi_gpio_0_0 -cells U0 e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_gpio_0_0/MIPSfpga_system_axi_gpio_0_0.xdc
+  set_property processing_order EARLY [get_files e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_gpio_0_0/MIPSfpga_system_axi_gpio_0_0.xdc]
+  read_xdc -prop_thru_buffers -ref MIPSfpga_system_clk_wiz_0_0 -cells inst e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_clk_wiz_0_0/MIPSfpga_system_clk_wiz_0_0_board.xdc
+  set_property processing_order EARLY [get_files e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_clk_wiz_0_0/MIPSfpga_system_clk_wiz_0_0_board.xdc]
+  read_xdc -ref MIPSfpga_system_clk_wiz_0_0 -cells inst e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_clk_wiz_0_0/MIPSfpga_system_clk_wiz_0_0.xdc
+  set_property processing_order EARLY [get_files e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_clk_wiz_0_0/MIPSfpga_system_clk_wiz_0_0.xdc]
+  read_xdc -prop_thru_buffers -ref MIPSfpga_system_axi_uart16550_0_0 -cells U0 e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_uart16550_0_0/MIPSfpga_system_axi_uart16550_0_0_board.xdc
+  set_property processing_order EARLY [get_files e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_uart16550_0_0/MIPSfpga_system_axi_uart16550_0_0_board.xdc]
+  read_xdc -ref MIPSfpga_system_axi_uart16550_0_0 -cells U0 e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_uart16550_0_0/MIPSfpga_system_axi_uart16550_0_0.xdc
+  set_property processing_order EARLY [get_files e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_uart16550_0_0/MIPSfpga_system_axi_uart16550_0_0.xdc]
+  read_xdc -prop_thru_buffers -ref MIPSfpga_system_axi_iic_0_0 e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_iic_0_0/MIPSfpga_system_axi_iic_0_0_board.xdc
+  set_property processing_order EARLY [get_files e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_iic_0_0/MIPSfpga_system_axi_iic_0_0_board.xdc]
+  read_xdc E:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/constrs_1/imports/MIPSfpga_Peripheral_2017/MIPSfpga_axi4.xdc
+  read_xdc -mode out_of_context -ref MIPSfpga_system E:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/MIPSfpga_system_ooc.xdc
   link_design -top MIPSfpga_system_wrapper -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]

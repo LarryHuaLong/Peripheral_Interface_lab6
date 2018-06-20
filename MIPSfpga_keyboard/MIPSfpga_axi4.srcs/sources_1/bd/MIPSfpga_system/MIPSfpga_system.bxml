@@ -182,6 +182,29 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
+      <File Name="hdl\MIPSfpga_system.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\MIPSfpga_system_util_vector_logic_2_0\MIPSfpga_system_util_vector_logic_2_0.xci" Type="IP">
+        <Instance HierarchyPath="util_vector_logic_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\MIPSfpga_system_segment_0_1\MIPSfpga_system_segment_0_1.xci" Type="IP">
+        <Instance HierarchyPath="segment_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="ip\MIPSfpga_system_auto_pc_0\MIPSfpga_system_auto_pc_0.xci" Type="IP">
         <Instance HierarchyPath="axi_interconnect_0/m00_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -222,8 +245,9 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="hdl\MIPSfpga_system.v" Type="Verilog">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+      <File Name="ip\MIPSfpga_system_auto_pc_5\MIPSfpga_system_auto_pc_5.xci" Type="IP">
+        <Instance HierarchyPath="axi_interconnect_0/m07_couplers/auto_pc"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -250,6 +274,32 @@
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="MIPSfpga_system.dcp" Type="DCP">
+        <Properties IsEditable="true" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+      </File>
+      <File Name="MIPSfpga_system_stub.v" Type="Verilog">
+        <Properties IsEditable="true" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTH_BLACKBOX_STUB"/>
+      </File>
+      <File Name="MIPSfpga_system_stub.vhdl" Type="VHDL">
+        <Properties IsEditable="true" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTH_BLACKBOX_STUB"/>
+      </File>
+      <File Name="MIPSfpga_system_funcsim.v" Type="Verilog">
+        <Properties IsEditable="true" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="MIPSfpga_system_funcsim.vhdl" Type="VHDL">
+        <Properties IsEditable="true" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
       </File>
     </FileCollection>
   </CompositeFile>

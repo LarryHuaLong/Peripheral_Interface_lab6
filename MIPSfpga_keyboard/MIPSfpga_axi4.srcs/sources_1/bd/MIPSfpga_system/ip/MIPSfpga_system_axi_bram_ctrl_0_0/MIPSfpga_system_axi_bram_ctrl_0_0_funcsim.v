@@ -1,10 +1,10 @@
 // Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
-// Date        : Wed Jun 20 20:31:01 2018
+// Date        : Wed Jun 20 23:23:36 2018
 // Host        : DESKTOP-LARRY running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_bram_ctrl_0_0/MIPSfpga_system_axi_bram_ctrl_0_0_funcsim.v
+//               E:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_axi_bram_ctrl_0_0/MIPSfpga_system_axi_bram_ctrl_0_0_funcsim.v
 // Design      : MIPSfpga_system_axi_bram_ctrl_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
