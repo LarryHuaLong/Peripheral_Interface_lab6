@@ -1,0 +1,11 @@
+Vivado Simulator 2015.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module system_tb.init.MIPSfpga_system_i.blk_mem_gen_0.inst.native_mem_module.blk_mem_gen_v8_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module system_tb.init.MIPSfpga_system_i.blk_mem_gen_1.inst.native_mem_module.blk_mem_gen_v8_2_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Note: axi_iic configured for SDA inertial delay of 0 clocks.
+Time: 0 ps  Iteration: 0  Process: /system_tb/init/MIPSfpga_system_i/axi_iic_0/U0/X_IIC/FILTER_I/line__184  File: E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_iic_v2_0/23cdddee/hdl/src/vhdl/filter.vhd
+Note: axi_iic configured for SCL inertial delay of 0 clocks.
+Time: 0 ps  Iteration: 0  Process: /system_tb/init/MIPSfpga_system_i/axi_iic_0/U0/X_IIC/FILTER_I/line__158  File: E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_iic_v2_0/23cdddee/hdl/src/vhdl/filter.vhd
+Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance system_tb.init.MIPSfpga_system_i.clk_wiz_0.inst.plle2_adv_inst are not same.

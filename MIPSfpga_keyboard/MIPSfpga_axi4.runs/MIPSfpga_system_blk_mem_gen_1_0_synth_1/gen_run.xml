@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="MIPSfpga_system_blk_mem_gen_1_0_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1529497167">
+  <File Type="RDS-DCP" Name="MIPSfpga_system_blk_mem_gen_1_0.dcp"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/MIPSfpga_system_blk_mem_gen_1_0_synth_1/constrs_in.xml"/>
+  <File Type="RDS-UTIL-PB" Name="MIPSfpga_system_blk_mem_gen_1_0_utilization_synth.pb"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/MIPSfpga_system_blk_mem_gen_1_0_synth_1/sources.xml"/>
+  <File Type="RDS-PROPCONSTRS" Name="MIPSfpga_system_blk_mem_gen_1_0_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="MIPSfpga_system_blk_mem_gen_1_0.tcl"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/MIPSfpga_system_blk_mem_gen_1_0_synth_1/MIPSfpga_system_blk_mem_gen_1_0_synth_1.psg"/>
+  <File Type="RDS-RDS" Name="MIPSfpga_system_blk_mem_gen_1_0.vds"/>
+  <File Type="RDS-UTIL" Name="MIPSfpga_system_blk_mem_gen_1_0_utilization_synth.rpt"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="MIPSfpga_system_blk_mem_gen_1_0_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="MIPSfpga_system_blk_mem_gen_1_0_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MIPSfpga_system_blk_mem_gen_1_0">
+    <File Path="$PSRCDIR/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_blk_mem_gen_1_0/MIPSfpga_system_blk_mem_gen_1_0.xci">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="MIPSfpga_system_blk_mem_gen_1_0"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MIPSfpga_system_blk_mem_gen_1_0">
+    <File Path="$PSRCDIR/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_blk_mem_gen_1_0/MIPSfpga_system_blk_mem_gen_1_0.xci">
+      <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="MIPSfpga_system_blk_mem_gen_1_0"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

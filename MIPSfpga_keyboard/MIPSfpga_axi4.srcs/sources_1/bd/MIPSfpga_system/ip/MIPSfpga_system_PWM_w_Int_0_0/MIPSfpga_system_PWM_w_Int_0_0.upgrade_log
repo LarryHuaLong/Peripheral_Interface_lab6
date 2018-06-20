@@ -1,0 +1,27 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
+| Date         : Mon Jun 11 14:58:44 2018
+| Host         : DESKTOP-LARRY running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'MIPSfpga_system_PWM_w_Int_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of MIPSfpga_system_PWM_w_Int_0_0 from xilinx.com:user:PWM_w_Int:1.0 (Rev. 2) to xilinx.com:user:PWM_w_Int:1.1 (Rev. 1)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading IP 'MIPSfpga_system_PWM_w_Int_0_0'. These changes may impact your design.
+
+
+-upgrade has added port 'DutyCycle'
+-upgrade has added port 'PWM_Counter'
+

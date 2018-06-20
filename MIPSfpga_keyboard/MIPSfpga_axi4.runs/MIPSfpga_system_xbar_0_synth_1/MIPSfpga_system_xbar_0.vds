@@ -1,0 +1,1475 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed Jun 20 20:21:53 2018
+# Process ID: 3148
+# Log file: E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.runs/MIPSfpga_system_xbar_0_synth_1/MIPSfpga_system_xbar_0.vds
+# Journal file: E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.runs/MIPSfpga_system_xbar_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source MIPSfpga_system_xbar_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Peripheral_Interface_lab/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2015.2/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'MIPSfpga_system_xbar_0' generated file not found 'e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/MIPSfpga_system_xbar_0.dcp'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'MIPSfpga_system_xbar_0' generated file not found 'e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/MIPSfpga_system_xbar_0_stub.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'MIPSfpga_system_xbar_0' generated file not found 'e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/MIPSfpga_system_xbar_0_stub.vhdl'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'MIPSfpga_system_xbar_0' generated file not found 'e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/MIPSfpga_system_xbar_0_funcsim.v'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'MIPSfpga_system_xbar_0' generated file not found 'e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/MIPSfpga_system_xbar_0_funcsim.vhdl'. Please regenerate to continue.
+read_ip: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 223.047 ; gain = 32.207
+Command: synth_design -top MIPSfpga_system_xbar_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:52 ; elapsed = 00:01:11 . Memory (MB): peak = 272.238 ; gain = 95.754
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'MIPSfpga_system_xbar_0' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/synth/MIPSfpga_system_xbar_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_axi_crossbar' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_axi_crossbar.v:54]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
+	Parameter C_NUM_MASTER_SLOTS bound to: 7 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_NUM_ADDR_RANGES bound to: 1 - type: integer 
+	Parameter C_M_AXI_BASE_ADDR bound to: 448'b0000000000000000000000000000000000010000110100000000000000000000000000000000000000000000000000000001000010100000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000001000000000000000000000000000000000000000000000000000000000111111100000000000000000000000000000000000000000000000000000000010000011000000000000000000000 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 224'b00000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000110100000000000000000000000000010000 
+	Parameter C_S_AXI_BASE_ID bound to: 0 - type: integer 
+	Parameter C_S_AXI_THREAD_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_WRITE_CONNECTIVITY bound to: 224'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_M_AXI_READ_CONNECTIVITY bound to: 224'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_R_REGISTER bound to: 0 - type: integer 
+	Parameter C_S_AXI_SINGLE_THREAD bound to: 0 - type: integer 
+	Parameter C_S_AXI_WRITE_ACCEPTANCE bound to: 2 - type: integer 
+	Parameter C_S_AXI_READ_ACCEPTANCE bound to: 2 - type: integer 
+	Parameter C_M_AXI_WRITE_ISSUING bound to: 224'b00000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
+	Parameter C_M_AXI_READ_ISSUING bound to: 224'b00000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
+	Parameter C_S_AXI_ARB_PRIORITY bound to: 0 - type: integer 
+	Parameter C_M_AXI_SECURE bound to: 224'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_CONNECTIVITY_MODE bound to: 1 - type: integer 
+	Parameter P_ONES bound to: 65'b11111111111111111111111111111111111111111111111111111111111111111 
+	Parameter P_S_AXI_BASE_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter P_S_AXI_HIGH_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000001111 
+	Parameter P_AXI4 bound to: 0 - type: integer 
+	Parameter P_AXI3 bound to: 1 - type: integer 
+	Parameter P_AXILITE bound to: 2 - type: integer 
+	Parameter P_AXILITE_SIZE bound to: 3'b010 
+	Parameter P_INCR bound to: 2'b01 
+	Parameter P_M_AXI_SUPPORTS_WRITE bound to: 7'b1111111 
+	Parameter P_M_AXI_SUPPORTS_READ bound to: 7'b1111111 
+	Parameter P_S_AXI_SUPPORTS_WRITE bound to: 1'b1 
+	Parameter P_S_AXI_SUPPORTS_READ bound to: 1'b1 
+	Parameter C_DEBUG bound to: 1 - type: integer 
+	Parameter P_RANGE_CHECK bound to: 1 - type: integer 
+	Parameter P_ADDR_DECODE bound to: 1 - type: integer 
+	Parameter P_M_AXI_ERR_MODE bound to: 224'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter P_LEN bound to: 8 - type: integer 
+	Parameter P_LOCK bound to: 1 - type: integer 
+	Parameter P_FAMILY bound to: artix7 - type: string 
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_crossbar' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_crossbar.v:90]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
+	Parameter C_NUM_MASTER_SLOTS bound to: 7 - type: integer 
+	Parameter C_NUM_ADDR_RANGES bound to: 1 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_M_AXI_BASE_ADDR bound to: 448'b0000000000000000000000000000000000010000110100000000000000000000000000000000000000000000000000000001000010100000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000001000000000000000000000000000000000000000000000000000000000111111100000000000000000000000000000000000000000000000000000000010000011000000000000000000000 
+	Parameter C_M_AXI_HIGH_ADDR bound to: 448'b0000000000000000000000000000000000010000110100001111111111111111000000000000000000000000000000000001000010100000111111111111111100000000000000000000000000000000000100001100000011111111111111110000000000000000000000000000000000000000000000001111111111111111000000000000000000000000000000000001000001000000111111111111111100000000000000000000000000000000000111111100000000011111111111110000000000000000000000000000000000010000011000001111111111111111 
+	Parameter C_S_AXI_BASE_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_S_AXI_HIGH_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000001111 
+	Parameter C_S_AXI_THREAD_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_S_AXI_SUPPORTS_WRITE bound to: 1'b1 
+	Parameter C_S_AXI_SUPPORTS_READ bound to: 1'b1 
+	Parameter C_M_AXI_SUPPORTS_WRITE bound to: 7'b1111111 
+	Parameter C_M_AXI_SUPPORTS_READ bound to: 7'b1111111 
+	Parameter C_M_AXI_WRITE_CONNECTIVITY bound to: 224'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_M_AXI_READ_CONNECTIVITY bound to: 224'b00000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_S_AXI_SINGLE_THREAD bound to: 0 - type: integer 
+	Parameter C_S_AXI_WRITE_ACCEPTANCE bound to: 2 - type: integer 
+	Parameter C_S_AXI_READ_ACCEPTANCE bound to: 2 - type: integer 
+	Parameter C_M_AXI_WRITE_ISSUING bound to: 224'b00000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
+	Parameter C_M_AXI_READ_ISSUING bound to: 224'b00000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
+	Parameter C_S_AXI_ARB_PRIORITY bound to: 0 - type: integer 
+	Parameter C_M_AXI_SECURE bound to: 224'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_M_AXI_ERR_MODE bound to: 224'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_RANGE_CHECK bound to: 1 - type: integer 
+	Parameter C_ADDR_DECODE bound to: 1 - type: integer 
+	Parameter C_W_ISSUE_WIDTH bound to: 256'b0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_R_ISSUE_WIDTH bound to: 256'b0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter C_W_ACCEPT_WIDTH bound to: 32'b00000000000000000000000000000001 
+	Parameter C_R_ACCEPT_WIDTH bound to: 32'b00000000000000000000000000000001 
+	Parameter C_DEBUG bound to: 1 - type: integer 
+	Parameter P_AXI4 bound to: 0 - type: integer 
+	Parameter P_AXI3 bound to: 1 - type: integer 
+	Parameter P_AXILITE bound to: 2 - type: integer 
+	Parameter P_WRITE bound to: 0 - type: integer 
+	Parameter P_READ bound to: 1 - type: integer 
+	Parameter P_NUM_MASTER_SLOTS_LOG bound to: 3 - type: integer 
+	Parameter P_NUM_SLAVE_SLOTS_LOG bound to: 1 - type: integer 
+	Parameter P_AXI_WID_WIDTH bound to: 1 - type: integer 
+	Parameter P_ST_AWMESG_WIDTH bound to: 11 - type: integer 
+	Parameter P_AA_AWMESG_WIDTH bound to: 67 - type: integer 
+	Parameter P_ST_ARMESG_WIDTH bound to: 11 - type: integer 
+	Parameter P_AA_ARMESG_WIDTH bound to: 67 - type: integer 
+	Parameter P_ST_BMESG_WIDTH bound to: 3 - type: integer 
+	Parameter P_ST_RMESG_WIDTH bound to: 35 - type: integer 
+	Parameter P_WR_WMESG_WIDTH bound to: 38 - type: integer 
+	Parameter P_BYPASS bound to: 0 - type: integer 
+	Parameter P_FWD_REV bound to: 1 - type: integer 
+	Parameter P_SIMPLE bound to: 7 - type: integer 
+	Parameter P_M_AXI_SUPPORTS_READ bound to: 8'b11111111 
+	Parameter P_M_AXI_SUPPORTS_WRITE bound to: 8'b11111111 
+	Parameter P_M_AXI_WRITE_CONNECTIVITY bound to: 256'b1111111111111111111111111111111100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter P_M_AXI_READ_CONNECTIVITY bound to: 256'b1111111111111111111111111111111100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
+	Parameter P_S_AXI_WRITE_CONNECTIVITY bound to: 32'b11111111111111111111111111111111 
+	Parameter P_S_AXI_READ_CONNECTIVITY bound to: 32'b11111111111111111111111111111111 
+	Parameter P_M_AXI_READ_ISSUING bound to: 256'b0000000000000000000000000000000100000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
+	Parameter P_M_AXI_WRITE_ISSUING bound to: 256'b0000000000000000000000000000000100000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010 
+	Parameter P_DECERR bound to: 2'b11 
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_si_transactor' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_si_transactor.v:81]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_SI bound to: 0 - type: integer 
+	Parameter C_DIR bound to: 1 - type: integer 
+	Parameter C_NUM_ADDR_RANGES bound to: 1 - type: integer 
+	Parameter C_NUM_M bound to: 7 - type: integer 
+	Parameter C_NUM_M_LOG bound to: 3 - type: integer 
+	Parameter C_ACCEPTANCE bound to: 2 - type: integer 
+	Parameter C_ACCEPTANCE_LOG bound to: 1 - type: integer 
+	Parameter C_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_THREAD_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AMESG_WIDTH bound to: 11 - type: integer 
+	Parameter C_RMESG_WIDTH bound to: 35 - type: integer 
+	Parameter C_BASE_ID bound to: 4'b0000 
+	Parameter C_HIGH_ID bound to: 4'b1111 
+	Parameter C_BASE_ADDR bound to: 448'b0000000000000000000000000000000000010000110100000000000000000000000000000000000000000000000000000001000010100000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000001000000000000000000000000000000000000000000000000000000000111111100000000000000000000000000000000000000000000000000000000010000011000000000000000000000 
+	Parameter C_HIGH_ADDR bound to: 448'b0000000000000000000000000000000000010000110100001111111111111111000000000000000000000000000000000001000010100000111111111111111100000000000000000000000000000000000100001100000011111111111111110000000000000000000000000000000000000000000000001111111111111111000000000000000000000000000000000001000001000000111111111111111100000000000000000000000000000000000111111100000000011111111111110000000000000000000000000000000000010000011000001111111111111111 
+	Parameter C_SINGLE_THREAD bound to: 0 - type: integer 
+	Parameter C_TARGET_QUAL bound to: 7'b1111111 
+	Parameter C_M_AXI_SECURE bound to: 224'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_RANGE_CHECK bound to: 1 - type: integer 
+	Parameter C_ADDR_DECODE bound to: 1 - type: integer 
+	Parameter C_ERR_MODE bound to: 224'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_DEBUG bound to: 1 - type: integer 
+	Parameter P_WRITE bound to: 0 - type: integer 
+	Parameter P_READ bound to: 1 - type: integer 
+	Parameter P_RMUX_MESG_WIDTH bound to: 40 - type: integer 
+	Parameter P_AXILITE_ERRMODE bound to: 1 - type: integer 
+	Parameter P_NONSECURE_BIT bound to: 1 - type: integer 
+	Parameter P_NUM_M_LOG_M1 bound to: 3 - type: integer 
+	Parameter P_M_AXILITE bound to: 7'b0000000 
+	Parameter P_FIXED bound to: 2'b00 
+	Parameter P_NUM_M_DE_LOG bound to: 3 - type: integer 
+	Parameter P_THREAD_ID_WIDTH_M1 bound to: 4 - type: integer 
+	Parameter P_NUM_ID_VAL bound to: 16 - type: integer 
+	Parameter P_NUM_THREADS bound to: 2 - type: integer 
+	Parameter P_M_SECURE_MASK bound to: 7'b0000000 
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_addr_decoder' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_addr_decoder.v:69]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_NUM_TARGETS bound to: 7 - type: integer 
+	Parameter C_NUM_TARGETS_LOG bound to: 3 - type: integer 
+	Parameter C_NUM_RANGES bound to: 1 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_TARGET_ENC bound to: 1 - type: integer 
+	Parameter C_TARGET_HOT bound to: 1 - type: integer 
+	Parameter C_REGION_ENC bound to: 1 - type: integer 
+	Parameter C_BASE_ADDR bound to: 448'b0000000000000000000000000000000000010000110100000000000000000000000000000000000000000000000000000001000010100000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000001000000000000000000000000000000000000000000000000000000000111111100000000000000000000000000000000000000000000000000000000010000011000000000000000000000 
+	Parameter C_HIGH_ADDR bound to: 448'b0000000000000000000000000000000000010000110100001111111111111111000000000000000000000000000000000001000010100000111111111111111100000000000000000000000000000000000100001100000011111111111111110000000000000000000000000000000000000000000000001111111111111111000000000000000000000000000000000001000001000000111111111111111100000000000000000000000000000000000111111100000000011111111111110000000000000000000000000000000000010000011000001111111111111111 
+	Parameter C_TARGET_QUAL bound to: 8'b01111111 
+	Parameter C_RESOLUTION bound to: 2 - type: integer 
+	Parameter C_COMPARATOR_THRESHOLD bound to: 6 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_comparator_static' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 30'b000100000110000000000000000000 
+	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 5 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_carry_and' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_carry_and.v:62]
+	Parameter C_FAMILY bound to: rtl - type: string 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_carry_and' (1#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_carry_and.v:62]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_comparator_static' (2#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized0' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 30'b000111111100000000000000000000 
+	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 5 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized0' (2#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized1' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 30'b000100000100000000000000000000 
+	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 5 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized1' (2#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized2' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 30'b000000000000000000000000000000 
+	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 5 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized2' (2#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized3' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 30'b000100001100000000000000000000 
+	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 5 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized3' (2#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized4' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 30'b000100001010000000000000000000 
+	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 5 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized4' (2#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized5' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+	Parameter C_FAMILY bound to: rtl - type: string 
+	Parameter C_VALUE bound to: 30'b000100001101000000000000000000 
+	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
+	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
+	Parameter C_NUM_LUT bound to: 5 - type: integer 
+	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_comparator_static__parameterized5' (2#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_comparator_static.v:61]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_addr_decoder' (3#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_addr_decoder.v:69]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_arbiter_resp' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_arbiter_resp.v:58]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_NUM_S bound to: 8 - type: integer 
+	Parameter C_NUM_S_LOG bound to: 3 - type: integer 
+	Parameter C_GRANT_ENC bound to: 1 - type: integer 
+	Parameter C_GRANT_HOT bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_arbiter_resp' (4#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_arbiter_resp.v:58]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_mux_enc' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_mux_enc.v:63]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_RATIO bound to: 8 - type: integer 
+	Parameter C_SEL_WIDTH bound to: 3 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 40 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'MUXF7' [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:16764]
+INFO: [Synth 8-256] done synthesizing module 'MUXF7' (5#1) [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:16764]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_mux_enc' (6#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_mux_enc.v:63]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
+	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 2 - type: integer 
+	Parameter C_USE_FULL bound to: 0 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 2 - type: integer 
+	Parameter P_EMPTY bound to: 2'b11 
+	Parameter P_ALMOSTEMPTY bound to: 2'b00 
+	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
+	Parameter P_ALMOSTFULL bound to: 2'b10 
+	Parameter P_NUM_REPS bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_ndeep_srl' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_ndeep_srl.v:58]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_A_WIDTH bound to: 2 - type: integer 
+	Parameter P_SRLASIZE bound to: 5 - type: integer 
+	Parameter P_SRLDEPTH bound to: 32 - type: integer 
+	Parameter P_NUMSRLS bound to: 1 - type: integer 
+	Parameter P_SHIFT_DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'SRLC32E' [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:34688]
+	Parameter INIT bound to: 32'b00000000000000000000000000000000 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'SRLC32E' (7#1) [D:/Xilinx/Vivado/2015.2/scripts/rt/data/unisim_comp.v:34688]
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_ndeep_srl' (8#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_ndeep_srl.v:58]
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo' (9#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_si_transactor' (10#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_si_transactor.v:81]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_si_transactor__parameterized0' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_si_transactor.v:81]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_SI bound to: 0 - type: integer 
+	Parameter C_DIR bound to: 0 - type: integer 
+	Parameter C_NUM_ADDR_RANGES bound to: 1 - type: integer 
+	Parameter C_NUM_M bound to: 7 - type: integer 
+	Parameter C_NUM_M_LOG bound to: 3 - type: integer 
+	Parameter C_ACCEPTANCE bound to: 2 - type: integer 
+	Parameter C_ACCEPTANCE_LOG bound to: 1 - type: integer 
+	Parameter C_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_THREAD_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_AMESG_WIDTH bound to: 11 - type: integer 
+	Parameter C_RMESG_WIDTH bound to: 3 - type: integer 
+	Parameter C_BASE_ID bound to: 4'b0000 
+	Parameter C_HIGH_ID bound to: 4'b1111 
+	Parameter C_BASE_ADDR bound to: 448'b0000000000000000000000000000000000010000110100000000000000000000000000000000000000000000000000000001000010100000000000000000000000000000000000000000000000000000000100001100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000001000000000000000000000000000000000000000000000000000000000111111100000000000000000000000000000000000000000000000000000000010000011000000000000000000000 
+	Parameter C_HIGH_ADDR bound to: 448'b0000000000000000000000000000000000010000110100001111111111111111000000000000000000000000000000000001000010100000111111111111111100000000000000000000000000000000000100001100000011111111111111110000000000000000000000000000000000000000000000001111111111111111000000000000000000000000000000000001000001000000111111111111111100000000000000000000000000000000000111111100000000011111111111110000000000000000000000000000000000010000011000001111111111111111 
+	Parameter C_SINGLE_THREAD bound to: 0 - type: integer 
+	Parameter C_TARGET_QUAL bound to: 7'b1111111 
+	Parameter C_M_AXI_SECURE bound to: 224'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_RANGE_CHECK bound to: 1 - type: integer 
+	Parameter C_ADDR_DECODE bound to: 1 - type: integer 
+	Parameter C_ERR_MODE bound to: 224'b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter C_DEBUG bound to: 1 - type: integer 
+	Parameter P_WRITE bound to: 0 - type: integer 
+	Parameter P_READ bound to: 1 - type: integer 
+	Parameter P_RMUX_MESG_WIDTH bound to: 8 - type: integer 
+	Parameter P_AXILITE_ERRMODE bound to: 1 - type: integer 
+	Parameter P_NONSECURE_BIT bound to: 1 - type: integer 
+	Parameter P_NUM_M_LOG_M1 bound to: 3 - type: integer 
+	Parameter P_M_AXILITE bound to: 7'b0000000 
+	Parameter P_FIXED bound to: 2'b00 
+	Parameter P_NUM_M_DE_LOG bound to: 3 - type: integer 
+	Parameter P_THREAD_ID_WIDTH_M1 bound to: 4 - type: integer 
+	Parameter P_NUM_ID_VAL bound to: 16 - type: integer 
+	Parameter P_NUM_THREADS bound to: 2 - type: integer 
+	Parameter P_M_SECURE_MASK bound to: 7'b0000000 
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_mux_enc__parameterized0' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_mux_enc.v:63]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_RATIO bound to: 8 - type: integer 
+	Parameter C_SEL_WIDTH bound to: 3 - type: integer 
+	Parameter C_DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_mux_enc__parameterized0' (10#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/generic_baseblocks_v2_1/da89d453/hdl/verilog/generic_baseblocks_v2_1_mux_enc.v:63]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_si_transactor__parameterized0' (10#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_si_transactor.v:81]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_splitter' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_splitter.v:72]
+	Parameter C_NUM_M bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_splitter' (11#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_splitter.v:72]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_wdata_router' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_wdata_router.v:67]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_WMESG_WIDTH bound to: 38 - type: integer 
+	Parameter C_NUM_MASTER_SLOTS bound to: 8 - type: integer 
+	Parameter C_SELECT_WIDTH bound to: 4 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_axic_reg_srl_fifo' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_reg_srl_fifo.v:61]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_FIFO_WIDTH bound to: 4 - type: integer 
+	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+	Parameter C_USE_FULL bound to: 1 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 2 - type: integer 
+	Parameter P_EMPTY bound to: 2'b11 
+	Parameter P_ALMOSTEMPTY bound to: 2'b00 
+	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
+	Parameter P_ALMOSTFULL bound to: 2'b10 
+	Parameter P_NUM_REPS bound to: 1 - type: integer 
+	Parameter ZERO bound to: 2'b10 
+	Parameter ONE bound to: 2'b11 
+	Parameter TWO bound to: 2'b01 
+INFO: [Synth 8-155] case statement is not full and has no default [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_reg_srl_fifo.v:157]
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_axic_reg_srl_fifo' (12#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_reg_srl_fifo.v:61]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_wdata_router' (13#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_wdata_router.v:67]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_wdata_mux' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_wdata_mux.v:68]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_WMESG_WIDTH bound to: 38 - type: integer 
+	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
+	Parameter C_SELECT_WIDTH bound to: 1 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_wdata_mux' (14#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_wdata_mux.v:68]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized0' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
+	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+	Parameter C_USE_FULL bound to: 0 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 2 - type: integer 
+	Parameter P_EMPTY bound to: 2'b11 
+	Parameter P_ALMOSTEMPTY bound to: 2'b00 
+	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
+	Parameter P_ALMOSTFULL bound to: 2'b10 
+	Parameter P_NUM_REPS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized0' (14#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_axi_register_slice' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_register_slice_v2_1/03a8e0ba/hdl/verilog/axi_register_slice_v2_1_axi_register_slice.v:64]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_REG_CONFIG_AW bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_W bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_B bound to: 7 - type: integer 
+	Parameter C_REG_CONFIG_AR bound to: 0 - type: integer 
+	Parameter C_REG_CONFIG_R bound to: 1 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 1 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 4 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 7 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 9 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 13 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 21 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 22 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 26 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 30 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 1 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 4 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 7 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 9 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 13 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 21 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 22 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 26 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 30 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 6 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 6 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 39 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 39 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'axi_infrastructure_v1_1_axi2vector' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_infrastructure_v1_1/cf21a66f/hdl/verilog/axi_infrastructure_v1_1_axi2vector.v:60]
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 6 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 39 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 1 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 4 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 7 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 9 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 13 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 21 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 22 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 26 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 30 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 1 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 4 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 7 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 9 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 13 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 21 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 22 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 26 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 30 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 6 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 6 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 39 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 39 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_infrastructure_v1_1_axi2vector' (15#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_infrastructure_v1_1/cf21a66f/hdl/verilog/axi_infrastructure_v1_1_axi2vector.v:60]
+INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_axic_register_slice' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_register_slice_v2_1/03a8e0ba/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:62]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_DATA_WIDTH bound to: 34 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_axic_register_slice' (16#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_register_slice_v2_1/03a8e0ba/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:62]
+INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_axic_register_slice__parameterized0' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_register_slice_v2_1/03a8e0ba/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:62]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_DATA_WIDTH bound to: 37 - type: integer 
+	Parameter C_REG_CONFIG bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_axic_register_slice__parameterized0' (16#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_register_slice_v2_1/03a8e0ba/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:62]
+INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_axic_register_slice__parameterized1' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_register_slice_v2_1/03a8e0ba/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:62]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_DATA_WIDTH bound to: 6 - type: integer 
+	Parameter C_REG_CONFIG bound to: 7 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_axic_register_slice__parameterized1' (16#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_register_slice_v2_1/03a8e0ba/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:62]
+INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_axic_register_slice__parameterized2' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_register_slice_v2_1/03a8e0ba/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:62]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_DATA_WIDTH bound to: 39 - type: integer 
+	Parameter C_REG_CONFIG bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_axic_register_slice__parameterized2' (16#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_register_slice_v2_1/03a8e0ba/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:62]
+INFO: [Synth 8-638] synthesizing module 'axi_infrastructure_v1_1_vector2axi' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_infrastructure_v1_1/cf21a66f/hdl/verilog/axi_infrastructure_v1_1_vector2axi.v:60]
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXI_ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
+	Parameter C_AXI_SUPPORTS_REGION_SIGNALS bound to: 1 - type: integer 
+	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AWPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter C_WPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter C_BPAYLOAD_WIDTH bound to: 6 - type: integer 
+	Parameter C_ARPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter C_RPAYLOAD_WIDTH bound to: 39 - type: integer 
+	Parameter G_AXI_AWADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_AWADDR_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWPROT_INDEX bound to: 1 - type: integer 
+	Parameter G_AXI_AWPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWSIZE_INDEX bound to: 4 - type: integer 
+	Parameter G_AXI_AWSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_AWBURST_INDEX bound to: 7 - type: integer 
+	Parameter G_AXI_AWBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_AWCACHE_INDEX bound to: 9 - type: integer 
+	Parameter G_AXI_AWCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWLEN_INDEX bound to: 13 - type: integer 
+	Parameter G_AXI_AWLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_AWLOCK_INDEX bound to: 21 - type: integer 
+	Parameter G_AXI_AWLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_AWID_INDEX bound to: 22 - type: integer 
+	Parameter G_AXI_AWID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWQOS_INDEX bound to: 26 - type: integer 
+	Parameter G_AXI_AWQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWREGION_INDEX bound to: 30 - type: integer 
+	Parameter G_AXI_AWREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_AWUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_AWUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_AWPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter G_AXI_ARADDR_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_ARADDR_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARPROT_INDEX bound to: 1 - type: integer 
+	Parameter G_AXI_ARPROT_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARSIZE_INDEX bound to: 4 - type: integer 
+	Parameter G_AXI_ARSIZE_WIDTH bound to: 3 - type: integer 
+	Parameter G_AXI_ARBURST_INDEX bound to: 7 - type: integer 
+	Parameter G_AXI_ARBURST_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_ARCACHE_INDEX bound to: 9 - type: integer 
+	Parameter G_AXI_ARCACHE_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARLEN_INDEX bound to: 13 - type: integer 
+	Parameter G_AXI_ARLEN_WIDTH bound to: 8 - type: integer 
+	Parameter G_AXI_ARLOCK_INDEX bound to: 21 - type: integer 
+	Parameter G_AXI_ARLOCK_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_ARID_INDEX bound to: 22 - type: integer 
+	Parameter G_AXI_ARID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARQOS_INDEX bound to: 26 - type: integer 
+	Parameter G_AXI_ARQOS_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARREGION_INDEX bound to: 30 - type: integer 
+	Parameter G_AXI_ARREGION_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_ARUSER_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_ARUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_ARPAYLOAD_WIDTH bound to: 34 - type: integer 
+	Parameter G_AXI_WDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_WDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_WLAST_INDEX bound to: 36 - type: integer 
+	Parameter G_AXI_WLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_WID_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WID_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WUSER_INDEX bound to: 37 - type: integer 
+	Parameter G_AXI_WUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_WPAYLOAD_WIDTH bound to: 37 - type: integer 
+	Parameter G_AXI_BRESP_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_BRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_BID_INDEX bound to: 2 - type: integer 
+	Parameter G_AXI_BID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_BUSER_INDEX bound to: 6 - type: integer 
+	Parameter G_AXI_BUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_BPAYLOAD_WIDTH bound to: 6 - type: integer 
+	Parameter G_AXI_RDATA_INDEX bound to: 0 - type: integer 
+	Parameter G_AXI_RDATA_WIDTH bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_INDEX bound to: 32 - type: integer 
+	Parameter G_AXI_RRESP_WIDTH bound to: 2 - type: integer 
+	Parameter G_AXI_RLAST_INDEX bound to: 34 - type: integer 
+	Parameter G_AXI_RLAST_WIDTH bound to: 1 - type: integer 
+	Parameter G_AXI_RID_INDEX bound to: 35 - type: integer 
+	Parameter G_AXI_RID_WIDTH bound to: 4 - type: integer 
+	Parameter G_AXI_RUSER_INDEX bound to: 39 - type: integer 
+	Parameter G_AXI_RUSER_WIDTH bound to: 0 - type: integer 
+	Parameter G_AXI_RPAYLOAD_WIDTH bound to: 39 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_infrastructure_v1_1_vector2axi' (17#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_infrastructure_v1_1/cf21a66f/hdl/verilog/axi_infrastructure_v1_1_vector2axi.v:60]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_axi_register_slice' (18#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_register_slice_v2_1/03a8e0ba/hdl/verilog/axi_register_slice_v2_1_axi_register_slice.v:64]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized1' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
+	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+	Parameter C_USE_FULL bound to: 0 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 2 - type: integer 
+	Parameter P_EMPTY bound to: 2'b11 
+	Parameter P_ALMOSTEMPTY bound to: 2'b00 
+	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
+	Parameter P_ALMOSTFULL bound to: 2'b10 
+	Parameter P_NUM_REPS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized1' (18#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized2' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
+	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+	Parameter C_USE_FULL bound to: 0 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 2 - type: integer 
+	Parameter P_EMPTY bound to: 2'b11 
+	Parameter P_ALMOSTEMPTY bound to: 2'b00 
+	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
+	Parameter P_ALMOSTFULL bound to: 2'b10 
+	Parameter P_NUM_REPS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized2' (18#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized3' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
+	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+	Parameter C_USE_FULL bound to: 0 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 2 - type: integer 
+	Parameter P_EMPTY bound to: 2'b11 
+	Parameter P_ALMOSTEMPTY bound to: 2'b00 
+	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
+	Parameter P_ALMOSTFULL bound to: 2'b10 
+	Parameter P_NUM_REPS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized3' (18#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized4' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
+	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+	Parameter C_USE_FULL bound to: 0 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 2 - type: integer 
+	Parameter P_EMPTY bound to: 2'b11 
+	Parameter P_ALMOSTEMPTY bound to: 2'b00 
+	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
+	Parameter P_ALMOSTFULL bound to: 2'b10 
+	Parameter P_NUM_REPS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized4' (18#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized5' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
+	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+	Parameter C_USE_FULL bound to: 0 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 2 - type: integer 
+	Parameter P_EMPTY bound to: 2'b11 
+	Parameter P_ALMOSTEMPTY bound to: 2'b00 
+	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
+	Parameter P_ALMOSTFULL bound to: 2'b10 
+	Parameter P_NUM_REPS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized5' (18#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized6' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
+	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 1 - type: integer 
+	Parameter C_USE_FULL bound to: 0 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 2 - type: integer 
+	Parameter P_EMPTY bound to: 2'b11 
+	Parameter P_ALMOSTEMPTY bound to: 2'b00 
+	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
+	Parameter P_ALMOSTFULL bound to: 2'b10 
+	Parameter P_NUM_REPS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized6' (18#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_wdata_mux__parameterized0' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_wdata_mux.v:68]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_WMESG_WIDTH bound to: 38 - type: integer 
+	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
+	Parameter C_SELECT_WIDTH bound to: 1 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 0 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_wdata_mux__parameterized0' (18#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_wdata_mux.v:68]
+INFO: [Synth 8-638] synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized7' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_FIFO_WIDTH bound to: 8 - type: integer 
+	Parameter C_MAX_CTRL_FANOUT bound to: 33 - type: integer 
+	Parameter C_FIFO_DEPTH_LOG bound to: 0 - type: integer 
+	Parameter C_USE_FULL bound to: 0 - type: integer 
+	Parameter P_FIFO_DEPTH_LOG bound to: 2 - type: integer 
+	Parameter P_EMPTY bound to: 2'b11 
+	Parameter P_ALMOSTEMPTY bound to: 2'b00 
+	Parameter P_ALMOSTFULL_TEMP bound to: 3'b110 
+	Parameter P_ALMOSTFULL bound to: 2'b10 
+	Parameter P_NUM_REPS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'axi_data_fifo_v2_1_axic_srl_fifo__parameterized7' (18#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_data_fifo_v2_1/82d298e6/hdl/verilog/axi_data_fifo_v2_1_axic_srl_fifo.v:61]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_addr_arbiter' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_addr_arbiter.v:65]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_NUM_S bound to: 1 - type: integer 
+	Parameter C_NUM_S_LOG bound to: 1 - type: integer 
+	Parameter C_NUM_M bound to: 8 - type: integer 
+	Parameter C_MESG_WIDTH bound to: 67 - type: integer 
+	Parameter C_ARB_PRIORITY bound to: 0 - type: integer 
+	Parameter P_PRIO_MASK bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_addr_arbiter' (19#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_addr_arbiter.v:65]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_decerr_slave' [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_decerr_slave.v:64]
+	Parameter C_AXI_ID_WIDTH bound to: 4 - type: integer 
+	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_AXI_PROTOCOL bound to: 0 - type: integer 
+	Parameter C_RESP bound to: 3 - type: integer 
+	Parameter P_WRITE_IDLE bound to: 2'b00 
+	Parameter P_WRITE_DATA bound to: 2'b01 
+	Parameter P_WRITE_RESP bound to: 2'b10 
+	Parameter P_READ_IDLE bound to: 1'b0 
+	Parameter P_READ_DATA bound to: 1'b1 
+	Parameter P_AXI4 bound to: 0 - type: integer 
+	Parameter P_AXI3 bound to: 1 - type: integer 
+	Parameter P_AXILITE bound to: 2 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_decerr_slave.v:195]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_decerr_slave' (20#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_decerr_slave.v:64]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_crossbar' (21#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_crossbar.v:90]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_axi_crossbar' (22#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/ipshared/xilinx.com/axi_crossbar_v2_1/9368eebf/hdl/verilog/axi_crossbar_v2_1_axi_crossbar.v:54]
+INFO: [Synth 8-256] done synthesizing module 'MIPSfpga_system_xbar_0' (23#1) [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/synth/MIPSfpga_system_xbar_0.v:57]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:01:37 ; elapsed = 00:02:05 . Memory (MB): peak = 398.730 ; gain = 222.246
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:39 ; elapsed = 00:02:08 . Memory (MB): peak = 398.730 ; gain = 222.246
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/MIPSfpga_system_xbar_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/MIPSfpga_system_xbar_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.runs/MIPSfpga_system_xbar_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.runs/MIPSfpga_system_xbar_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.908 . Memory (MB): peak = 640.621 ; gain = 0.195
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:02:34 ; elapsed = 00:03:10 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:34 ; elapsed = 00:03:10 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.runs/MIPSfpga_system_xbar_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:34 ; elapsed = 00:03:10 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "read_cs" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "s_axi_rlast_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "s_axi_rlast_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "p_2_out0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_0_in3" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_0_in2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_0_in1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_2_out0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_0_in3" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_0_in2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_0_in1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_axic_reg_srl_fifo'
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                     Old Encoding 
+---------------------------------------------------------------------------------------------------
+                    ZERO |                             0001 |                               10
+                     ONE |                             0010 |                               11
+                     TWO |                             1000 |                               01
+                  iSTATE |                             0100 |                               00
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_data_fifo_v2_1_axic_reg_srl_fifo'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:43 ; elapsed = 00:03:21 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 3     
+	   2 Input      2 Bit       Adders := 33    
+	   2 Input      1 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 13    
++---Registers : 
+	               67 Bit    Registers := 2     
+	               39 Bit    Registers := 16    
+	                8 Bit    Registers := 9     
+	                6 Bit    Registers := 8     
+	                4 Bit    Registers := 7     
+	                2 Bit    Registers := 34    
+	                1 Bit    Registers := 61    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 16    
+	   2 Input     40 Bit        Muxes := 3     
+	   2 Input     39 Bit        Muxes := 16    
+	   2 Input     16 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 6     
+	   2 Input      7 Bit        Muxes := 2     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 49    
+	   3 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 60    
+	   4 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module axi_crossbar_v2_1_addr_arbiter 
+Detailed RTL Component Info : 
++---Registers : 
+	               67 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_crossbar_v2_1_splitter 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+Module axi_crossbar_v2_1_decerr_slave 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 12    
+	   3 Input      1 Bit        Muxes := 1     
+Module axi_crossbar_v2_1_addr_decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 1     
+Module axi_crossbar_v2_1_arbiter_resp 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+Module generic_baseblocks_v2_1_mux_enc 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 4     
+Module axi_data_fifo_v2_1_axic_srl_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_crossbar_v2_1_si_transactor 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 3     
++---Registers : 
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   3 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module generic_baseblocks_v2_1_mux_enc__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 4     
+Module axi_crossbar_v2_1_si_transactor__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 3     
++---Registers : 
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   3 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_data_fifo_v2_1_axic_reg_srl_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 3     
+Module axi_data_fifo_v2_1_axic_srl_fifo__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_register_slice_v2_1_axic_register_slice__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module axi_register_slice_v2_1_axic_register_slice__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	               39 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     39 Bit        Muxes := 2     
+Module axi_data_fifo_v2_1_axic_srl_fifo__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_data_fifo_v2_1_axic_srl_fifo__parameterized2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_data_fifo_v2_1_axic_srl_fifo__parameterized3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_data_fifo_v2_1_axic_srl_fifo__parameterized4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_data_fifo_v2_1_axic_srl_fifo__parameterized5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_data_fifo_v2_1_axic_srl_fifo__parameterized6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_data_fifo_v2_1_axic_srl_fifo__parameterized7 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module axi_crossbar_v2_1_crossbar 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 14    
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 16    
+	   2 Input      2 Bit        Muxes := 30    
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:02:45 ; elapsed = 00:03:22 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "s_axi_rlast_i" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "read_cs" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:02:49 ; elapsed = 00:03:27 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:02:49 ; elapsed = 00:03:27 . Memory (MB): peak = 640.621 ; gain = 464.137
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:02:58 ; elapsed = 00:03:37 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:02:58 ; elapsed = 00:03:37 . Memory (MB): peak = 640.621 ; gain = 464.137
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:02:58 ; elapsed = 00:03:37 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:13 ; elapsed = 00:05:03 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:04:14 ; elapsed = 00:05:05 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_grant_enc_i_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_grant_enc_i_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[0].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[0].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[0].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[0].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[0].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[0].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[1].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[1].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[1].gen_debug_r_multi_thread.debug_r_seq_fifo_multi_thread/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[0].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[0].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[0].gen_mi_write.gen_debug_w.debug_w_seq_fifo/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[1].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[1].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[1].gen_mi_write.gen_debug_w.debug_w_seq_fifo/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[2].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[2].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[2].gen_mi_write.gen_debug_w.debug_w_seq_fifo/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[3].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[3].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[3].gen_mi_write.gen_debug_w.debug_w_seq_fifo/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[4].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[4].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[4].gen_mi_write.gen_debug_w.debug_w_seq_fifo/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[5].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[5].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[5].gen_mi_write.gen_debug_w.debug_w_seq_fifo/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[6].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[6].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[6].gen_mi_write.gen_debug_w.debug_w_seq_fifo/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].gen_mi_write.gen_debug_w.debug_w_seq_fifo/gen_rep[0].fifoaddr_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].gen_mi_write.gen_debug_w.debug_w_seq_fifo/M_VALID_i_reg ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_aw_trans_seq_i_reg[7] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_aw_trans_seq_i_reg[6] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_aw_trans_seq_i_reg[5] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_aw_trans_seq_i_reg[4] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_aw_trans_seq_i_reg[3] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_aw_trans_seq_i_reg[2] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_aw_trans_seq_i_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_aw_trans_seq_i_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_ar_trans_seq_i_reg[7] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_ar_trans_seq_i_reg[6] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_ar_trans_seq_i_reg[5] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_ar_trans_seq_i_reg[4] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_ar_trans_seq_i_reg[3] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_ar_trans_seq_i_reg[2] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_ar_trans_seq_i_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_debug_trans_seq.debug_ar_trans_seq_i_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[55] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[54] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[53] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/addr_arbiter_aw/gen_no_arbiter.m_mesg_i_reg[52] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[55] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[54] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[53] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/addr_arbiter_ar/gen_no_arbiter.m_mesg_i_reg[52] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_region_reg[11] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_region_reg[10] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_region_reg[9] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[1].active_region_reg[8] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[0].active_region_reg[3] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[0].active_region_reg[2] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[0].active_region_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_read.si_transactor_ar/gen_multi_thread.gen_thread_loop[0].active_region_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[1].active_region_reg[11] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[1].active_region_reg[10] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[1].active_region_reg[9] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[1].active_region_reg[8] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[0].active_region_reg[3] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[0].active_region_reg[2] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[0].active_region_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_slave_slots[0].gen_si_write.si_transactor_aw/gen_multi_thread.gen_thread_loop[0].active_region_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/b_pipe/m_payload_i_reg[1] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/b_pipe/m_payload_i_reg[0] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[31] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[30] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[29] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[28] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[27] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[26] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[25] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[24] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[23] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[22] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[21] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[20] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[19] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[18] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[17] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[16] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[15] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[14] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[13] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Synth 8-3332] Sequential element (\gen_samd.crossbar_samd/gen_master_slots[7].reg_slice_mi/r_pipe/skid_buffer_reg[12] ) is unused and will be removed from module axi_crossbar_v2_1_axi_crossbar.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:04:24 ; elapsed = 00:05:18 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:04:27 ; elapsed = 00:05:21 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:27 ; elapsed = 00:05:21 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:28 ; elapsed = 00:05:22 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports : Time (s): cpu = 00:04:28 ; elapsed = 00:05:22 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:28 ; elapsed = 00:05:22 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |LUT1    |    18|
+|2     |LUT2    |    39|
+|3     |LUT3    |   337|
+|4     |LUT4    |    61|
+|5     |LUT5    |    96|
+|6     |LUT6    |   304|
+|7     |MUXF7   |    46|
+|8     |SRLC32E |     4|
+|9     |FDRE    |   952|
+|10    |FDSE    |     5|
++------+--------+------+
+
+Report Instance Areas: 
++------+---------------------------------------------------------+---------------------------------------------------------------+------+
+|      |Instance                                                 |Module                                                         |Cells |
++------+---------------------------------------------------------+---------------------------------------------------------------+------+
+|1     |top                                                      |                                                               |  1862|
+|2     |  inst                                                   |axi_crossbar_v2_1_axi_crossbar                                 |  1862|
+|3     |    \gen_samd.crossbar_samd                              |axi_crossbar_v2_1_crossbar                                     |  1862|
+|4     |      addr_arbiter_ar                                    |axi_crossbar_v2_1_addr_arbiter                                 |   127|
+|5     |      addr_arbiter_aw                                    |axi_crossbar_v2_1_addr_arbiter_0                               |   129|
+|6     |      \gen_decerr_slave.decerr_slave_inst                |axi_crossbar_v2_1_decerr_slave                                 |    55|
+|7     |      \gen_master_slots[0].reg_slice_mi                  |axi_register_slice_v2_1_axi_register_slice                     |   144|
+|8     |        b_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized1_25 |    18|
+|9     |        r_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized2_26 |   126|
+|10    |      \gen_master_slots[1].reg_slice_mi                  |axi_register_slice_v2_1_axi_register_slice_1                   |   140|
+|11    |        b_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized1_23 |    15|
+|12    |        r_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized2_24 |   125|
+|13    |      \gen_master_slots[2].reg_slice_mi                  |axi_register_slice_v2_1_axi_register_slice_2                   |   142|
+|14    |        b_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized1_21 |    15|
+|15    |        r_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized2_22 |   127|
+|16    |      \gen_master_slots[3].reg_slice_mi                  |axi_register_slice_v2_1_axi_register_slice_3                   |   143|
+|17    |        b_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized1_19 |    17|
+|18    |        r_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized2_20 |   126|
+|19    |      \gen_master_slots[4].reg_slice_mi                  |axi_register_slice_v2_1_axi_register_slice_4                   |   144|
+|20    |        b_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized1_17 |    17|
+|21    |        r_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized2_18 |   127|
+|22    |      \gen_master_slots[5].reg_slice_mi                  |axi_register_slice_v2_1_axi_register_slice_5                   |   142|
+|23    |        b_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized1_15 |    16|
+|24    |        r_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized2_16 |   126|
+|25    |      \gen_master_slots[6].reg_slice_mi                  |axi_register_slice_v2_1_axi_register_slice_6                   |   140|
+|26    |        b_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized1_13 |    14|
+|27    |        r_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized2_14 |   126|
+|28    |      \gen_master_slots[7].reg_slice_mi                  |axi_register_slice_v2_1_axi_register_slice_7                   |    43|
+|29    |        b_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized1    |    13|
+|30    |        r_pipe                                           |axi_register_slice_v2_1_axic_register_slice__parameterized2    |    30|
+|31    |      \gen_slave_slots[0].gen_si_read.si_transactor_ar   |axi_crossbar_v2_1_si_transactor                                |   268|
+|32    |        \gen_multi_thread.arbiter_resp_inst              |axi_crossbar_v2_1_arbiter_resp_12                              |   194|
+|33    |        \gen_multi_thread.mux_resp_multi_thread          |generic_baseblocks_v2_1_mux_enc                                |    39|
+|34    |      \gen_slave_slots[0].gen_si_write.si_transactor_aw  |axi_crossbar_v2_1_si_transactor__parameterized0                |   142|
+|35    |        \gen_multi_thread.arbiter_resp_inst              |axi_crossbar_v2_1_arbiter_resp                                 |    99|
+|36    |        \gen_multi_thread.mux_resp_multi_thread          |generic_baseblocks_v2_1_mux_enc__parameterized0                |     7|
+|37    |      \gen_slave_slots[0].gen_si_write.splitter_aw_si    |axi_crossbar_v2_1_splitter                                     |     6|
+|38    |      \gen_slave_slots[0].gen_si_write.wdata_router_w    |axi_crossbar_v2_1_wdata_router                                 |    61|
+|39    |        wrouter_aw_fifo                                  |axi_data_fifo_v2_1_axic_reg_srl_fifo                           |    61|
+|40    |          \gen_srls[0].gen_rep[0].srl_nx1                |axi_data_fifo_v2_1_ndeep_srl                                   |     3|
+|41    |          \gen_srls[0].gen_rep[1].srl_nx1                |axi_data_fifo_v2_1_ndeep_srl_9                                 |     3|
+|42    |          \gen_srls[0].gen_rep[2].srl_nx1                |axi_data_fifo_v2_1_ndeep_srl_10                                |     2|
+|43    |          \gen_srls[0].gen_rep[3].srl_nx1                |axi_data_fifo_v2_1_ndeep_srl_11                                |    11|
+|44    |      splitter_aw_mi                                     |axi_crossbar_v2_1_splitter_8                                   |     5|
++------+---------------------------------------------------------+---------------------------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:29 ; elapsed = 00:05:23 . Memory (MB): peak = 640.621 ; gain = 464.137
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:10 ; elapsed = 00:04:02 . Memory (MB): peak = 640.621 ; gain = 175.684
+Synthesis Optimization Complete : Time (s): cpu = 00:04:29 ; elapsed = 00:05:24 . Memory (MB): peak = 640.621 ; gain = 464.137
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/MIPSfpga_system_xbar_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [e:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_xbar_0/MIPSfpga_system_xbar_0_ooc.xdc] for cell 'inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  SRLC32E => SRL16E: 4 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+217 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:04:20 ; elapsed = 00:05:05 . Memory (MB): peak = 640.621 ; gain = 417.574
+INFO: [Coretcl 2-1174] Renamed 43 cell refs.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.559 . Memory (MB): peak = 640.621 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 20 20:27:47 2018...

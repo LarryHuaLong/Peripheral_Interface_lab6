@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="controller_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="controller_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="10" />
+   <wvobject db_ref_id="1" fp_name="/controller_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/controller_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/controller_tb/VGA_R" type="array">
+      <obj_property name="ElementShortName">VGA_R[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_R[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/controller_tb/VGA_G" type="array">
+      <obj_property name="ElementShortName">VGA_G[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_G[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/controller_tb/VGA_B" type="array">
+      <obj_property name="ElementShortName">VGA_B[3:0]</obj_property>
+      <obj_property name="ObjectShortName">VGA_B[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/controller_tb/VGA_HS" type="logic">
+      <obj_property name="ElementShortName">VGA_HS</obj_property>
+      <obj_property name="ObjectShortName">VGA_HS</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/controller_tb/VGA_VS" type="logic">
+      <obj_property name="ElementShortName">VGA_VS</obj_property>
+      <obj_property name="ObjectShortName">VGA_VS</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/controller_tb/controller_test/rgb_data" type="array">
+      <obj_property name="ElementShortName">rgb_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rgb_data[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/controller_tb/controller_test/rgb_data_base" type="array">
+      <obj_property name="ElementShortName">rgb_data_base[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rgb_data_base[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/controller_tb/controller_test/rgb_data_addr" type="array">
+      <obj_property name="ElementShortName">rgb_data_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rgb_data_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

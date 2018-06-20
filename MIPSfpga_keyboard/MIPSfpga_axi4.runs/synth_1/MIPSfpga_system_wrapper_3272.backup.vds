@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Mon Jun 11 18:19:09 2018
+# Process ID: 10972
+# Log file: E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1/MIPSfpga_system_wrapper.vds
+# Journal file: E:/Peripheral_Interface_lab/MIPSfpga_ADT7420/MIPSfpga_axi4.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source MIPSfpga_system_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/Peripheral_Interface_lab/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2015.2/data/ip'.
+add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 240.469 ; gain = 50.922
+Command: synth_design -top MIPSfpga_system_wrapper -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'

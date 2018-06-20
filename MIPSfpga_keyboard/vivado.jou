@@ -1,0 +1,85 @@
+#-----------------------------------------------------------
+# Vivado v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# IP Build 1264090 on Wed Jun 24 14:22:01 MDT 2015
+# Start of session at: Wed Jun 20 19:30:22 2018
+# Process ID: 4208
+# Log file: E:/Peripheral_Interface_lab/MIPSfpga_keyboard/vivado.log
+# Journal file: E:/Peripheral_Interface_lab/MIPSfpga_keyboard\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.xpr
+open_bd_design {E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/MIPSfpga_system.bd}
+delete_bd_objs [get_bd_nets v_tc_0_vsync_out] [get_bd_nets v_tc_0_hblank_out] [get_bd_nets clk_wiz_0_clk_out2] [get_bd_nets Video_Out_to_VGA_0_VGA_VS] [get_bd_nets xlconstant_5_dout] [get_bd_nets v_tc_0_hsync_out] [get_bd_nets v_tc_0_vblank_out] [get_bd_nets Video_Out_to_VGA_0_VGA_HS] [get_bd_nets xlconstant_4_dout] [get_bd_nets v_tpg_0_m_axis_video_tdata] [get_bd_nets v_axi4s_vid_out_0_vtg_ce] [get_bd_nets v_tc_0_active_video_out] [get_bd_nets Video_Out_to_VGA_0_VGA_R] [get_bd_nets Video_Out_to_VGA_0_VGA_G] [get_bd_nets Video_Out_to_VGA_0_VGA_B] [get_bd_intf_nets v_tpg_0_video_out] [get_bd_cells v_tpg_0] [get_bd_cells v_axi4s_vid_out_0] [get_bd_cells v_tc_0] [get_bd_cells Video_Out_to_VGA_0]
+delete_bd_objs [get_bd_ports VGA_G] [get_bd_ports VGA_HS] [get_bd_ports VGA_R] [get_bd_ports VGA_B] [get_bd_ports VGA_VS]
+delete_bd_objs [get_bd_cells xlconstant_5] [get_bd_cells xlconstant_4]
+startgroup
+set_property -dict [list CONFIG.NUM_MI {6}] [get_bd_cells axi_interconnect_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.NUM_MI {7}] [get_bd_cells axi_interconnect_0]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:PS2Receiver:1.0 PS2Receiver_0
+endgroup
+connect_bd_intf_net [get_bd_intf_pins PS2Receiver_0/S00_AXI] -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M06_AXI]
+startgroup
+create_bd_port -dir I PS2_CLK
+connect_bd_net [get_bd_pins /PS2Receiver_0/PS2_CLK] [get_bd_ports PS2_CLK]
+create_bd_port -dir I PS2_DATA
+connect_bd_net [get_bd_pins /PS2Receiver_0/PS2_DATA] [get_bd_ports PS2_DATA]
+endgroup
+connect_bd_net -net [get_bd_nets MIPS_MicroAptiv_UP_0_HCLK] [get_bd_pins PS2Receiver_0/s00_axi_aclk] [get_bd_pins MIPS_MicroAptiv_UP_0/HCLK]
+connect_bd_net -net [get_bd_nets MIPS_MicroAptiv_UP_0_HRESETn] [get_bd_pins PS2Receiver_0/s00_axi_aresetn] [get_bd_pins MIPS_MicroAptiv_UP_0/HRESETn]
+connect_bd_net -net [get_bd_nets MIPS_MicroAptiv_UP_0_HCLK] [get_bd_pins axi_interconnect_0/M06_ACLK] [get_bd_pins MIPS_MicroAptiv_UP_0/HCLK]
+connect_bd_net -net [get_bd_nets MIPS_MicroAptiv_UP_0_HRESETn] [get_bd_pins axi_interconnect_0/M06_ARESETN] [get_bd_pins MIPS_MicroAptiv_UP_0/HRESETn]
+disconnect_bd_net /xlconstant_1_dout [get_bd_pins xlconcat_0/In2]
+connect_bd_net [get_bd_pins xlconcat_0/In2] [get_bd_pins PS2Receiver_0/irq]
+set_property location {1 301 813} [get_bd_cells xlconcat_0]
+set_property location {0.5 133 701} [get_bd_cells xlconstant_1]
+set_property location {6 1754 613} [get_bd_cells PWM_w_Int_0]
+set_property location {6 1760 810} [get_bd_cells axi_iic_0]
+set_property location {6 1760 968} [get_bd_cells PS2Receiver_0]
+save_bd_design
+assign_bd_address [get_bd_addr_segs {PS2Receiver_0/S00_AXI/S00_AXI_reg }]
+set_property offset 0x10D00000 [get_bd_addr_segs {MIPS_MicroAptiv_UP_0/ahblite/SEG_PS2Receiver_0_S00_AXI_reg}]
+validate_bd_design
+generate_target all [get_files  E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/MIPSfpga_system.bd]
+set_property location {6 1756 1051} [get_bd_cells PS2Receiver_0]
+save_bd_design
+generate_target all [get_files  E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/MIPSfpga_system.bd]
+create_ip_run [get_files -of_objects [get_fileset sources_1] E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/MIPSfpga_system.bd]
+reset_run MIPSfpga_system_xbar_0_synth_1
+reset_run MIPSfpga_system_axi_gpio_0_0_synth_1
+reset_run MIPSfpga_system_axi_uart16550_0_0_synth_1
+reset_run MIPSfpga_system_PWM_w_Int_0_0_synth_1
+reset_run MIPSfpga_system_axi_iic_0_0_synth_1
+launch_run -jobs 3 {MIPSfpga_system_xbar_0_synth_1 MIPSfpga_system_axi_gpio_0_0_synth_1 MIPSfpga_system_axi_uart16550_0_0_synth_1 MIPSfpga_system_PWM_w_Int_0_0_synth_1 MIPSfpga_system_axi_iic_0_0_synth_1 MIPSfpga_system_PS2Receiver_0_0_synth_1 MIPSfpga_system_auto_pc_0_synth_1 MIPSfpga_system_auto_pc_1_synth_1 MIPSfpga_system_auto_pc_2_synth_1 MIPSfpga_system_auto_pc_3_synth_1 MIPSfpga_system_auto_pc_4_synth_1}
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:PS2Receiver:1.0 [get_ips  MIPSfpga_system_PS2Receiver_0_0]
+delete_ip_run [get_ips -all MIPSfpga_system_PS2Receiver_0_0]
+report_ip_status -name ip_status 
+generate_target all [get_files  E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/MIPSfpga_system.bd]
+create_ip_run [get_files -of_objects [get_fileset sources_1] E:/Peripheral_Interface_lab/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/MIPSfpga_system.bd]
+reset_run MIPSfpga_system_MIPS_MicroAptiv_UP_0_0_synth_1
+reset_run MIPSfpga_system_ahblite_axi_bridge_0_0_synth_1
+reset_run MIPSfpga_system_xlconstant_0_0_synth_1
+reset_run MIPSfpga_system_xbar_0_synth_1
+reset_run MIPSfpga_system_axi_gpio_0_0_synth_1
+reset_run MIPSfpga_system_axi_bram_ctrl_0_0_synth_1
+reset_run MIPSfpga_system_blk_mem_gen_0_0_synth_1
+reset_run MIPSfpga_system_util_ds_buf_0_0_synth_1
+reset_run MIPSfpga_system_xlconstant_1_0_synth_1
+reset_run MIPSfpga_system_xlconstant_2_0_synth_1
+reset_run MIPSfpga_system_clk_wiz_0_0_synth_1
+reset_run MIPSfpga_system_util_vector_logic_0_0_synth_1
+reset_run MIPSfpga_system_util_vector_logic_1_0_synth_1
+reset_run MIPSfpga_system_axi_uart16550_0_0_synth_1
+reset_run MIPSfpga_system_xlconstant_3_0_synth_1
+reset_run MIPSfpga_system_axi_bram_ctrl_1_0_synth_1
+reset_run MIPSfpga_system_blk_mem_gen_1_0_synth_1
+reset_run MIPSfpga_system_PWM_w_Int_0_0_synth_1
+reset_run MIPSfpga_system_xlconcat_0_0_synth_1
+reset_run MIPSfpga_system_axi_iic_0_0_synth_1
+launch_run -jobs 3 {MIPSfpga_system_MIPS_MicroAptiv_UP_0_0_synth_1 MIPSfpga_system_ahblite_axi_bridge_0_0_synth_1 MIPSfpga_system_xlconstant_0_0_synth_1 MIPSfpga_system_xbar_0_synth_1 MIPSfpga_system_axi_gpio_0_0_synth_1 MIPSfpga_system_axi_bram_ctrl_0_0_synth_1 MIPSfpga_system_blk_mem_gen_0_0_synth_1 MIPSfpga_system_util_ds_buf_0_0_synth_1 MIPSfpga_system_xlconstant_1_0_synth_1 MIPSfpga_system_xlconstant_2_0_synth_1 MIPSfpga_system_clk_wiz_0_0_synth_1 MIPSfpga_system_util_vector_logic_0_0_synth_1 MIPSfpga_system_util_vector_logic_1_0_synth_1 MIPSfpga_system_axi_uart16550_0_0_synth_1 MIPSfpga_system_xlconstant_3_0_synth_1 MIPSfpga_system_axi_bram_ctrl_1_0_synth_1 MIPSfpga_system_blk_mem_gen_1_0_synth_1 MIPSfpga_system_PWM_w_Int_0_0_synth_1 MIPSfpga_system_xlconcat_0_0_synth_1 MIPSfpga_system_axi_iic_0_0_synth_1 MIPSfpga_system_PS2Receiver_0_0_synth_1 MIPSfpga_system_auto_pc_0_synth_1 MIPSfpga_system_auto_pc_1_synth_1 MIPSfpga_system_auto_pc_2_synth_1 MIPSfpga_system_auto_pc_3_synth_1 MIPSfpga_system_auto_pc_4_synth_1}
