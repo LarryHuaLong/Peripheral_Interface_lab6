@@ -247,10 +247,10 @@ void _mips_handle_irq(void *ctx, int reason)
 			break;
 
 		default:
-			rxData = '9';
+			rxData = '0';
 			break;
 		}
-		rxData = keycode;
+		data_received = 0x1;
 		return;
 	}
 
