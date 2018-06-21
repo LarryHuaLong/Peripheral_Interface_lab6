@@ -50,14 +50,6 @@ volatile unsigned int rxData = 0x0;
 volatile unsigned int data_received = 0x0;
 
 unsigned char *promt = "Select a Brightness between 0 and 9\n\r";
-// The following is for ADT7420
-//#include "i2c.h"
-//#include "ADT7420.h"
-
-/*****************************************************************************/
-/********************** Variable Definitions *********************************/
-/*****************************************************************************/
-// volatile int rxData = 0;
 
 //------------------
 // main()
@@ -87,18 +79,19 @@ int main()
 	/* Prompt the user to select a brightness value ranging from  0 to 9. */
 	//uart_print("Select a Brightness between 0 and 9\n\r");
 	uart_print(promt);
+
 	while (1)
 	{
 		keycode = *READ_IO(PS2_BASE);
 		lastkeycode = *READ_IO(PS2_BASE+4);
-		*WRITE_IO(IO_LEDR) = keycode;
-		*WRITE_IO(SEG_BASE) = keycode;
-		uart_print(my_itoa(keycode));
-		uart_print("\n\r");
-		delay();
-	}
-	while (1)
-	{
+		if(lastkeycode != keycode){
+			*WRITE_IO(PS2_BASE + 4) = keycode;
+			*WRITE_IO(SEG_BASE) = keycode;
+			uart_print("keycode:");
+			uart_print(my_itoa(keycode));
+			uart_print("\n\r");
+		}
+
 		// LEDs display
 		*WRITE_IO(IO_LEDR) = count;
 
@@ -126,7 +119,7 @@ void delay()
 	volatile unsigned int j;
 
 	for (j = 0; j < (100); j++)
-		;
+		; 
 }
 
 void uart_outbyte(char c)
@@ -206,24 +199,25 @@ char *my_itoa(int n)
 void _mips_handle_irq(void *ctx, int reason)
 {
 	volatile unsigned int period;
-	volatile unsigned int rxData;
 	volatile unsigned int keycode;
 
-	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xF00F on LEDs to indicate receive data from uart
+	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xF00F on LEDs to indicate enter the interrupt
 	data_received = 0x0;
 
-	if (reason & IS_PS2_INTR)
+	if (reason & IS_TIMER_INTR)
 	{
-		keycode = *READ_IO(PS2_BASE);
-		*WRITE_IO(PS2_BASE + 4) = keycode;
-		*WRITE_IO(SEG_BASE) = keycode;
+		// write C0_Compare = $11
+		asm volatile("mtc0	$0, $11");
 
-		uart_print("PS2_INTR occurred!\n\r");
-		uart_print(my_itoa(reason));
-		uart_print("\n\rkeycode:");
-		uart_print(my_itoa(keycode));
-		uart_print("\n\r");
-		delay();
+		asm volatile("li $9, 0x1");
+		// write C0_COUNT = $9
+		asm volatile("mtc0 $9, $9");
+		return;
+	}
+
+	if (reason & IS_PWM_INTR)
+	{
+		*WRITE_IO(PWM_BASE) = 0x0;
 		return;
 	}
 
@@ -232,24 +226,22 @@ void _mips_handle_irq(void *ctx, int reason)
 		/* Read an input value from the console. */
 		rxData = *READ_IO(UART_BASE + rbr);
 		data_received = 0x1;
-		uart_print("UART_INTR occurred!\n\r");
-		uart_print(my_itoa(reason));
-		delay();
 		return;
 	}
 
-	if (reason & IS_PWM_INTR)
+	if (reason & IS_PS2_INTR)
 	{
-		*WRITE_IO(PWM_BASE) = 0x0;
-		uart_print("PWM_INTR occurred!\n\r");
-		uart_print(my_itoa(reason));
-		delay();
+		keycode = *READ_IO(PS2_BASE);
+		*WRITE_IO(PS2_BASE + 4) = keycode;
+		*WRITE_IO(SEG_BASE) = keycode;
+		uart_print("keycode:");
+		uart_print(my_itoa(keycode));
+		uart_print("\n\r");
 		return;
 	}
 
 	*WRITE_IO(IO_LEDR) = 0x0FF0;
-	uart_print("Other interrupts occurred!\n\r");
 	uart_print(my_itoa(reason));
-	delay();
+	uart_print("Other interrupts occurred!\n\r");
 	return;
 }

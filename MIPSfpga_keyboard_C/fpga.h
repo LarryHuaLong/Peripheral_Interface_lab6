@@ -15,7 +15,8 @@
 #define READ_IO(addr)  (volatile unsigned int *)(addr)
 #define WRITE_IO(addr) (volatile unsigned int *)( addr)
 
-#define STACK_BASE_ADDR 0xbfc00900;
+//#define STACK_BASE_ADDR 0xbfc00900;
+#define STACK_BASE_ADDR 0xA0010000;
 
 #endif /* FPGA_H_ */
 

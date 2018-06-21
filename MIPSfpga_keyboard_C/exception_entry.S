@@ -117,13 +117,12 @@ LEAF(__exception_entry)
 	sw	s5,160(sp)
 	
 	la  t9, _mips_handle_irq
-	andi	a1,s3,0x7c
+	#andi	a1,s3,0x7c
+	move	a1, s3
 	addiu	a0,a0,16
-	srl	a1,a1,0x2
+	#srl	a1,a1,0x2
 	jalr  t9
 	nop
-	
-	
 		
 	lw	t1,148(sp)
 	lw	t2,152(sp)
@@ -133,6 +132,7 @@ LEAF(__exception_entry)
 	mtc0	s5,C0_STATUS
 	lw	s6,140(sp)
 	mtc0	s6,C0_EPC
+	
 	#lw	at,16(sp)
 	lw	v0,20(sp)
 	lw	v1,24(sp)
@@ -164,6 +164,16 @@ LEAF(__exception_entry)
 	lw	s8,132(sp)
 	lw	ra,136(sp)
 	lw	sp,128(sp)
+	
+	//mfc0 	k0, C0_STATUS
+	//li		k1, 0x1
+	//or		k0, k0, k1 
+	//mtc0 	k0, C0_STATUS
+	
+	mfc0 	k1, C0_STATUS
+	ori		k1, k1, 0x1 
+	mtc0 	k1, C0_STATUS
+	
 	eret
 	nop
 
