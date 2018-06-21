@@ -87,7 +87,9 @@ int main()
 		lastkeycode = *READ_IO(PS2_BASE + 4);
 		if (lastkeycode != keycode)
 		{
+			uart_print("sdfsf:");
 			*WRITE_IO(PS2_BASE + 4) = keycode;
+			uart_print("sdfaadfasdf:")
 			*WRITE_IO(SEG_BASE) = keycode; //在数码管上显示按键状态
 			uart_print("keychanged:");
 			if ((keycode & 0xff00) != 0Xf000)
