@@ -23,7 +23,7 @@ class App(QtWidgets.QWidget, Ui_GUIMainWindow):
         if False == self.serial.isOpen():
             print("faild to open serial port!\n")
         else:
-            self.timer.start(100)
+            self.timer.start(1000)
         self.data = list()
 
     def read_data(self):
@@ -34,7 +34,8 @@ class App(QtWidgets.QWidget, Ui_GUIMainWindow):
 
     def setPeriod(self):
         period = self.verticalSlider_period.value()
-        self.serial.write(period)
+        print(chr(period+48))
+        self.serial.write(str(period+48).encode())
 
 
 if __name__ == '__main__':
