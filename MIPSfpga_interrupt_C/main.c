@@ -59,6 +59,8 @@ int main()
 	volatile unsigned int count = 0xF;
 	volatile unsigned int j = 1;
 	volatile unsigned int period;
+	volatile unsigned int keycode;
+	volatile unsigned int lastkeycode;
 
 	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
 	delay();
@@ -80,6 +82,14 @@ int main()
 
 	while (1)
 	{
+
+		keycode = *READ_IO(PS2_BASE);
+		lastkeycode = *READ_IO(PS2_BASE+4);
+		if(keycode != lastkeycode){
+			uart_print("got new keycode:");
+			uart_print(my_itoa(keycode));
+			uart_print("\n\r");
+		}
 		// LEDs display
 		*WRITE_IO(IO_LEDR) = count;
 
@@ -197,63 +207,17 @@ void _mips_handle_irq(void *ctx, int reason)
 	if (reason & IS_PS2_INTR)
 	{
 		keycode = *READ_IO(PS2_BASE);
+		*WRITE_IO(PS2_BASE+4) = keycode;
 		*WRITE_IO(SEG_BASE) = keycode;
 
-		switch (keycode & 0x000000FF)
-		{
-		case 0x45:
-		case 0x70:
-			rxData = '0';
-			break;
-		case 0x16:
-		case 0x69:
-			rxData = '1';
-			break;
-		case 0x1E:
-		case 0x72:
-			rxData = '2';
-			break;
-		case 0x26:
-		case 0x7A:
-			rxData = '3';
-			break;
-		case 0x25:
-		case 0x6B:
-			rxData = '4';
-			break;
-		case 0x2E:
-		case 0x73:
-			rxData = '5';
-			break;
-		case 0x36:
-		case 0x74:
-			rxData = '6';
-			break;
-		case 0x3D:
-		case 0x6C:
-			rxData = '7';
-			break;
-		case 0x3E:
-		case 0x75:
-			rxData = '8';
-			break;
-		case 0x46:
-		case 0x7D:
-			rxData = '9';
-			break;
-
-		default:
-			rxData = '0';
-			break;
-		}
-		data_received = 0x1;
 		uart_print("PS2_INTR occurred!:");
 		uart_print(my_itoa(reason));
-		uart_print("\n\rgot num :");
-		uart_print(my_itoa(rxData);
+		uart_print("\n\rkeycode:");
+		uart_print(my_itoa(keycode);
 		uart_print("\n\r");
 		return;
 	}
+
 	if (reason & IS_TIMER_INTR)
 	{
 		// write C0_Compare = $11
