@@ -82,16 +82,27 @@ int main()
 
 	while (1)
 	{
-		/*keycode = *READ_IO(PS2_BASE);
+		keycode = *READ_IO(PS2_BASE);
 		lastkeycode = *READ_IO(PS2_BASE+4);
 		if(lastkeycode != keycode){
-			//*WRITE_IO(PS2_BASE + 4) = keycode;
-			//*WRITE_IO(SEG_BASE) = keycode;
+			*WRITE_IO(PS2_BASE + 4) = keycode;
+			*WRITE_IO(SEG_BASE) = keycode;
 			uart_print("keycode:");
 			uart_print(my_itoa(keycode));
 			uart_print("\n\r");
-		}*/
+		}
+		if (data_received)
+		{
+			period = rxData - 0x30;
+			*WRITE_IO(PWM_BASE) = period * 110000;
+			data_received = 0x0;
 
+			uart_print(promt);
+			delay();
+		}
+	}
+
+	while(1)
 		// LEDs display
 		*WRITE_IO(IO_LEDR) = count;
 
@@ -203,19 +214,6 @@ void _mips_handle_irq(void *ctx, int reason)
 
 	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xF00F on LEDs to indicate enter the interrupt
 	data_received = 0x0;
-	
-	if (reason & IS_PS2_INTR)
-	{
-		keycode = *READ_IO(PS2_BASE);
-		*WRITE_IO(PS2_BASE + 4) = keycode;
-		*WRITE_IO(SEG_BASE) = keycode;
-		uart_print("PS2_interrupts occurred!:");
-		uart_print(my_itoa(reason));
-		uart_print("keycode:");
-		uart_print(my_itoa(keycode));
-		uart_print("\n\r");
-		return;
-	}
 
 	if (reason & IS_TIMER_INTR)
 	{
@@ -242,7 +240,19 @@ void _mips_handle_irq(void *ctx, int reason)
 		return;
 	}
 
-	
+	if (reason & IS_PS2_INTR)
+	{
+		keycode = *READ_IO(PS2_BASE);
+		*WRITE_IO(PS2_BASE + 4) = keycode;
+		*WRITE_IO(SEG_BASE) = keycode;
+		uart_print("PS2_interrupts occurred!:");
+		uart_print(my_itoa(reason));
+		uart_print("keycode:");
+		uart_print(my_itoa(keycode));
+		uart_print("\n\r");
+		return;
+	}
+
 	*WRITE_IO(IO_LEDR) = 0x0FF0;
 	uart_print(my_itoa(reason));
 	uart_print("Other interrupts occurred!\n\r");
