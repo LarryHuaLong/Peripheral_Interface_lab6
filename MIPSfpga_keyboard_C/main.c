@@ -237,6 +237,8 @@ void _mips_handle_irq(void *ctx, int reason)
 		/* Read an input value from the console. */
 		rxData = *READ_IO(UART_BASE + rbr);
 		data_received = 0x1;
+		uart_print(my_itoa(reason));
+		uart_print("\n\r");
 		return;
 	}
 
