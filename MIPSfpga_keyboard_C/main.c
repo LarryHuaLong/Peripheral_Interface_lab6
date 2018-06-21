@@ -35,7 +35,6 @@
 
 #define IS_UART_INTR (1 << 15)
 #define IS_PWM_INTR (1 << 14)
-#define IS_PS2_INTR (1 << 13)
 #define IS_TIMER_INTR (1 << 30)
 
 void delay();
@@ -79,7 +78,7 @@ int main()
 
 	/* Prompt the user to select a brightness value ranging from  0 to 9. */
 	//uart_print("Select a Brightness between 0 and 9\n\r");
-	uart_print(promt);
+	//uart_print(promt);
 
 	while (1)
 	{
@@ -96,11 +95,14 @@ int main()
 				if (code != '\0')
 				{
 					uart_outbyte(code);//输出数字和字母
-					if (code == '\r')//如果是回车，则多加一个换行
+					delay();
+					if (code == '\r'){//如果是回车，则多加一个换行
 						uart_outbyte('\n');
-				}
+						
+				}}
 			}
 		}
+		delay();
 		//设置亮度
 		if (data_received)
 		{
@@ -302,12 +304,15 @@ void _mips_handle_irq(void *ctx, int reason)
 		/* Read an input value from the console. */
 		rxData = *READ_IO(UART_BASE + rbr);
 		data_received = 0x1;
+		uart_print(my_itoa(reason));
 		return;
 	}
 	if (reason & IS_PWM_INTR)
 	{
 		*WRITE_IO(PWM_BASE) = 0x0;
+		uart_print(my_itoa(reason));
 		return;
 	}
+	uart_print(my_itoa(reason));
 	return;
 }
