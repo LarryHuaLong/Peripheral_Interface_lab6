@@ -710,17 +710,8 @@ Disassembly of section .text_ram:
 a0001000 <delay>:
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:129
-
-	return 0;
-}
-
-void delay()
-{
 a0001000:	27bdfff8 	addiu	sp,sp,-8
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a0001004:	afa00000 	sw	zero,0(sp)
 a0001008:	8fa20000 	lw	v0,0(sp)
 a000100c:	2c420064 	sltiu	v0,v0,100
@@ -735,40 +726,21 @@ a0001028:	2c420064 	sltiu	v0,v0,100
 a000102c:	1440fffa 	bnez	v0,a0001018 <delay+0x18>
 a0001030:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:134
-		; 
-}
 a0001034:	03e00008 	jr	ra
 a0001038:	27bd0008 	addiu	sp,sp,8
 
 a000103c <uart_outbyte>:
 uart_outbyte():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:137
-
-void uart_outbyte(char c)
-{
 a000103c:	27bdfff8 	addiu	sp,sp,-8
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:138
-	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 a0001040:	3c02b040 	lui	v0,0xb040
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:137
-	for (j = 0; j < (100); j++)
-		; 
-}
-
-void uart_outbyte(char c)
-{
 a0001044:	308400ff 	andi	a0,a0,0xff
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:138
-	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 a0001048:	ac441000 	sw	a0,4096(v0)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a000104c:	afa00000 	sw	zero,0(sp)
 a0001050:	8fa20000 	lw	v0,0(sp)
 a0001054:	2c420064 	sltiu	v0,v0,100
@@ -783,24 +755,12 @@ a0001074:	1440fffa 	bnez	v0,a0001060 <uart_outbyte+0x24>
 a0001078:	00000000 	nop
 uart_outbyte():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:140
-
-void uart_outbyte(char c)
-{
-	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
-	delay();
-}
 a000107c:	03e00008 	jr	ra
 a0001080:	27bd0008 	addiu	sp,sp,8
 
 a0001084 <uart_inbyte>:
 uart_inbyte():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:146
-
-char uart_inbyte(void)
-{
-	unsigned int RecievedByte;
-
-	while (!((*READ_IO(UART_BASE + lsr) & 0x00000001) == 0x00000001))
 a0001084:	3c03b040 	lui	v1,0xb040
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:146 (discriminator 1)
 a0001088:	8c621014 	lw	v0,4116(v1)
@@ -808,52 +768,24 @@ a000108c:	30420001 	andi	v0,v0,0x1
 a0001090:	1040fffd 	beqz	v0,a0001088 <uart_inbyte+0x4>
 a0001094:	3c02b040 	lui	v0,0xb040
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:149
-		;
-
-	RecievedByte = *READ_IO(UART_BASE + rbr);
 a0001098:	8c421000 	lw	v0,4096(v0)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:152
-
-	return (char)RecievedByte;
-}
 a000109c:	03e00008 	jr	ra
 a00010a0:	304200ff 	andi	v0,v0,0xff
 
 a00010a4 <uart_print>:
 uart_print():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:156
-
-void uart_print(const char *ptr)
-{
-	while (*ptr)
 a00010a4:	90820000 	lbu	v0,0(a0)
 a00010a8:	10400014 	beqz	v0,a00010fc <uart_print+0x58>
 a00010ac:	3c03b040 	lui	v1,0xb040
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:155
-
-	return (char)RecievedByte;
-}
-
-void uart_print(const char *ptr)
-{
 a00010b0:	27bdfff8 	addiu	sp,sp,-8
 uart_outbyte():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:138
-		; 
-}
-
-void uart_outbyte(char c)
-{
-	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 a00010b4:	ac621000 	sw	v0,4096(v1)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a00010b8:	afa00000 	sw	zero,0(sp)
 a00010bc:	8fa20000 	lw	v0,0(sp)
 a00010c0:	2c420064 	sltiu	v0,v0,100
@@ -868,29 +800,12 @@ a00010e0:	1440fffa 	bnez	v0,a00010cc <uart_print+0x28>
 a00010e4:	00000000 	nop
 uart_print():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:159
-void uart_print(const char *ptr)
-{
-	while (*ptr)
-	{
-		uart_outbyte(*ptr);
-		ptr++;
 a00010e8:	24840001 	addiu	a0,a0,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:156
-	return (char)RecievedByte;
-}
-
-void uart_print(const char *ptr)
-{
-	while (*ptr)
 a00010ec:	90820000 	lbu	v0,0(a0)
 a00010f0:	1440fff0 	bnez	v0,a00010b4 <uart_print+0x10>
 a00010f4:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:161
-	{
-		uart_outbyte(*ptr);
-		ptr++;
-	}
-}
 a00010f8:	27bd0008 	addiu	sp,sp,8
 a00010fc:	03e00008 	jr	ra
 a0001100:	00000000 	nop
@@ -898,133 +813,56 @@ a0001100:	00000000 	nop
 a0001104 <reverse>:
 reverse():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:169
-char *reverse(char *s)
-{
-	char temp;
-	char *p = s; //p指向s的头部
-	char *q = s; //q指向s的尾部
-	while (*q)
 a0001104:	90860000 	lbu	a2,0(a0)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:165
-	}
-}
-
-//反转字符串
-char *reverse(char *s)
-{
 a0001108:	00801021 	move	v0,a0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:169
-	char temp;
-	char *p = s; //p指向s的头部
-	char *q = s; //q指向s的尾部
-	while (*q)
 a000110c:	10c00005 	beqz	a2,a0001124 <reverse+0x20>
 a0001110:	00801821 	move	v1,a0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:170
-		++q;
 a0001114:	24630001 	addiu	v1,v1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:169
-char *reverse(char *s)
-{
-	char temp;
-	char *p = s; //p指向s的头部
-	char *q = s; //q指向s的尾部
-	while (*q)
 a0001118:	90650000 	lbu	a1,0(v1)
 a000111c:	54a0fffe 	bnezl	a1,a0001118 <reverse+0x14>
 a0001120:	24630001 	addiu	v1,v1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:171
-		++q;
-	q--;
 a0001124:	2463ffff 	addiu	v1,v1,-1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:174
-
-	//交换移动指针，直到p和q交叉
-	while (q > p)
 a0001128:	0043202b 	sltu	a0,v0,v1
 a000112c:	1080000b 	beqz	a0,a000115c <reverse+0x58>
 a0001130:	00402821 	move	a1,v0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:177
-	{
-		temp = *p;
-		*p++ = *q;
 a0001134:	10000003 	b	a0001144 <reverse+0x40>
 a0001138:	90680000 	lbu	t0,0(v1)
 a000113c:	90a60000 	lbu	a2,0(a1)
 a0001140:	90680000 	lbu	t0,0(v1)
 a0001144:	24a50001 	addiu	a1,a1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:178
-		*q-- = temp;
 a0001148:	2463ffff 	addiu	v1,v1,-1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:174
-	while (*q)
-		++q;
-	q--;
-
-	//交换移动指针，直到p和q交叉
-	while (q > p)
 a000114c:	00a3382b 	sltu	a3,a1,v1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:177
-	{
-		temp = *p;
-		*p++ = *q;
 a0001150:	a0a8ffff 	sb	t0,-1(a1)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:174
-	while (*q)
-		++q;
-	q--;
-
-	//交换移动指针，直到p和q交叉
-	while (q > p)
 a0001154:	14e0fff9 	bnez	a3,a000113c <reverse+0x38>
 a0001158:	a0660001 	sb	a2,1(v1)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:181
-		temp = *p;
-		*p++ = *q;
-		*q-- = temp;
-	}
-	return s;
-}
 a000115c:	03e00008 	jr	ra
 a0001160:	00000000 	nop
 
 a0001164 <my_itoa>:
 my_itoa():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:188
-/* 
- * 功能：整数转换为字符串 
- * char s[] 的作用是存储整数的每一位 
- */
-char *my_itoa(int n)
-{
 a0001164:	000417c3 	sra	v0,a0,0x1f
 a0001168:	00442826 	xor	a1,v0,a0
 a000116c:	3c0ba000 	lui	t3,0xa000
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:197
-	{
-		n = -n;
-	}
-	do //从各位开始变为字符，直到最高位，最后应该反转
-	{
-		s[i++] = n % 10 + '0';
 a0001170:	3c0a6666 	lui	t2,0x6666
 a0001174:	00a22823 	subu	a1,a1,v0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:188
-/* 
- * 功能：整数转换为字符串 
- * char s[] 的作用是存储整数的每一位 
- */
-char *my_itoa(int n)
-{
 a0001178:	00003821 	move	a3,zero
 a000117c:	256216a0 	addiu	v0,t3,5792
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:197
-	{
-		n = -n;
-	}
-	do //从各位开始变为字符，直到最高位，最后应该反转
-	{
-		s[i++] = n % 10 + '0';
 a0001180:	254a6667 	addiu	t2,t2,26215
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:197 (discriminator 1)
 a0001184:	00aa0018 	mult	a1,t2
@@ -1041,62 +879,33 @@ a00011ac:	00a62823 	subu	a1,a1,a2
 a00011b0:	24a60030 	addiu	a2,a1,48
 a00011b4:	a106ffff 	sb	a2,-1(t0)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:199 (discriminator 1)
-		n = n / 10;
-	} while (n > 0);
 a00011b8:	1460fff2 	bnez	v1,a0001184 <my_itoa+0x20>
 a00011bc:	00602821 	move	a1,v1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:201
-
-	if (isNegative < 0) //如果是负数，补上负号
 a00011c0:	0480001a 	bltz	a0,a000122c <my_itoa+0xc8>
 a00011c4:	2404002d 	li	a0,45
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:205
-	{
-		s[i++] = '-';
-	}
-	s[i] = '\0'; //最后加上字符串结束符
 a00011c8:	00473821 	addu	a3,v0,a3
 a00011cc:	a0e00000 	sb	zero,0(a3)
 reverse():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:169
-char *reverse(char *s)
-{
-	char temp;
-	char *p = s; //p指向s的头部
-	char *q = s; //q指向s的尾部
-	while (*q)
 a00011d0:	916516a0 	lbu	a1,5792(t3)
 a00011d4:	10a00005 	beqz	a1,a00011ec <my_itoa+0x88>
 a00011d8:	00401821 	move	v1,v0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:170
-		++q;
 a00011dc:	24630001 	addiu	v1,v1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:169
-char *reverse(char *s)
-{
-	char temp;
-	char *p = s; //p指向s的头部
-	char *q = s; //q指向s的尾部
-	while (*q)
 a00011e0:	90640000 	lbu	a0,0(v1)
 a00011e4:	5480fffe 	bnezl	a0,a00011e0 <my_itoa+0x7c>
 a00011e8:	24630001 	addiu	v1,v1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:171
-		++q;
-	q--;
 a00011ec:	2463ffff 	addiu	v1,v1,-1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:174
-
-	//交换移动指针，直到p和q交叉
-	while (q > p)
 a00011f0:	0043202b 	sltu	a0,v0,v1
 a00011f4:	1080000b 	beqz	a0,a0001224 <my_itoa+0xc0>
 a00011f8:	00402021 	move	a0,v0
 my_itoa():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:177
-	{
-		temp = *p;
-		*p++ = *q;
 a00011fc:	10000003 	b	a000120c <my_itoa+0xa8>
 a0001200:	90670000 	lbu	a3,0(v1)
 a0001204:	90850000 	lbu	a1,0(a0)
@@ -1104,47 +913,19 @@ reverse():
 a0001208:	90670000 	lbu	a3,0(v1)
 a000120c:	24840001 	addiu	a0,a0,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:178
-		*q-- = temp;
 a0001210:	2463ffff 	addiu	v1,v1,-1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:174
-	while (*q)
-		++q;
-	q--;
-
-	//交换移动指针，直到p和q交叉
-	while (q > p)
 a0001214:	0083302b 	sltu	a2,a0,v1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:177
-	{
-		temp = *p;
-		*p++ = *q;
 a0001218:	a087ffff 	sb	a3,-1(a0)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:174
-	while (*q)
-		++q;
-	q--;
-
-	//交换移动指针，直到p和q交叉
-	while (q > p)
 a000121c:	14c0fff9 	bnez	a2,a0001204 <my_itoa+0xa0>
 a0001220:	a0650001 	sb	a1,1(v1)
 my_itoa():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:208
-		s[i++] = '-';
-	}
-	s[i] = '\0'; //最后加上字符串结束符
-
-	return reverse(s);
-}
 a0001224:	03e00008 	jr	ra
 a0001228:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:203
-		n = n / 10;
-	} while (n > 0);
-
-	if (isNegative < 0) //如果是负数，补上负号
-	{
-		s[i++] = '-';
 a000122c:	24e70001 	addiu	a3,a3,1
 a0001230:	1000ffe5 	b	a00011c8 <my_itoa+0x64>
 a0001234:	a1040000 	sb	a0,0(t0)
@@ -1152,28 +933,19 @@ a0001234:	a1040000 	sb	a0,0(t0)
 a0001238 <_mips_handle_irq>:
 _mips_handle_irq():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:215
-void _mips_handle_irq(void *ctx, int reason)
-{
-	volatile unsigned int period;
-	volatile unsigned int keycode;
-	
-	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xFFFF on LEDs to indicate receive data from uart
 a0001238:	3403f00f 	li	v1,0xf00f
 a000123c:	3c02b060 	lui	v0,0xb060
 a0001240:	ac430000 	sw	v1,0(v0)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:216
-	if ((*READ_IO(UART_BASE + lsr) & 0x00000001) == 0x00000001)
 a0001244:	3c03b040 	lui	v1,0xb040
 a0001248:	8c621014 	lw	v0,4116(v1)
 a000124c:	30420001 	andi	v0,v0,0x1
 a0001250:	10400004 	beqz	v0,a0001264 <_mips_handle_irq+0x2c>
 a0001254:	3c02b060 	lui	v0,0xb060
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:217
-		rxData = *READ_IO(UART_BASE + rbr);
 a0001258:	8c621000 	lw	v0,4096(v1)
 a000125c:	af82800c 	sw	v0,-32756(gp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:218
-	*WRITE_IO(IO_LEDR) = 0x0;
 a0001260:	3c02b060 	lui	v0,0xb060
 a0001264:	ac400000 	sw	zero,0(v0)
 a0001268:	03e00008 	jr	ra
@@ -1182,36 +954,17 @@ a000126c:	00000000 	nop
 a0001270 <main>:
 main():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:58
-
-//------------------
-// main()
-//------------------
-int main()
-{
 a0001270:	27bdff88 	addiu	sp,sp,-120
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:59
-	volatile unsigned int count = 0xF;
 a0001274:	2402000f 	li	v0,15
 a0001278:	afa20050 	sw	v0,80(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:60
-	volatile unsigned int j = 1;
 a000127c:	24020001 	li	v0,1
 a0001280:	afa2004c 	sw	v0,76(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:65
-	volatile unsigned int period;
-	volatile unsigned int keycode;
-	volatile unsigned int lastkeycode;
-
-	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
 a0001284:	24030080 	li	v1,128
 a0001288:	3c02b040 	lui	v0,0xb040
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:58
-
-//------------------
-// main()
-//------------------
-int main()
-{
 a000128c:	afbf0074 	sw	ra,116(sp)
 a0001290:	afb50070 	sw	s5,112(sp)
 a0001294:	afb4006c 	sw	s4,108(sp)
@@ -1220,21 +973,9 @@ a000129c:	afb20064 	sw	s2,100(sp)
 a00012a0:	afb10060 	sw	s1,96(sp)
 a00012a4:	afb0005c 	sw	s0,92(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:65
-	volatile unsigned int j = 1;
-	volatile unsigned int period;
-	volatile unsigned int keycode;
-	volatile unsigned int lastkeycode;
-
-	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
 a00012a8:	ac43100c 	sw	v1,4108(v0)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a00012ac:	afa0003c 	sw	zero,60(sp)
 a00012b0:	8fa2003c 	lw	v0,60(sp)
 a00012b4:	2c420064 	sltiu	v0,v0,100
@@ -1249,22 +990,10 @@ a00012d4:	1440fffa 	bnez	v0,a00012c0 <main+0x50>
 a00012d8:	3c02b040 	lui	v0,0xb040
 main():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:67
-	volatile unsigned int keycode;
-	volatile unsigned int lastkeycode;
-
-	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
-	delay();
-	*WRITE_IO(UART_BASE + dll) = 27; // DLL msb. 115200 at 50MHz. Formula is Clk/16/baudrate. From axi_uart manual.
 a00012dc:	2403001b 	li	v1,27
 a00012e0:	ac431000 	sw	v1,4096(v0)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a00012e4:	afa00038 	sw	zero,56(sp)
 a00012e8:	8fa20038 	lw	v0,56(sp)
 a00012ec:	2c420064 	sltiu	v0,v0,100
@@ -1279,21 +1008,9 @@ a000130c:	1440fffa 	bnez	v0,a00012f8 <main+0x88>
 a0001310:	3c02b040 	lui	v0,0xb040
 main():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:69
-
-	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
-	delay();
-	*WRITE_IO(UART_BASE + dll) = 27; // DLL msb. 115200 at 50MHz. Formula is Clk/16/baudrate. From axi_uart manual.
-	delay();
-	*WRITE_IO(UART_BASE + dlm) = 0x00000000; // DLL lsb.
 a0001314:	ac401004 	sw	zero,4100(v0)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a0001318:	afa00034 	sw	zero,52(sp)
 a000131c:	8fa20034 	lw	v0,52(sp)
 a0001320:	2c420064 	sltiu	v0,v0,100
@@ -1308,22 +1025,10 @@ a0001340:	1440fffa 	bnez	v0,a000132c <main+0xbc>
 a0001344:	3c02b040 	lui	v0,0xb040
 main():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:71
-	delay();
-	*WRITE_IO(UART_BASE + dll) = 27; // DLL msb. 115200 at 50MHz. Formula is Clk/16/baudrate. From axi_uart manual.
-	delay();
-	*WRITE_IO(UART_BASE + dlm) = 0x00000000; // DLL lsb.
-	delay();
-	*WRITE_IO(UART_BASE + lcr) = 0x00000003; // LCR register. 8n1 parity disabled
 a0001348:	24030003 	li	v1,3
 a000134c:	ac43100c 	sw	v1,4108(v0)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a0001350:	afa00030 	sw	zero,48(sp)
 a0001354:	8fa20030 	lw	v0,48(sp)
 a0001358:	2c420064 	sltiu	v0,v0,100
@@ -1338,21 +1043,9 @@ a0001378:	1440fffa 	bnez	v0,a0001364 <main+0xf4>
 a000137c:	3c02b040 	lui	v0,0xb040
 main():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:73
-	delay();
-	*WRITE_IO(UART_BASE + dlm) = 0x00000000; // DLL lsb.
-	delay();
-	*WRITE_IO(UART_BASE + lcr) = 0x00000003; // LCR register. 8n1 parity disabled
-	delay();
-	*WRITE_IO(UART_BASE + ier) = 0x00000000; // IER register. disable interrupts
 a0001380:	ac401004 	sw	zero,4100(v0)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a0001384:	afa0002c 	sw	zero,44(sp)
 a0001388:	8fa2002c 	lw	v0,44(sp)
 a000138c:	2c420064 	sltiu	v0,v0,100
@@ -1367,22 +1060,10 @@ a00013ac:	1440fffa 	bnez	v0,a0001398 <main+0x128>
 a00013b0:	3c02b040 	lui	v0,0xb040
 main():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:76
-	*WRITE_IO(UART_BASE + lcr) = 0x00000003; // LCR register. 8n1 parity disabled
-	delay();
-	*WRITE_IO(UART_BASE + ier) = 0x00000000; // IER register. disable interrupts
-	delay();
-
-	*WRITE_IO(UART_BASE + ier) = 0x00000001; // IER register. Enables Receiver Line Status and Received Data Interrupts
 a00013b4:	24030001 	li	v1,1
 a00013b8:	ac431004 	sw	v1,4100(v0)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a00013bc:	afa00028 	sw	zero,40(sp)
 a00013c0:	8fa20028 	lw	v0,40(sp)
 a00013c4:	2c420064 	sltiu	v0,v0,100
@@ -1397,32 +1078,14 @@ a00013e4:	1440fffa 	bnez	v0,a00013d0 <main+0x160>
 a00013e8:	8f838000 	lw	v1,-32768(gp)
 uart_print():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:156
-	return (char)RecievedByte;
-}
-
-void uart_print(const char *ptr)
-{
-	while (*ptr)
 a00013ec:	90620000 	lbu	v0,0(v1)
 a00013f0:	10400012 	beqz	v0,a000143c <main+0x1cc>
 a00013f4:	3c04b040 	lui	a0,0xb040
 uart_outbyte():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:138
-		; 
-}
-
-void uart_outbyte(char c)
-{
-	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 a00013f8:	ac821000 	sw	v0,4096(a0)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a00013fc:	afa00024 	sw	zero,36(sp)
 a0001400:	8fa20024 	lw	v0,36(sp)
 a0001404:	2c420064 	sltiu	v0,v0,100
@@ -1437,20 +1100,8 @@ a0001424:	1440fffa 	bnez	v0,a0001410 <main+0x1a0>
 a0001428:	00000000 	nop
 uart_print():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:159
-void uart_print(const char *ptr)
-{
-	while (*ptr)
-	{
-		uart_outbyte(*ptr);
-		ptr++;
 a000142c:	24630001 	addiu	v1,v1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:156
-	return (char)RecievedByte;
-}
-
-void uart_print(const char *ptr)
-{
-	while (*ptr)
 a0001430:	90620000 	lbu	v0,0(v1)
 a0001434:	1440fff0 	bnez	v0,a00013f8 <main+0x188>
 a0001438:	00000000 	nop
@@ -1460,92 +1111,41 @@ a0001444:	26311654 	addiu	s1,s1,5716
 a0001448:	26101660 	addiu	s0,s0,5728
 main():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:85
-	//uart_print("Select a Brightness between 0 and 9\n\r");
-	uart_print(promt);
-
-	while (1)
-	{
-		keycode = *READ_IO(PS2_BASE);
 a000144c:	3c15b0d0 	lui	s5,0xb0d0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:89
-		lastkeycode = *READ_IO(PS2_BASE+4);
-		if(lastkeycode != keycode){
-			*WRITE_IO(PS2_BASE + 4) = keycode;
-			*WRITE_IO(SEG_BASE) = keycode;
 a0001450:	3c12b0e0 	lui	s2,0xb0e0
 uart_outbyte():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:138
-		; 
-}
-
-void uart_outbyte(char c)
-{
-	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 a0001454:	3c14b040 	lui	s4,0xb040
 main():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:97
-			uart_print("\n\r");
-		}
-		if (data_received)
-		{
-			period = rxData - 0x30;
-			*WRITE_IO(PWM_BASE) = period * 110000;
 a0001458:	3c13b0c0 	lui	s3,0xb0c0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:85
-	//uart_print("Select a Brightness between 0 and 9\n\r");
-	uart_print(promt);
-
-	while (1)
-	{
-		keycode = *READ_IO(PS2_BASE);
 a000145c:	8ea20000 	lw	v0,0(s5)
 a0001460:	afa20044 	sw	v0,68(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:86
-		lastkeycode = *READ_IO(PS2_BASE+4);
 a0001464:	8ea20004 	lw	v0,4(s5)
 a0001468:	afa20040 	sw	v0,64(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:87
-		if(lastkeycode != keycode){
 a000146c:	8fa30040 	lw	v1,64(sp)
 a0001470:	8fa20044 	lw	v0,68(sp)
 a0001474:	10620042 	beq	v1,v0,a0001580 <main+0x310>
 a0001478:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:88
-			*WRITE_IO(PS2_BASE + 4) = keycode;
 a000147c:	8fa40044 	lw	a0,68(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:89
-			*WRITE_IO(SEG_BASE) = keycode;
 a0001480:	02201821 	move	v1,s1
 a0001484:	2402006b 	li	v0,107
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:88
-	while (1)
-	{
-		keycode = *READ_IO(PS2_BASE);
-		lastkeycode = *READ_IO(PS2_BASE+4);
-		if(lastkeycode != keycode){
-			*WRITE_IO(PS2_BASE + 4) = keycode;
 a0001488:	aea40004 	sw	a0,4(s5)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:89
-			*WRITE_IO(SEG_BASE) = keycode;
 a000148c:	8fa40044 	lw	a0,68(sp)
 a0001490:	ae440000 	sw	a0,0(s2)
 uart_outbyte():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:138
-		; 
-}
-
-void uart_outbyte(char c)
-{
-	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 a0001494:	ae821000 	sw	v0,4096(s4)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a0001498:	afa00020 	sw	zero,32(sp)
 a000149c:	8fa20020 	lw	v0,32(sp)
 a00014a0:	2c420064 	sltiu	v0,v0,100
@@ -1560,62 +1160,26 @@ a00014c0:	1440fffa 	bnez	v0,a00014ac <main+0x23c>
 a00014c4:	00000000 	nop
 uart_print():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:159
-void uart_print(const char *ptr)
-{
-	while (*ptr)
-	{
-		uart_outbyte(*ptr);
-		ptr++;
 a00014c8:	24630001 	addiu	v1,v1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:156
-	return (char)RecievedByte;
-}
-
-void uart_print(const char *ptr)
-{
-	while (*ptr)
 a00014cc:	90620000 	lbu	v0,0(v1)
 a00014d0:	1440fff0 	bnez	v0,a0001494 <main+0x224>
 a00014d4:	00000000 	nop
 main():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:91
-		lastkeycode = *READ_IO(PS2_BASE+4);
-		if(lastkeycode != keycode){
-			*WRITE_IO(PS2_BASE + 4) = keycode;
-			*WRITE_IO(SEG_BASE) = keycode;
-			uart_print("keycode:");
-			uart_print(my_itoa(keycode));
 a00014d8:	8fa40044 	lw	a0,68(sp)
 a00014dc:	0c000459 	jal	a0001164 <my_itoa>
 a00014e0:	00000000 	nop
 uart_print():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:156
-	return (char)RecievedByte;
-}
-
-void uart_print(const char *ptr)
-{
-	while (*ptr)
 a00014e4:	90430000 	lbu	v1,0(v0)
 a00014e8:	50600013 	beqzl	v1,a0001538 <main+0x2c8>
 a00014ec:	02001821 	move	v1,s0
 uart_outbyte():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:138
-		; 
-}
-
-void uart_outbyte(char c)
-{
-	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 a00014f0:	ae831000 	sw	v1,4096(s4)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a00014f4:	afa0001c 	sw	zero,28(sp)
 a00014f8:	8fa3001c 	lw	v1,28(sp)
 a00014fc:	2c630064 	sltiu	v1,v1,100
@@ -1630,50 +1194,20 @@ a000151c:	1460fffa 	bnez	v1,a0001508 <main+0x298>
 a0001520:	00000000 	nop
 uart_print():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:159
-void uart_print(const char *ptr)
-{
-	while (*ptr)
-	{
-		uart_outbyte(*ptr);
-		ptr++;
 a0001524:	24420001 	addiu	v0,v0,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:156
-	return (char)RecievedByte;
-}
-
-void uart_print(const char *ptr)
-{
-	while (*ptr)
 a0001528:	90430000 	lbu	v1,0(v0)
 a000152c:	1460fff0 	bnez	v1,a00014f0 <main+0x280>
 a0001530:	00000000 	nop
 main():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:89
-	{
-		keycode = *READ_IO(PS2_BASE);
-		lastkeycode = *READ_IO(PS2_BASE+4);
-		if(lastkeycode != keycode){
-			*WRITE_IO(PS2_BASE + 4) = keycode;
-			*WRITE_IO(SEG_BASE) = keycode;
 a0001534:	02001821 	move	v1,s0
 a0001538:	2402000a 	li	v0,10
 uart_outbyte():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:138
-		; 
-}
-
-void uart_outbyte(char c)
-{
-	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 a000153c:	ae821000 	sw	v0,4096(s4)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a0001540:	afa00018 	sw	zero,24(sp)
 a0001544:	8fa20018 	lw	v0,24(sp)
 a0001548:	2c420064 	sltiu	v0,v0,100
@@ -1688,42 +1222,21 @@ a0001568:	1440fffa 	bnez	v0,a0001554 <main+0x2e4>
 a000156c:	00000000 	nop
 uart_print():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:159
-void uart_print(const char *ptr)
-{
-	while (*ptr)
-	{
-		uart_outbyte(*ptr);
-		ptr++;
 a0001570:	24630001 	addiu	v1,v1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:156
-	return (char)RecievedByte;
-}
-
-void uart_print(const char *ptr)
-{
-	while (*ptr)
 a0001574:	90620000 	lbu	v0,0(v1)
 a0001578:	1440fff0 	bnez	v0,a000153c <main+0x2cc>
 a000157c:	00000000 	nop
 main():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:94
-			*WRITE_IO(SEG_BASE) = keycode;
-			uart_print("keycode:");
-			uart_print(my_itoa(keycode));
-			uart_print("\n\r");
-		}
-		if (data_received)
 a0001580:	8f828008 	lw	v0,-32760(gp)
 a0001584:	1040ffb5 	beqz	v0,a000145c <main+0x1ec>
 a0001588:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:96
-		{
-			period = rxData - 0x30;
 a000158c:	8f82800c 	lw	v0,-32756(gp)
 a0001590:	2442ffd0 	addiu	v0,v0,-48
 a0001594:	afa20048 	sw	v0,72(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:97
-			*WRITE_IO(PWM_BASE) = period * 110000;
 a0001598:	8fa40048 	lw	a0,72(sp)
 a000159c:	00041180 	sll	v0,a0,0x6
 a00015a0:	00041a00 	sll	v1,a0,0x8
@@ -1734,50 +1247,22 @@ a00015b0:	00431021 	addu	v0,v0,v1
 a00015b4:	00021080 	sll	v0,v0,0x2
 a00015b8:	00441023 	subu	v0,v0,a0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:100
-			data_received = 0x0;
-
-			uart_print(promt);
 a00015bc:	8f838000 	lw	v1,-32768(gp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:97
-			uart_print("\n\r");
-		}
-		if (data_received)
-		{
-			period = rxData - 0x30;
-			*WRITE_IO(PWM_BASE) = period * 110000;
 a00015c0:	00021100 	sll	v0,v0,0x4
 a00015c4:	ae620000 	sw	v0,0(s3)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:98
-			data_received = 0x0;
 a00015c8:	af808008 	sw	zero,-32760(gp)
 uart_print():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:156
-	return (char)RecievedByte;
-}
-
-void uart_print(const char *ptr)
-{
-	while (*ptr)
 a00015cc:	90620000 	lbu	v0,0(v1)
 a00015d0:	10400012 	beqz	v0,a000161c <main+0x3ac>
 a00015d4:	00000000 	nop
 uart_outbyte():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:138
-		; 
-}
-
-void uart_outbyte(char c)
-{
-	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 a00015d8:	ae821000 	sw	v0,4096(s4)
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a00015dc:	afa00014 	sw	zero,20(sp)
 a00015e0:	8fa20014 	lw	v0,20(sp)
 a00015e4:	2c420064 	sltiu	v0,v0,100
@@ -1792,31 +1277,13 @@ a0001604:	1440fffa 	bnez	v0,a00015f0 <main+0x380>
 a0001608:	00000000 	nop
 uart_print():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:159
-void uart_print(const char *ptr)
-{
-	while (*ptr)
-	{
-		uart_outbyte(*ptr);
-		ptr++;
 a000160c:	24630001 	addiu	v1,v1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:156
-	return (char)RecievedByte;
-}
-
-void uart_print(const char *ptr)
-{
-	while (*ptr)
 a0001610:	90620000 	lbu	v0,0(v1)
 a0001614:	1440fff0 	bnez	v0,a00015d8 <main+0x368>
 a0001618:	00000000 	nop
 delay():
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/main.c:132
-
-void delay()
-{
-	volatile unsigned int j;
-
-	for (j = 0; j < (100); j++)
 a000161c:	afa00010 	sw	zero,16(sp)
 a0001620:	8fa20010 	lw	v0,16(sp)
 a0001624:	2c420064 	sltiu	v0,v0,100
