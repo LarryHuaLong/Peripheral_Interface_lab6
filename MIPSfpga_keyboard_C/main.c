@@ -95,14 +95,14 @@ int main()
 			if ((keycode & 0xff00) != 0Xf000)
 			{
 				uart_print("keypress:");
-
-				char code = decode(keycode & 0xff);
+				code =(char) keycode & 0xff;
+				//char code = decode(keycode & 0xff);
 				uart_print("keydecoded:");
 
-				if (code != '\0')
+				if (1)
 				{
 					uart_print("keyshow:");
-					uart_outbyte(code); //输出数字和字母
+					uart_outbyte(keycode & 0xff); //输出数字和字母
 					delay();
 					if (code == '\r')
 					{ //如果是回车，则多加一个换行
@@ -110,6 +110,8 @@ int main()
 						uart_outbyte('\n');
 					}
 				}
+				char code = decode(keycode & 0xff);
+
 				uart_print("otherkey:");
 			}
 		}
