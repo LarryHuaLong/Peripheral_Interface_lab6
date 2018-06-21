@@ -17,7 +17,7 @@ ASOURCES= \
 boot.S
 
 CSOURCES= \
-main.c
+main.c ADT7420.c i2c.c
 
 all: FPGA_RAM
 
