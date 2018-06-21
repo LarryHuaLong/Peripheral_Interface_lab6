@@ -109,10 +109,11 @@ int main()
 						uart_print("keynextline:");
 						uart_outbyte('\n');
 					}
+				}else{
+					uart_print("otherkey:");
+					uart_outbyte(code);
 				}
 
-				uart_print("otherkey:");
-				uart_outbyte(code);
 			}
 			else
 				uart_print("keyrelease:");
@@ -314,7 +315,7 @@ void _mips_handle_irq(void *ctx, int reason)
 
 	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xF00F on LEDs to indicate enter the interrupt
 	data_received = 0x0;
-
+	uart_print(my_itoa(reason));
 	if (reason & IS_TIMER_INTR)
 	{
 		// write C0_Compare = $11
@@ -322,6 +323,7 @@ void _mips_handle_irq(void *ctx, int reason)
 		asm volatile("li $9, 0x1");
 		// write C0_COUNT = $9
 		asm volatile("mtc0 $9, $9");
+		uart_print("TIME_int!\r\n");
 		return;
 	}
 
@@ -330,14 +332,17 @@ void _mips_handle_irq(void *ctx, int reason)
 		/* Read an input value from the console. */
 		rxData = *READ_IO(UART_BASE + rbr);
 		data_received = 0x1;
+		uart_print("UART_int!\r\n");
 		return;
 	}
 
 	if (reason & IS_PWM_INTR)
 	{
 		*WRITE_IO(PWM_BASE) = 0x0;
+		uart_print("PWM_int!\r\n");
 		return;
 	}
+	uart_print("other int!\r\n");
 	*WRITE_IO(IO_LEDR) = 0x0FF0; // Display 0xF00F on LEDs to indicate enter the interrupt
 	return;
 }
