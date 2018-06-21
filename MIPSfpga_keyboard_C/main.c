@@ -45,6 +45,7 @@ void uart_print(const char *ptr);
 
 char *reverse(char *s);
 char *my_itoa(int n);
+char *decode(int code);
 
 volatile unsigned int rxData = 0x0;
 volatile unsigned int data_received = 0x0;
@@ -56,7 +57,7 @@ unsigned char *promt = "Select a Brightness between 0 and 9\n\r";
 //------------------
 int main()
 {
-	volatile unsigned int count = 0xF;
+	volatile unsigned int count = 0xF, count_div = 0;
 	volatile unsigned int j = 1;
 	volatile unsigned int period;
 	volatile unsigned int keycode;
@@ -82,50 +83,129 @@ int main()
 
 	while (1)
 	{
+		//循环检测键盘是否有输入
 		keycode = *READ_IO(PS2_BASE);
-		lastkeycode = *READ_IO(PS2_BASE+4);
-		if(lastkeycode != keycode){
+		lastkeycode = *READ_IO(PS2_BASE + 4);
+		if (lastkeycode != keycode)
+		{
 			*WRITE_IO(PS2_BASE + 4) = keycode;
-			*WRITE_IO(SEG_BASE) = keycode;
-			uart_print("keycode:");
-			uart_print(my_itoa(keycode));
-			uart_print("\n\r");
+			*WRITE_IO(SEG_BASE) = keycode; //在数码管上显示按键状态
+			if ((keycode & 0xff00) != 0Xf000)
+			{
+				char code = decode(keycode & 0xff);
+				if (code != '\0')
+				{
+					uart_outbyte(code);//输出数字和字母
+					if (code == '\r')//如果是回车，则多加一个换行
+						uart_outbyte('\n');
+				}
+			}
 		}
-
+		//设置亮度
 		if (data_received)
 		{
 			period = rxData - 0x30;
 			*WRITE_IO(PWM_BASE) = period * 110000;
 			data_received = 0x0;
-			uart_print(promt);
+			//uart_print(promt);
 			delay();
 		}
-
-		*WRITE_IO(IO_LEDR) = count;
-		count = count + 1;
-	}
-
-	while(1){
-		// LEDs display
-		*WRITE_IO(IO_LEDR) = count;
-
-		count = count + 1;
-
-		for (j = 0; j < 1000; j++)
-			delay();
-
-		if (data_received)
+		//LED显示计数
+		if (count_div < 1000)
 		{
-			period = rxData - 0x30;
-			*WRITE_IO(PWM_BASE) = period * 110000;
-			data_received = 0x0;
-
-			uart_print(promt);
-			delay();
+			count_div = 0;
+			count = count + 1;
+			*WRITE_IO(IO_LEDR) = count;
 		}
+		else
+			count_div = count_div + 1;
 	}
-
 	return 0;
+}
+char *decode(int code)
+{
+
+	switch (code)
+	{
+	case 0x45:
+		return '0';
+	case 0x16:
+		return '1';
+	case 0x1e:
+		return '2';
+	case 0x26:
+		return '3';
+	case 0x25:
+		return '4';
+	case 0x2e:
+		return '5';
+	case 0x36:
+		return '6';
+	case 0x3d:
+		return '7';
+	case 0x3e:
+		return '8';
+	case 0x46:
+		return '9';
+	case 0x29:
+		return ' ';
+	case 0x5a:
+		return '\r';
+	case 0x1c:
+		return 'a';
+	case 0x32:
+		return 'b';
+	case 0x21:
+		return 'c';
+	case 0x23:
+		return 'd';
+	case 0x24:
+		return 'e';
+	case 0x2b:
+		return 'f';
+	case 0x34:
+		return 'g';
+	case 0x33:
+		return 'h';
+	case 0x43:
+		return 'i';
+	case 0x3b:
+		return 'j';
+	case 0x42:
+		return 'k';
+	case 0x4b:
+		return 'l';
+	case 0x3a:
+		return 'm';
+	case 0x31:
+		return 'n';
+	case 0x44:
+		return 'o';
+	case 0x4d:
+		return 'p';
+	case 0x15:
+		return 'q';
+	case 0x2d:
+		return 'r';
+	case 0x1b:
+		return 's';
+	case 0x2c:
+		return 't';
+	case 0x3c:
+		return 'u';
+	case 0x2a:
+		return 'v';
+	case 0x1d:
+		return 'w';
+	case 0x22:
+		return 'x';
+	case 0x35:
+		return 'y';
+	case:
+		return 'z';
+	default:
+		return '\0';
+	}
 }
 
 void delay()
@@ -133,7 +213,7 @@ void delay()
 	volatile unsigned int j;
 
 	for (j = 0; j < (100); j++)
-		; 
+		;
 }
 
 void uart_outbyte(char c)
@@ -215,59 +295,19 @@ void _mips_handle_irq(void *ctx, int reason)
 	volatile unsigned int period;
 	volatile unsigned int keycode;
 
-	/**WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xFFFF on LEDs to indicate receive data from uart
-	if ((*READ_IO(UART_BASE + lsr) & 0x00000001) == 0x00000001)
-		rxData = *READ_IO(UART_BASE + rbr);
-	*WRITE_IO(IO_LEDR) = 0x0;
-	return;
-*/
 	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xF00F on LEDs to indicate enter the interrupt
 	data_received = 0x0;
-
-	if (reason & IS_TIMER_INTR)
-	{
-		// write C0_Compare = $11
-		asm volatile("mtc0	$0, $11");
-
-		asm volatile("li $9, 0x1");
-		// write C0_COUNT = $9
-		asm volatile("mtc0 $9, $9");
-		return;
-	}
-
-	if (reason & IS_PWM_INTR)
-	{
-		*WRITE_IO(PWM_BASE) = 0x0;
-		uart_print(my_itoa(reason));
-		uart_print("\n\r");
-		return;
-	}
-
 	if (reason & IS_UART_INTR)
 	{
 		/* Read an input value from the console. */
 		rxData = *READ_IO(UART_BASE + rbr);
 		data_received = 0x1;
-		uart_print(my_itoa(reason));
-		uart_print("\n\r");
 		return;
 	}
-
-	if (reason & IS_PS2_INTR)
+	if (reason & IS_PWM_INTR)
 	{
-		keycode = *READ_IO(PS2_BASE);
-		*WRITE_IO(PS2_BASE + 4) = keycode;
-		*WRITE_IO(SEG_BASE) = keycode;
-		uart_print("PS2_interrupts occurred!:");
-		uart_print(my_itoa(reason));
-		uart_print("keycode:");
-		uart_print(my_itoa(keycode));
-		uart_print("\n\r");
+		*WRITE_IO(PWM_BASE) = 0x0;
 		return;
 	}
-
-	*WRITE_IO(IO_LEDR) = 0x0FF0;
-	uart_print(my_itoa(reason));
-	uart_print("Other interrupts occurred!\n\r");
 	return;
 }
