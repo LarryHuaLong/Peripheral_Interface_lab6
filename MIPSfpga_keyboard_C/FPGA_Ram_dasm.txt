@@ -6,1185 +6,679 @@ Disassembly of section .text_init:
 
 bfc00000 <__reset_vector>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:63
-/**************************************************************************************
-    R E S E T   E X C E P T I O N   H A N D L E R
-**************************************************************************************/
-
-LEAF(__reset_vector)
-    la a2,__cpu_init
 bfc00000:	3c06bfc0 	lui	a2,0xbfc0
 bfc00004:	24c60014 	addiu	a2,a2,20
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:64
-    jr a2
 bfc00008:	00c00008 	jr	a2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:65
-    mtc0    $0, C0_COUNT        # Clear cp0 Count (Used to measure boot time.)
 bfc0000c:	40804800 	mtc0	zero,c0_count
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:66
-    nop
 bfc00010:	00000000 	nop
 
 bfc00014 <__cpu_init>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:75
-LEAF(__cpu_init)
-
-    # Verify the code is here due to a reset and not NMI. If this is an NMI then trigger
-    # a debugger breakpoint using a sdbp instruction.
-
-    mfc0    s1, C0_STATUS       # Read CP0 Status
 bfc00014:	40116000 	mfc0	s1,c0_status
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:76
-    ext     s1, s1, 19, 1       # extract NMI
 bfc00018:	7e3104c0 	ext	s1,s1,0x13,0x1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:77
-    beqz    s1, init_resources  # Branch if this is NOT an NMI exception.
 bfc0001c:	12200002 	beqz	s1,bfc00028 <init_resources>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:78
-    nop
 bfc00020:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:79
-    sdbbp                       # Failed assertion: NMI.
 bfc00024:	7000003f 	sdbbp
 
 bfc00028 <init_resources>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:85
-
-init_resources:                 # initializes resources for "cpu".
-
-    # Initialize CP0 registers
-
-    la a2,      init_cp0        # Init CP0 Status, Count, Compare, Watch*, and Cause.
 bfc00028:	3c06bfc0 	lui	a2,0xbfc0
 bfc0002c:	24c6049c 	addiu	a2,a2,1180
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:86
-    jalr a2
 bfc00030:	00c0f809 	jalr	a2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:87
-    nop
 bfc00034:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:118
-  #  jalr    a2
-  #  nop
-
-    # Prepare for eret to main.
-
-    la      ra, all_done        # If main returns then go to all_done:.
 bfc00038:	3c1fbfc0 	lui	ra,0xbfc0
 bfc0003c:	27ff0058 	addiu	ra,ra,88
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:119
-    move    a0, zero            # Indicate that there are no arguments available.
 bfc00040:	00002021 	move	a0,zero
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:120
-    la      v0, _start          # load the address of the CRT entry point _start.
 bfc00044:	3c02bfc0 	lui	v0,0xbfc0
 bfc00048:	24420508 	addiu	v0,v0,1288
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:121
-    mtc0    v0, $30             # Write ErrorEPC with the address of main
 bfc0004c:	4082f000 	mtc0	v0,c0_errorepc
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:122
-    ehb                         # clear hazards (makes sure write to ErrorPC has completed)
 bfc00050:	000000c0 	ehb
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:126
-
-    # Return from exception will now execute code in main
-
-    eret                        # Exit reset exception handler and start execution of _start.
 bfc00054:	42000018 	eret
 
 bfc00058 <all_done>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:132
-
-
-/**************************************************************************************/
-all_done:
-    # If main returns it will return to this point.  Just spin here.
-    b       all_done
 bfc00058:	1000ffff 	b	bfc00058 <all_done>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:133
-    nop
 bfc0005c:	00000000 	nop
 
 bfc00060 <init_icache>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:60
-LEAF(init_icache)
-
-	// Can be skipped if using magic simulation cache flush
-
-	// Determine how big the I$ is
-	mfc0	v0, C0_CONFIG1		// read C0_Config1
 bfc00060:	40028001 	mfc0	v0,c0_config1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:63
-
-	// Isolate I$ Line Size
-	ext	    v1, v0, CFG1_ILSHIFT, 3		// extract IL
 bfc00064:	7c4314c0 	ext	v1,v0,0x13,0x3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:66
-
-	// Skip ahead if No I$
-	beq	    v1, zero, done_icache
 bfc00068:	10600011 	beqz	v1,bfc000b0 <done_icache>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:67
-	nop
 bfc0006c:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:69
-
-	li	    a2, 2
 bfc00070:	24060002 	li	a2,2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:70
-	sllv    v1, a2, v1			// Now have true I$ line size in bytes
 bfc00074:	00661804 	sllv	v1,a2,v1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:72
-
-	ext	    a0, v0, CFG1_ISSHIFT, 3		// extract IS
 bfc00078:	7c441580 	ext	a0,v0,0x16,0x3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:73
-	li	    a2, 64
 bfc0007c:	24060040 	li	a2,64
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:74
-	sllv    a0, a2, a0			// I$ Sets per way
 bfc00080:	00862004 	sllv	a0,a2,a0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:77
-
-	// Config1IA == I$ Assoc - 1
-	ext	    a1, v0, CFG1_IASHIFT, 3		// extract IA
 bfc00084:	7c451400 	ext	a1,v0,0x10,0x3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:78
-	add	    a1, 1
 bfc00088:	20a50001 	addi	a1,a1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:80
-
-	mul	    a0, a0, a1			// Total number of sets
 bfc0008c:	70852002 	mul	a0,a0,a1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:82
-
-	lui	    a2, 0x8000			// Get a KSeg0 address for cacheops
 bfc00090:	3c068000 	lui	a2,0x8000
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:85
-
-	// Clear TagLo/TagHi registers
-	mtc0    zero, C0_TAGLO		// write C0_ITagLo
 bfc00094:	4080e000 	mtc0	zero,c0_taglo
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:86
-	mtc0    zero, C0_TAGHI		// write C0_ITagHi
 bfc00098:	4080e800 	mtc0	zero,c0_taghi
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:88
-
-	move    a3, a0
 bfc0009c:	00803821 	move	a3,a0
 
 bfc000a0 <next_icache_tag>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:93
-
-next_icache_tag:
-	// Index Store Tag Cache Op
-	// Will invalidate the tag entry, clear the lock bit, and clear the LRF bit
-	cache   0x8, 0(a2)			// ICIndexStTag
 bfc000a0:	bcc80000 	cache	0x8,0(a2)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:94
-	add	    a3, -1				// Decrement set counter
 bfc000a4:	20e7ffff 	addi	a3,a3,-1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:95
-	bne     a3, zero, next_icache_tag
 bfc000a8:	14e0fffd 	bnez	a3,bfc000a0 <next_icache_tag>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:96
-	add     a2, v1				// Get next line address
 bfc000ac:	00c33020 	add	a2,a2,v1
 
 bfc000b0 <done_icache>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:100
-
-done_icache:
-
-    jr      ra
 bfc000b0:	03e00008 	jr	ra
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:101
-    nop
 bfc000b4:	00000000 	nop
 
 bfc000b8 <init_dcache>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:110
-* init_dcache invalidates all data cache entries
-**************************************************************************************/
-
-LEAF(init_dcache)
-
-	mfc0	v0, C0_CONFIG1		// read C0_Config1
 bfc000b8:	40028001 	mfc0	v0,c0_config1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:113
-
-	// Isolate D$ Line Size
-	ext	    v1, v0, CFG1_DLSHIFT, 3		// extract DL
 bfc000bc:	7c431280 	ext	v1,v0,0xa,0x3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:116
-
-	// Skip ahead if No D$
-	beq	    v1, zero, done_dcache
 bfc000c0:	10600013 	beqz	v1,bfc00110 <done_dcache>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:117
-	nop
 bfc000c4:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:119
-
-	li	    a2, 2
 bfc000c8:	24060002 	li	a2,2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:120
-	sllv	v1, a2, v1			// Now have true D$ line size in bytes
 bfc000cc:	00661804 	sllv	v1,a2,v1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:122
-
-	ext	    a0, v0, CFG1_DSSHIFT, 3		// extract DS
 bfc000d0:	7c441340 	ext	a0,v0,0xd,0x3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:123
-	li	    a2, 64
 bfc000d4:	24060040 	li	a2,64
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:124
-	sllv	a0, a2, a0	// D$ Sets per way
 bfc000d8:	00862004 	sllv	a0,a2,a0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:127
-
-	// Config1DA == D$ Assoc - 1
-	ext	    a1, v0, CFG1_DASHIFT, 3		// extract DA
 bfc000dc:	7c4511c0 	ext	a1,v0,0x7,0x3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:128
-	add	    a1, 1
 bfc000e0:	20a50001 	addi	a1,a1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:130
-
-	mul	    a0, a0, a1			// Get total number of sets
 bfc000e4:	70852002 	mul	a0,a0,a1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:132
-
-	lui	    a2, 0x8000		    // Get a KSeg0 address for cacheops
 bfc000e8:	3c068000 	lui	a2,0x8000
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:135
-
-	// Clear TagLo/TagHi registers
-	mtc0	zero, C0_TAGLO		// write C0_TagLo
 bfc000ec:	4080e000 	mtc0	zero,c0_taglo
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:136
-	mtc0	zero, C0_TAGHI		// write C0_TagHi
 bfc000f0:	4080e800 	mtc0	zero,c0_taghi
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:137
-	mtc0	zero, C0_TAGLO, 2	// write C0_DTagLo
 bfc000f4:	4080e002 	mtc0	zero,c0_taglo1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:138
-	mtc0	zero, C0_TAGHI, 2	// write C0_DTagHi
 bfc000f8:	4080e802 	mtc0	zero,c0_taghi1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:140
-
-	move	a3, a0
 bfc000fc:	00803821 	move	a3,a0
 
 bfc00100 <next_dcache_tag>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:146
-
-next_dcache_tag:
-	// Index Store Tag Cache Op
-	// Will invalidate the tag entry, clear the lock bit, and clear the LRF bit
-
-    cache	0x9, 0(a2)			// DCIndexStTag
 bfc00100:	bcc90000 	cache	0x9,0(a2)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:147
-	add	    a3, -1			    // Decrement set counter
 bfc00104:	20e7ffff 	addi	a3,a3,-1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:149
-
-	bne	    a3, zero, next_dcache_tag
 bfc00108:	14e0fffd 	bnez	a3,bfc00100 <next_dcache_tag>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:150
-	add	    a2, v1		    	// Get next line address
 bfc0010c:	00c33020 	add	a2,a2,v1
 
 bfc00110 <done_dcache>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:153
-
-done_dcache:
-    jr      ra
 bfc00110:	03e00008 	jr	ra
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:154
-    nop
 bfc00114:	00000000 	nop
 
 bfc00118 <change_k0_cca>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:160
-END(init_dcache)
-
-LEAF(change_k0_cca)
-	// NOTE! This code must be executed in KSEG1 (not KSGE0 uncached)
-    // Set CCA for kseg0 to cacheable
-	mfc0	v0, C0_CONFIG	// read C0_Config
 bfc00118:	40028000 	mfc0	v0,c0_config
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:161
-	li	v1, 3			// CCA for single-core processors
 bfc0011c:	24030003 	li	v1,3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:162
-      ins	v0, v1, 0, 3	// insert K0
 bfc00120:	7c621004 	ins	v0,v1,0x0,0x3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:163
-	mtc0	v0, C0_CONFIG	// write C0_Config
 bfc00124:	40828000 	mtc0	v0,c0_config
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:164
-	jr.hb   ra
 bfc00128:	03e00408 	jr.hb	ra
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_caches.S:165
-    	nop
 bfc0012c:	00000000 	nop
 	...
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:148
-**************************************************************************************/
-/* NOTE: the linker script must insure that this code starts at start + 0x200 so the exception */
-/* vectors will be addressed properly. All .org assume this! */
-/* TLB refill, 32 bit task. */
-.org 0x180						# interrupt exception
-	la a2,  __exception_entry   # prepare to enter the uart irq handler.
 bfc00180:	3c06bfc0 	lui	a2,0xbfc0
 bfc00184:	24c605c8 	addiu	a2,a2,1480
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:149
-    jr a2
 bfc00188:	00c00008 	jr	a2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:150
-    nop
 bfc0018c:	00000000 	nop
 	...
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:155
-
-	
-.org 0x200                      # TLB refill, 32 bit task.
-	# display alternating one-zeros on board LEDs
-    li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
 bfc00200:	3c1ab060 	lui	k0,0xb060
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:156
-    li      k1, 0x1111          # alternating one-zeros
 bfc00204:	241b1111 	li	k1,4369
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:157
-    sw      k1, 0(k0)           # Write pattern to LEDs
 bfc00208:	af5b0000 	sw	k1,0(k0)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:158
-    eret
 bfc0020c:	42000018 	eret
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:159
-    nop
 bfc00210:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:163
-	#la a2,  __exception_entry   # prepare to enter the uart irq handler.
-    #jr a2
-    #nop
-    sdbbp                       # This has the effect of starting the debugger
 bfc00214:	7000003f 	sdbbp
 	...
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:168
-    nop
-
-.org 0x280                      # XTLB refill, 64 bit task. start + 0x280
-	# display alternating one-zeros on board LEDs
-    li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
 bfc00280:	3c1ab060 	lui	k0,0xb060
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:169
-    li      k1, 0x3333          # alternating one-zeros
 bfc00284:	241b3333 	li	k1,13107
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:170
-    sw      k1, 0(k0)           # Write pattern to LEDs
 bfc00288:	af5b0000 	sw	k1,0(k0)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:171
-    eret
 bfc0028c:	42000018 	eret
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:172
-    nop
 bfc00290:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:173
-    sdbbp                       # This has the effect of starting the debugger
 bfc00294:	7000003f 	sdbbp
 	...
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:178
-    nop
-
-	
-.org 0x300                      # Cache error exception. start + 0x300
-    sdbbp                       # This has the effect of starting the debugger
 bfc00300:	7000003f 	sdbbp
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:179
-    nop
 bfc00304:	00000000 	nop
 
 bfc00308 <init_tlb>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:57
-**************************************************************************************/
-LEAF(init_tlb)
-
-check_for_tlb:
-	// Determine if we have a TLB
-	mfc0    v1, C0_CONFIG			// read C0_Config
 bfc00308:	40038000 	mfc0	v1,c0_config
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:58
-	ext	    v1, v1, 7, 3			// extract MT field
 bfc0030c:	7c6311c0 	ext	v1,v1,0x7,0x3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:59
-	li	    a3, 0x1					// load a 1 to check against
 bfc00310:	24070001 	li	a3,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:60
-	bne	    v1, a3, done_init_tlb
 bfc00314:	1467000f 	bne	v1,a3,bfc00354 <done_init_tlb>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:61
-	mfc0    v0, C0_CONFIG1			// C0_Config1
 bfc00318:	40028001 	mfc0	v0,c0_config1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:62
-	nop
 bfc0031c:	00000000 	nop
 
 bfc00320 <start_init_tlb>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:66
-
-start_init_tlb:
-	// Config1MMUSize == Number of TLB entries - 1
-	ext     v1, v0, CFG1_MMUSSHIFT, 6 // extract MMU Size
 bfc00320:	7c432e40 	ext	v1,v0,0x19,0x6
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:67
-	mtc0    zero, C0_ENTRYLO0		// write C0_EntryLo0
 bfc00324:	40801000 	mtc0	zero,c0_entrylo0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:68
-	mtc0    zero, C0_ENTRYLO1		// write C0_EntryLo1
 bfc00328:	40801800 	mtc0	zero,c0_entrylo1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:69
-	mtc0    zero, C0_PAGEMASK		// write C0_PageMask
 bfc0032c:	40802800 	mtc0	zero,c0_pagemask
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:70
-	mtc0    zero, C0_WIRED			// write C0_Wired
 bfc00330:	40803000 	mtc0	zero,c0_wired
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:71
-	li	    a0, 0x80000000
 bfc00334:	3c048000 	lui	a0,0x8000
 
 bfc00338 <next_tlb_entry_pair>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:74
-
-next_tlb_entry_pair:
-	mtc0    v1, C0_INDEX			// write C0_Index
 bfc00338:	40830000 	mtc0	v1,c0_index
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:75
-	mtc0	a0, C0_ENTRYHI			// write C0_EntryHi
 bfc0033c:	40845000 	mtc0	a0,c0_entryhi
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:76
-	ehb
 bfc00340:	000000c0 	ehb
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:77
-	tlbwi
 bfc00344:	42000002 	tlbwi
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:78
-	add	    a0, (2<<13)				// Add 8K to the address to avoid TLB conflict with previous entry
 bfc00348:	20844000 	addi	a0,a0,16384
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:80
-
-	bne		v1, zero, next_tlb_entry_pair
 bfc0034c:	1460fffa 	bnez	v1,bfc00338 <next_tlb_entry_pair>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:81
-	add	    v1, -1
 bfc00350:	2063ffff 	addi	v1,v1,-1
 
 bfc00354 <done_init_tlb>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:84
-
-done_init_tlb:
-    jr      ra
 bfc00354:	03e00008 	jr	ra
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_tlb.S:85
-    nop
 bfc00358:	00000000 	nop
 	...
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:186
-#include "init_tlb.S"
-
-
-.org 0x380    /* General exception. */
-	# disable interrupt
-	mfc0    k0, C0_STATUS
 bfc00380:	401a6000 	mfc0	k0,c0_status
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:187
-	la		k1, 0xfffffffe
 bfc00384:	241bfffe 	li	k1,-2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:188
-	and		k0, k0, k1			# StatusIE = 0
 bfc00388:	035bd024 	and	k0,k0,k1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:189
-	mtc0	k0, C0_STATUS		# set the Status register to disable interrupt
 bfc0038c:	409a6000 	mtc0	k0,c0_status
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:190
-	ehb
 bfc00390:	000000c0 	ehb
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:192
-
-	la a2,  __exception_entry   # prepare to enter the uart irq handler.
 bfc00394:	3c06bfc0 	lui	a2,0xbfc0
 bfc00398:	24c605c8 	addiu	a2,a2,1480
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:193
-    jr a2
 bfc0039c:	00c00008 	jr	a2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:194
-    nop
 bfc003a0:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:197
-	
-    # display alternating one-zeros on board LEDs
-    li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
 bfc003a4:	3c1ab060 	lui	k0,0xb060
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:198
-    li      k1, 0x5555          # alternating one-zeros
 bfc003a8:	241b5555 	li	k1,21845
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:199
-    sw      k1, 0(k0)           # Write pattern to LEDs
 bfc003ac:	af5b0000 	sw	k1,0(k0)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:200
-    eret
 bfc003b0:	42000018 	eret
 	...
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:205
-    nop
-
-.org 0x400    /* General interrupt. */
-    # display alternating one-zeros on board LEDs
-    li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
 bfc00400:	3c1ab060 	lui	k0,0xb060
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:206
-    li      k1, 0x7777          # alternating one-zeros
 bfc00404:	241b7777 	li	k1,30583
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:207
-    sw      k1, 0(k0)           # Write pattern to LEDs
 bfc00408:	af5b0000 	sw	k1,0(k0)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:208
-    eret
 bfc0040c:	42000018 	eret
 	...
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:216
-
-# If you want the above code to fit into 1k flash you will need to leave out the
-# code below. This is the code that covers the debug exception which you normally will not get.
-
-.org 0x480 /* EJTAG debug exception (EJTAG Control Register[ProbTrap] == 0.) */
-    li      r24_malta_word, BOARD_16_LEDS_ADDR     # If post boot then $24 is clobbered.
 bfc00480:	3c18b060 	lui	t8,0xb060
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:217
-    mtc0    a0, C0_DESAVE       # DeSave a0
 bfc00484:	4084f800 	mtc0	a0,c0_desave
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:218
-    mfc0    a0, C0_DEPC         # Read DEPC
 bfc00488:	4004c000 	mfc0	a0,c0_depc
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:219
-    sw      a0, 0(r24_malta_word)    # Display lower 16 bits of DEPC if there is not an EJTAG probe.
 bfc0048c:	af040000 	sw	a0,0(t8)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:220
-    mfc0    a0, C0_DESAVE       # Restore a0
 bfc00490:	4004f800 	mfc0	a0,c0_desave
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:221
-1:  b       1b  /* Stay here */
 bfc00494:	1000ffff 	b	bfc00494 <done_init_tlb+0x140>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/boot.S:222
-    nop
 bfc00498:	00000000 	nop
 
 bfc0049c <init_cp0>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:57
-**************************************************************************************/
-LEAF(init_cp0)
-
-    // Initialize Status
-	//li	v1, 0x00400404		// (M_StatusERL | M_StatusIPL1 | M_StatusBEV)
-	li	v1, 0x0040fc04			// (M_StatusERL | M_StatusIPL1~IPL6 | M_StatusBEV)
 bfc0049c:	3c030040 	lui	v1,0x40
 bfc004a0:	3463fc04 	ori	v1,v1,0xfc04
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:58
-	mtc0	v1, C0_STATUS		// write C0_Status
 bfc004a4:	40836000 	mtc0	v1,c0_status
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:61
-
-	// Initialize Watch registers if implemented.
-	mfc0	v0, C0_CONFIG1		// read C0_Config1
 bfc004a8:	40028001 	mfc0	v0,c0_config1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:62
-	ext	v1, v0, 3, 1		// extract bit 3 WR (Watch registers implemented)
 bfc004ac:	7c4300c0 	ext	v1,v0,0x3,0x1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:63
-	beq 	v1, zero, done_wr
 bfc004b0:	10600011 	beqz	v1,bfc004f8 <done_wr>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:64
-	li    	v1, 0x7				// (M_WatchHiI | M_WatchHiR | M_WatchHiW)
 bfc004b4:	24030007 	li	v1,7
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:67
-
-	// Clear all possible Watch Status bits and disable watch exceptions
-	mtc0	v1, C0_WATCHHI		// write C0_WatchHi0
 bfc004b8:	40839800 	mtc0	v1,c0_watchhi
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:68
-	mtc0	zero, C0_WATCHLO	// write C0_WatchLo0
 bfc004bc:	40809000 	mtc0	zero,c0_watchlo
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:70
-
-	mtc0	v1, C0_WATCHHI, 1	// write C0_WatchHi1
 bfc004c0:	40839801 	mtc0	v1,c0_watchhi,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:71
-	mtc0	zero, C0_WATCHLO, 1	// write C0_WatchLo1
 bfc004c4:	40809001 	mtc0	zero,c0_watchlo,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:73
-
-	mtc0	v1, C0_WATCHHI, 2	// write C0_WatchHi2
 bfc004c8:	40839802 	mtc0	v1,c0_watchhi,2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:74
-	mtc0	zero, C0_WATCHLO, 2	// write C0_WatchLo2
 bfc004cc:	40809002 	mtc0	zero,c0_watchlo,2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:76
-
-	mtc0	v1, C0_WATCHHI, 3	// write C0_WatchHi3
 bfc004d0:	40839803 	mtc0	v1,c0_watchhi,3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:77
-	mtc0	zero, C0_WATCHLO, 3	// write C0_WatchLo3
 bfc004d4:	40809003 	mtc0	zero,c0_watchlo,3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:79
-
-	mtc0	v1, C0_WATCHHI, 4	// write C0_WatchHi4
 bfc004d8:	40839804 	mtc0	v1,c0_watchhi,4
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:80
-	mtc0	zero, C0_WATCHLO, 4	// write C0_WatchLo4
 bfc004dc:	40809004 	mtc0	zero,c0_watchlo,4
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:82
-
-	mtc0	v1, C0_WATCHHI, 5	// write C0_WatchHi5
 bfc004e0:	40839805 	mtc0	v1,c0_watchhi,5
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:83
-	mtc0	zero, C0_WATCHLO, 5	// write C0_WatchLo5
 bfc004e4:	40809005 	mtc0	zero,c0_watchlo,5
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:85
-
-	mtc0	v1, C0_WATCHHI, 6	// write C0_WatchHi6
 bfc004e8:	40839806 	mtc0	v1,c0_watchhi,6
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:86
-	mtc0	zero, C0_WATCHLO, 6	// write C0_WatchLo6
 bfc004ec:	40809006 	mtc0	zero,c0_watchlo,6
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:88
-
-	mtc0	v1, C0_WATCHHI, 7	// write C0_WatchHi7
 bfc004f0:	40839807 	mtc0	v1,c0_watchhi,7
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:89
-	mtc0	zero, C0_WATCHLO, 7	// write C0_WatchLo7
 bfc004f4:	40809007 	mtc0	zero,c0_watchlo,7
 
 bfc004f8 <done_wr>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:94
-
-done_wr:
-
-	// Clear WP bit to avoid watch exception upon user code entry, IV, and software interrupts.
-	mtc0	zero, C0_CAUSE		// write C0_Cause: Init AFTER init of CP0 WatchHi/Lo registers.
 bfc004f8:	40806800 	mtc0	zero,c0_cause
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:97
-
-	// Clear timer interrupt. (Count was cleared at the reset vector to allow timing boot.)
-	mtc0	zero, C0_COMPARE	// write C0_Compare
 bfc004fc:	40805800 	mtc0	zero,c0_compare
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:99
-
-    jr      ra
 bfc00500:	03e00008 	jr	ra
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/init_cp0.S:100
-	nop
 bfc00504:	00000000 	nop
 
 bfc00508 <_start>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:60
-/**************************************************************************************
-**************************************************************************************/
-LEAF(_start)
-
-    # Set the global pointer register address to _gp - value set in linker .ld file
-    la      gp, _gp             # All share globals.
 bfc00508:	3c1c8001 	lui	gp,0x8001
 bfc0050c:	279c9b00 	addiu	gp,gp,-25856
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:63
-
-    # Set up the stack pointer register to STACK_BASE_ADDR defined in boot.h
-    li      sp, STACK_BASE_ADDR # Set up stack base.
 bfc00510:	3c1dbfc0 	lui	sp,0xbfc0
 bfc00514:	37bd0900 	ori	sp,sp,0x900
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:66
-
-    # Make a stack frame; must be a multiple of 8-bytes
-    addiu   sp, sp, -8
 bfc00518:	27bdfff8 	addiu	sp,sp,-8
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:69
-
-    # Preserve return address over the call to main
-    sw      ra, 0(sp)
 bfc0051c:	afbf0000 	sw	ra,0(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:71
-
-    li      s1_all_ones, 0xffffffff
 bfc00520:	2411ffff 	li	s1,-1
 
 bfc00524 <zero_bss>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:74
-
-zero_bss:
-    la      t1_temp_addr, _fbss
 bfc00524:	3c098000 	lui	t1,0x8000
 bfc00528:	25291b08 	addiu	t1,t1,6920
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:75
-    ins     t1_temp_addr, s1_all_ones, 29, 1
 bfc0052c:	7e29ef44 	ins	t1,s1,0x1d,0x1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:76
-    la      t3_temp_mark, _end
 bfc00530:	3c0b8000 	lui	t3,0x8000
 bfc00534:	256b1b74 	addiu	t3,t3,7028
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:77
-    ins     t3_temp_mark, s1_all_ones, 29, 1
 bfc00538:	7e2bef44 	ins	t3,s1,0x1d,0x1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:78
-    beq     t1_temp_addr, t3_temp_mark, invoke_main
 bfc0053c:	112b0005 	beq	t1,t3,bfc00554 <invoke_main>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:79
-    nop
 bfc00540:	00000000 	nop
 
 bfc00544 <next_bss_word>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:81
-next_bss_word:
-    sw      zero, 0(t1_temp_addr)
 bfc00544:	ad200000 	sw	zero,0(t1)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:82
-    addiu   t1_temp_addr, 4
 bfc00548:	25290004 	addiu	t1,t1,4
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:83
-    bne     t1_temp_addr, t3_temp_mark, next_bss_word
 bfc0054c:	152bfffd 	bne	t1,t3,bfc00544 <next_bss_word>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:84
-    nop
 bfc00550:	00000000 	nop
 
 bfc00554 <invoke_main>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:90
-
-	
-invoke_main:
-	# Create interrupt control
-	#
-	lui		v0, 0xbfc0
 bfc00554:	3c02bfc0 	lui	v0,0xbfc0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:91
-	mtc0	v0, C0_EBASE		# set the interrupt base address at 0xbfc0_0000
 bfc00558:	40827801 	mtc0	v0,c0_ebase
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:92
-	ehb
 bfc0055c:	000000c0 	ehb
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:94
-	
-	mfc0	v0, C0_CAUSE
 bfc00560:	40026800 	mfc0	v0,c0_cause
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:95
-	la		v1, 0xff7fffff
 bfc00564:	3c03ff7f 	lui	v1,0xff7f
 bfc00568:	3463ffff 	ori	v1,v1,0xffff
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:96
-	and		v0, v0, v1
 bfc0056c:	00431024 	and	v0,v0,v1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:97
-	mtc0	v0, C0_CAUSE		# CauseIV = 0, interrupt offset at 0x180
 bfc00570:	40826800 	mtc0	v0,c0_cause
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:98
-	ehb
 bfc00574:	000000c0 	ehb
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:100
-	
-	mfc0	v0, C0_STATUS
 bfc00578:	40026000 	mfc0	v0,c0_status
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:103
-	#la		v1, 0xffbffff9
-	#and		v0, v0, v1			# StatusBEV = 0, StatusEXL = 0, StatusERL = 0
-	la		v1, 0x1
 bfc0057c:	24030001 	li	v1,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:104
-	or		v0, v0, v1			# StatusIE = 1
 bfc00580:	00431025 	or	v0,v0,v1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:105
-	mtc0	v0, C0_STATUS		# set the Status register to enable interrupt
 bfc00584:	40826000 	mtc0	v0,c0_status
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:106
-	ehb							
 bfc00588:	000000c0 	ehb
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:108
-	
-	mfc0	v0,C0_STATUS		# M_StatusEXL = 0
 bfc0058c:	40026000 	mfc0	v0,c0_status
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:109
-	lui		v1,0x0
 bfc00590:	3c030000 	lui	v1,0x0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:110
-	addiu	v1,v1,-3
 bfc00594:	2463fffd 	addiu	v1,v1,-3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:111
-	and		v0,v0,v1
 bfc00598:	00431024 	and	v0,v0,v1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:112
-	mtc0	v0,C0_STATUS
 bfc0059c:	40826000 	mtc0	v0,c0_status
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:113
-	ehb							
 bfc005a0:	000000c0 	ehb
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:116
-	
-
-    la      t0, main
 bfc005a4:	3c088000 	lui	t0,0x8000
 bfc005a8:	2508166c 	addiu	t0,t0,5740
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:118
-    # Create space for the o32 argument stack
-    addiu   sp, sp, -16
 bfc005ac:	27bdfff0 	addiu	sp,sp,-16
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:120
-    # Call main
-    jalr    t0
 bfc005b0:	0100f809 	jalr	t0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:121
-    nop
 bfc005b4:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:123
-
-    lw      ra, 0(sp)
 bfc005b8:	8fbf0000 	lw	ra,0(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:124
-    addiu   sp, sp, 8
 bfc005bc:	27bd0008 	addiu	sp,sp,8
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:125
-    jr      ra
 bfc005c0:	03e00008 	jr	ra
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/mini_crt0.S:126
-    nop
 bfc005c4:	00000000 	nop
 
 bfc005c8 <__exception_entry>:
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:55
-
-/**************************************************************************************
-**************************************************************************************/
-LEAF(__exception_entry)
-
-	move	k1,sp
 bfc005c8:	03a0d821 	move	k1,sp
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:56
-	addiu	sp, sp, -176
 bfc005cc:	27bdff50 	addiu	sp,sp,-176
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:58
-	#sw	at, 16(sp)
-	sw	v0, 20(sp)
 bfc005d0:	afa20014 	sw	v0,20(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:59
-	sw	v1, 24(sp)
 bfc005d4:	afa30018 	sw	v1,24(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:60
-	sw	a0, 28(sp)
 bfc005d8:	afa4001c 	sw	a0,28(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:61
-	sw	a1, 32(sp)
 bfc005dc:	afa50020 	sw	a1,32(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:62
-	sw	a2, 36(sp)
 bfc005e0:	afa60024 	sw	a2,36(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:63
-	sw	a3, 40(sp)
 bfc005e4:	afa70028 	sw	a3,40(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:64
-	sw	t0, 44(sp)
 bfc005e8:	afa8002c 	sw	t0,44(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:65
-	sw	t1, 48(sp)
 bfc005ec:	afa90030 	sw	t1,48(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:66
-	sw	t2, 52(sp)
 bfc005f0:	afaa0034 	sw	t2,52(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:67
-	sw	t3, 56(sp)
 bfc005f4:	afab0038 	sw	t3,56(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:68
-	sw	t4, 60(sp)
 bfc005f8:	afac003c 	sw	t4,60(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:69
-	sw	t5, 64(sp)
 bfc005fc:	afad0040 	sw	t5,64(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:70
-	sw	t6, 68(sp)
 bfc00600:	afae0044 	sw	t6,68(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:71
-	sw	t7, 72(sp)
 bfc00604:	afaf0048 	sw	t7,72(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:72
-	sw	s0, 76(sp)
 bfc00608:	afb0004c 	sw	s0,76(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:73
-	sw	s1, 80(sp)
 bfc0060c:	afb10050 	sw	s1,80(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:74
-	sw	s2, 84(sp)
 bfc00610:	afb20054 	sw	s2,84(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:75
-	sw	s3, 88(sp)
 bfc00614:	afb30058 	sw	s3,88(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:76
-	sw	s4, 92(sp)
 bfc00618:	afb4005c 	sw	s4,92(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:77
-	sw	s5, 96(sp)
 bfc0061c:	afb50060 	sw	s5,96(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:78
-	sw	s6, 100(sp)
 bfc00620:	afb60064 	sw	s6,100(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:79
-	sw	s7, 104(sp)
 bfc00624:	afb70068 	sw	s7,104(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:80
-	sw	t8, 108(sp)
 bfc00628:	afb8006c 	sw	t8,108(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:81
-	sw	t9, 112(sp)
 bfc0062c:	afb90070 	sw	t9,112(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:82
-	sw	k0, 116(sp)
 bfc00630:	afba0074 	sw	k0,116(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:83
-	sw	gp, 124(sp)
 bfc00634:	afbc007c 	sw	gp,124(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:84
-	sw	k1, 128(sp)
 bfc00638:	afbb0080 	sw	k1,128(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:85
-	sw	s8, 132(sp)
 bfc0063c:	afbe0084 	sw	s8,132(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:86
-	sw	ra, 136(sp)
 bfc00640:	afbf0088 	sw	ra,136(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:87
-	sw	zero,156(sp)
 bfc00644:	afa0009c 	sw	zero,156(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:88
-	mfhi	t1
 bfc00648:	00004810 	mfhi	t1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:89
-	mflo	t2
 bfc0064c:	00005012 	mflo	t2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:90
-	sw	t1,148(sp)
 bfc00650:	afa90094 	sw	t1,148(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:91
-	sw	t2,152(sp)
 bfc00654:	afaa0098 	sw	t2,152(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:92
-	mfc0	ra,C0_EPC
 bfc00658:	401f7000 	mfc0	ra,c0_epc
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:93
-	mfc0	s3,C0_CAUSE
 bfc0065c:	40136800 	mfc0	s3,c0_cause
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:94
-	sw	ra,140(sp)
 bfc00660:	afbf008c 	sw	ra,140(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:95
-	mfc0	t1,C0_BADVADDR
 bfc00664:	40094000 	mfc0	t1,c0_badvaddr
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:96
-	sw	t1,144(sp)
 bfc00668:	afa90090 	sw	t1,144(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:97
-	sw	s3,164(sp)
 bfc0066c:	afb300a4 	sw	s3,164(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:98
-	move	t3,zero
 bfc00670:	00005821 	move	t3,zero
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:99
-	move	t4,zero
 bfc00674:	00006021 	move	t4,zero
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:100
-	mfc0	t1,C0_CONFIG3
 bfc00678:	40098003 	mfc0	t1,c0_config3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:101
-	ext	t2,t1,0x1b,0x1
 bfc0067c:	7d2a06c0 	ext	t2,t1,0x1b,0x1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:102
-	beqz	t2, 1f
 bfc00680:	11400001 	beqz	t2,bfc00688 <__exception_entry+0xc0>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:103
-	mfc0	t3,$8,2
 bfc00684:	400b4002 	mfc0	t3,$8,2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:105
-1:
-	ext	t1,t1,0x1a,0x1
 bfc00688:	7d290680 	ext	t1,t1,0x1a,0x1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:106
-	beqz	t1, 2f
 bfc0068c:	11200001 	beqz	t1,bfc00694 <__exception_entry+0xcc>
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:107
-	mfc0	t4,$8,1
 bfc00690:	400c4001 	mfc0	t4,$8,1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:109
-2:
-	sw	t3,172(sp)
 bfc00694:	afab00ac 	sw	t3,172(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:110
-	sw	t4,168(sp)
 bfc00698:	afac00a8 	sw	t4,168(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:111
-	move	a0,sp
 bfc0069c:	03a02021 	move	a0,sp
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:112
-	mfc0	s5,C0_STATUS
 bfc006a0:	40156000 	mfc0	s5,c0_status
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:113
-	lui	t1,0x0
 bfc006a4:	3c090000 	lui	t1,0x0
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:114
-	addiu	t1,t1,-3
 bfc006a8:	2529fffd 	addiu	t1,t1,-3
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:115
-	and	s5,s5,t1
 bfc006ac:	02a9a824 	and	s5,s5,t1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:116
-	mtc0	s5,C0_STATUS
 bfc006b0:	40956000 	mtc0	s5,c0_status
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:117
-	sw	s5,160(sp)
 bfc006b4:	afb500a0 	sw	s5,160(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:119
-	
-	la  t9, _mips_handle_irq
 bfc006b8:	3c198000 	lui	t9,0x8000
 bfc006bc:	27391254 	addiu	t9,t9,4692
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:120
-	andi	a1,s3,0x7c
 bfc006c0:	3265007c 	andi	a1,s3,0x7c
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:121
-	addiu	a0,a0,16
 bfc006c4:	24840010 	addiu	a0,a0,16
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:122
-	srl	a1,a1,0x2
 bfc006c8:	00052882 	srl	a1,a1,0x2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:123
-	jalr  t9
 bfc006cc:	0320f809 	jalr	t9
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:124
-	nop
 bfc006d0:	00000000 	nop
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:128
-	
-	
-		
-	lw	t1,148(sp)
 bfc006d4:	8fa90094 	lw	t1,148(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:129
-	lw	t2,152(sp)
 bfc006d8:	8faa0098 	lw	t2,152(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:130
-	mthi	t1
 bfc006dc:	01200011 	mthi	t1
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:131
-	mtlo	t2
 bfc006e0:	01400013 	mtlo	t2
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:132
-	lw	s5,160(sp)
 bfc006e4:	8fb500a0 	lw	s5,160(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:133
-	mtc0	s5,C0_STATUS
 bfc006e8:	40956000 	mtc0	s5,c0_status
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:134
-	lw	s6,140(sp)
 bfc006ec:	8fb6008c 	lw	s6,140(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:135
-	mtc0	s6,C0_EPC
 bfc006f0:	40967000 	mtc0	s6,c0_epc
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:137
-	#lw	at,16(sp)
-	lw	v0,20(sp)
 bfc006f4:	8fa20014 	lw	v0,20(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:138
-	lw	v1,24(sp)
 bfc006f8:	8fa30018 	lw	v1,24(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:139
-	lw	a0,28(sp)
 bfc006fc:	8fa4001c 	lw	a0,28(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:140
-	lw	a1,32(sp)
 bfc00700:	8fa50020 	lw	a1,32(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:141
-	lw	a2,36(sp)
 bfc00704:	8fa60024 	lw	a2,36(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:142
-	lw	a3,40(sp)
 bfc00708:	8fa70028 	lw	a3,40(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:143
-	lw	t0,44(sp)
 bfc0070c:	8fa8002c 	lw	t0,44(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:144
-	lw	t1,48(sp)
 bfc00710:	8fa90030 	lw	t1,48(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:145
-	lw	t2,52(sp)
 bfc00714:	8faa0034 	lw	t2,52(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:146
-	lw	t3,56(sp)
 bfc00718:	8fab0038 	lw	t3,56(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:147
-	lw	t4,60(sp)
 bfc0071c:	8fac003c 	lw	t4,60(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:148
-	lw	t5,64(sp)
 bfc00720:	8fad0040 	lw	t5,64(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:149
-	lw	t6,68(sp)
 bfc00724:	8fae0044 	lw	t6,68(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:150
-	lw	t7,72(sp)
 bfc00728:	8faf0048 	lw	t7,72(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:151
-	lw	s0,76(sp)
 bfc0072c:	8fb0004c 	lw	s0,76(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:152
-	lw	s1,80(sp)
 bfc00730:	8fb10050 	lw	s1,80(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:153
-	lw	s2,84(sp)
 bfc00734:	8fb20054 	lw	s2,84(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:154
-	lw	s3,88(sp)
 bfc00738:	8fb30058 	lw	s3,88(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:155
-	lw	s4,92(sp)
 bfc0073c:	8fb4005c 	lw	s4,92(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:156
-	lw	s5,96(sp)
 bfc00740:	8fb50060 	lw	s5,96(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:157
-	lw	s6,100(sp)
 bfc00744:	8fb60064 	lw	s6,100(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:158
-	lw	s7,104(sp)
 bfc00748:	8fb70068 	lw	s7,104(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:159
-	lw	t8,108(sp)
 bfc0074c:	8fb8006c 	lw	t8,108(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:160
-	lw	t9,112(sp)
 bfc00750:	8fb90070 	lw	t9,112(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:161
-	lw	k0,116(sp)
 bfc00754:	8fba0074 	lw	k0,116(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:162
-	lw	k1,120(sp)
 bfc00758:	8fbb0078 	lw	k1,120(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:163
-	lw	gp,124(sp)
 bfc0075c:	8fbc007c 	lw	gp,124(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:164
-	lw	s8,132(sp)
 bfc00760:	8fbe0084 	lw	s8,132(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:165
-	lw	ra,136(sp)
 bfc00764:	8fbf0088 	lw	ra,136(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:166
-	lw	sp,128(sp)
 bfc00768:	8fbd0080 	lw	sp,128(sp)
 C:\Users\LXP\Desktop\Peripheral_Interface_lab6\MIPSfpga_keyboard_C/exception_entry.S:167
-	eret
 bfc0076c:	42000018 	eret
 	...
 
@@ -1193,8 +687,17 @@ Disassembly of section .text_ram:
 80001000 <delay>:
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:120
+
+	return 0;
+}
+
+void delay()
+{
 80001000:	27bdfff8 	addiu	sp,sp,-8
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	volatile unsigned int j;
+
+	for (j = 0; j < (10000); j++)
 80001004:	afa00000 	sw	zero,0(sp)
 80001008:	8fa20000 	lw	v0,0(sp)
 8000100c:	2c422710 	sltiu	v0,v0,10000
@@ -1209,18 +712,25 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123 (discrimi
 8000102c:	1440fffa 	bnez	v0,80001018 <delay+0x18>
 80001030:	00000000 	nop
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:125
+		; // delay
+}
 80001034:	03e00008 	jr	ra
 80001038:	27bd0008 	addiu	sp,sp,8
 
 8000103c <uart_outbyte>:
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:128
+
+void uart_outbyte(char c)
+{
 8000103c:	27bdfff8 	addiu	sp,sp,-8
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 80001040:	3c02b040 	lui	v0,0xb040
 80001044:	ac441000 	sw	a0,4096(v0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 80001048:	afa00000 	sw	zero,0(sp)
 8000104c:	8fa20000 	lw	v0,0(sp)
 80001050:	2c422710 	sltiu	v0,v0,10000
@@ -1235,12 +745,20 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 80001074:	00000000 	nop
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:131
+	delay();
+}
 80001078:	03e00008 	jr	ra
 8000107c:	27bd0008 	addiu	sp,sp,8
 
 80001080 <uart_inbyte>:
 uart_inbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:137
+
+char uart_inbyte(void)
+{
+	unsigned int RecievedByte;
+
+	while (!((*READ_IO(UART_BASE + lsr) & 0x00000001) == 0x00000001))
 80001080:	3c03b040 	lui	v1,0xb040
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:137 (discriminator 1)
 80001084:	8c621014 	lw	v0,4116(v1)
@@ -1248,25 +766,38 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:137 (discrimi
 8000108c:	1040fffd 	beqz	v0,80001084 <uart_inbyte+0x4>
 80001090:	3c02b040 	lui	v0,0xb040
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:140
+		;
+
+	RecievedByte = *READ_IO(UART_BASE + rbr);
 80001094:	8c421000 	lw	v0,4096(v0)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:143
+
+	return (char)RecievedByte;
+}
 80001098:	03e00008 	jr	ra
 8000109c:	304200ff 	andi	v0,v0,0xff
 
 800010a0 <uart_print>:
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+
+void uart_print(const char *ptr)
+{
+	while (*ptr)
 800010a0:	90820000 	lbu	v0,0(a0)
 800010a4:	10400015 	beqz	v0,800010fc <uart_print+0x5c>
 800010a8:	00000000 	nop
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:146
+{
 800010ac:	27bdfff8 	addiu	sp,sp,-8
 800010b0:	3c03b040 	lui	v1,0xb040
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 800010b4:	ac621000 	sw	v0,4096(v1)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 800010b8:	afa00000 	sw	zero,0(sp)
 800010bc:	8fa20000 	lw	v0,0(sp)
 800010c0:	2c422710 	sltiu	v0,v0,10000
@@ -1281,12 +812,18 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 800010e4:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:150
+	{
+		uart_outbyte(*ptr);
+		ptr++;
 800010e8:	24840001 	addiu	a0,a0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 800010ec:	90820000 	lbu	v0,0(a0)
 800010f0:	1440fff0 	bnez	v0,800010b4 <uart_print+0x14>
 800010f4:	00000000 	nop
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:152
+	}
+}
 800010f8:	27bd0008 	addiu	sp,sp,8
 800010fc:	03e00008 	jr	ra
 80001100:	00000000 	nop
@@ -1294,21 +831,35 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:152
 80001104 <reverse>:
 reverse():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:160
+char *reverse(char *s)
+{
+	char temp;
+	char *p = s; //p指向s的头部
+	char *q = s; //q指向s的尾部
+	while (*q)
 80001104:	90860000 	lbu	a2,0(a0)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:156
+{
 80001108:	00801025 	move	v0,a0
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:160
+	while (*q)
 8000110c:	10c00005 	beqz	a2,80001124 <reverse+0x20>
 80001110:	00801825 	move	v1,a0
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:161
+		++q;
 80001114:	24630001 	addiu	v1,v1,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:160
+	while (*q)
 80001118:	90650000 	lbu	a1,0(v1)
 8000111c:	54a0fffe 	bnezl	a1,80001118 <reverse+0x14>
 80001120:	24630001 	addiu	v1,v1,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:162
+	q--;
 80001124:	2463ffff 	addiu	v1,v1,-1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:165
+
+	//交换移动指针，直到p和q交叉
+	while (q > p)
 80001128:	0043202b 	sltu	a0,v0,v1
 8000112c:	1080000b 	beqz	a0,8000115c <reverse+0x58>
 80001130:	00000000 	nop
@@ -1316,29 +867,51 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:165
 80001138:	00402825 	move	a1,v0
 8000113c:	90a60000 	lbu	a2,0(a1)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:168
+	{
+		temp = *p;
+		*p++ = *q;
 80001140:	90680000 	lbu	t0,0(v1)
 80001144:	24a50001 	addiu	a1,a1,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:169
+		*q-- = temp;
 80001148:	2463ffff 	addiu	v1,v1,-1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:165
+	while (q > p)
 8000114c:	00a3382b 	sltu	a3,a1,v1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:168
+		*p++ = *q;
 80001150:	a0a8ffff 	sb	t0,-1(a1)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:165
+	while (q > p)
 80001154:	14e0fff9 	bnez	a3,8000113c <reverse+0x38>
 80001158:	a0660001 	sb	a2,1(v1)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:172
+	}
+	return s;
+}
 8000115c:	03e00008 	jr	ra
 80001160:	00000000 	nop
 
 80001164 <my_itoa>:
 my_itoa():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:179
+/* 
+ * 功能：整数转换为字符串 
+ * char s[] 的作用是存储整数的每一位 
+ */
+char *my_itoa(int n)
+{
 80001164:	00041fc3 	sra	v1,a0,0x1f
 80001168:	3c0b8000 	lui	t3,0x8000
 8000116c:	00642826 	xor	a1,v1,a0
 80001170:	25621b10 	addiu	v0,t3,6928
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:188
+	{
+		n = -n;
+	}
+	do //从各位开始变为字符，直到最高位，最后应该反转
+	{
+		s[i++] = n % 10 + '0';
 80001174:	3c0a6666 	lui	t2,0x6666
 80001178:	00a32823 	subu	a1,a1,v1
 8000117c:	00403825 	move	a3,v0
@@ -1360,18 +933,27 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:188 (discrimi
 800011b8:	24a60030 	addiu	a2,a1,48
 800011bc:	a0e60000 	sb	a2,0(a3)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:189 (discriminator 1)
+		n = n / 10;
 800011c0:	00602825 	move	a1,v1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:190 (discriminator 1)
+	} while (n > 0);
 800011c4:	1c60fff1 	bgtz	v1,8000118c <my_itoa+0x28>
 800011c8:	24e70001 	addiu	a3,a3,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:192
+
+	if (isNegative < 0) //如果是负数，补上负号
 800011cc:	0482001b 	bltzl	a0,8000123c <my_itoa+0xd8>
 800011d0:	00484021 	addu	t0,v0,t0
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:196
+	{
+		s[i++] = '-';
+	}
+	s[i] = '\0'; //最后加上字符串结束符
 800011d4:	00484021 	addu	t0,v0,t0
 800011d8:	a1000000 	sb	zero,0(t0)
 reverse():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:160
+	while (*q)
 800011dc:	91651b10 	lbu	a1,6928(t3)
 800011e0:	14a00004 	bnez	a1,800011f4 <my_itoa+0x90>
 800011e4:	00401825 	move	v1,v0
@@ -1382,6 +964,7 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:160
 800011f8:	1480fffd 	bnez	a0,800011f0 <my_itoa+0x8c>
 800011fc:	24660001 	addiu	a2,v1,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:165
+	while (q > p)
 80001200:	0043202b 	sltu	a0,v0,v1
 80001204:	10800011 	beqz	a0,8000124c <my_itoa+0xe8>
 80001208:	00000000 	nop
@@ -1391,22 +974,31 @@ my_itoa():
 80001214:	90850000 	lbu	a1,0(a0)
 reverse():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:168
+		*p++ = *q;
 80001218:	90670000 	lbu	a3,0(v1)
 8000121c:	24840001 	addiu	a0,a0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:169
+		*q-- = temp;
 80001220:	2463ffff 	addiu	v1,v1,-1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:165
+	while (q > p)
 80001224:	0083302b 	sltu	a2,a0,v1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:168
+		*p++ = *q;
 80001228:	a087ffff 	sb	a3,-1(a0)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:165
+	while (q > p)
 8000122c:	14c0fff9 	bnez	a2,80001214 <my_itoa+0xb0>
 80001230:	a0650001 	sb	a1,1(v1)
 my_itoa():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:199
+
+	return reverse(s);
+}
 80001234:	03e00008 	jr	ra
 80001238:	00000000 	nop
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:194
+		s[i++] = '-';
 8000123c:	2403002d 	li	v1,45
 80001240:	a1030000 	sb	v1,0(t0)
 80001244:	1000ffe3 	b	800011d4 <my_itoa+0x70>
@@ -1417,30 +1009,50 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:194
 80001254 <_mips_handle_irq>:
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:202
+
+void _mips_handle_irq(void *ctx, int reason)
+{
 80001254:	27bdffc0 	addiu	sp,sp,-64
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:207
+	volatile unsigned int period;
+	volatile unsigned int rxData;
+	volatile unsigned int keycode;
+
+	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xF00F on LEDs to indicate receive data from uart
 80001258:	3c02b060 	lui	v0,0xb060
 8000125c:	3404f00f 	li	a0,0xf00f
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:210
+	data_received = 0x0;
+
+	if (reason & IS_PS2_INTR)
 80001260:	30a32000 	andi	v1,a1,0x2000
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:202
+{
 80001264:	afbf003c 	sw	ra,60(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:207
+	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xF00F on LEDs to indicate receive data from uart
 80001268:	ac440000 	sw	a0,0(v0)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:208
+	data_received = 0x0;
 8000126c:	af808008 	sw	zero,-32760(gp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:210
+	if (reason & IS_PS2_INTR)
 80001270:	10600012 	beqz	v1,800012bc <_mips_handle_irq+0x68>
 80001274:	30a38000 	andi	v1,a1,0x8000
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:212
+	{
+		keycode = *READ_IO(PS2_BASE);
 80001278:	3c02b0d0 	lui	v0,0xb0d0
 8000127c:	8c420000 	lw	v0,0(v0)
 80001280:	afa20030 	sw	v0,48(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:213
+		*WRITE_IO(SEG_BASE) = keycode;
 80001284:	8fa30030 	lw	v1,48(sp)
 80001288:	3c02b0e0 	lui	v0,0xb0e0
 8000128c:	ac430000 	sw	v1,0(v0)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:215
+
+		switch (keycode & 0x000000FF)
 80001290:	8fa20030 	lw	v0,48(sp)
 80001294:	304200ff 	andi	v0,v0,0xff
 80001298:	2442ffea 	addiu	v0,v0,-22
@@ -1453,30 +1065,46 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:215
 800012b4:	00400008 	jr	v0
 800012b8:	00000000 	nop
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:268
+		uart_print("PS2_INTR occurred!\n\r");
+		uart_print(my_itoa(reason));
+		return;
+	}
+
+	if (reason & IS_UART_INTR)
 800012bc:	10600035 	beqz	v1,80001394 <_mips_handle_irq+0x140>
 800012c0:	30a34000 	andi	v1,a1,0x4000
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:271
+	{
+		/* Read an input value from the console. */
+		rxData = *READ_IO(UART_BASE + rbr);
 800012c4:	3c02b040 	lui	v0,0xb040
 800012c8:	8c421000 	lw	v0,4096(v0)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:272
+		data_received = 0x1;
 800012cc:	3c038000 	lui	v1,0x8000
 800012d0:	24631a88 	addiu	v1,v1,6792
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:271
+		rxData = *READ_IO(UART_BASE + rbr);
 800012d4:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:272
+		data_received = 0x1;
 800012d8:	24020001 	li	v0,1
 800012dc:	af828008 	sw	v0,-32760(gp)
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 800012e0:	3c04b040 	lui	a0,0xb040
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:272
+		data_received = 0x1;
 800012e4:	24020055 	li	v0,85
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 800012e8:	ac821000 	sw	v0,4096(a0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 800012ec:	afa00020 	sw	zero,32(sp)
 800012f0:	8fa20020 	lw	v0,32(sp)
 800012f4:	2c422710 	sltiu	v0,v0,10000
@@ -1491,26 +1119,33 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 80001318:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:150
+		ptr++;
 8000131c:	24630001 	addiu	v1,v1,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 80001320:	90620000 	lbu	v0,0(v1)
 80001324:	1440fff0 	bnez	v0,800012e8 <_mips_handle_irq+0x94>
 80001328:	00000000 	nop
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:274
+		uart_print("UART_INTR occurred!\n\r");
+		uart_print(my_itoa(reason));
 8000132c:	0c000459 	jal	80001164 <my_itoa>
 80001330:	00a02025 	move	a0,a1
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 80001334:	90430000 	lbu	v1,0(v0)
 80001338:	10600014 	beqz	v1,8000138c <_mips_handle_irq+0x138>
 8000133c:	8fbf003c 	lw	ra,60(sp)
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 80001340:	3c04b040 	lui	a0,0xb040
 80001344:	ac831000 	sw	v1,4096(a0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 80001348:	afa00024 	sw	zero,36(sp)
 8000134c:	8fa30024 	lw	v1,36(sp)
 80001350:	2c632710 	sltiu	v1,v1,10000
@@ -1525,35 +1160,49 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 80001374:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:150
+		ptr++;
 80001378:	24420001 	addiu	v0,v0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 8000137c:	90430000 	lbu	v1,0(v0)
 80001380:	1460fff0 	bnez	v1,80001344 <_mips_handle_irq+0xf0>
 80001384:	00000000 	nop
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:291
+	*WRITE_IO(IO_LEDR) = 0x0FF0;
+	uart_print("Other interrupts occurred!\n\r");
+	uart_print(my_itoa(reason));
+
+	return;
+}
 80001388:	8fbf003c 	lw	ra,60(sp)
 8000138c:	03e00008 	jr	ra
 80001390:	27bd0040 	addiu	sp,sp,64
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:278
+	if (reason & IS_PWM_INTR)
 80001394:	10600031 	beqz	v1,8000145c <_mips_handle_irq+0x208>
 80001398:	24030ff0 	li	v1,4080
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:280
+		*WRITE_IO(PWM_BASE) = 0x0;
 8000139c:	3c02b0c0 	lui	v0,0xb0c0
 800013a0:	3c038000 	lui	v1,0x8000
 800013a4:	ac400000 	sw	zero,0(v0)
 800013a8:	24631aa0 	addiu	v1,v1,6816
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 800013ac:	3c04b040 	lui	a0,0xb040
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:280
+		*WRITE_IO(PWM_BASE) = 0x0;
 800013b0:	24020050 	li	v0,80
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 800013b4:	ac821000 	sw	v0,4096(a0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 800013b8:	afa00018 	sw	zero,24(sp)
 800013bc:	8fa20018 	lw	v0,24(sp)
 800013c0:	2c422710 	sltiu	v0,v0,10000
@@ -1568,26 +1217,32 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 800013e4:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:150
+		ptr++;
 800013e8:	24630001 	addiu	v1,v1,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 800013ec:	90620000 	lbu	v0,0(v1)
 800013f0:	1440fff0 	bnez	v0,800013b4 <_mips_handle_irq+0x160>
 800013f4:	00000000 	nop
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:282
+		uart_print(my_itoa(reason));
 800013f8:	0c000459 	jal	80001164 <my_itoa>
 800013fc:	00a02025 	move	a0,a1
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 80001400:	90440000 	lbu	a0,0(v0)
 80001404:	1080ffe0 	beqz	a0,80001388 <_mips_handle_irq+0x134>
 80001408:	3c05b040 	lui	a1,0xb040
 8000140c:	00401825 	move	v1,v0
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 80001410:	aca41000 	sw	a0,4096(a1)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 80001414:	afa0001c 	sw	zero,28(sp)
 80001418:	8fa2001c 	lw	v0,28(sp)
 8000141c:	2c422710 	sltiu	v0,v0,10000
@@ -1602,30 +1257,38 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 80001440:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:150
+		ptr++;
 80001444:	24630001 	addiu	v1,v1,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 80001448:	90640000 	lbu	a0,0(v1)
 8000144c:	1480fff0 	bnez	a0,80001410 <_mips_handle_irq+0x1bc>
 80001450:	8fbf003c 	lw	ra,60(sp)
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:291
+}
 80001454:	03e00008 	jr	ra
 80001458:	27bd0040 	addiu	sp,sp,64
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:286
+	*WRITE_IO(IO_LEDR) = 0x0FF0;
 8000145c:	ac430000 	sw	v1,0(v0)
 80001460:	3c038000 	lui	v1,0x8000
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 80001464:	3c04b040 	lui	a0,0xb040
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:286
+	*WRITE_IO(IO_LEDR) = 0x0FF0;
 80001468:	24631ab8 	addiu	v1,v1,6840
 8000146c:	2402004f 	li	v0,79
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 80001470:	ac821000 	sw	v0,4096(a0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 80001474:	afa00010 	sw	zero,16(sp)
 80001478:	8fa20010 	lw	v0,16(sp)
 8000147c:	2c422710 	sltiu	v0,v0,10000
@@ -1640,26 +1303,32 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 800014a0:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:150
+		ptr++;
 800014a4:	24630001 	addiu	v1,v1,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 800014a8:	90620000 	lbu	v0,0(v1)
 800014ac:	1440fff0 	bnez	v0,80001470 <_mips_handle_irq+0x21c>
 800014b0:	00000000 	nop
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:288
+	uart_print(my_itoa(reason));
 800014b4:	0c000459 	jal	80001164 <my_itoa>
 800014b8:	00a02025 	move	a0,a1
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 800014bc:	90440000 	lbu	a0,0(v0)
 800014c0:	1080ffb1 	beqz	a0,80001388 <_mips_handle_irq+0x134>
 800014c4:	3c05b040 	lui	a1,0xb040
 800014c8:	00401825 	move	v1,v0
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 800014cc:	aca41000 	sw	a0,4096(a1)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 800014d0:	afa00014 	sw	zero,20(sp)
 800014d4:	8fa20014 	lw	v0,20(sp)
 800014d8:	2c422710 	sltiu	v0,v0,10000
@@ -1674,19 +1343,24 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 800014fc:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:150
+		ptr++;
 80001500:	24630001 	addiu	v1,v1,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 80001504:	90640000 	lbu	a0,0(v1)
 80001508:	1480fff0 	bnez	a0,800014cc <_mips_handle_irq+0x278>
 8000150c:	8fbf003c 	lw	ra,60(sp)
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:291
+}
 80001510:	03e00008 	jr	ra
 80001514:	27bd0040 	addiu	sp,sp,64
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:259
+			rxData = '0';
 80001518:	24020030 	li	v0,48
 8000151c:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:262
+		data_received = 0x1;
 80001520:	24020001 	li	v0,1
 80001524:	3c038000 	lui	v1,0x8000
 80001528:	af828008 	sw	v0,-32760(gp)
@@ -1694,10 +1368,12 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:262
 80001530:	24020050 	li	v0,80
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 80001534:	3c04b040 	lui	a0,0xb040
 80001538:	ac821000 	sw	v0,4096(a0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 8000153c:	afa00028 	sw	zero,40(sp)
 80001540:	8fa20028 	lw	v0,40(sp)
 80001544:	2c422710 	sltiu	v0,v0,10000
@@ -1712,25 +1388,31 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 80001568:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:150
+		ptr++;
 8000156c:	24630001 	addiu	v1,v1,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 80001570:	90620000 	lbu	v0,0(v1)
 80001574:	1440fff0 	bnez	v0,80001538 <_mips_handle_irq+0x2e4>
 80001578:	00000000 	nop
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:264
+		uart_print(my_itoa(reason));
 8000157c:	0c000459 	jal	80001164 <my_itoa>
 80001580:	00a02025 	move	a0,a1
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 80001584:	90430000 	lbu	v1,0(v0)
 80001588:	1060ff7f 	beqz	v1,80001388 <_mips_handle_irq+0x134>
 8000158c:	3c04b040 	lui	a0,0xb040
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 80001590:	ac831000 	sw	v1,4096(a0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 80001594:	afa0002c 	sw	zero,44(sp)
 80001598:	8fa3002c 	lw	v1,44(sp)
 8000159c:	2c632710 	sltiu	v1,v1,10000
@@ -1745,89 +1427,117 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 800015c0:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:150
+		ptr++;
 800015c4:	24420001 	addiu	v0,v0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 800015c8:	90430000 	lbu	v1,0(v0)
 800015cc:	1460fff0 	bnez	v1,80001590 <_mips_handle_irq+0x33c>
 800015d0:	8fbf003c 	lw	ra,60(sp)
 _mips_handle_irq():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:291
+}
 800015d4:	03e00008 	jr	ra
 800015d8:	27bd0040 	addiu	sp,sp,64
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:223
+			rxData = '1';
 800015dc:	24020031 	li	v0,49
 800015e0:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:224
+			break;
 800015e4:	1000ffcf 	b	80001524 <_mips_handle_irq+0x2d0>
 800015e8:	24020001 	li	v0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:255
+			rxData = '9';
 800015ec:	24020039 	li	v0,57
 800015f0:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:256
+			break;
 800015f4:	1000ffcb 	b	80001524 <_mips_handle_irq+0x2d0>
 800015f8:	24020001 	li	v0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:251
+			rxData = '8';
 800015fc:	24020038 	li	v0,56
 80001600:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:252
+			break;
 80001604:	1000ffc7 	b	80001524 <_mips_handle_irq+0x2d0>
 80001608:	24020001 	li	v0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:235
+			rxData = '4';
 8000160c:	24020034 	li	v0,52
 80001610:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:236
+			break;
 80001614:	1000ffc3 	b	80001524 <_mips_handle_irq+0x2d0>
 80001618:	24020001 	li	v0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:227
+			rxData = '2';
 8000161c:	24020032 	li	v0,50
 80001620:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:228
+			break;
 80001624:	1000ffbf 	b	80001524 <_mips_handle_irq+0x2d0>
 80001628:	24020001 	li	v0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:247
+			rxData = '7';
 8000162c:	24020037 	li	v0,55
 80001630:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:248
+			break;
 80001634:	1000ffbb 	b	80001524 <_mips_handle_irq+0x2d0>
 80001638:	24020001 	li	v0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:243
+			rxData = '6';
 8000163c:	24020036 	li	v0,54
 80001640:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:244
+			break;
 80001644:	1000ffb7 	b	80001524 <_mips_handle_irq+0x2d0>
 80001648:	24020001 	li	v0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:239
+			rxData = '5';
 8000164c:	24020035 	li	v0,53
 80001650:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:240
+			break;
 80001654:	1000ffb3 	b	80001524 <_mips_handle_irq+0x2d0>
 80001658:	24020001 	li	v0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:231
+			rxData = '3';
 8000165c:	24020033 	li	v0,51
 80001660:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:232
+			break;
 80001664:	1000ffaf 	b	80001524 <_mips_handle_irq+0x2d0>
 80001668:	24020001 	li	v0,1
 
 8000166c <main>:
 main():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:66
+{
 8000166c:	27bdffb8 	addiu	sp,sp,-72
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:67
+	volatile unsigned int count = 0xF;
 80001670:	2402000f 	li	v0,15
 80001674:	afa2003c 	sw	v0,60(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:68
+	volatile unsigned int j = 1;
 80001678:	24020001 	li	v0,1
 8000167c:	afa20038 	sw	v0,56(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:71
+	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
 80001680:	24030080 	li	v1,128
 80001684:	3c02b040 	lui	v0,0xb040
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:66
+{
 80001688:	afbf0044 	sw	ra,68(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:71
+	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
 8000168c:	ac43100c 	sw	v1,4108(v0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 80001690:	afa00018 	sw	zero,24(sp)
 80001694:	8fa20018 	lw	v0,24(sp)
 80001698:	2c422710 	sltiu	v0,v0,10000
@@ -1842,10 +1552,12 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 800016bc:	3c02b040 	lui	v0,0xb040
 main():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:73
+	*WRITE_IO(UART_BASE + dll) = 27; // DLL msb. 115200 at 50MHz. Formula is Clk/16/baudrate. From axi_uart manual.
 800016c0:	2403001b 	li	v1,27
 800016c4:	ac431000 	sw	v1,4096(v0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 800016c8:	afa0001c 	sw	zero,28(sp)
 800016cc:	8fa2001c 	lw	v0,28(sp)
 800016d0:	2c422710 	sltiu	v0,v0,10000
@@ -1860,9 +1572,11 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 800016f4:	3c02b040 	lui	v0,0xb040
 main():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:75
+	*WRITE_IO(UART_BASE + dlm) = 0x00000000; // DLL lsb.
 800016f8:	ac401004 	sw	zero,4100(v0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 800016fc:	afa00020 	sw	zero,32(sp)
 80001700:	8fa20020 	lw	v0,32(sp)
 80001704:	2c422710 	sltiu	v0,v0,10000
@@ -1877,10 +1591,12 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 80001728:	3c02b040 	lui	v0,0xb040
 main():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:77
+	*WRITE_IO(UART_BASE + lcr) = 0x00000003; // LCR register. 8n1 parity disabled
 8000172c:	24030003 	li	v1,3
 80001730:	ac43100c 	sw	v1,4108(v0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 80001734:	afa00024 	sw	zero,36(sp)
 80001738:	8fa20024 	lw	v0,36(sp)
 8000173c:	2c422710 	sltiu	v0,v0,10000
@@ -1895,9 +1611,11 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 80001760:	3c02b040 	lui	v0,0xb040
 main():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:79
+	*WRITE_IO(UART_BASE + ier) = 0x00000000; // IER register. disable interrupts
 80001764:	ac401004 	sw	zero,4100(v0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 80001768:	afa00028 	sw	zero,40(sp)
 8000176c:	8fa20028 	lw	v0,40(sp)
 80001770:	2c422710 	sltiu	v0,v0,10000
@@ -1912,10 +1630,12 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 80001794:	3c02b040 	lui	v0,0xb040
 main():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:82
+	*WRITE_IO(UART_BASE + ier) = 0x00000001; // IER register. Enables Receiver Line Status and Received Data Interrupts
 80001798:	24030001 	li	v1,1
 8000179c:	ac431004 	sw	v1,4100(v0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 800017a0:	afa0002c 	sw	zero,44(sp)
 800017a4:	8fa2002c 	lw	v0,44(sp)
 800017a8:	2c422710 	sltiu	v0,v0,10000
@@ -1930,14 +1650,17 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 800017cc:	8f828000 	lw	v0,-32768(gp)
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 800017d0:	90430000 	lbu	v1,0(v0)
 800017d4:	10600012 	beqz	v1,80001820 <main+0x1b4>
 800017d8:	3c04b040 	lui	a0,0xb040
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 800017dc:	ac831000 	sw	v1,4096(a0)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 800017e0:	afa00030 	sw	zero,48(sp)
 800017e4:	8fa30030 	lw	v1,48(sp)
 800017e8:	2c632710 	sltiu	v1,v1,10000
@@ -1952,40 +1675,51 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 8000180c:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:150
+		ptr++;
 80001810:	24420001 	addiu	v0,v0,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 80001814:	90430000 	lbu	v1,0(v0)
 80001818:	1460fff0 	bnez	v1,800017dc <main+0x170>
 8000181c:	00000000 	nop
 main():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:90
+		period = *READ_IO(PS2_BASE);
 80001820:	3c0db0d0 	lui	t5,0xb0d0
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:91
+		*WRITE_IO(IO_LEDR) = period;
 80001824:	3c0cb060 	lui	t4,0xb060
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 80001828:	3c0eb040 	lui	t6,0xb040
 main():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:90 (discriminator 1)
+		period = *READ_IO(PS2_BASE);
 8000182c:	8da20000 	lw	v0,0(t5)
 80001830:	afa20034 	sw	v0,52(sp)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:91 (discriminator 1)
+		*WRITE_IO(IO_LEDR) = period;
 80001834:	8fa20034 	lw	v0,52(sp)
 80001838:	ad820000 	sw	v0,0(t4)
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:92 (discriminator 1)
+		uart_print(my_itoa(period));
 8000183c:	8fa40034 	lw	a0,52(sp)
 80001840:	0c000459 	jal	80001164 <my_itoa>
 80001844:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147 (discriminator 1)
+	while (*ptr)
 80001848:	90440000 	lbu	a0,0(v0)
 8000184c:	10800012 	beqz	a0,80001898 <main+0x22c>
 80001850:	00401825 	move	v1,v0
 uart_outbyte():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:129
+	*WRITE_IO(UART_BASE + thr) = (unsigned int)c;
 80001854:	adc41000 	sw	a0,4096(t6)
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 80001858:	afa00010 	sw	zero,16(sp)
 8000185c:	8fa20010 	lw	v0,16(sp)
 80001860:	2c422710 	sltiu	v0,v0,10000
@@ -2000,13 +1734,16 @@ E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
 80001884:	00000000 	nop
 uart_print():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:150
+		ptr++;
 80001888:	24630001 	addiu	v1,v1,1
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:147
+	while (*ptr)
 8000188c:	90640000 	lbu	a0,0(v1)
 80001890:	1480fff0 	bnez	a0,80001854 <main+0x1e8>
 80001894:	00000000 	nop
 delay():
 E:\Peripheral_Interface_lab6_Keyboard_C\MIPSfpga_keyboard_C/main.c:123
+	for (j = 0; j < (10000); j++)
 80001898:	afa00014 	sw	zero,20(sp)
 8000189c:	8fa20014 	lw	v0,20(sp)
 800018a0:	2c422710 	sltiu	v0,v0,10000
@@ -2135,7 +1872,7 @@ main():
 80001a88:	54524155 	bnel	v0,s2,80011fe0 <_gp+0x84e0>
 80001a8c:	544e495f 	bnel	v0,t6,8001400c <_gp+0xa50c>
 80001a90:	636f2052 	0x636f2052
-80001a94:	72727563 	s8std	xr5,s3,-99,
+80001a94:	72727563 	0x72727563
 80001a98:	0a216465 	j	88859194 <_gp+0x884f694>
 80001a9c:	0000000d 	break
 80001aa0:	5f4d5750 	0x5f4d5750
@@ -2146,8 +1883,8 @@ main():
 80001ab4:	00000000 	nop
 80001ab8:	6568744f 	0x6568744f
 80001abc:	6e692072 	0x6e692072
-80001ac0:	72726574 	q16sll	xr5,xr9,xr9,xr12,9
-80001ac4:	73747075 	q16slr	xr1,xr12,xr1,xr13,13
+80001ac0:	72726574 	0x72726574
+80001ac4:	73747075 	0x73747075
 80001ac8:	63636f20 	0x63636f20
 80001acc:	65727275 	0x65727275
 80001ad0:	0d0a2164 	jal	84288590 <_gp+0x427ea90>

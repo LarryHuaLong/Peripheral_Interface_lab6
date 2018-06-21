@@ -67,6 +67,8 @@ int main()
 	volatile unsigned int count = 0xF;
 	volatile unsigned int j = 1;
 	volatile unsigned int period;
+	volatile unsigned int keycode;
+	volatile unsigned int lastkeycode;
 
 	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
 	delay();
@@ -87,9 +89,12 @@ int main()
 	uart_print(promt);
 	while (1)
 	{
-		period = *READ_IO(PS2_BASE);
-		*WRITE_IO(IO_LEDR) = period;
-		uart_print(my_itoa(period));
+		keycode = *READ_IO(PS2_BASE);
+		lastkeycode = *READ_IO(PS2_BASE+4);
+		*WRITE_IO(IO_LEDR) = keycode;
+		*WRITE_IO(SEG_BASE) = keycode;
+		uart_print(my_itoa(keycode));
+		uart_print("\n\r");
 		delay();
 	}
 	while (1)
@@ -120,8 +125,8 @@ void delay()
 {
 	volatile unsigned int j;
 
-	for (j = 0; j < (10000); j++)
-		; // delay
+	for (j = 0; j < (100); j++)
+		;
 }
 
 void uart_outbyte(char c)
@@ -210,58 +215,15 @@ void _mips_handle_irq(void *ctx, int reason)
 	if (reason & IS_PS2_INTR)
 	{
 		keycode = *READ_IO(PS2_BASE);
+		*WRITE_IO(PS2_BASE + 4) = keycode;
 		*WRITE_IO(SEG_BASE) = keycode;
 
-		switch (keycode & 0x000000FF)
-		{
-		case 0x45:
-		case 0x70:
-			rxData = '0';
-			break;
-		case 0x16:
-		case 0x69:
-			rxData = '1';
-			break;
-		case 0x1E:
-		case 0x72:
-			rxData = '2';
-			break;
-		case 0x26:
-		case 0x7A:
-			rxData = '3';
-			break;
-		case 0x25:
-		case 0x6B:
-			rxData = '4';
-			break;
-		case 0x2E:
-		case 0x73:
-			rxData = '5';
-			break;
-		case 0x36:
-		case 0x74:
-			rxData = '6';
-			break;
-		case 0x3D:
-		case 0x6C:
-			rxData = '7';
-			break;
-		case 0x3E:
-		case 0x75:
-			rxData = '8';
-			break;
-		case 0x46:
-		case 0x7D:
-			rxData = '9';
-			break;
-
-		default:
-			rxData = '0';
-			break;
-		}
-		data_received = 0x1;
 		uart_print("PS2_INTR occurred!\n\r");
 		uart_print(my_itoa(reason));
+		uart_print("\n\rkeycode:");
+		uart_print(my_itoa(keycode);
+		uart_print("\n\r");
+		delay();
 		return;
 	}
 
@@ -272,6 +234,7 @@ void _mips_handle_irq(void *ctx, int reason)
 		data_received = 0x1;
 		uart_print("UART_INTR occurred!\n\r");
 		uart_print(my_itoa(reason));
+		delay();
 		return;
 	}
 
@@ -280,12 +243,13 @@ void _mips_handle_irq(void *ctx, int reason)
 		*WRITE_IO(PWM_BASE) = 0x0;
 		uart_print("PWM_INTR occurred!\n\r");
 		uart_print(my_itoa(reason));
+		delay();
 		return;
 	}
 
 	*WRITE_IO(IO_LEDR) = 0x0FF0;
 	uart_print("Other interrupts occurred!\n\r");
 	uart_print(my_itoa(reason));
-
+	delay();
 	return;
 }

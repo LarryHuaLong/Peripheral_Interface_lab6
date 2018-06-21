@@ -82,13 +82,18 @@ int main()
 
 	while (1)
 	{
-
+		lastkeycode = *READ_IO(SEG_BASE);
+		uart_print(my_itoa(lastkeycode));
+		delay();
 		keycode = *READ_IO(PS2_BASE);
 		lastkeycode = *READ_IO(PS2_BASE+4);
+		*WRITE_IO(IO_LEDR) = keycode;
+		*WRITE_IO(SEG_BASE) = keycode;
 		if(keycode != lastkeycode){
 			uart_print("got new keycode:");
 			uart_print(my_itoa(keycode));
 			uart_print("\n\r");
+			delay();
 		}
 		// LEDs display
 		*WRITE_IO(IO_LEDR) = count;
@@ -116,9 +121,8 @@ void delay()
 {
 	volatile unsigned int j;
 
-	//for (j = 0; j < (10000); j++) ;	// delay
 	for (j = 0; j < (100); j++)
-		; // delay
+		; 
 }
 
 void uart_outbyte(char c)
@@ -215,6 +219,7 @@ void _mips_handle_irq(void *ctx, int reason)
 		uart_print("\n\rkeycode:");
 		uart_print(my_itoa(keycode);
 		uart_print("\n\r");
+		delay();
 		return;
 	}
 
@@ -236,6 +241,7 @@ void _mips_handle_irq(void *ctx, int reason)
 		data_received = 0x1;
 		uart_print("UART_INTR occurred!\n\r");
 		uart_print(my_itoa(reason));
+		delay();
 		return;
 	}
 
@@ -244,12 +250,13 @@ void _mips_handle_irq(void *ctx, int reason)
 		*WRITE_IO(PWM_BASE) = 0x0;
 		uart_print("PWM_INTR occurred!\n\r");
 		uart_print(my_itoa(reason));
+		delay();
 		return;
 	}
 
 	*WRITE_IO(IO_LEDR) = 0x0FF0;
 	uart_print("Other interrupts occurred!\n\r");
 	uart_print(my_itoa(reason));
-
+	delay();
 	return;
 }
