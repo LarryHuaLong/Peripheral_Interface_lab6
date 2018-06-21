@@ -95,6 +95,8 @@ int main()
 				uart_print("keypress:");
 
 				char code = decode(keycode & 0xff);
+				uart_print("keydecoded:");
+
 				if (code != '\0')
 				{
 					uart_print("keyshow:");
@@ -106,6 +108,7 @@ int main()
 						uart_outbyte('\n');
 					}
 				}
+				uart_print("otherkey:");
 			}
 		}
 		delay();
