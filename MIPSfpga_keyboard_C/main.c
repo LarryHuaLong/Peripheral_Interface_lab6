@@ -45,7 +45,7 @@ void uart_print(const char *ptr);
 
 char *reverse(char *s);
 char *my_itoa(int n);
-char *decode(int code);
+char decode(int code);
 
 volatile unsigned int rxData = 0x0;
 volatile unsigned int data_received = 0x0;
@@ -122,7 +122,7 @@ int main()
 	}
 	return 0;
 }
-char *decode(int code)
+char decode(int code)
 {
 
 	switch (code)
@@ -201,7 +201,7 @@ char *decode(int code)
 		return 'x';
 	case 0x35:
 		return 'y';
-	case:
+	case 0x1a:
 		return 'z';
 	default:
 		return '\0';
