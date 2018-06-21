@@ -48,6 +48,7 @@ extern void delay_ms(unsigned int ms_count);
 /********************** Variable Definitions *********************************/
 /*****************************************************************************/
 volatile int rxData = 0;
+volatile unsigned int data_received = 0x0;
 
 //------------------
 // main()
@@ -56,9 +57,10 @@ int main()
 {
 	volatile unsigned int pushbutton, count = 0xF;
 	volatile unsigned int j = 1;
+	volatile unsigned int period;
 	volatile unsigned int keycode;
-	volatile unsigned int lastkeycode, code;
-	volatile unsigned int key_release=0;
+	volatile unsigned int lastkeycode, code = 0;
+	volatile unsigned int key_release = 0;
 
 	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
 	delay();
@@ -84,12 +86,21 @@ int main()
 			key_release = (keycode & 0x0000ff00) == 0X0000f000;
 			if (key_release)
 			{
+				code = keycode & 0xff;
 				uart_print("keyrelease:");
-				uart_print(my_itoa(keycode & 0xff));
+				uart_print(my_itoa(code));
 				uart_print("\r\n");
 			}
+			lastkeycode = keycode;
 		}
-		lastkeycode = keycode;
+		if (data_received)
+		{
+			period = rxData - 0x30;
+			*WRITE_IO(PWM_BASE) = period * 110000;
+			data_received = 0x0;
+		}
+		*WRITE_IO(SEG_BASE) = (period << 16) | code;
+		code = 0;
 		delay();
 	}
 	return 0;
@@ -97,64 +108,14 @@ int main()
 	// Initialize ADT7420 Device
 	ADT7420_Init();
 
-	// Display Main Menu on UART
-	ADT7420_DisplayMainMenu();
 
-	while (rxData != 'q')
-	{
-		uart_print("rxData = ");
-		uart_print(my_itoa(rxData));
-		uart_print("\n\r");
-
-		Display_Temp(ADT7420_ReadTemp());
-
-		switch (rxData)
-		{
-		case 't':
-			Display_Temp(ADT7420_ReadTemp());
-			break;
-		case 'r':
-			ADT7420_SetResolution();
-			break;
-		case 'h':
-			ADT7420_DisplaySetTHighMenu();
-			break;
-		case 'l':
-			ADT7420_DisplaySetTLowMenu();
-			break;
-		case 'c':
-			ADT7420_DisplaySetTCritMenu();
-			break;
-		case 'y':
-			ADT7420_DisplaySetTHystMenu();
-			break;
-		case 'f':
-			ADT7420_DisplaySetFaultQueueMenu();
-			break;
-		case 's':
-			ADT7420_DisplaySettings();
-			break;
-		case 'm':
-			ADT7420_DisplayMenu();
-			break;
-		case 0:
-			break;
-		default:
-			uart_print("\n\rWrong option! Please select one of the options below.");
-			ADT7420_DisplayMenu();
-			break;
-		}
-	}
-
-	uart_print("Exiting ADT7420 test application!\n\r");
-	return 0;
 }
 
 void delay()
 {
 	volatile unsigned int j;
 
-	for (j = 0; j < (10000); j++)
+	for (j = 0; j < (100); j++)
 		; // delay
 }
 
@@ -188,11 +149,15 @@ void uart_print(const char *ptr)
 void _mips_handle_irq(void *ctx, int reason)
 {
 	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xFFFF on LEDs to indicate receive data from uart
+	data_received = 0x0;
 
 	if ((*READ_IO(UART_BASE + lsr) & 0x00000001) == 0x00000001)
+	{
 		rxData = *READ_IO(UART_BASE + rbr);
+		data_received = 0x1;
+	}
 
-	*WRITE_IO(IO_LEDR) = 0x0;
+	*WRITE_IO(IO_LEDR) = 0;
 
 	return;
 }
