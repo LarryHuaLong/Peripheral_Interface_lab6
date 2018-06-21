@@ -89,19 +89,24 @@ int main()
 		{
 			*WRITE_IO(PS2_BASE + 4) = keycode;
 			*WRITE_IO(SEG_BASE) = keycode; //在数码管上显示按键状态
-			uart_print("keychanged\r\n");
-			/*if ((keycode & 0xff00) != 0Xf000)
+			uart_print("keychanged:");
+			if ((keycode & 0xff00) != 0Xf000)
 			{
+				uart_print("keypress:");
+
 				char code = decode(keycode & 0xff);
 				if (code != '\0')
 				{
-					uart_outbyte(code);//输出数字和字母
+					uart_print("keyshow:");
+					uart_outbyte(code); //输出数字和字母
 					delay();
-					if (code == '\r'){//如果是回车，则多加一个换行
+					if (code == '\r')
+					{ //如果是回车，则多加一个换行
+						uart_print("keynextline:");
 						uart_outbyte('\n');
-						
-				}}
-			}*/
+					}
+				}
+			}
 		}
 		delay();
 		//设置亮度
@@ -114,7 +119,7 @@ int main()
 			delay();
 		}
 		//LED显示计数
-		if (count_div >= 100)
+		if (count_div >= 1000)
 		{
 			count_div = 0;
 			count = count + 1;
@@ -305,15 +310,12 @@ void _mips_handle_irq(void *ctx, int reason)
 		/* Read an input value from the console. */
 		rxData = *READ_IO(UART_BASE + rbr);
 		data_received = 0x1;
-		uart_print(my_itoa(reason));
 		return;
 	}
 	if (reason & IS_PWM_INTR)
 	{
 		*WRITE_IO(PWM_BASE) = 0x0;
-		uart_print(my_itoa(reason));
 		return;
 	}
-	uart_print(my_itoa(reason));
 	return;
 }
