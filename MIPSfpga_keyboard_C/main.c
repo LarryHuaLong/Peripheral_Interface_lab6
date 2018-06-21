@@ -87,36 +87,17 @@ int main()
 		lastkeycode = *READ_IO(PS2_BASE + 4);
 		if (lastkeycode != keycode)
 		{
-			uart_print("keychanged:");
 			*WRITE_IO(PS2_BASE + 4) = keycode;
-			int i;
 			*WRITE_IO(SEG_BASE) = keycode; //在数码管上显示按键状态
-			for(i = 0;i<10;i++) delay();
 			if ((keycode & 0x0000ff00) != 0X0000f000)
 			{
-				uart_print("keypress:");
-				code = (int)decode(keycode & 0xff);
-				uart_print("keydecoded:");
-				uart_outbyte(code);
-				if (code != '\0')
-				{
-					uart_print("keyshow:");
-					uart_print(my_itoa(code));
-					uart_outbyte(keycode & 0xff); //输出数字和字母
-					delay();
-					if (code == '\r')
-					{ //如果是回车，则多加一个换行
-						uart_print("keynextline:");
-						uart_outbyte('\n');
-					}
-				}else{
-					uart_print("otherkey:");
-					uart_outbyte(code);
-				}
-
+				uart_print("\r\nkeypress:");
+				uart_print(my_itoa(keycode));
 			}
-			else
+			else{
 				uart_print("keyrelease:");
+				uart_print(my_itoa(keycode));
+			}
 		}
 		delay();
 		//设置亮度
