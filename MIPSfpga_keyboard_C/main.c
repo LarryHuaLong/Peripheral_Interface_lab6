@@ -61,6 +61,7 @@ int main()
 	volatile unsigned int period;
 	volatile unsigned int keycode;
 	volatile unsigned int lastkeycode,code;
+	volatile unsigned int key_release = 0;
 
 	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
 	delay();
@@ -78,8 +79,27 @@ int main()
 
 	/* Prompt the user to select a brightness value ranging from  0 to 9. */
 	//uart_print("Select a Brightness between 0 and 9\n\r");
-	uart_print(promt);
+	//uart_print(promt);
 
+	lastkeycode = *READ_IO(PS2_BASE);
+	while (1)
+	{
+		//循环检测键盘是否有输入
+		keycode = *READ_IO(PS2_BASE);
+		if (lastkeycode != keycode)
+		{
+			key_release = (keycode & 0x0000ff00) == 0X0000f000;
+			if (key_release)
+			{
+				uart_print("keyrelease:");
+				uart_print(my_itoa(keycode & 0xff));
+				uart_print("\r\n");
+			}
+		}
+		lastkeycode = keycode;
+		delay();
+	}
+	return 0;
 	while (1)
 	{
 		//循环检测键盘是否有输入
