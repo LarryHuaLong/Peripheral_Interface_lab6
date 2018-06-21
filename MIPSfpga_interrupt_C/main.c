@@ -82,19 +82,6 @@ int main()
 
 	while (1)
 	{
-		lastkeycode = *READ_IO(SEG_BASE);
-		uart_print(my_itoa(lastkeycode));
-		delay();
-		keycode = *READ_IO(PS2_BASE);
-		lastkeycode = *READ_IO(PS2_BASE+4);
-		*WRITE_IO(IO_LEDR) = keycode;
-		*WRITE_IO(SEG_BASE) = keycode;
-		if(keycode != lastkeycode){
-			uart_print("got new keycode:");
-			uart_print(my_itoa(keycode));
-			uart_print("\n\r");
-			delay();
-		}
 		// LEDs display
 		*WRITE_IO(IO_LEDR) = count;
 
@@ -207,7 +194,7 @@ void _mips_handle_irq(void *ctx, int reason)
 	keycode = *READ_IO(PS2_BASE);
 	*WRITE_IO(PS2_BASE + 4) = keycode;
 	*WRITE_IO(SEG_BASE) = keycode;
-	
+
 	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xF00F on LEDs to indicate enter the interrupt
 	data_received = 0x0;
 
