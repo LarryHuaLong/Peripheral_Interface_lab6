@@ -78,7 +78,7 @@ int main()
 
 	/* Prompt the user to select a brightness value ranging from  0 to 9. */
 	//uart_print("Select a Brightness between 0 and 9\n\r");
-	//uart_print(promt);
+	uart_print(promt);
 
 	while (1)
 	{
@@ -109,7 +109,7 @@ int main()
 			period = rxData - 0x30;
 			*WRITE_IO(PWM_BASE) = period * 110000;
 			data_received = 0x0;
-			//uart_print(promt);
+			uart_print(promt);
 			delay();
 		}
 		//LED显示计数
