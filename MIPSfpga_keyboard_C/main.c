@@ -95,7 +95,7 @@ int main()
 			if ((keycode & 0xff00) != 0Xf000)
 			{
 				uart_print("keypress:");
-				code =(char) keycode & 0xff;
+				char code =(char) keycode & 0xff;
 				//char code = decode(keycode & 0xff);
 				uart_print("keydecoded:");
 
@@ -110,7 +110,7 @@ int main()
 						uart_outbyte('\n');
 					}
 				}
-				char code = decode(keycode & 0xff);
+				code = decode(keycode & 0xff);
 
 				uart_print("otherkey:");
 			}
