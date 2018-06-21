@@ -211,6 +211,12 @@ void _mips_handle_irq(void *ctx, int reason)
 {
 	volatile unsigned int period;
 	volatile unsigned int keycode;
+	
+	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xFFFF on LEDs to indicate receive data from uart
+	if ((*READ_IO(UART_BASE + lsr) & 0x00000001) == 0x00000001)
+		rxData = *READ_IO(UART_BASE + rbr);
+	*WRITE_IO(IO_LEDR) = 0x0;
+	return;
 
 	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xF00F on LEDs to indicate enter the interrupt
 	data_received = 0x0;
@@ -229,6 +235,8 @@ void _mips_handle_irq(void *ctx, int reason)
 	if (reason & IS_PWM_INTR)
 	{
 		*WRITE_IO(PWM_BASE) = 0x0;
+		uart_print(my_itoa(reason));
+		uart_print("\n\r");
 		return;
 	}
 
