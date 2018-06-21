@@ -84,13 +84,13 @@ int main()
 	{
 		keycode = *READ_IO(PS2_BASE);
 		lastkeycode = *READ_IO(PS2_BASE+4);
-		if(lastkeycode != keycode){
+		//if(lastkeycode != keycode){
 			*WRITE_IO(PS2_BASE + 4) = keycode;
 			*WRITE_IO(SEG_BASE) = keycode;
 			uart_print("keycode:");
 			uart_print(my_itoa(keycode));
 			uart_print("\n\r");
-		}
+		//}
 
 		// LEDs display
 		*WRITE_IO(IO_LEDR) = count;
