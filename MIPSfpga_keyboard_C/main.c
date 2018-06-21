@@ -88,7 +88,8 @@ int main()
 			if (key_release)
 			{
 				code = keycode & 0xff;
-				display = (display << 8) | code;
+				display = (display << 8) | (keycode & 0xff);
+				;
 				uart_outbyte(decode(code));
 			}
 			lastkeycode = keycode;
