@@ -60,7 +60,7 @@ int main()
 	volatile unsigned int j = 1;
 	volatile unsigned int period;
 	volatile unsigned int keycode;
-	volatile unsigned int lastkeycode;
+	volatile unsigned int lastkeycode,code;
 
 	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
 	delay();
@@ -87,21 +87,21 @@ int main()
 		lastkeycode = *READ_IO(PS2_BASE + 4);
 		if (lastkeycode != keycode)
 		{
-			uart_print("sdfsf:");
-			*WRITE_IO(PS2_BASE + 4) = keycode;
-			uart_print("sdfaadfasdf:");
-			*WRITE_IO(SEG_BASE) = keycode; //在数码管上显示按键状态
 			uart_print("keychanged:");
-			if ((keycode & 0xff00) != 0Xf000)
+			*WRITE_IO(PS2_BASE + 4) = keycode;
+			int i;
+			*WRITE_IO(SEG_BASE) = keycode; //在数码管上显示按键状态
+			for(i = 0;i<10;i++) delay();
+			if ((keycode & 0x0000ff00) != 0X0000f000)
 			{
 				uart_print("keypress:");
-				char code =(char) keycode & 0xff;
-				//char code = decode(keycode & 0xff);
+				code = (int)decode(keycode & 0xff);
 				uart_print("keydecoded:");
-
-				if (1)
+				uart_outbyte(code);
+				if (code != '\0')
 				{
 					uart_print("keyshow:");
+					uart_print(my_itoa(code));
 					uart_outbyte(keycode & 0xff); //输出数字和字母
 					delay();
 					if (code == '\r')
@@ -110,10 +110,12 @@ int main()
 						uart_outbyte('\n');
 					}
 				}
-				code = decode(keycode & 0xff);
 
 				uart_print("otherkey:");
+				uart_outbyte(code);
 			}
+			else
+				uart_print("keyrelease:");
 		}
 		delay();
 		//设置亮度
@@ -312,6 +314,17 @@ void _mips_handle_irq(void *ctx, int reason)
 
 	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xF00F on LEDs to indicate enter the interrupt
 	data_received = 0x0;
+
+	if (reason & IS_TIMER_INTR)
+	{
+		// write C0_Compare = $11
+		asm volatile("mtc0	$0, $11");
+		asm volatile("li $9, 0x1");
+		// write C0_COUNT = $9
+		asm volatile("mtc0 $9, $9");
+		return;
+	}
+
 	if (reason & IS_UART_INTR)
 	{
 		/* Read an input value from the console. */
@@ -319,10 +332,12 @@ void _mips_handle_irq(void *ctx, int reason)
 		data_received = 0x1;
 		return;
 	}
+
 	if (reason & IS_PWM_INTR)
 	{
 		*WRITE_IO(PWM_BASE) = 0x0;
 		return;
 	}
+	*WRITE_IO(IO_LEDR) = 0x0FF0; // Display 0xF00F on LEDs to indicate enter the interrupt
 	return;
 }
