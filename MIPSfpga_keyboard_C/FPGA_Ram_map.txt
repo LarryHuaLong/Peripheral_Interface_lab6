@@ -41,103 +41,101 @@ LOAD i2c.o
                 0x00000000bfc00778                . = ALIGN (0x8)
                 0x00000000bfc00778                _etext_init = ABSOLUTE (.)
 
-.text_ram       0x00000000a0001000     0x2130
+.text_ram       0x00000000a0001000     0x2278
                 0x00000000a0001000                _ftext_ram = ABSOLUTE (.)
  *(.text)
- .text          0x00000000a0001000      0x14c main.o
+ .text          0x00000000a0001000      0x150 main.o
                 0x00000000a0001000                delay
                 0x00000000a000103c                uart_outbyte
-                0x00000000a0001080                uart_inbyte
-                0x00000000a00010a0                uart_print
+                0x00000000a0001084                uart_inbyte
+                0x00000000a00010a4                uart_print
                 0x00000000a0001104                _mips_handle_irq
                 0x00000000a000113c                decode
- .text          0x00000000a000114c     0x13e4 ADT7420.o
-                0x00000000a000114c                reverse
-                0x00000000a00011ac                my_itoa
-                0x00000000a0001280                SetAlertModeComparator
-                0x00000000a00012b8                ADT7420_Init
-                0x00000000a000134c                ADT7420_ReadConfigReg
-                0x00000000a0001388                ADT7420_PrintID
-                0x00000000a0001424                ADT7420_DisplayMainMenu
-                0x00000000a00014e4                ADT7420_DisplayMenu
-                0x00000000a0001574                ADT7420_GetResolution
-                0x00000000a0001618                ADT7420_DisplayResolutionMenu
-                0x00000000a0001664                ADT7420_SetResolution
-                0x00000000a0001788                ADT7420_ReadTemp
-                0x00000000a00017fc                Display_Temp
-                0x00000000a0001878                ADT7420_ConsoleRead
-                0x00000000a0001a10                ADT7420_SetTHigh
-                0x00000000a0001aa8                ADT7420_DisplaySetTHighMenu
-                0x00000000a0001b70                ADT7420_PrintTHigh
-                0x00000000a0001c18                ADT7420_SetTLow
-                0x00000000a0001cb0                ADT7420_DisplaySetTLowMenu
-                0x00000000a0001d78                ADT7420_PrintTLow
-                0x00000000a0001e20                ADT7420_SetTCrit
-                0x00000000a0001eb8                ADT7420_DisplaySetTCritMenu
-                0x00000000a0001f80                ADT7420_PrintTCrit
-                0x00000000a0002028                ADT7420_SetHysteresis
-                0x00000000a0002060                ADT7420_DisplaySetTHystMenu
-                0x00000000a0002128                ADT7420_PrintHysteresis
-                0x00000000a0002184                ADT7420_DisplaySetFaultQueueMenu
-                0x00000000a00022d4                ADT7420_PrintFaultQueue
-                0x00000000a000237c                ADT7420_PrintAlertMode
-                0x00000000a00023e0                ADT7420_PrintCTPolarity
-                0x00000000a0002444                ADT7420_PrintINTPolarity
-                0x00000000a00024a8                ADT7420_DisplaySettings
- .text          0x00000000a0002530      0x1e8 i2c.o
-                0x00000000a0002530                delay_ms
-                0x00000000a0002578                I2C_Init
-                0x00000000a00025a0                I2C_Read
-                0x00000000a0002680                I2C_Write
+ .text          0x00000000a0001150     0x13e4 ADT7420.o
+                0x00000000a0001150                reverse
+                0x00000000a00011b0                my_itoa
+                0x00000000a0001284                SetAlertModeComparator
+                0x00000000a00012bc                ADT7420_Init
+                0x00000000a0001350                ADT7420_ReadConfigReg
+                0x00000000a000138c                ADT7420_PrintID
+                0x00000000a0001428                ADT7420_DisplayMainMenu
+                0x00000000a00014e8                ADT7420_DisplayMenu
+                0x00000000a0001578                ADT7420_GetResolution
+                0x00000000a000161c                ADT7420_DisplayResolutionMenu
+                0x00000000a0001668                ADT7420_SetResolution
+                0x00000000a000178c                ADT7420_ReadTemp
+                0x00000000a0001800                Display_Temp
+                0x00000000a000187c                ADT7420_ConsoleRead
+                0x00000000a0001a14                ADT7420_SetTHigh
+                0x00000000a0001aac                ADT7420_DisplaySetTHighMenu
+                0x00000000a0001b74                ADT7420_PrintTHigh
+                0x00000000a0001c1c                ADT7420_SetTLow
+                0x00000000a0001cb4                ADT7420_DisplaySetTLowMenu
+                0x00000000a0001d7c                ADT7420_PrintTLow
+                0x00000000a0001e24                ADT7420_SetTCrit
+                0x00000000a0001ebc                ADT7420_DisplaySetTCritMenu
+                0x00000000a0001f84                ADT7420_PrintTCrit
+                0x00000000a000202c                ADT7420_SetHysteresis
+                0x00000000a0002064                ADT7420_DisplaySetTHystMenu
+                0x00000000a000212c                ADT7420_PrintHysteresis
+                0x00000000a0002188                ADT7420_DisplaySetFaultQueueMenu
+                0x00000000a00022d8                ADT7420_PrintFaultQueue
+                0x00000000a0002380                ADT7420_PrintAlertMode
+                0x00000000a00023e4                ADT7420_PrintCTPolarity
+                0x00000000a0002448                ADT7420_PrintINTPolarity
+                0x00000000a00024ac                ADT7420_DisplaySettings
+ .text          0x00000000a0002534      0x1e8 i2c.o
+                0x00000000a0002534                delay_ms
+                0x00000000a000257c                I2C_Init
+                0x00000000a00025a4                I2C_Read
+                0x00000000a0002684                I2C_Write
  *(.text.*)
- .text.startup  0x00000000a0002718      0x274 main.o
-                0x00000000a0002718                main
+ .text.startup  0x00000000a000271c      0x2ac main.o
+                0x00000000a000271c                main
  *(.rodata)
- .rodata        0x00000000a000298c       0x5b main.o
+ .rodata        0x00000000a00029c8      0x16c main.o
  *(.rodata.*)
- *fill*         0x00000000a00029e7        0x1 00000000
  .rodata.str1.4
-                0x00000000a00029e8      0x744 ADT7420.o
+                0x00000000a0002b34      0x744 ADT7420.o
                                         0x750 (size before relaxing)
-                0x00000000a0003130                . = ALIGN (0x8)
- *fill*         0x00000000a000312c        0x4 00000000
-                0x00000000a0003130                _etext_ram = ABSOLUTE (.)
+                0x00000000a0003278                . = ALIGN (0x8)
+                0x00000000a0003278                _etext_ram = ABSOLUTE (.)
 
-.data           0x00000000a0003130        0x8
-                0x00000000a0003130                _fdata_ram = ABSOLUTE (.)
+.data           0x00000000a0003278        0x8
+                0x00000000a0003278                _fdata_ram = ABSOLUTE (.)
  *(.data)
- .data          0x00000000a0003130        0x0 main.o
- .data          0x00000000a0003130        0x0 ADT7420.o
- .data          0x00000000a0003130        0x0 i2c.o
- .data          0x00000000a0003130        0x0 boot.o
-                0x00000000a0003130                . = ALIGN (0x8)
-                0x00000000a000b130                _gp = ABSOLUTE ((. + 0x8000))
+ .data          0x00000000a0003278        0x0 main.o
+ .data          0x00000000a0003278        0x0 ADT7420.o
+ .data          0x00000000a0003278        0x0 i2c.o
+ .data          0x00000000a0003278        0x0 boot.o
+                0x00000000a0003278                . = ALIGN (0x8)
+                0x00000000a000b278                _gp = ABSOLUTE ((. + 0x8000))
  *(.lit8)
  *(.lit4)
  *(.sdata)
- .sdata         0x00000000a0003130        0x4 ADT7420.o
-                0x00000000a0003130                TUpper
-                0x00000000a0003138                . = ALIGN (0x8)
- *fill*         0x00000000a0003134        0x4 
-                0x00000000a0003138                _edata_ram = ABSOLUTE (.)
-                0x00000000a0003138                _fbss = .
+ .sdata         0x00000000a0003278        0x4 ADT7420.o
+                0x00000000a0003278                TUpper
+                0x00000000a0003280                . = ALIGN (0x8)
+ *fill*         0x00000000a000327c        0x4 
+                0x00000000a0003280                _edata_ram = ABSOLUTE (.)
+                0x00000000a0003280                _fbss = .
 
-.sbss           0x00000000a0003138        0x5
+.sbss           0x00000000a0003280        0x5
  *(.sbss)
- .sbss          0x00000000a0003138        0x4 main.o
-                0x00000000a0003138                rxData
- .sbss          0x00000000a000313c        0x1 ADT7420.o
-                0x00000000a000313c                valid
+ .sbss          0x00000000a0003280        0x4 main.o
+                0x00000000a0003280                rxData
+ .sbss          0x00000000a0003284        0x1 ADT7420.o
+                0x00000000a0003284                valid
  *(.scommon)
 
-.bss            0x00000000a0003140       0x64
+.bss            0x00000000a0003288       0x64
  *(.bss)
- .bss           0x00000000a0003140        0x0 main.o
- .bss           0x00000000a0003140       0x64 ADT7420.o
- .bss           0x00000000a00031a4        0x0 i2c.o
- .bss           0x00000000a00031a4        0x0 boot.o
+ .bss           0x00000000a0003288        0x0 main.o
+ .bss           0x00000000a0003288       0x64 ADT7420.o
+ .bss           0x00000000a00032ec        0x0 i2c.o
+ .bss           0x00000000a00032ec        0x0 boot.o
  *(COMMON)
-                0x00000000a00031a4                _end = .
+                0x00000000a00032ec                _end = .
 
 .gptab.sdata
  *(.gptab.data)
@@ -150,7 +148,7 @@ LOAD i2c.o
 /DISCARD/
  *(.reginfo)
  *(.MIPS.abiflags)
-                0x00000000a00031a4                _freemem = .
+                0x00000000a00032ec                _freemem = .
 OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
 
 .pdr            0x0000000000000000      0x680
@@ -164,12 +162,11 @@ OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
  .mdebug.abi32  0x0000000000000000        0x0 ADT7420.o
  .mdebug.abi32  0x0000000000000000        0x0 i2c.o
 
-.comment        0x0000000000000000       0x87
- .comment       0x0000000000000000       0x44 main.o
-                                         0x45 (size before relaxing)
- .comment       0x0000000000000044       0x43 ADT7420.o
+.comment        0x0000000000000000       0x43
+ .comment       0x0000000000000000       0x43 main.o
                                          0x44 (size before relaxing)
- .comment       0x0000000000000087       0x44 i2c.o
+ .comment       0x0000000000000043       0x44 ADT7420.o
+ .comment       0x0000000000000043       0x44 i2c.o
 
 .gnu.attributes
                 0x0000000000000000       0x10
@@ -182,22 +179,22 @@ OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
  .gnu.attributes
                 0x0000000000000030       0x10 boot.o
 
-.debug_info     0x0000000000000000     0x1f07
- .debug_info    0x0000000000000000      0x423 main.o
- .debug_info    0x0000000000000423     0x1827 ADT7420.o
- .debug_info    0x0000000000001c4a      0x24a i2c.o
- .debug_info    0x0000000000001e94       0x73 boot.o
+.debug_info     0x0000000000000000     0x20b8
+ .debug_info    0x0000000000000000      0x5d4 main.o
+ .debug_info    0x00000000000005d4     0x1827 ADT7420.o
+ .debug_info    0x0000000000001dfb      0x24a i2c.o
+ .debug_info    0x0000000000002045       0x73 boot.o
 
-.debug_abbrev   0x0000000000000000      0x5b9
- .debug_abbrev  0x0000000000000000      0x207 main.o
- .debug_abbrev  0x0000000000000207      0x28b ADT7420.o
- .debug_abbrev  0x0000000000000492      0x113 i2c.o
- .debug_abbrev  0x00000000000005a5       0x14 boot.o
+.debug_abbrev   0x0000000000000000      0x5c2
+ .debug_abbrev  0x0000000000000000      0x210 main.o
+ .debug_abbrev  0x0000000000000210      0x28b ADT7420.o
+ .debug_abbrev  0x000000000000049b      0x113 i2c.o
+ .debug_abbrev  0x00000000000005ae       0x14 boot.o
 
-.debug_loc      0x0000000000000000      0xa64
- .debug_loc     0x0000000000000000       0x31 main.o
- .debug_loc     0x0000000000000031      0x705 ADT7420.o
- .debug_loc     0x0000000000000736      0x32e i2c.o
+.debug_loc      0x0000000000000000      0xabe
+ .debug_loc     0x0000000000000000       0x8b main.o
+ .debug_loc     0x000000000000008b      0x705 ADT7420.o
+ .debug_loc     0x0000000000000790      0x32e i2c.o
 
 .debug_aranges  0x0000000000000000       0x88
  .debug_aranges
@@ -209,25 +206,25 @@ OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
  .debug_aranges
                 0x0000000000000068       0x20 boot.o
 
-.debug_ranges   0x0000000000000000       0x48
- .debug_ranges  0x0000000000000000       0x30 main.o
- .debug_ranges  0x0000000000000030       0x18 ADT7420.o
+.debug_ranges   0x0000000000000000       0x60
+ .debug_ranges  0x0000000000000000       0x48 main.o
+ .debug_ranges  0x0000000000000048       0x18 ADT7420.o
 
-.debug_line     0x0000000000000000      0x6f4
- .debug_line    0x0000000000000000       0xdb main.o
- .debug_line    0x00000000000000db      0x35d ADT7420.o
- .debug_line    0x0000000000000438       0xbe i2c.o
- .debug_line    0x00000000000004f6      0x1fe boot.o
+.debug_line     0x0000000000000000      0x70a
+ .debug_line    0x0000000000000000       0xf1 main.o
+ .debug_line    0x00000000000000f1      0x35d ADT7420.o
+ .debug_line    0x000000000000044e       0xbe i2c.o
+ .debug_line    0x000000000000050c      0x1fe boot.o
 
-.debug_str      0x0000000000000000      0x5a0
- .debug_str     0x0000000000000000      0x166 main.o
-                                        0x17e (size before relaxing)
- .debug_str     0x0000000000000166      0x3d8 ADT7420.o
+.debug_str      0x0000000000000000      0x4f3
+ .debug_str     0x0000000000000000      0x173 main.o
+                                        0x18b (size before relaxing)
+ .debug_str     0x0000000000000173      0x31e ADT7420.o
                                         0x42a (size before relaxing)
- .debug_str     0x000000000000053e       0x62 i2c.o
+ .debug_str     0x0000000000000491       0x62 i2c.o
                                         0x151 (size before relaxing)
 
-.debug_frame    0x0000000000000000      0x574
- .debug_frame   0x0000000000000000       0x9c main.o
- .debug_frame   0x000000000000009c      0x488 ADT7420.o
- .debug_frame   0x0000000000000524       0x50 i2c.o
+.debug_frame    0x0000000000000000      0x580
+ .debug_frame   0x0000000000000000       0xa8 main.o
+ .debug_frame   0x00000000000000a8      0x488 ADT7420.o
+ .debug_frame   0x0000000000000530       0x50 i2c.o

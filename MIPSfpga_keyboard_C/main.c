@@ -90,7 +90,7 @@ int main()
 				code = keycode & 0xff;
 				display = (display << 8) | (keycode & 0xff);
 				;
-				uart_print(decode(code));
+				uart_print(my_itoa(decode(code)));
 			}
 			lastkeycode = keycode;
 		}
