@@ -217,7 +217,7 @@ void _mips_handle_irq(void *ctx, int reason)
 		uart_print("PS2_INTR occurred!:");
 		uart_print(my_itoa(reason));
 		uart_print("\n\rkeycode:");
-		uart_print(my_itoa(keycode);
+		uart_print(my_itoa(keycode));
 		uart_print("\n\r");
 		delay();
 		return;
