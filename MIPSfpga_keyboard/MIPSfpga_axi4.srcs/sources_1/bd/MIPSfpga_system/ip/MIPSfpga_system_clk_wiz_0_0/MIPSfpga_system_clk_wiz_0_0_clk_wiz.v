@@ -56,7 +56,7 @@
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
 // CLK_OUT1____50.000______0.000______50.0______167.017____114.212
-// CLK_OUT2____25.000______0.000______50.0______191.696____114.212
+// CLK_OUT2___100.000______0.000______50.0______144.719____114.212
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -111,7 +111,7 @@ module MIPSfpga_system_clk_wiz_0_0_clk_wiz
     .CLKOUT0_DIVIDE       (16),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
-    .CLKOUT1_DIVIDE       (32),
+    .CLKOUT1_DIVIDE       (8),
     .CLKOUT1_PHASE        (0.000),
     .CLKOUT1_DUTY_CYCLE   (0.500),
     .CLKIN1_PERIOD        (10.0))

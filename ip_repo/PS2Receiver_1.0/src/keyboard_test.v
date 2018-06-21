@@ -1,11 +1,13 @@
 module test(
     input CLK100MHZ,
+    input CPU_RESETN,
     input PS2_CLK,
     input PS2_DATA,
     output [6:0]SEG,
     output [7:0]AN,
     output DP,
-    output UART_TXD
+    output UART_TXD,
+    output LED16_G
     );
     
 reg CLK50MHZ=0;    
@@ -17,9 +19,11 @@ end
 
 PS2Receiver keyboard (
 .clk(CLK50MHZ),
+.reset(CPU_RESETN),
 .kclk(PS2_CLK),
 .kdata(PS2_DATA),
 .irq(UART_TXD),
+.flag(LED16_G),
 .keycodeout(keycode[31:0])
 );
 

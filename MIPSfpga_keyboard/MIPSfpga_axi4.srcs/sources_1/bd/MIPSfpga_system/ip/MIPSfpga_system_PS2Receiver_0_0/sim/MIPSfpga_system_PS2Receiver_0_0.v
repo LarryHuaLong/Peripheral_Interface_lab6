@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:PS2Receiver:1.0
-// IP Revision: 3
+// IP Revision: 10
 
 `timescale 1ns/1ps
 
@@ -57,7 +57,9 @@ module MIPSfpga_system_PS2Receiver_0_0 (
   PS2_CLK,
   PS2_DATA,
   irq,
+  flag,
   keycodeout,
+  lastkeycode,
   s00_axi_aclk,
   s00_axi_aresetn,
   s00_axi_awaddr,
@@ -84,7 +86,9 @@ module MIPSfpga_system_PS2Receiver_0_0 (
 input wire PS2_CLK;
 input wire PS2_DATA;
 output wire irq;
+output wire flag;
 output wire [31 : 0] keycodeout;
+output wire [31 : 0] lastkeycode;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *)
 input wire s00_axi_aclk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *)
@@ -135,7 +139,9 @@ input wire s00_axi_rready;
     .PS2_CLK(PS2_CLK),
     .PS2_DATA(PS2_DATA),
     .irq(irq),
+    .flag(flag),
     .keycodeout(keycodeout),
+    .lastkeycode(lastkeycode),
     .s00_axi_aclk(s00_axi_aclk),
     .s00_axi_aresetn(s00_axi_aresetn),
     .s00_axi_awaddr(s00_axi_awaddr),

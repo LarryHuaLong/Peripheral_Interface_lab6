@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module debouncer(
+odule debouncer(
     input clk,
     input I0,
     input I1,

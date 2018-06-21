@@ -1,0 +1,91 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
+| Date         : Thu Jun 21 03:57:44 2018
+| Host         : DESKTOP-LARRY running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'MIPSfpga_system_segment_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of MIPSfpga_system_segment_0_0 (xilinx.com:user:segment:1.0) from (Rev. 9) to (Rev. 10)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading IP 'MIPSfpga_system_segment_0_0'. These changes may impact your design.
+
+
+-upgrade has added port 'CLK100MHZ'
+
+
+
+
+
+
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
+| Date         : Thu Jun 21 02:40:47 2018
+| Host         : DESKTOP-LARRY running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'MIPSfpga_system_segment_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of MIPSfpga_system_segment_0_0 (xilinx.com:user:segment:1.0) from (Rev. 8) to (Rev. 9)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Warnings
+-----------
+
+WARNING: The upgraded user parameter set contained parameters that could not be mapped on to the upgraded IP. Note that parameter names and IDs are case sensitive.
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading IP 'MIPSfpga_system_segment_0_0'. These changes may impact your design.
+
+
+-upgrade has removed port 'anodes'
+-upgrade has removed port 'cathodes'
+-upgrade has added port 'AN'
+-upgrade has added port 'DP'
+-upgrade has added port 'SEG'
+
+4. Customization warnings
+-------------------------
+
+WARNING: Parameter 'divider_count' is no longer present on the upgraded IP 'MIPSfpga_system_segment_0_0', and cannot be set to '250000'
+
+
+5. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  Please consult the warnings from the previous sections, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:user:segment:1.0 -user_name MIPSfpga_system_segment_0_0
+set_property -dict "\
+  CONFIG.C_S00_AXI_DATA_WIDTH 32 \
+  CONFIG.C_S00_AXI_ADDR_WIDTH 4 \
+  CONFIG.C_S00_AXI_BASEADDR 0xFFFFFFFF \
+  CONFIG.C_S00_AXI_HIGHADDR 0x00000000 \
+  CONFIG.Component_Name MIPSfpga_system_segment_0_0 " [get_ips MIPSfpga_system_segment_0_0]
+
+

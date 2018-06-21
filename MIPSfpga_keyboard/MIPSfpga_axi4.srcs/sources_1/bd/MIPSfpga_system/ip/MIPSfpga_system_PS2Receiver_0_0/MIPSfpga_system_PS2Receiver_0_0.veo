@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 // IP VLNV: xilinx.com:user:PS2Receiver:1.0
-// IP Revision: 3
+// IP Revision: 10
 
 // The following must be inserted into your Verilog file for this
 // core to be instantiated. Change the instance name and port connections
@@ -58,7 +58,9 @@ MIPSfpga_system_PS2Receiver_0_0 your_instance_name (
   .PS2_CLK(PS2_CLK),                  // input wire PS2_CLK
   .PS2_DATA(PS2_DATA),                // input wire PS2_DATA
   .irq(irq),                          // output wire irq
+  .flag(flag),                        // output wire flag
   .keycodeout(keycodeout),            // output wire [31 : 0] keycodeout
+  .lastkeycode(lastkeycode),          // output wire [31 : 0] lastkeycode
   .s00_axi_aclk(s00_axi_aclk),        // input wire s00_axi_aclk
   .s00_axi_aresetn(s00_axi_aresetn),  // input wire s00_axi_aresetn
   .s00_axi_awaddr(s00_axi_awaddr),    // input wire [3 : 0] s00_axi_awaddr

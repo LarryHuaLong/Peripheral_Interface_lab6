@@ -48,17 +48,19 @@
 
 
 // IP VLNV: xilinx.com:user:PS2Receiver:1.0
-// IP Revision: 3
+// IP Revision: 10
 
 (* X_CORE_INFO = "PS2Receiver_v1_0,Vivado 2015.2" *)
 (* CHECK_LICENSE_TYPE = "MIPSfpga_system_PS2Receiver_0_0,PS2Receiver_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "MIPSfpga_system_PS2Receiver_0_0,PS2Receiver_v1_0,{x_ipProduct=Vivado 2015.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=PS2Receiver,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
+(* CORE_GENERATION_INFO = "MIPSfpga_system_PS2Receiver_0_0,PS2Receiver_v1_0,{x_ipProduct=Vivado 2015.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=PS2Receiver,x_ipVersion=1.0,x_ipCoreRevision=10,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module MIPSfpga_system_PS2Receiver_0_0 (
   PS2_CLK,
   PS2_DATA,
   irq,
+  flag,
   keycodeout,
+  lastkeycode,
   s00_axi_aclk,
   s00_axi_aresetn,
   s00_axi_awaddr,
@@ -85,7 +87,9 @@ module MIPSfpga_system_PS2Receiver_0_0 (
 input wire PS2_CLK;
 input wire PS2_DATA;
 output wire irq;
+output wire flag;
 output wire [31 : 0] keycodeout;
+output wire [31 : 0] lastkeycode;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *)
 input wire s00_axi_aclk;
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *)
@@ -136,7 +140,9 @@ input wire s00_axi_rready;
     .PS2_CLK(PS2_CLK),
     .PS2_DATA(PS2_DATA),
     .irq(irq),
+    .flag(flag),
     .keycodeout(keycodeout),
+    .lastkeycode(lastkeycode),
     .s00_axi_aclk(s00_axi_aclk),
     .s00_axi_aresetn(s00_axi_aresetn),
     .s00_axi_awaddr(s00_axi_awaddr),

@@ -1,6 +1,0 @@
-set_property SRC_FILE_INFO {cfile:E:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.runs/MIPSfpga_system_auto_pc_3_synth_1/dont_touch.xdc rfile:../../../dont_touch.xdc id:1} [current_design]
-set_property SRC_FILE_INFO {cfile:e:/Peripheral_Interface_lab6/MIPSfpga_keyboard/MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_3/MIPSfpga_system_auto_pc_3_ooc.xdc rfile:../../../../../MIPSfpga_axi4.srcs/sources_1/bd/MIPSfpga_system/ip/MIPSfpga_system_auto_pc_3/MIPSfpga_system_auto_pc_3_ooc.xdc id:2 order:EARLY scoped_inst:inst} [current_design]
-set_property src_info {type:XDC file:1 line:9 export:INPUT save:INPUT read:READ} [current_design]
-set_property DONT_TOUCH true [get_cells inst]
-set_property src_info {type:SCOPED_XDC file:2 line:49 export:INPUT save:INPUT read:FILTER_OUT_OF_CONTEXT} [current_design]
-create_clock -period 100.000 -name aclk [get_ports aclk]
