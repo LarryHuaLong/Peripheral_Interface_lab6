@@ -89,7 +89,8 @@ int main()
 		{
 			*WRITE_IO(PS2_BASE + 4) = keycode;
 			*WRITE_IO(SEG_BASE) = keycode; //在数码管上显示按键状态
-			if ((keycode & 0xff00) != 0Xf000)
+			uart_print("keychanged\r\n");
+			/*if ((keycode & 0xff00) != 0Xf000)
 			{
 				char code = decode(keycode & 0xff);
 				if (code != '\0')
@@ -100,7 +101,7 @@ int main()
 						uart_outbyte('\n');
 						
 				}}
-			}
+			}*/
 		}
 		delay();
 		//设置亮度
@@ -113,7 +114,7 @@ int main()
 			delay();
 		}
 		//LED显示计数
-		if (count_div < 10000)
+		if (count_div >= 100)
 		{
 			count_div = 0;
 			count = count + 1;
