@@ -33,7 +33,7 @@ LOAD main.o
                 0x00000000bfc00778                . = ALIGN (0x8)
                 0x00000000bfc00778                _etext_init = ABSOLUTE (.)
 
-.text_ram       0x00000000a0001000      0xa00
+.text_ram       0x00000000a0001000      0x8d0
                 0x00000000a0001000                _ftext_ram = ABSOLUTE (.)
  *(.text)
  .text          0x00000000a0001000      0x550 main.o
@@ -45,46 +45,47 @@ LOAD main.o
                 0x00000000a0001164                my_itoa
                 0x00000000a0001254                _mips_handle_irq
  *(.text.*)
- .text.startup  0x00000000a0001550      0x43c main.o
+ .text.startup  0x00000000a0001550      0x308 main.o
                 0x00000000a0001550                main
  *(.rodata)
  *(.rodata.*)
  .rodata.str1.4
-                0x00000000a000198c       0x74 main.o
+                0x00000000a0001858       0x74 main.o
                                          0x72 (size before relaxing)
-                0x00000000a0001a00                . = ALIGN (0x8)
-                0x00000000a0001a00                _etext_ram = ABSOLUTE (.)
+                0x00000000a00018d0                . = ALIGN (0x8)
+ *fill*         0x00000000a00018cc        0x4 00000000
+                0x00000000a00018d0                _etext_ram = ABSOLUTE (.)
 
-.data           0x00000000a0001a00        0x8
-                0x00000000a0001a00                _fdata_ram = ABSOLUTE (.)
+.data           0x00000000a00018d0        0x8
+                0x00000000a00018d0                _fdata_ram = ABSOLUTE (.)
  *(.data)
- .data          0x00000000a0001a00        0x0 main.o
- .data          0x00000000a0001a00        0x0 boot.o
-                0x00000000a0001a00                . = ALIGN (0x8)
-                0x00000000a0009a00                _gp = ABSOLUTE ((. + 0x8000))
+ .data          0x00000000a00018d0        0x0 main.o
+ .data          0x00000000a00018d0        0x0 boot.o
+                0x00000000a00018d0                . = ALIGN (0x8)
+                0x00000000a00098d0                _gp = ABSOLUTE ((. + 0x8000))
  *(.lit8)
  *(.lit4)
  *(.sdata)
- .sdata         0x00000000a0001a00        0x4 main.o
-                0x00000000a0001a00                promt
-                0x00000000a0001a08                . = ALIGN (0x8)
- *fill*         0x00000000a0001a04        0x4 
-                0x00000000a0001a08                _edata_ram = ABSOLUTE (.)
-                0x00000000a0001a08                _fbss = .
+ .sdata         0x00000000a00018d0        0x4 main.o
+                0x00000000a00018d0                promt
+                0x00000000a00018d8                . = ALIGN (0x8)
+ *fill*         0x00000000a00018d4        0x4 
+                0x00000000a00018d8                _edata_ram = ABSOLUTE (.)
+                0x00000000a00018d8                _fbss = .
 
-.sbss           0x00000000a0001a08        0x8
+.sbss           0x00000000a00018d8        0x8
  *(.sbss)
- .sbss          0x00000000a0001a08        0x8 main.o
-                0x00000000a0001a08                data_received
-                0x00000000a0001a0c                rxData
+ .sbss          0x00000000a00018d8        0x8 main.o
+                0x00000000a00018d8                data_received
+                0x00000000a00018dc                rxData
  *(.scommon)
 
-.bss            0x00000000a0001a10       0x64
+.bss            0x00000000a00018e0       0x64
  *(.bss)
- .bss           0x00000000a0001a10       0x64 main.o
- .bss           0x00000000a0001a74        0x0 boot.o
+ .bss           0x00000000a00018e0       0x64 main.o
+ .bss           0x00000000a0001944        0x0 boot.o
  *(COMMON)
-                0x00000000a0001a74                _end = .
+                0x00000000a0001944                _end = .
 
 .gptab.sdata
  *(.gptab.data)
@@ -97,7 +98,7 @@ LOAD main.o
 /DISCARD/
  *(.reginfo)
  *(.MIPS.abiflags)
-                0x00000000a0001a74                _freemem = .
+                0x00000000a0001944                _freemem = .
 OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
 
 .pdr            0x0000000000000000      0x220
@@ -118,16 +119,16 @@ OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
  .gnu.attributes
                 0x0000000000000010       0x10 boot.o
 
-.debug_info     0x0000000000000000      0x906
- .debug_info    0x0000000000000000      0x89a main.o
- .debug_info    0x000000000000089a       0x6c boot.o
+.debug_info     0x0000000000000000      0x812
+ .debug_info    0x0000000000000000      0x7a6 main.o
+ .debug_info    0x00000000000007a6       0x6c boot.o
 
 .debug_abbrev   0x0000000000000000      0x231
  .debug_abbrev  0x0000000000000000      0x21d main.o
  .debug_abbrev  0x000000000000021d       0x14 boot.o
 
-.debug_loc      0x0000000000000000      0x43b
- .debug_loc     0x0000000000000000      0x43b main.o
+.debug_loc      0x0000000000000000      0x3b9
+ .debug_loc     0x0000000000000000      0x3b9 main.o
 
 .debug_aranges  0x0000000000000000       0x48
  .debug_aranges
@@ -135,16 +136,16 @@ OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
  .debug_aranges
                 0x0000000000000028       0x20 boot.o
 
-.debug_ranges   0x0000000000000000       0x90
- .debug_ranges  0x0000000000000000       0x90 main.o
+.debug_ranges   0x0000000000000000       0xb0
+ .debug_ranges  0x0000000000000000       0xb0 main.o
 
-.debug_line     0x0000000000000000      0x3f9
- .debug_line    0x0000000000000000      0x1fb main.o
- .debug_line    0x00000000000001fb      0x1fe boot.o
+.debug_line     0x0000000000000000      0x3c7
+ .debug_line    0x0000000000000000      0x1c9 main.o
+ .debug_line    0x00000000000001c9      0x1fe boot.o
 
 .debug_str      0x0000000000000000      0x18a
  .debug_str     0x0000000000000000      0x18a main.o
                                         0x1b6 (size before relaxing)
 
-.debug_frame    0x0000000000000000       0xc8
- .debug_frame   0x0000000000000000       0xc8 main.o
+.debug_frame    0x0000000000000000       0xc4
+ .debug_frame   0x0000000000000000       0xc4 main.o
