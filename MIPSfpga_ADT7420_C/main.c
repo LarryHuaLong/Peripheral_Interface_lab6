@@ -48,7 +48,6 @@ extern void delay_ms(unsigned int ms_count);
 /********************** Variable Definitions *********************************/
 /*****************************************************************************/
 volatile int rxData = 0;
-volatile unsigned int data_received = 0x0;
 
 //------------------
 // main()
@@ -58,8 +57,8 @@ int main()
 	volatile unsigned int pushbutton, count = 0xF;
 	volatile unsigned int j = 1;
 	volatile unsigned int period;
-	volatile unsigned int keycode;
-	volatile unsigned int lastkeycode, code = 0;
+	volatile unsigned int keycode,lastkeycode;
+	volatile unsigned int code = 0, display = 0;
 	volatile unsigned int key_release = 0;
 
 	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
@@ -76,6 +75,7 @@ int main()
 	*WRITE_IO(UART_BASE + ier) = 0x00000001; // IER register. Enables Receiver Line Status and Received Data Interrupts
 	delay();
 
+	code = 0, display = 0;
 	lastkeycode = *READ_IO(PS2_BASE);
 	while (1)
 	{
@@ -87,27 +87,17 @@ int main()
 			if (key_release)
 			{
 				code = keycode & 0xff;
+				display = (display << 8) | code;
 				uart_print("keyrelease:");
 				uart_print(my_itoa(code));
 				uart_print("\r\n");
 			}
 			lastkeycode = keycode;
 		}
-		if (data_received)
-		{
-			period = rxData - 0x30;
-			*WRITE_IO(PWM_BASE) = period * 110000;
-			data_received = 0x0;
-		}
-		*WRITE_IO(SEG_BASE) = (period << 16) | code;
-		code = 0;
+		*WRITE_IO(SEG_BASE) = display;
 		delay();
 	}
 	return 0;
-	// Begin ADT7420 test
-	// Initialize ADT7420 Device
-	ADT7420_Init();
-
 
 }
 
@@ -149,13 +139,9 @@ void uart_print(const char *ptr)
 void _mips_handle_irq(void *ctx, int reason)
 {
 	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xFFFF on LEDs to indicate receive data from uart
-	data_received = 0x0;
 
 	if ((*READ_IO(UART_BASE + lsr) & 0x00000001) == 0x00000001)
-	{
 		rxData = *READ_IO(UART_BASE + rbr);
-		data_received = 0x1;
-	}
 
 	*WRITE_IO(IO_LEDR) = 0;
 

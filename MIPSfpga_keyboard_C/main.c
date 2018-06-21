@@ -37,6 +37,7 @@ void uart_print(const char *ptr);
 
 extern char *reverse(char *s);
 extern char *my_itoa(int n);
+char decode(int code);
 
 extern void delay_ms(unsigned int ms_count);
 
@@ -48,7 +49,6 @@ extern void delay_ms(unsigned int ms_count);
 /********************** Variable Definitions *********************************/
 /*****************************************************************************/
 volatile int rxData = 0;
-volatile unsigned int data_received = 0x0;
 
 //------------------
 // main()
@@ -58,8 +58,8 @@ int main()
 	volatile unsigned int pushbutton, count = 0xF;
 	volatile unsigned int j = 1;
 	volatile unsigned int period;
-	volatile unsigned int keycode;
-	volatile unsigned int lastkeycode, code;
+	volatile unsigned int keycode, lastkeycode;
+	volatile unsigned int code = 0, display = 0;
 	volatile unsigned int key_release = 0;
 
 	*WRITE_IO(UART_BASE + lcr) = 0x00000080; // LCR[7]  is 1
@@ -76,6 +76,7 @@ int main()
 	*WRITE_IO(UART_BASE + ier) = 0x00000001; // IER register. Enables Receiver Line Status and Received Data Interrupts
 	delay();
 
+	code = 0, display = 0;
 	lastkeycode = *READ_IO(PS2_BASE);
 	while (1)
 	{
@@ -86,19 +87,14 @@ int main()
 			key_release = (keycode & 0x0000ff00) == 0X0000f000;
 			if (key_release)
 			{
-				uart_print("keyrelease:");
-				uart_print(my_itoa(keycode & 0xff));
-				uart_print("\r\n");
+				code = keycode & 0xff;
+				display = (display << 8) | code;
+				uart_outbyte(decode(code));
 			}
 			lastkeycode = keycode;
 		}
-		if (data_received)
-		{
-			period = rxData - 0x30;
-			*WRITE_IO(PWM_BASE) = period * 110000;
-			data_received = 0x0;
-		}
-		//delay();
+		*WRITE_IO(SEG_BASE) = display;
+		delay();
 	}
 	return 0;
 }
@@ -107,7 +103,7 @@ void delay()
 {
 	volatile unsigned int j;
 
-	for (j = 0; j < (10000); j++)
+	for (j = 0; j < (100); j++)
 		; // delay
 }
 
@@ -141,15 +137,97 @@ void uart_print(const char *ptr)
 void _mips_handle_irq(void *ctx, int reason)
 {
 	*WRITE_IO(IO_LEDR) = 0xF00F; // Display 0xFFFF on LEDs to indicate receive data from uart
-	data_received = 0x0;
 
 	if ((*READ_IO(UART_BASE + lsr) & 0x00000001) == 0x00000001)
-	{
 		rxData = *READ_IO(UART_BASE + rbr);
-		data_received = 0x1;
-	}
 
-	*WRITE_IO(IO_LEDR) = rxData;
+	*WRITE_IO(IO_LEDR) = 0;
 
 	return;
+}
+
+char decode(int code)
+{
+
+	switch (code)
+	{
+	case 0x45:
+		return '0';
+	case 0x16:
+		return '1';
+	case 0x1e:
+		return '2';
+	case 0x26:
+		return '3';
+	case 0x25:
+		return '4';
+	case 0x2e:
+		return '5';
+	case 0x36:
+		return '6';
+	case 0x3d:
+		return '7';
+	case 0x3e:
+		return '8';
+	case 0x46:
+		return '9';
+	case 0x29:
+		return ' ';
+	case 0x5a:
+		return '\r';
+	case 0x1c:
+		return 'a';
+	case 0x32:
+		return 'b';
+	case 0x21:
+		return 'c';
+	case 0x23:
+		return 'd';
+	case 0x24:
+		return 'e';
+	case 0x2b:
+		return 'f';
+	case 0x34:
+		return 'g';
+	case 0x33:
+		return 'h';
+	case 0x43:
+		return 'i';
+	case 0x3b:
+		return 'j';
+	case 0x42:
+		return 'k';
+	case 0x4b:
+		return 'l';
+	case 0x3a:
+		return 'm';
+	case 0x31:
+		return 'n';
+	case 0x44:
+		return 'o';
+	case 0x4d:
+		return 'p';
+	case 0x15:
+		return 'q';
+	case 0x2d:
+		return 'r';
+	case 0x1b:
+		return 's';
+	case 0x2c:
+		return 't';
+	case 0x3c:
+		return 'u';
+	case 0x2a:
+		return 'v';
+	case 0x1d:
+		return 'w';
+	case 0x22:
+		return 'x';
+	case 0x35:
+		return 'y';
+	case 0x1a:
+		return 'z';
+	default:
+		return '\0';
+	}
 }
