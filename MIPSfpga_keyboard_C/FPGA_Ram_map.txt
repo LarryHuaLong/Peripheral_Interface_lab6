@@ -47,8 +47,8 @@ LOAD i2c.o
  .text          0x00000000a0001000      0x14c main.o
                 0x00000000a0001000                delay
                 0x00000000a000103c                uart_outbyte
-                0x00000000a0001084                uart_inbyte
-                0x00000000a00010a4                uart_print
+                0x00000000a0001080                uart_inbyte
+                0x00000000a00010a0                uart_print
                 0x00000000a0001104                _mips_handle_irq
                 0x00000000a000113c                decode
  .text          0x00000000a000114c     0x13e4 ADT7420.o
@@ -93,8 +93,9 @@ LOAD i2c.o
  .text.startup  0x00000000a0002718      0x274 main.o
                 0x00000000a0002718                main
  *(.rodata)
- .rodata        0x00000000a000298c       0x5c main.o
+ .rodata        0x00000000a000298c       0x5b main.o
  *(.rodata.*)
+ *fill*         0x00000000a00029e7        0x1 00000000
  .rodata.str1.4
                 0x00000000a00029e8      0x744 ADT7420.o
                                         0x750 (size before relaxing)
@@ -163,11 +164,12 @@ OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
  .mdebug.abi32  0x0000000000000000        0x0 ADT7420.o
  .mdebug.abi32  0x0000000000000000        0x0 i2c.o
 
-.comment        0x0000000000000000       0x43
- .comment       0x0000000000000000       0x43 main.o
+.comment        0x0000000000000000       0x87
+ .comment       0x0000000000000000       0x44 main.o
+                                         0x45 (size before relaxing)
+ .comment       0x0000000000000044       0x43 ADT7420.o
                                          0x44 (size before relaxing)
- .comment       0x0000000000000043       0x44 ADT7420.o
- .comment       0x0000000000000043       0x44 i2c.o
+ .comment       0x0000000000000087       0x44 i2c.o
 
 .gnu.attributes
                 0x0000000000000000       0x10
@@ -180,22 +182,22 @@ OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
  .gnu.attributes
                 0x0000000000000030       0x10 boot.o
 
-.debug_info     0x0000000000000000     0x1f1b
- .debug_info    0x0000000000000000      0x437 main.o
- .debug_info    0x0000000000000437     0x1827 ADT7420.o
- .debug_info    0x0000000000001c5e      0x24a i2c.o
- .debug_info    0x0000000000001ea8       0x73 boot.o
+.debug_info     0x0000000000000000     0x1f07
+ .debug_info    0x0000000000000000      0x423 main.o
+ .debug_info    0x0000000000000423     0x1827 ADT7420.o
+ .debug_info    0x0000000000001c4a      0x24a i2c.o
+ .debug_info    0x0000000000001e94       0x73 boot.o
 
-.debug_abbrev   0x0000000000000000      0x59b
- .debug_abbrev  0x0000000000000000      0x1e9 main.o
- .debug_abbrev  0x00000000000001e9      0x28b ADT7420.o
- .debug_abbrev  0x0000000000000474      0x113 i2c.o
- .debug_abbrev  0x0000000000000587       0x14 boot.o
+.debug_abbrev   0x0000000000000000      0x5b9
+ .debug_abbrev  0x0000000000000000      0x207 main.o
+ .debug_abbrev  0x0000000000000207      0x28b ADT7420.o
+ .debug_abbrev  0x0000000000000492      0x113 i2c.o
+ .debug_abbrev  0x00000000000005a5       0x14 boot.o
 
-.debug_loc      0x0000000000000000      0xa7e
- .debug_loc     0x0000000000000000       0x4b main.o
- .debug_loc     0x000000000000004b      0x705 ADT7420.o
- .debug_loc     0x0000000000000750      0x32e i2c.o
+.debug_loc      0x0000000000000000      0xa64
+ .debug_loc     0x0000000000000000       0x31 main.o
+ .debug_loc     0x0000000000000031      0x705 ADT7420.o
+ .debug_loc     0x0000000000000736      0x32e i2c.o
 
 .debug_aranges  0x0000000000000000       0x88
  .debug_aranges
@@ -211,18 +213,18 @@ OUTPUT(FPGA_Ram.elf elf32-tradlittlemips)
  .debug_ranges  0x0000000000000000       0x30 main.o
  .debug_ranges  0x0000000000000030       0x18 ADT7420.o
 
-.debug_line     0x0000000000000000      0x6f6
- .debug_line    0x0000000000000000       0xdd main.o
- .debug_line    0x00000000000000dd      0x35d ADT7420.o
- .debug_line    0x000000000000043a       0xbe i2c.o
- .debug_line    0x00000000000004f8      0x1fe boot.o
+.debug_line     0x0000000000000000      0x6f4
+ .debug_line    0x0000000000000000       0xdb main.o
+ .debug_line    0x00000000000000db      0x35d ADT7420.o
+ .debug_line    0x0000000000000438       0xbe i2c.o
+ .debug_line    0x00000000000004f6      0x1fe boot.o
 
-.debug_str      0x0000000000000000      0x4f3
- .debug_str     0x0000000000000000      0x16b main.o
-                                        0x183 (size before relaxing)
- .debug_str     0x000000000000016b      0x326 ADT7420.o
+.debug_str      0x0000000000000000      0x5a0
+ .debug_str     0x0000000000000000      0x166 main.o
+                                        0x17e (size before relaxing)
+ .debug_str     0x0000000000000166      0x3d8 ADT7420.o
                                         0x42a (size before relaxing)
- .debug_str     0x0000000000000491       0x62 i2c.o
+ .debug_str     0x000000000000053e       0x62 i2c.o
                                         0x151 (size before relaxing)
 
 .debug_frame    0x0000000000000000      0x574

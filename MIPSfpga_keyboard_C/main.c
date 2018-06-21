@@ -37,7 +37,7 @@ void uart_print(const char *ptr);
 
 extern char *reverse(char *s);
 extern char *my_itoa(int n);
-char decode(int code);
+int decode(int code);
 
 extern void delay_ms(unsigned int ms_count);
 
@@ -90,7 +90,7 @@ int main()
 				code = keycode & 0xff;
 				display = (display << 8) | (keycode & 0xff);
 				;
-				uart_outbyte(decode(code));
+				uart_print(decode(code));
 			}
 			lastkeycode = keycode;
 		}
@@ -147,9 +147,9 @@ void _mips_handle_irq(void *ctx, int reason)
 	return;
 }
 
-char decode(int code)
+int decode(int code)
 {
-	static const char mapping[] = {
+	static const int mapping[] = {
 		'\0', // 0x00
 		'\0',
 		'\0',

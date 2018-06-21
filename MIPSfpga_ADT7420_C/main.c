@@ -88,7 +88,7 @@ int main()
 			{
 				code = keycode & 0xff;
 				display = (display << 8) | code;
-				uart_print("keyrelease:");
+				//uart_print("keyrelease:");
 				uart_print(my_itoa(code));
 				uart_print("\r\n");
 			}

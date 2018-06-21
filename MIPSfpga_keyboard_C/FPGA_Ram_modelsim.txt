@@ -408,54 +408,54 @@ a0001038:	27bd0008 	addiu	sp,sp,8
 a000103c <uart_outbyte>:
 a000103c:	27bdfff8 	addiu	sp,sp,-8
 a0001040:	3c02b040 	lui	v0,0xb040
-a0001044:	308400ff 	andi	a0,a0,0xff
-a0001048:	ac441000 	sw	a0,4096(v0)
-a000104c:	afa00000 	sw	zero,0(sp)
-a0001050:	8fa20000 	lw	v0,0(sp)
-a0001054:	2c420064 	sltiu	v0,v0,100
-a0001058:	10400008 	beqz	v0,a000107c <uart_outbyte+0x40>
-a000105c:	00000000 	nop
-a0001060:	8fa20000 	lw	v0,0(sp)
-a0001064:	24420001 	addiu	v0,v0,1
-a0001068:	afa20000 	sw	v0,0(sp)
-a000106c:	8fa20000 	lw	v0,0(sp)
-a0001070:	2c420064 	sltiu	v0,v0,100
-a0001074:	1440fffa 	bnez	v0,a0001060 <uart_outbyte+0x24>
-a0001078:	00000000 	nop
-a000107c:	03e00008 	jr	ra
-a0001080:	27bd0008 	addiu	sp,sp,8
+a0001044:	ac441000 	sw	a0,4096(v0)
+a0001048:	afa00000 	sw	zero,0(sp)
+a000104c:	8fa20000 	lw	v0,0(sp)
+a0001050:	2c420064 	sltiu	v0,v0,100
+a0001054:	10400008 	beqz	v0,a0001078 <uart_outbyte+0x3c>
+a0001058:	00000000 	nop
+a000105c:	8fa20000 	lw	v0,0(sp)
+a0001060:	24420001 	addiu	v0,v0,1
+a0001064:	afa20000 	sw	v0,0(sp)
+a0001068:	8fa20000 	lw	v0,0(sp)
+a000106c:	2c420064 	sltiu	v0,v0,100
+a0001070:	1440fffa 	bnez	v0,a000105c <uart_outbyte+0x20>
+a0001074:	00000000 	nop
+a0001078:	03e00008 	jr	ra
+a000107c:	27bd0008 	addiu	sp,sp,8
 
-a0001084 <uart_inbyte>:
-a0001084:	3c03b040 	lui	v1,0xb040
-a0001088:	8c621014 	lw	v0,4116(v1)
-a000108c:	30420001 	andi	v0,v0,0x1
-a0001090:	1040fffd 	beqz	v0,a0001088 <uart_inbyte+0x4>
-a0001094:	3c02b040 	lui	v0,0xb040
-a0001098:	8c421000 	lw	v0,4096(v0)
-a000109c:	03e00008 	jr	ra
-a00010a0:	304200ff 	andi	v0,v0,0xff
+a0001080 <uart_inbyte>:
+a0001080:	3c03b040 	lui	v1,0xb040
+a0001084:	8c621014 	lw	v0,4116(v1)
+a0001088:	30420001 	andi	v0,v0,0x1
+a000108c:	1040fffd 	beqz	v0,a0001084 <uart_inbyte+0x4>
+a0001090:	3c02b040 	lui	v0,0xb040
+a0001094:	8c421000 	lw	v0,4096(v0)
+a0001098:	03e00008 	jr	ra
+a000109c:	304200ff 	andi	v0,v0,0xff
 
-a00010a4 <uart_print>:
-a00010a4:	90820000 	lbu	v0,0(a0)
-a00010a8:	10400014 	beqz	v0,a00010fc <uart_print+0x58>
-a00010ac:	3c03b040 	lui	v1,0xb040
-a00010b0:	27bdfff8 	addiu	sp,sp,-8
+a00010a0 <uart_print>:
+a00010a0:	90820000 	lbu	v0,0(a0)
+a00010a4:	10400015 	beqz	v0,a00010fc <uart_print+0x5c>
+a00010a8:	00000000 	nop
+a00010ac:	27bdfff8 	addiu	sp,sp,-8
+a00010b0:	3c03b040 	lui	v1,0xb040
 a00010b4:	ac621000 	sw	v0,4096(v1)
 a00010b8:	afa00000 	sw	zero,0(sp)
 a00010bc:	8fa20000 	lw	v0,0(sp)
 a00010c0:	2c420064 	sltiu	v0,v0,100
-a00010c4:	50400009 	beqzl	v0,a00010ec <uart_print+0x48>
+a00010c4:	50400009 	beqzl	v0,a00010ec <uart_print+0x4c>
 a00010c8:	24840001 	addiu	a0,a0,1
 a00010cc:	8fa20000 	lw	v0,0(sp)
 a00010d0:	24420001 	addiu	v0,v0,1
 a00010d4:	afa20000 	sw	v0,0(sp)
 a00010d8:	8fa20000 	lw	v0,0(sp)
 a00010dc:	2c420064 	sltiu	v0,v0,100
-a00010e0:	1440fffa 	bnez	v0,a00010cc <uart_print+0x28>
+a00010e0:	1440fffa 	bnez	v0,a00010cc <uart_print+0x2c>
 a00010e4:	00000000 	nop
 a00010e8:	24840001 	addiu	a0,a0,1
 a00010ec:	90820000 	lbu	v0,0(a0)
-a00010f0:	1440fff0 	bnez	v0,a00010b4 <uart_print+0x10>
+a00010f0:	1440fff0 	bnez	v0,a00010b4 <uart_print+0x14>
 a00010f4:	00000000 	nop
 a00010f8:	27bd0008 	addiu	sp,sp,8
 a00010fc:	03e00008 	jr	ra
@@ -590,7 +590,7 @@ a00012cc:	a3a00018 	sb	zero,24(sp)
 a00012d0:	54400010 	bnezl	v0,a0001314 <ADT7420_Init+0x5c>
 a00012d4:	3c04a000 	lui	a0,0xa000
 a00012d8:	3c04a000 	lui	a0,0xa000
-a00012dc:	0c000429 	jal	a00010a4 <uart_print>
+a00012dc:	0c000428 	jal	a00010a0 <uart_print>
 a00012e0:	24842a04 	addiu	a0,a0,10756
 a00012e4:	27a20018 	addiu	v0,sp,24
 a00012e8:	afa20010 	sw	v0,16(sp)
@@ -604,7 +604,7 @@ a0001304:	00000000 	nop
 a0001308:	8fbf0024 	lw	ra,36(sp)
 a000130c:	03e00008 	jr	ra
 a0001310:	27bd0028 	addiu	sp,sp,40
-a0001314:	0c000429 	jal	a00010a4 <uart_print>
+a0001314:	0c000428 	jal	a00010a0 <uart_print>
 a0001318:	248429e8 	addiu	a0,a0,10728
 a000131c:	27a20018 	addiu	v0,sp,24
 a0001320:	afa20010 	sw	v0,16(sp)
@@ -649,28 +649,28 @@ a00013a8:	afb00020 	sw	s0,32(sp)
 a00013ac:	0c000968 	jal	a00025a0 <I2C_Read>
 a00013b0:	a3a00018 	sb	zero,24(sp)
 a00013b4:	3c04a000 	lui	a0,0xa000
-a00013b8:	0c000429 	jal	a00010a4 <uart_print>
+a00013b8:	0c000428 	jal	a00010a0 <uart_print>
 a00013bc:	24842a18 	addiu	a0,a0,10776
 a00013c0:	93a40018 	lbu	a0,24(sp)
 a00013c4:	3c10a000 	lui	s0,0xa000
 a00013c8:	0c00046b 	jal	a00011ac <my_itoa>
 a00013cc:	30840007 	andi	a0,a0,0x7
-a00013d0:	0c000429 	jal	a00010a4 <uart_print>
+a00013d0:	0c000428 	jal	a00010a0 <uart_print>
 a00013d4:	00402021 	move	a0,v0
-a00013d8:	0c000429 	jal	a00010a4 <uart_print>
+a00013d8:	0c000428 	jal	a00010a0 <uart_print>
 a00013dc:	26043128 	addiu	a0,s0,12584
 a00013e0:	3c04a000 	lui	a0,0xa000
-a00013e4:	0c000429 	jal	a00010a4 <uart_print>
+a00013e4:	0c000428 	jal	a00010a0 <uart_print>
 a00013e8:	24842a28 	addiu	a0,a0,10792
 a00013ec:	93a40018 	lbu	a0,24(sp)
 a00013f0:	0c00046b 	jal	a00011ac <my_itoa>
 a00013f4:	000420c2 	srl	a0,a0,0x3
-a00013f8:	0c000429 	jal	a00010a4 <uart_print>
+a00013f8:	0c000428 	jal	a00010a0 <uart_print>
 a00013fc:	00402021 	move	a0,v0
-a0001400:	0c000429 	jal	a00010a4 <uart_print>
+a0001400:	0c000428 	jal	a00010a0 <uart_print>
 a0001404:	26043128 	addiu	a0,s0,12584
 a0001408:	3c04a000 	lui	a0,0xa000
-a000140c:	0c000429 	jal	a00010a4 <uart_print>
+a000140c:	0c000428 	jal	a00010a0 <uart_print>
 a0001410:	24842a3c 	addiu	a0,a0,10812
 a0001414:	8fbf0024 	lw	ra,36(sp)
 a0001418:	8fb00020 	lw	s0,32(sp)
@@ -681,84 +681,84 @@ a0001424 <ADT7420_DisplayMainMenu>:
 a0001424:	3c04a000 	lui	a0,0xa000
 a0001428:	27bdffe8 	addiu	sp,sp,-24
 a000142c:	afbf0014 	sw	ra,20(sp)
-a0001430:	0c000429 	jal	a00010a4 <uart_print>
+a0001430:	0c000428 	jal	a00010a0 <uart_print>
 a0001434:	24842a68 	addiu	a0,a0,10856
 a0001438:	0c0004e2 	jal	a0001388 <ADT7420_PrintID>
 a000143c:	00000000 	nop
 a0001440:	3c04a000 	lui	a0,0xa000
-a0001444:	0c000429 	jal	a00010a4 <uart_print>
+a0001444:	0c000428 	jal	a00010a0 <uart_print>
 a0001448:	24842a84 	addiu	a0,a0,10884
 a000144c:	3c04a000 	lui	a0,0xa000
-a0001450:	0c000429 	jal	a00010a4 <uart_print>
+a0001450:	0c000428 	jal	a00010a0 <uart_print>
 a0001454:	24842a9c 	addiu	a0,a0,10908
 a0001458:	3c04a000 	lui	a0,0xa000
-a000145c:	0c000429 	jal	a00010a4 <uart_print>
+a000145c:	0c000428 	jal	a00010a0 <uart_print>
 a0001460:	24842ab4 	addiu	a0,a0,10932
 a0001464:	3c04a000 	lui	a0,0xa000
-a0001468:	0c000429 	jal	a00010a4 <uart_print>
+a0001468:	0c000428 	jal	a00010a0 <uart_print>
 a000146c:	24842acc 	addiu	a0,a0,10956
 a0001470:	3c04a000 	lui	a0,0xa000
-a0001474:	0c000429 	jal	a00010a4 <uart_print>
+a0001474:	0c000428 	jal	a00010a0 <uart_print>
 a0001478:	24842ae0 	addiu	a0,a0,10976
 a000147c:	3c04a000 	lui	a0,0xa000
-a0001480:	0c000429 	jal	a00010a4 <uart_print>
+a0001480:	0c000428 	jal	a00010a0 <uart_print>
 a0001484:	24842af0 	addiu	a0,a0,10992
 a0001488:	3c04a000 	lui	a0,0xa000
-a000148c:	0c000429 	jal	a00010a4 <uart_print>
+a000148c:	0c000428 	jal	a00010a0 <uart_print>
 a0001490:	24842b04 	addiu	a0,a0,11012
 a0001494:	3c04a000 	lui	a0,0xa000
-a0001498:	0c000429 	jal	a00010a4 <uart_print>
+a0001498:	0c000428 	jal	a00010a0 <uart_print>
 a000149c:	24842b18 	addiu	a0,a0,11032
 a00014a0:	3c04a000 	lui	a0,0xa000
-a00014a4:	0c000429 	jal	a00010a4 <uart_print>
+a00014a4:	0c000428 	jal	a00010a0 <uart_print>
 a00014a8:	24842b30 	addiu	a0,a0,11056
 a00014ac:	3c04a000 	lui	a0,0xa000
-a00014b0:	0c000429 	jal	a00010a4 <uart_print>
+a00014b0:	0c000428 	jal	a00010a0 <uart_print>
 a00014b4:	24842b4c 	addiu	a0,a0,11084
 a00014b8:	3c04a000 	lui	a0,0xa000
-a00014bc:	0c000429 	jal	a00010a4 <uart_print>
+a00014bc:	0c000428 	jal	a00010a0 <uart_print>
 a00014c0:	24843128 	addiu	a0,a0,12584
 a00014c4:	3c04a000 	lui	a0,0xa000
-a00014c8:	0c000429 	jal	a00010a4 <uart_print>
+a00014c8:	0c000428 	jal	a00010a0 <uart_print>
 a00014cc:	24842b7c 	addiu	a0,a0,11132
 a00014d0:	8fbf0014 	lw	ra,20(sp)
 a00014d4:	3c04a000 	lui	a0,0xa000
 a00014d8:	24842ba4 	addiu	a0,a0,11172
-a00014dc:	08000429 	j	a00010a4 <uart_print>
+a00014dc:	08000428 	j	a00010a0 <uart_print>
 a00014e0:	27bd0018 	addiu	sp,sp,24
 
 a00014e4 <ADT7420_DisplayMenu>:
 a00014e4:	3c04a000 	lui	a0,0xa000
 a00014e8:	27bdffe8 	addiu	sp,sp,-24
 a00014ec:	afbf0014 	sw	ra,20(sp)
-a00014f0:	0c000429 	jal	a00010a4 <uart_print>
+a00014f0:	0c000428 	jal	a00010a0 <uart_print>
 a00014f4:	24842bc8 	addiu	a0,a0,11208
 a00014f8:	3c04a000 	lui	a0,0xa000
-a00014fc:	0c000429 	jal	a00010a4 <uart_print>
+a00014fc:	0c000428 	jal	a00010a0 <uart_print>
 a0001500:	24842a9c 	addiu	a0,a0,10908
 a0001504:	3c04a000 	lui	a0,0xa000
-a0001508:	0c000429 	jal	a00010a4 <uart_print>
+a0001508:	0c000428 	jal	a00010a0 <uart_print>
 a000150c:	24842ab4 	addiu	a0,a0,10932
 a0001510:	3c04a000 	lui	a0,0xa000
-a0001514:	0c000429 	jal	a00010a4 <uart_print>
+a0001514:	0c000428 	jal	a00010a0 <uart_print>
 a0001518:	24842acc 	addiu	a0,a0,10956
 a000151c:	3c04a000 	lui	a0,0xa000
-a0001520:	0c000429 	jal	a00010a4 <uart_print>
+a0001520:	0c000428 	jal	a00010a0 <uart_print>
 a0001524:	24842ae0 	addiu	a0,a0,10976
 a0001528:	3c04a000 	lui	a0,0xa000
-a000152c:	0c000429 	jal	a00010a4 <uart_print>
+a000152c:	0c000428 	jal	a00010a0 <uart_print>
 a0001530:	24842af0 	addiu	a0,a0,10992
 a0001534:	3c04a000 	lui	a0,0xa000
-a0001538:	0c000429 	jal	a00010a4 <uart_print>
+a0001538:	0c000428 	jal	a00010a0 <uart_print>
 a000153c:	24842b04 	addiu	a0,a0,11012
 a0001540:	3c04a000 	lui	a0,0xa000
-a0001544:	0c000429 	jal	a00010a4 <uart_print>
+a0001544:	0c000428 	jal	a00010a0 <uart_print>
 a0001548:	24842b18 	addiu	a0,a0,11032
 a000154c:	3c04a000 	lui	a0,0xa000
-a0001550:	0c000429 	jal	a00010a4 <uart_print>
+a0001550:	0c000428 	jal	a00010a0 <uart_print>
 a0001554:	24842b30 	addiu	a0,a0,11056
 a0001558:	3c04a000 	lui	a0,0xa000
-a000155c:	0c000429 	jal	a00010a4 <uart_print>
+a000155c:	0c000428 	jal	a00010a0 <uart_print>
 a0001560:	24842b4c 	addiu	a0,a0,11084
 a0001564:	8fbf0014 	lw	ra,20(sp)
 a0001568:	af808008 	sw	zero,-32760(gp)
@@ -791,7 +791,7 @@ a00015c8:	83a20018 	lb	v0,24(sp)
 a00015cc:	0442000a 	bltzl	v0,a00015f8 <ADT7420_GetResolution+0x84>
 a00015d0:	3c04a000 	lui	a0,0xa000
 a00015d4:	3c04a000 	lui	a0,0xa000
-a00015d8:	0c000429 	jal	a00010a4 <uart_print>
+a00015d8:	0c000428 	jal	a00010a0 <uart_print>
 a00015dc:	24842be0 	addiu	a0,a0,11232
 a00015e0:	93a20018 	lbu	v0,24(sp)
 a00015e4:	8fbf0024 	lw	ra,36(sp)
@@ -799,7 +799,7 @@ a00015e8:	8fb00020 	lw	s0,32(sp)
 a00015ec:	30420080 	andi	v0,v0,0x80
 a00015f0:	03e00008 	jr	ra
 a00015f4:	27bd0028 	addiu	sp,sp,40
-a00015f8:	0c000429 	jal	a00010a4 <uart_print>
+a00015f8:	0c000428 	jal	a00010a0 <uart_print>
 a00015fc:	24842c08 	addiu	a0,a0,11272
 a0001600:	93a20018 	lbu	v0,24(sp)
 a0001604:	8fbf0024 	lw	ra,36(sp)
@@ -812,21 +812,21 @@ a0001618 <ADT7420_DisplayResolutionMenu>:
 a0001618:	3c04a000 	lui	a0,0xa000
 a000161c:	27bdffe8 	addiu	sp,sp,-24
 a0001620:	afbf0014 	sw	ra,20(sp)
-a0001624:	0c000429 	jal	a00010a4 <uart_print>
+a0001624:	0c000428 	jal	a00010a0 <uart_print>
 a0001628:	24842c30 	addiu	a0,a0,11312
 a000162c:	3c04a000 	lui	a0,0xa000
-a0001630:	0c000429 	jal	a00010a4 <uart_print>
+a0001630:	0c000428 	jal	a00010a0 <uart_print>
 a0001634:	24842a3c 	addiu	a0,a0,10812
 a0001638:	3c04a000 	lui	a0,0xa000
-a000163c:	0c000429 	jal	a00010a4 <uart_print>
+a000163c:	0c000428 	jal	a00010a0 <uart_print>
 a0001640:	24842c4c 	addiu	a0,a0,11340
 a0001644:	3c04a000 	lui	a0,0xa000
-a0001648:	0c000429 	jal	a00010a4 <uart_print>
+a0001648:	0c000428 	jal	a00010a0 <uart_print>
 a000164c:	24842c68 	addiu	a0,a0,11368
 a0001650:	8fbf0014 	lw	ra,20(sp)
 a0001654:	3c04a000 	lui	a0,0xa000
 a0001658:	24842c88 	addiu	a0,a0,11400
-a000165c:	08000429 	j	a00010a4 <uart_print>
+a000165c:	08000428 	j	a00010a0 <uart_print>
 a0001660:	27bd0018 	addiu	sp,sp,24
 
 a0001664 <ADT7420_SetResolution>:
@@ -834,14 +834,14 @@ a0001664:	27bdffd8 	addiu	sp,sp,-40
 a0001668:	afbf0024 	sw	ra,36(sp)
 a000166c:	0c000586 	jal	a0001618 <ADT7420_DisplayResolutionMenu>
 a0001670:	a3a00018 	sb	zero,24(sp)
-a0001674:	0c000421 	jal	a0001084 <uart_inbyte>
+a0001674:	0c000420 	jal	a0001080 <uart_inbyte>
 a0001678:	00000000 	nop
 a000167c:	24030031 	li	v1,49
 a0001680:	10430029 	beq	v0,v1,a0001728 <ADT7420_SetResolution+0xc4>
 a0001684:	24030032 	li	v1,50
 a0001688:	1043000d 	beq	v0,v1,a00016c0 <ADT7420_SetResolution+0x5c>
 a000168c:	3c04a000 	lui	a0,0xa000
-a0001690:	0c000429 	jal	a00010a4 <uart_print>
+a0001690:	0c000428 	jal	a00010a0 <uart_print>
 a0001694:	24842cc8 	addiu	a0,a0,11464
 a0001698:	27a20018 	addiu	v0,sp,24
 a000169c:	afa20010 	sw	v0,16(sp)
@@ -859,7 +859,7 @@ a00016c8:	2403ff80 	li	v1,-128
 a00016cc:	3c04a000 	lui	a0,0xa000
 a00016d0:	00431025 	or	v0,v0,v1
 a00016d4:	24842c08 	addiu	a0,a0,11272
-a00016d8:	0c000429 	jal	a00010a4 <uart_print>
+a00016d8:	0c000428 	jal	a00010a0 <uart_print>
 a00016dc:	a3a20018 	sb	v0,24(sp)
 a00016e0:	3402ffff 	li	v0,0xffff
 a00016e4:	3c04a000 	lui	a0,0xa000
@@ -867,7 +867,7 @@ a00016e8:	24842ca8 	addiu	a0,a0,11432
 a00016ec:	af828000 	sw	v0,-32768(gp)
 a00016f0:	2402006d 	li	v0,109
 a00016f4:	af828008 	sw	v0,-32760(gp)
-a00016f8:	0c000429 	jal	a00010a4 <uart_print>
+a00016f8:	0c000428 	jal	a00010a0 <uart_print>
 a00016fc:	00000000 	nop
 a0001700:	27a20018 	addiu	v0,sp,24
 a0001704:	afa20010 	sw	v0,16(sp)
@@ -883,7 +883,7 @@ a0001728:	0c0004d3 	jal	a000134c <ADT7420_ReadConfigReg>
 a000172c:	00000000 	nop
 a0001730:	3c04a000 	lui	a0,0xa000
 a0001734:	24842be0 	addiu	a0,a0,11232
-a0001738:	0c000429 	jal	a00010a4 <uart_print>
+a0001738:	0c000428 	jal	a00010a0 <uart_print>
 a000173c:	a3a20018 	sb	v0,24(sp)
 a0001740:	24021fff 	li	v0,8191
 a0001744:	3c04a000 	lui	a0,0xa000
@@ -891,7 +891,7 @@ a0001748:	24842ca8 	addiu	a0,a0,11432
 a000174c:	af828000 	sw	v0,-32768(gp)
 a0001750:	2402006d 	li	v0,109
 a0001754:	af828008 	sw	v0,-32760(gp)
-a0001758:	0c000429 	jal	a00010a4 <uart_print>
+a0001758:	0c000428 	jal	a00010a0 <uart_print>
 a000175c:	00000000 	nop
 a0001760:	27a20018 	addiu	v0,sp,24
 a0001764:	afa20010 	sw	v0,16(sp)
@@ -942,30 +942,30 @@ a0001804:	7c048620 	seh	s0,a0
 a0001808:	0600000e 	bltz	s0,a0001844 <Display_Temp+0x48>
 a000180c:	afbf0014 	sw	ra,20(sp)
 a0001810:	3c04a000 	lui	a0,0xa000
-a0001814:	0c000429 	jal	a00010a4 <uart_print>
+a0001814:	0c000428 	jal	a00010a0 <uart_print>
 a0001818:	24842cd8 	addiu	a0,a0,11480
 a000181c:	0c00046b 	jal	a00011ac <my_itoa>
 a0001820:	02002021 	move	a0,s0
-a0001824:	0c000429 	jal	a00010a4 <uart_print>
+a0001824:	0c000428 	jal	a00010a0 <uart_print>
 a0001828:	00402021 	move	a0,v0
 a000182c:	8fbf0014 	lw	ra,20(sp)
 a0001830:	8fb00010 	lw	s0,16(sp)
 a0001834:	3c04a000 	lui	a0,0xa000
 a0001838:	24842ce0 	addiu	a0,a0,11488
-a000183c:	08000429 	j	a00010a4 <uart_print>
+a000183c:	08000428 	j	a00010a0 <uart_print>
 a0001840:	27bd0018 	addiu	sp,sp,24
 a0001844:	3c04a000 	lui	a0,0xa000
-a0001848:	0c000429 	jal	a00010a4 <uart_print>
+a0001848:	0c000428 	jal	a00010a0 <uart_print>
 a000184c:	24842ce8 	addiu	a0,a0,11496
 a0001850:	0c00046b 	jal	a00011ac <my_itoa>
 a0001854:	00102023 	negu	a0,s0
-a0001858:	0c000429 	jal	a00010a4 <uart_print>
+a0001858:	0c000428 	jal	a00010a0 <uart_print>
 a000185c:	00402021 	move	a0,v0
 a0001860:	8fbf0014 	lw	ra,20(sp)
 a0001864:	8fb00010 	lw	s0,16(sp)
 a0001868:	3c04a000 	lui	a0,0xa000
 a000186c:	24842ce0 	addiu	a0,a0,11488
-a0001870:	08000429 	j	a00010a4 <uart_print>
+a0001870:	08000428 	j	a00010a0 <uart_print>
 a0001874:	27bd0018 	addiu	sp,sp,24
 
 a0001878 <ADT7420_ConsoleRead>:
@@ -988,12 +988,12 @@ a00018b4:	2412000d 	li	s2,13
 a00018b8:	2413000a 	li	s3,10
 a00018bc:	24160001 	li	s6,1
 a00018c0:	24150004 	li	s5,4
-a00018c4:	0c000421 	jal	a0001084 <uart_inbyte>
+a00018c4:	0c000420 	jal	a0001080 <uart_inbyte>
 a00018c8:	00000000 	nop
 a00018cc:	00402021 	move	a0,v0
 a00018d0:	0c00046b 	jal	a00011ac <my_itoa>
 a00018d4:	00408021 	move	s0,v0
-a00018d8:	0c000429 	jal	a00010a4 <uart_print>
+a00018d8:	0c000428 	jal	a00010a0 <uart_print>
 a00018dc:	00402021 	move	a0,v0
 a00018e0:	2602ffff 	addiu	v0,s0,-1
 a00018e4:	304200ff 	andi	v0,v0,0xff
@@ -1013,7 +1013,7 @@ a0001918:	2e030067 	sltiu	v1,s0,103
 a000191c:	14600034 	bnez	v1,a00019f0 <ADT7420_ConsoleRead+0x178>
 a0001920:	26220001 	addiu	v0,s1,1
 a0001924:	3c04a000 	lui	a0,0xa000
-a0001928:	0c000429 	jal	a00010a4 <uart_print>
+a0001928:	0c000428 	jal	a00010a0 <uart_print>
 a000192c:	24842cf0 	addiu	a0,a0,11504
 a0001930:	a380800c 	sb	zero,-32756(gp)
 a0001934:	1220001a 	beqz	s1,a00019a0 <ADT7420_ConsoleRead+0x128>
@@ -1118,13 +1118,13 @@ a0001aac:	27bdffe0 	addiu	sp,sp,-32
 a0001ab0:	24842d34 	addiu	a0,a0,11572
 a0001ab4:	afbf001c 	sw	ra,28(sp)
 a0001ab8:	afb10018 	sw	s1,24(sp)
-a0001abc:	0c000429 	jal	a00010a4 <uart_print>
+a0001abc:	0c000428 	jal	a00010a0 <uart_print>
 a0001ac0:	afb00014 	sw	s0,20(sp)
 a0001ac4:	3c04a000 	lui	a0,0xa000
-a0001ac8:	0c000429 	jal	a00010a4 <uart_print>
+a0001ac8:	0c000428 	jal	a00010a0 <uart_print>
 a0001acc:	24842a3c 	addiu	a0,a0,10812
 a0001ad0:	3c04a000 	lui	a0,0xa000
-a0001ad4:	0c000429 	jal	a00010a4 <uart_print>
+a0001ad4:	0c000428 	jal	a00010a0 <uart_print>
 a0001ad8:	24842d48 	addiu	a0,a0,11592
 a0001adc:	0c00061e 	jal	a0001878 <ADT7420_ConsoleRead>
 a0001ae0:	00000000 	nop
@@ -1134,9 +1134,9 @@ a0001aec:	3c11a000 	lui	s1,0xa000
 a0001af0:	3c10a000 	lui	s0,0xa000
 a0001af4:	26312d7c 	addiu	s1,s1,11644
 a0001af8:	26102db8 	addiu	s0,s0,11704
-a0001afc:	0c000429 	jal	a00010a4 <uart_print>
+a0001afc:	0c000428 	jal	a00010a0 <uart_print>
 a0001b00:	02202021 	move	a0,s1
-a0001b04:	0c000429 	jal	a00010a4 <uart_print>
+a0001b04:	0c000428 	jal	a00010a0 <uart_print>
 a0001b08:	02002021 	move	a0,s0
 a0001b0c:	0c00061e 	jal	a0001878 <ADT7420_ConsoleRead>
 a0001b10:	00000000 	nop
@@ -1161,7 +1161,7 @@ a0001b58:	2402006d 	li	v0,109
 a0001b5c:	24842dd8 	addiu	a0,a0,11736
 a0001b60:	27bd0020 	addiu	sp,sp,32
 a0001b64:	af828008 	sw	v0,-32760(gp)
-a0001b68:	08000429 	j	a00010a4 <uart_print>
+a0001b68:	08000428 	j	a00010a0 <uart_print>
 a0001b6c:	00000000 	nop
 
 a0001b70 <ADT7420_PrintTHigh>:
@@ -1185,7 +1185,7 @@ a0001bb0:	93b00019 	lbu	s0,25(sp)
 a0001bb4:	3c04a000 	lui	a0,0xa000
 a0001bb8:	00021200 	sll	v0,v0,0x8
 a0001bbc:	00508025 	or	s0,v0,s0
-a0001bc0:	0c000429 	jal	a00010a4 <uart_print>
+a0001bc0:	0c000428 	jal	a00010a0 <uart_print>
 a0001bc4:	24842dfc 	addiu	a0,a0,11772
 a0001bc8:	0c0005ff 	jal	a00017fc <Display_Temp>
 a0001bcc:	7c102620 	seh	a0,s0
@@ -1199,7 +1199,7 @@ a0001be8:	3c04a000 	lui	a0,0xa000
 a0001bec:	000210c2 	srl	v0,v0,0x3
 a0001bf0:	00108140 	sll	s0,s0,0x5
 a0001bf4:	00508025 	or	s0,v0,s0
-a0001bf8:	0c000429 	jal	a00010a4 <uart_print>
+a0001bf8:	0c000428 	jal	a00010a0 <uart_print>
 a0001bfc:	24842dfc 	addiu	a0,a0,11772
 a0001c00:	0c0005ff 	jal	a00017fc <Display_Temp>
 a0001c04:	7c102620 	seh	a0,s0
@@ -1254,13 +1254,13 @@ a0001cb4:	27bdffe0 	addiu	sp,sp,-32
 a0001cb8:	24842e0c 	addiu	a0,a0,11788
 a0001cbc:	afbf001c 	sw	ra,28(sp)
 a0001cc0:	afb10018 	sw	s1,24(sp)
-a0001cc4:	0c000429 	jal	a00010a4 <uart_print>
+a0001cc4:	0c000428 	jal	a00010a0 <uart_print>
 a0001cc8:	afb00014 	sw	s0,20(sp)
 a0001ccc:	3c04a000 	lui	a0,0xa000
-a0001cd0:	0c000429 	jal	a00010a4 <uart_print>
+a0001cd0:	0c000428 	jal	a00010a0 <uart_print>
 a0001cd4:	24842a3c 	addiu	a0,a0,10812
 a0001cd8:	3c04a000 	lui	a0,0xa000
-a0001cdc:	0c000429 	jal	a00010a4 <uart_print>
+a0001cdc:	0c000428 	jal	a00010a0 <uart_print>
 a0001ce0:	24842e20 	addiu	a0,a0,11808
 a0001ce4:	0c00061e 	jal	a0001878 <ADT7420_ConsoleRead>
 a0001ce8:	00000000 	nop
@@ -1270,9 +1270,9 @@ a0001cf4:	3c11a000 	lui	s1,0xa000
 a0001cf8:	3c10a000 	lui	s0,0xa000
 a0001cfc:	26312e54 	addiu	s1,s1,11860
 a0001d00:	26102db8 	addiu	s0,s0,11704
-a0001d04:	0c000429 	jal	a00010a4 <uart_print>
+a0001d04:	0c000428 	jal	a00010a0 <uart_print>
 a0001d08:	02202021 	move	a0,s1
-a0001d0c:	0c000429 	jal	a00010a4 <uart_print>
+a0001d0c:	0c000428 	jal	a00010a0 <uart_print>
 a0001d10:	02002021 	move	a0,s0
 a0001d14:	0c00061e 	jal	a0001878 <ADT7420_ConsoleRead>
 a0001d18:	00000000 	nop
@@ -1297,7 +1297,7 @@ a0001d60:	2402006d 	li	v0,109
 a0001d64:	24842dd8 	addiu	a0,a0,11736
 a0001d68:	27bd0020 	addiu	sp,sp,32
 a0001d6c:	af828008 	sw	v0,-32760(gp)
-a0001d70:	08000429 	j	a00010a4 <uart_print>
+a0001d70:	08000428 	j	a00010a0 <uart_print>
 a0001d74:	00000000 	nop
 
 a0001d78 <ADT7420_PrintTLow>:
@@ -1321,7 +1321,7 @@ a0001db8:	93b00019 	lbu	s0,25(sp)
 a0001dbc:	3c04a000 	lui	a0,0xa000
 a0001dc0:	00021200 	sll	v0,v0,0x8
 a0001dc4:	00508025 	or	s0,v0,s0
-a0001dc8:	0c000429 	jal	a00010a4 <uart_print>
+a0001dc8:	0c000428 	jal	a00010a0 <uart_print>
 a0001dcc:	24842e90 	addiu	a0,a0,11920
 a0001dd0:	0c0005ff 	jal	a00017fc <Display_Temp>
 a0001dd4:	7c102620 	seh	a0,s0
@@ -1335,7 +1335,7 @@ a0001df0:	3c04a000 	lui	a0,0xa000
 a0001df4:	000210c2 	srl	v0,v0,0x3
 a0001df8:	00108140 	sll	s0,s0,0x5
 a0001dfc:	00508025 	or	s0,v0,s0
-a0001e00:	0c000429 	jal	a00010a4 <uart_print>
+a0001e00:	0c000428 	jal	a00010a0 <uart_print>
 a0001e04:	24842e90 	addiu	a0,a0,11920
 a0001e08:	0c0005ff 	jal	a00017fc <Display_Temp>
 a0001e0c:	7c102620 	seh	a0,s0
@@ -1390,13 +1390,13 @@ a0001ebc:	27bdffe0 	addiu	sp,sp,-32
 a0001ec0:	24842ea0 	addiu	a0,a0,11936
 a0001ec4:	afbf001c 	sw	ra,28(sp)
 a0001ec8:	afb10018 	sw	s1,24(sp)
-a0001ecc:	0c000429 	jal	a00010a4 <uart_print>
+a0001ecc:	0c000428 	jal	a00010a0 <uart_print>
 a0001ed0:	afb00014 	sw	s0,20(sp)
 a0001ed4:	3c04a000 	lui	a0,0xa000
-a0001ed8:	0c000429 	jal	a00010a4 <uart_print>
+a0001ed8:	0c000428 	jal	a00010a0 <uart_print>
 a0001edc:	24842a3c 	addiu	a0,a0,10812
 a0001ee0:	3c04a000 	lui	a0,0xa000
-a0001ee4:	0c000429 	jal	a00010a4 <uart_print>
+a0001ee4:	0c000428 	jal	a00010a0 <uart_print>
 a0001ee8:	24842eb4 	addiu	a0,a0,11956
 a0001eec:	0c00061e 	jal	a0001878 <ADT7420_ConsoleRead>
 a0001ef0:	00000000 	nop
@@ -1406,9 +1406,9 @@ a0001efc:	3c11a000 	lui	s1,0xa000
 a0001f00:	3c10a000 	lui	s0,0xa000
 a0001f04:	26312ee8 	addiu	s1,s1,12008
 a0001f08:	26102db8 	addiu	s0,s0,11704
-a0001f0c:	0c000429 	jal	a00010a4 <uart_print>
+a0001f0c:	0c000428 	jal	a00010a0 <uart_print>
 a0001f10:	02202021 	move	a0,s1
-a0001f14:	0c000429 	jal	a00010a4 <uart_print>
+a0001f14:	0c000428 	jal	a00010a0 <uart_print>
 a0001f18:	02002021 	move	a0,s0
 a0001f1c:	0c00061e 	jal	a0001878 <ADT7420_ConsoleRead>
 a0001f20:	00000000 	nop
@@ -1433,7 +1433,7 @@ a0001f68:	2402006d 	li	v0,109
 a0001f6c:	24842dd8 	addiu	a0,a0,11736
 a0001f70:	27bd0020 	addiu	sp,sp,32
 a0001f74:	af828008 	sw	v0,-32760(gp)
-a0001f78:	08000429 	j	a00010a4 <uart_print>
+a0001f78:	08000428 	j	a00010a0 <uart_print>
 a0001f7c:	00000000 	nop
 
 a0001f80 <ADT7420_PrintTCrit>:
@@ -1457,7 +1457,7 @@ a0001fc0:	93b00019 	lbu	s0,25(sp)
 a0001fc4:	3c04a000 	lui	a0,0xa000
 a0001fc8:	00021200 	sll	v0,v0,0x8
 a0001fcc:	00508025 	or	s0,v0,s0
-a0001fd0:	0c000429 	jal	a00010a4 <uart_print>
+a0001fd0:	0c000428 	jal	a00010a0 <uart_print>
 a0001fd4:	24842f24 	addiu	a0,a0,12068
 a0001fd8:	0c0005ff 	jal	a00017fc <Display_Temp>
 a0001fdc:	7c102620 	seh	a0,s0
@@ -1471,7 +1471,7 @@ a0001ff8:	3c04a000 	lui	a0,0xa000
 a0001ffc:	000210c2 	srl	v0,v0,0x3
 a0002000:	00108140 	sll	s0,s0,0x5
 a0002004:	00508025 	or	s0,v0,s0
-a0002008:	0c000429 	jal	a00010a4 <uart_print>
+a0002008:	0c000428 	jal	a00010a0 <uart_print>
 a000200c:	24842f24 	addiu	a0,a0,12068
 a0002010:	0c0005ff 	jal	a00017fc <Display_Temp>
 a0002014:	7c102620 	seh	a0,s0
@@ -1502,13 +1502,13 @@ a0002064:	27bdffe0 	addiu	sp,sp,-32
 a0002068:	24842f34 	addiu	a0,a0,12084
 a000206c:	afbf001c 	sw	ra,28(sp)
 a0002070:	afb10018 	sw	s1,24(sp)
-a0002074:	0c000429 	jal	a00010a4 <uart_print>
+a0002074:	0c000428 	jal	a00010a0 <uart_print>
 a0002078:	afb00014 	sw	s0,20(sp)
 a000207c:	3c04a000 	lui	a0,0xa000
-a0002080:	0c000429 	jal	a00010a4 <uart_print>
+a0002080:	0c000428 	jal	a00010a0 <uart_print>
 a0002084:	24842a3c 	addiu	a0,a0,10812
 a0002088:	3c04a000 	lui	a0,0xa000
-a000208c:	0c000429 	jal	a00010a4 <uart_print>
+a000208c:	0c000428 	jal	a00010a0 <uart_print>
 a0002090:	24842f48 	addiu	a0,a0,12104
 a0002094:	0c00061e 	jal	a0001878 <ADT7420_ConsoleRead>
 a0002098:	00000000 	nop
@@ -1518,9 +1518,9 @@ a00020a4:	3c11a000 	lui	s1,0xa000
 a00020a8:	3c10a000 	lui	s0,0xa000
 a00020ac:	26312f70 	addiu	s1,s1,12144
 a00020b0:	26102db8 	addiu	s0,s0,11704
-a00020b4:	0c000429 	jal	a00010a4 <uart_print>
+a00020b4:	0c000428 	jal	a00010a0 <uart_print>
 a00020b8:	02202021 	move	a0,s1
-a00020bc:	0c000429 	jal	a00010a4 <uart_print>
+a00020bc:	0c000428 	jal	a00010a0 <uart_print>
 a00020c0:	02002021 	move	a0,s0
 a00020c4:	0c00061e 	jal	a0001878 <ADT7420_ConsoleRead>
 a00020c8:	00000000 	nop
@@ -1545,7 +1545,7 @@ a0002110:	2402006d 	li	v0,109
 a0002114:	24842dd8 	addiu	a0,a0,11736
 a0002118:	27bd0020 	addiu	sp,sp,32
 a000211c:	af828008 	sw	v0,-32760(gp)
-a0002120:	08000429 	j	a00010a4 <uart_print>
+a0002120:	08000428 	j	a00010a0 <uart_print>
 a0002124:	00000000 	nop
 
 a0002128 <ADT7420_PrintHysteresis>:
@@ -1560,14 +1560,14 @@ a0002144:	afbf0024 	sw	ra,36(sp)
 a0002148:	0c000968 	jal	a00025a0 <I2C_Read>
 a000214c:	a7a00018 	sh	zero,24(sp)
 a0002150:	3c04a000 	lui	a0,0xa000
-a0002154:	0c000429 	jal	a00010a4 <uart_print>
+a0002154:	0c000428 	jal	a00010a0 <uart_print>
 a0002158:	24842fa8 	addiu	a0,a0,12200
 a000215c:	0c00046b 	jal	a00011ac <my_itoa>
 a0002160:	93a40018 	lbu	a0,24(sp)
-a0002164:	0c000429 	jal	a00010a4 <uart_print>
+a0002164:	0c000428 	jal	a00010a0 <uart_print>
 a0002168:	00402021 	move	a0,v0
 a000216c:	3c04a000 	lui	a0,0xa000
-a0002170:	0c000429 	jal	a00010a4 <uart_print>
+a0002170:	0c000428 	jal	a00010a0 <uart_print>
 a0002174:	24842fa0 	addiu	a0,a0,12192
 a0002178:	8fbf0024 	lw	ra,36(sp)
 a000217c:	03e00008 	jr	ra
@@ -1578,27 +1578,27 @@ a0002184:	3c04a000 	lui	a0,0xa000
 a0002188:	27bdffd8 	addiu	sp,sp,-40
 a000218c:	24842fbc 	addiu	a0,a0,12220
 a0002190:	afbf0024 	sw	ra,36(sp)
-a0002194:	0c000429 	jal	a00010a4 <uart_print>
+a0002194:	0c000428 	jal	a00010a0 <uart_print>
 a0002198:	a3a00018 	sb	zero,24(sp)
 a000219c:	3c04a000 	lui	a0,0xa000
-a00021a0:	0c000429 	jal	a00010a4 <uart_print>
+a00021a0:	0c000428 	jal	a00010a0 <uart_print>
 a00021a4:	24842a3c 	addiu	a0,a0,10812
 a00021a8:	3c04a000 	lui	a0,0xa000
-a00021ac:	0c000429 	jal	a00010a4 <uart_print>
+a00021ac:	0c000428 	jal	a00010a0 <uart_print>
 a00021b0:	24842fd4 	addiu	a0,a0,12244
 a00021b4:	3c04a000 	lui	a0,0xa000
-a00021b8:	0c000429 	jal	a00010a4 <uart_print>
+a00021b8:	0c000428 	jal	a00010a0 <uart_print>
 a00021bc:	24842ff0 	addiu	a0,a0,12272
 a00021c0:	3c04a000 	lui	a0,0xa000
-a00021c4:	0c000429 	jal	a00010a4 <uart_print>
+a00021c4:	0c000428 	jal	a00010a0 <uart_print>
 a00021c8:	24843000 	addiu	a0,a0,12288
 a00021cc:	3c04a000 	lui	a0,0xa000
-a00021d0:	0c000429 	jal	a00010a4 <uart_print>
+a00021d0:	0c000428 	jal	a00010a0 <uart_print>
 a00021d4:	24843010 	addiu	a0,a0,12304
 a00021d8:	3c04a000 	lui	a0,0xa000
-a00021dc:	0c000429 	jal	a00010a4 <uart_print>
+a00021dc:	0c000428 	jal	a00010a0 <uart_print>
 a00021e0:	24843020 	addiu	a0,a0,12320
-a00021e4:	0c000421 	jal	a0001084 <uart_inbyte>
+a00021e4:	0c000420 	jal	a0001080 <uart_inbyte>
 a00021e8:	00000000 	nop
 a00021ec:	24030032 	li	v1,50
 a00021f0:	10430034 	beq	v0,v1,a00022c4 <ADT7420_DisplaySetFaultQueueMenu+0x140>
@@ -1612,13 +1612,13 @@ a000220c:	24020003 	li	v0,3
 a0002210:	3c04a000 	lui	a0,0xa000
 a0002214:	24843068 	addiu	a0,a0,12392
 a0002218:	a3a20018 	sb	v0,24(sp)
-a000221c:	0c000429 	jal	a00010a4 <uart_print>
+a000221c:	0c000428 	jal	a00010a0 <uart_print>
 a0002220:	00000000 	nop
 a0002224:	3c04a000 	lui	a0,0xa000
 a0002228:	2402006d 	li	v0,109
 a000222c:	24842ca8 	addiu	a0,a0,11432
 a0002230:	af828008 	sw	v0,-32760(gp)
-a0002234:	0c000429 	jal	a00010a4 <uart_print>
+a0002234:	0c000428 	jal	a00010a0 <uart_print>
 a0002238:	00000000 	nop
 a000223c:	27a20018 	addiu	v0,sp,24
 a0002240:	afa20010 	sw	v0,16(sp)
@@ -1642,7 +1642,7 @@ a0002284:	24843030 	addiu	a0,a0,12336
 a0002288:	1000ffe4 	b	a000221c <ADT7420_DisplaySetFaultQueueMenu+0x98>
 a000228c:	a3a00018 	sb	zero,24(sp)
 a0002290:	3c04a000 	lui	a0,0xa000
-a0002294:	0c000429 	jal	a00010a4 <uart_print>
+a0002294:	0c000428 	jal	a00010a0 <uart_print>
 a0002298:	24842cc8 	addiu	a0,a0,11464
 a000229c:	27a20018 	addiu	v0,sp,24
 a00022a0:	afa20010 	sw	v0,16(sp)
@@ -1680,24 +1680,24 @@ a0002314:	24030001 	li	v1,1
 a0002318:	50430007 	beql	v0,v1,a0002338 <ADT7420_PrintFaultQueue+0x64>
 a000231c:	3c04a000 	lui	a0,0xa000
 a0002320:	3c04a000 	lui	a0,0xa000
-a0002324:	0c000429 	jal	a00010a4 <uart_print>
+a0002324:	0c000428 	jal	a00010a0 <uart_print>
 a0002328:	24843030 	addiu	a0,a0,12336
 a000232c:	8fbf0024 	lw	ra,36(sp)
 a0002330:	03e00008 	jr	ra
 a0002334:	27bd0028 	addiu	sp,sp,40
-a0002338:	0c000429 	jal	a00010a4 <uart_print>
+a0002338:	0c000428 	jal	a00010a0 <uart_print>
 a000233c:	24843040 	addiu	a0,a0,12352
 a0002340:	8fbf0024 	lw	ra,36(sp)
 a0002344:	03e00008 	jr	ra
 a0002348:	27bd0028 	addiu	sp,sp,40
 a000234c:	3c04a000 	lui	a0,0xa000
-a0002350:	0c000429 	jal	a00010a4 <uart_print>
+a0002350:	0c000428 	jal	a00010a0 <uart_print>
 a0002354:	24843068 	addiu	a0,a0,12392
 a0002358:	8fbf0024 	lw	ra,36(sp)
 a000235c:	03e00008 	jr	ra
 a0002360:	27bd0028 	addiu	sp,sp,40
 a0002364:	3c04a000 	lui	a0,0xa000
-a0002368:	0c000429 	jal	a00010a4 <uart_print>
+a0002368:	0c000428 	jal	a00010a0 <uart_print>
 a000236c:	24843054 	addiu	a0,a0,12372
 a0002370:	8fbf0024 	lw	ra,36(sp)
 a0002374:	03e00008 	jr	ra
@@ -1719,12 +1719,12 @@ a00023a8:	30420010 	andi	v0,v0,0x10
 a00023ac:	54400007 	bnezl	v0,a00023cc <ADT7420_PrintAlertMode+0x50>
 a00023b0:	3c04a000 	lui	a0,0xa000
 a00023b4:	3c04a000 	lui	a0,0xa000
-a00023b8:	0c000429 	jal	a00010a4 <uart_print>
+a00023b8:	0c000428 	jal	a00010a0 <uart_print>
 a00023bc:	24843098 	addiu	a0,a0,12440
 a00023c0:	8fbf0024 	lw	ra,36(sp)
 a00023c4:	03e00008 	jr	ra
 a00023c8:	27bd0028 	addiu	sp,sp,40
-a00023cc:	0c000429 	jal	a00010a4 <uart_print>
+a00023cc:	0c000428 	jal	a00010a0 <uart_print>
 a00023d0:	2484307c 	addiu	a0,a0,12412
 a00023d4:	8fbf0024 	lw	ra,36(sp)
 a00023d8:	03e00008 	jr	ra
@@ -1746,12 +1746,12 @@ a000240c:	30420004 	andi	v0,v0,0x4
 a0002410:	54400007 	bnezl	v0,a0002430 <ADT7420_PrintCTPolarity+0x50>
 a0002414:	3c04a000 	lui	a0,0xa000
 a0002418:	3c04a000 	lui	a0,0xa000
-a000241c:	0c000429 	jal	a00010a4 <uart_print>
+a000241c:	0c000428 	jal	a00010a0 <uart_print>
 a0002420:	248430c8 	addiu	a0,a0,12488
 a0002424:	8fbf0024 	lw	ra,36(sp)
 a0002428:	03e00008 	jr	ra
 a000242c:	27bd0028 	addiu	sp,sp,40
-a0002430:	0c000429 	jal	a00010a4 <uart_print>
+a0002430:	0c000428 	jal	a00010a0 <uart_print>
 a0002434:	248430b0 	addiu	a0,a0,12464
 a0002438:	8fbf0024 	lw	ra,36(sp)
 a000243c:	03e00008 	jr	ra
@@ -1773,12 +1773,12 @@ a0002470:	30420008 	andi	v0,v0,0x8
 a0002474:	54400007 	bnezl	v0,a0002494 <ADT7420_PrintINTPolarity+0x50>
 a0002478:	3c04a000 	lui	a0,0xa000
 a000247c:	3c04a000 	lui	a0,0xa000
-a0002480:	0c000429 	jal	a00010a4 <uart_print>
+a0002480:	0c000428 	jal	a00010a0 <uart_print>
 a0002484:	248430fc 	addiu	a0,a0,12540
 a0002488:	8fbf0024 	lw	ra,36(sp)
 a000248c:	03e00008 	jr	ra
 a0002490:	27bd0028 	addiu	sp,sp,40
-a0002494:	0c000429 	jal	a00010a4 <uart_print>
+a0002494:	0c000428 	jal	a00010a0 <uart_print>
 a0002498:	248430e0 	addiu	a0,a0,12512
 a000249c:	8fbf0024 	lw	ra,36(sp)
 a00024a0:	03e00008 	jr	ra
@@ -1788,10 +1788,10 @@ a00024a8 <ADT7420_DisplaySettings>:
 a00024a8:	3c04a000 	lui	a0,0xa000
 a00024ac:	27bdffe8 	addiu	sp,sp,-24
 a00024b0:	afbf0014 	sw	ra,20(sp)
-a00024b4:	0c000429 	jal	a00010a4 <uart_print>
+a00024b4:	0c000428 	jal	a00010a0 <uart_print>
 a00024b8:	24843114 	addiu	a0,a0,12564
 a00024bc:	3c04a000 	lui	a0,0xa000
-a00024c0:	0c000429 	jal	a00010a4 <uart_print>
+a00024c0:	0c000428 	jal	a00010a0 <uart_print>
 a00024c4:	24842a3c 	addiu	a0,a0,10812
 a00024c8:	0c00055d 	jal	a0001574 <ADT7420_GetResolution>
 a00024cc:	24040001 	li	a0,1
@@ -1817,7 +1817,7 @@ a0002518:	2402006d 	li	v0,109
 a000251c:	24842ca8 	addiu	a0,a0,11432
 a0002520:	27bd0018 	addiu	sp,sp,24
 a0002524:	af828008 	sw	v0,-32760(gp)
-a0002528:	08000429 	j	a00010a4 <uart_print>
+a0002528:	08000428 	j	a00010a0 <uart_print>
 a000252c:	00000000 	nop
 
 a0002530 <delay_ms>:
@@ -1962,83 +1962,83 @@ a0002734:	afa00028 	sw	zero,40(sp)
 a0002738:	afa00024 	sw	zero,36(sp)
 a000273c:	afa00020 	sw	zero,32(sp)
 a0002740:	ac43100c 	sw	v1,4108(v0)
-a0002744:	afa0001c 	sw	zero,28(sp)
-a0002748:	8fa2001c 	lw	v0,28(sp)
+a0002744:	afa00008 	sw	zero,8(sp)
+a0002748:	8fa20008 	lw	v0,8(sp)
 a000274c:	2c420064 	sltiu	v0,v0,100
 a0002750:	10400008 	beqz	v0,a0002774 <main+0x5c>
 a0002754:	3c02b040 	lui	v0,0xb040
-a0002758:	8fa2001c 	lw	v0,28(sp)
+a0002758:	8fa20008 	lw	v0,8(sp)
 a000275c:	24420001 	addiu	v0,v0,1
-a0002760:	afa2001c 	sw	v0,28(sp)
-a0002764:	8fa2001c 	lw	v0,28(sp)
+a0002760:	afa20008 	sw	v0,8(sp)
+a0002764:	8fa20008 	lw	v0,8(sp)
 a0002768:	2c420064 	sltiu	v0,v0,100
 a000276c:	1440fffa 	bnez	v0,a0002758 <main+0x40>
 a0002770:	3c02b040 	lui	v0,0xb040
 a0002774:	2403001b 	li	v1,27
 a0002778:	ac431000 	sw	v1,4096(v0)
-a000277c:	afa00018 	sw	zero,24(sp)
-a0002780:	8fa20018 	lw	v0,24(sp)
+a000277c:	afa0000c 	sw	zero,12(sp)
+a0002780:	8fa2000c 	lw	v0,12(sp)
 a0002784:	2c420064 	sltiu	v0,v0,100
 a0002788:	10400008 	beqz	v0,a00027ac <main+0x94>
 a000278c:	3c02b040 	lui	v0,0xb040
-a0002790:	8fa20018 	lw	v0,24(sp)
+a0002790:	8fa2000c 	lw	v0,12(sp)
 a0002794:	24420001 	addiu	v0,v0,1
-a0002798:	afa20018 	sw	v0,24(sp)
-a000279c:	8fa20018 	lw	v0,24(sp)
+a0002798:	afa2000c 	sw	v0,12(sp)
+a000279c:	8fa2000c 	lw	v0,12(sp)
 a00027a0:	2c420064 	sltiu	v0,v0,100
 a00027a4:	1440fffa 	bnez	v0,a0002790 <main+0x78>
 a00027a8:	3c02b040 	lui	v0,0xb040
 a00027ac:	ac401004 	sw	zero,4100(v0)
-a00027b0:	afa00014 	sw	zero,20(sp)
-a00027b4:	8fa20014 	lw	v0,20(sp)
+a00027b0:	afa00010 	sw	zero,16(sp)
+a00027b4:	8fa20010 	lw	v0,16(sp)
 a00027b8:	2c420064 	sltiu	v0,v0,100
 a00027bc:	10400008 	beqz	v0,a00027e0 <main+0xc8>
 a00027c0:	3c02b040 	lui	v0,0xb040
-a00027c4:	8fa20014 	lw	v0,20(sp)
+a00027c4:	8fa20010 	lw	v0,16(sp)
 a00027c8:	24420001 	addiu	v0,v0,1
-a00027cc:	afa20014 	sw	v0,20(sp)
-a00027d0:	8fa20014 	lw	v0,20(sp)
+a00027cc:	afa20010 	sw	v0,16(sp)
+a00027d0:	8fa20010 	lw	v0,16(sp)
 a00027d4:	2c420064 	sltiu	v0,v0,100
 a00027d8:	1440fffa 	bnez	v0,a00027c4 <main+0xac>
 a00027dc:	3c02b040 	lui	v0,0xb040
 a00027e0:	24030003 	li	v1,3
 a00027e4:	ac43100c 	sw	v1,4108(v0)
-a00027e8:	afa00010 	sw	zero,16(sp)
-a00027ec:	8fa20010 	lw	v0,16(sp)
+a00027e8:	afa00014 	sw	zero,20(sp)
+a00027ec:	8fa20014 	lw	v0,20(sp)
 a00027f0:	2c420064 	sltiu	v0,v0,100
 a00027f4:	10400008 	beqz	v0,a0002818 <main+0x100>
 a00027f8:	3c02b040 	lui	v0,0xb040
-a00027fc:	8fa20010 	lw	v0,16(sp)
+a00027fc:	8fa20014 	lw	v0,20(sp)
 a0002800:	24420001 	addiu	v0,v0,1
-a0002804:	afa20010 	sw	v0,16(sp)
-a0002808:	8fa20010 	lw	v0,16(sp)
+a0002804:	afa20014 	sw	v0,20(sp)
+a0002808:	8fa20014 	lw	v0,20(sp)
 a000280c:	2c420064 	sltiu	v0,v0,100
 a0002810:	1440fffa 	bnez	v0,a00027fc <main+0xe4>
 a0002814:	3c02b040 	lui	v0,0xb040
 a0002818:	ac401004 	sw	zero,4100(v0)
-a000281c:	afa0000c 	sw	zero,12(sp)
-a0002820:	8fa2000c 	lw	v0,12(sp)
+a000281c:	afa00018 	sw	zero,24(sp)
+a0002820:	8fa20018 	lw	v0,24(sp)
 a0002824:	2c420064 	sltiu	v0,v0,100
 a0002828:	10400008 	beqz	v0,a000284c <main+0x134>
 a000282c:	3c02b040 	lui	v0,0xb040
-a0002830:	8fa2000c 	lw	v0,12(sp)
+a0002830:	8fa20018 	lw	v0,24(sp)
 a0002834:	24420001 	addiu	v0,v0,1
-a0002838:	afa2000c 	sw	v0,12(sp)
-a000283c:	8fa2000c 	lw	v0,12(sp)
+a0002838:	afa20018 	sw	v0,24(sp)
+a000283c:	8fa20018 	lw	v0,24(sp)
 a0002840:	2c420064 	sltiu	v0,v0,100
 a0002844:	1440fffa 	bnez	v0,a0002830 <main+0x118>
 a0002848:	3c02b040 	lui	v0,0xb040
 a000284c:	24030001 	li	v1,1
 a0002850:	ac431004 	sw	v1,4100(v0)
-a0002854:	afa00008 	sw	zero,8(sp)
-a0002858:	8fa20008 	lw	v0,8(sp)
+a0002854:	afa0001c 	sw	zero,28(sp)
+a0002858:	8fa2001c 	lw	v0,28(sp)
 a000285c:	2c420064 	sltiu	v0,v0,100
 a0002860:	10400008 	beqz	v0,a0002884 <main+0x16c>
 a0002864:	00000000 	nop
-a0002868:	8fa20008 	lw	v0,8(sp)
+a0002868:	8fa2001c 	lw	v0,28(sp)
 a000286c:	24420001 	addiu	v0,v0,1
-a0002870:	afa20008 	sw	v0,8(sp)
-a0002874:	8fa20008 	lw	v0,8(sp)
+a0002870:	afa2001c 	sw	v0,28(sp)
+a0002874:	8fa2001c 	lw	v0,28(sp)
 a0002878:	2c420064 	sltiu	v0,v0,100
 a000287c:	1440fffa 	bnez	v0,a0002868 <main+0x150>
 a0002880:	00000000 	nop
@@ -2048,10 +2048,10 @@ a000288c:	afa00024 	sw	zero,36(sp)
 a0002890:	8c420000 	lw	v0,0(v0)
 a0002894:	3c06a000 	lui	a2,0xa000
 a0002898:	24c6298c 	addiu	a2,a2,10636
-a000289c:	afa2002c 	sw	v0,44(sp)
-a00028a0:	3c05b0d0 	lui	a1,0xb0d0
-a00028a4:	3c07b040 	lui	a3,0xb040
-a00028a8:	3c04b0e0 	lui	a0,0xb0e0
+a000289c:	3c05b0d0 	lui	a1,0xb0d0
+a00028a0:	3c07b040 	lui	a3,0xb040
+a00028a4:	3c04b0e0 	lui	a0,0xb0e0
+a00028a8:	afa2002c 	sw	v0,44(sp)
 a00028ac:	8ca20000 	lw	v0,0(a1)
 a00028b0:	afa20030 	sw	v0,48(sp)
 a00028b4:	8fa3002c 	lw	v1,44(sp)
@@ -2069,10 +2069,10 @@ a00028e0:	00000000 	nop
 a00028e4:	8fa20030 	lw	v0,48(sp)
 a00028e8:	304200ff 	andi	v0,v0,0xff
 a00028ec:	afa20028 	sw	v0,40(sp)
-a00028f0:	8fa30024 	lw	v1,36(sp)
-a00028f4:	8fa20030 	lw	v0,48(sp)
-a00028f8:	00031a00 	sll	v1,v1,0x8
-a00028fc:	304200ff 	andi	v0,v0,0xff
+a00028f0:	8fa20024 	lw	v0,36(sp)
+a00028f4:	8fa30030 	lw	v1,48(sp)
+a00028f8:	00021200 	sll	v0,v0,0x8
+a00028fc:	306300ff 	andi	v1,v1,0xff
 a0002900:	00431025 	or	v0,v0,v1
 a0002904:	afa20024 	sw	v0,36(sp)
 a0002908:	8fa20028 	lw	v0,40(sp)
@@ -2109,7 +2109,7 @@ a0002980:	00000000 	nop
 a0002984:	1000ffc9 	b	a00028ac <main+0x194>
 a0002988:	00000000 	nop
 
-a000298c <mapping.1660>:
+a000298c <mapping.1673>:
 	...
 a00029a0:	00317100 737a0000 00327761 64786300     .q1...zsaw2..cxd
 a00029b0:	00333465 66762000 00357274 68626e00     e43.. vftr5..nbh
