@@ -208,18 +208,6 @@ void _mips_handle_irq(void *ctx, int reason)
 		asm volatile("mtc0 $9, $9");
 		return;
 	}
-	if (reason & IS_PS2_INTR)
-	{
-		keycode = *READ_IO(PS2_BASE);
-		*WRITE_IO(PS2_BASE + 4) = keycode;
-		*WRITE_IO(SEG_BASE) = keycode;
-
-		uart_print(my_itoa(reason));
-		uart_print("PS2_INTR occurred!:");
-		uart_print(my_itoa(keycode));
-		uart_print("\n\r");
-		return;
-	}
 
 	if (reason & IS_PWM_INTR)
 	{
