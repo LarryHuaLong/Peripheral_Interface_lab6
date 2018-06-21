@@ -37,7 +37,6 @@ void uart_print(const char *ptr);
 
 extern char *reverse(char *s);
 extern char *my_itoa(int n);
-int decode(int code);
 
 extern void delay_ms(unsigned int ms_count);
 
@@ -58,7 +57,7 @@ int main()
 	volatile unsigned int pushbutton, count = 0xF;
 	volatile unsigned int j = 1;
 	volatile unsigned int period;
-	volatile unsigned int keycode, lastkeycode;
+	volatile unsigned int keycode,lastkeycode;
 	volatile unsigned int code = 0, display = 0;
 	volatile unsigned int key_release = 0;
 
@@ -88,9 +87,10 @@ int main()
 			if (key_release)
 			{
 				code = keycode & 0xff;
-				display = (display << 8) | (keycode & 0xff);
-				;
-				uart_print(my_itoa(decode(code)));
+				display = (display << 8) | code;
+				uart_print("#");
+				uart_print(my_itoa(code));
+				uart_print("\r\n");
 			}
 			lastkeycode = keycode;
 		}
@@ -98,6 +98,7 @@ int main()
 		delay();
 	}
 	return 0;
+
 }
 
 void delay()
@@ -145,102 +146,4 @@ void _mips_handle_irq(void *ctx, int reason)
 	*WRITE_IO(IO_LEDR) = 0;
 
 	return;
-}
-
-int decode(int code)
-{
-	static const int mapping[] = {
-		'\0', // 0x00
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0', // 0x10
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'q',
-		'1',
-		'\0',
-		'\0',
-		'\0',
-		'z',
-		's',
-		'a',
-		'w',
-		'2',
-		'\0',
-		'\0', // 0x20
-		'c',
-		'x',
-		'd',
-		'e',
-		'4',
-		'3',
-		'\0',
-		'\0',
-		' ',
-		'v',
-		'f',
-		't',
-		'r',
-		'5',
-		'\0',
-		'\0', // 0x30
-		'n',
-		'b',
-		'h',
-		'g',
-		'y',
-		'6',
-		'\0',
-		'\0',
-		'\0',
-		'm',
-		'f',
-		'u',
-		'7',
-		'8',
-		'\0',
-		'\0', // 0x40
-		'\0',
-		'k',
-		'i',
-		'o',
-		'0',
-		'9',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'l',
-		'\0',
-		'p',
-		'\0',
-		'\0',
-		'\0', // 0x50
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\r'
-	};
-	return mapping[code];
 }

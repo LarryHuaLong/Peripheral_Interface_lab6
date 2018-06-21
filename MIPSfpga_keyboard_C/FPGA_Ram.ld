@@ -69,7 +69,7 @@ SECTIONS
 
   /**** "C" Code and read-only data ****/
 
-  .text_ram 0xA0001000 :
+  .text_ram 0x80001000 :
   /*.text_ram 0xbfc01000 :*/
   {
     _ftext_ram = ABSOLUTE(.) ;	/* Start of code and read-only data */

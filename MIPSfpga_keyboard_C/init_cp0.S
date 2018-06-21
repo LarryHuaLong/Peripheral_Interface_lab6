@@ -54,8 +54,7 @@ LEAF(init_cp0)
 
     // Initialize Status
 	//li	v1, 0x00400404		// (M_StatusERL | M_StatusIPL1 | M_StatusBEV)
-	//li	v1, 0x0040fc04			// (M_StatusERL | M_StatusIPL1~IPL6 | M_StatusBEV)
-	li	v1, 0x0040c004			// (M_StatusERL | M_StatusIPL7~IPL6 | M_StatusBEV)
+	li	v1, 0x0040fc04			// (M_StatusERL | M_StatusIPL1~IPL6 | M_StatusBEV)
 	mtc0	v1, C0_STATUS		// write C0_Status
 
 	// Initialize Watch registers if implemented.

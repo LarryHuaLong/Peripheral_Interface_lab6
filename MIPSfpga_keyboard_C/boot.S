@@ -145,30 +145,16 @@ END(__cpu_init)
 /* vectors will be addressed properly. All .org assume this! */
 /* TLB refill, 32 bit task. */
 .org 0x180						# interrupt exception
-	# display alternating one-zeros on board LEDs
-    #li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    #li      k1, 0x9999          # alternating one-zeros
-    #sw      k1, 0(k0)           # Write pattern to LEDs
-	li      s0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    li      s1, 0x9999          # alternating one-zeros
-    sw      s1, 0(s0)           # Write pattern to LEDs
-    eret
-    nop
-	#la a2,  __exception_entry   # prepare to enter the uart irq handler.
-    #jr a2
-    #nop
-	sdbbp                       # This has the effect of starting the debugger
+	la a2,  __exception_entry   # prepare to enter the uart irq handler.
+    jr a2
     nop
 
 	
 .org 0x200                      # TLB refill, 32 bit task.
 	# display alternating one-zeros on board LEDs
-    #li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    #li      k1, 0x1111          # alternating one-zeros
-    #sw      k1, 0(k0)           # Write pattern to LEDs
-	li      s0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    li      s1, 0x1111          # alternating one-zeros
-    sw      s1, 0(s0)           # Write pattern to LEDs
+    li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
+    li      k1, 0x1111          # alternating one-zeros
+    sw      k1, 0(k0)           # Write pattern to LEDs
     eret
     nop
 	#la a2,  __exception_entry   # prepare to enter the uart irq handler.
@@ -179,12 +165,9 @@ END(__cpu_init)
 
 .org 0x280                      # XTLB refill, 64 bit task. start + 0x280
 	# display alternating one-zeros on board LEDs
-    #li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    #li      k1, 0x3333          # alternating one-zeros
-    #sw      k1, 0(k0)           # Write pattern to LEDs
-	li      s0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    li      s1, 0x3333          # alternating one-zeros
-    sw      s1, 0(s0)           # Write pattern to LEDs
+    li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
+    li      k1, 0x3333          # alternating one-zeros
+    sw      k1, 0(k0)           # Write pattern to LEDs
     eret
     nop
     sdbbp                       # This has the effect of starting the debugger
@@ -192,18 +175,6 @@ END(__cpu_init)
 
 	
 .org 0x300                      # Cache error exception. start + 0x300
-	# display alternating one-zeros on board LEDs
-    #li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    #li      k1, 0xbbbb          # alternating one-zeros
-    #sw      k1, 0(k0)           # Write pattern to LEDs
-	li      s0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    li      s1, 0xbbbb          # alternating one-zeros
-    sw      s1, 0(s0)           # Write pattern to LEDs
-    eret
-    nop
-	#la a2,  __exception_entry   # prepare to enter the uart irq handler.
-    #jr a2
-    #nop
     sdbbp                       # This has the effect of starting the debugger
     nop
 
@@ -212,14 +183,10 @@ END(__cpu_init)
 
 .org 0x380    /* General exception. */
 	# disable interrupt
-	#mfc0    k0, C0_STATUS
-	#la		k1, 0xfffffffe
-	#and		k0, k0, k1			# StatusIE = 0
-	#mtc0	k0, C0_STATUS		# set the Status register to disable interrupt
-	mfc0    s0, C0_STATUS
-	la		s1, 0xfffffffe
-	and		s0, s0, s1			# StatusIE = 0
-	mtc0	s0, C0_STATUS		# set the Status register to disable interrupt
+	mfc0    k0, C0_STATUS
+	la		k1, 0xfffffffe
+	and		k0, k0, k1			# StatusIE = 0
+	mtc0	k0, C0_STATUS		# set the Status register to disable interrupt
 	ehb
 
 	la a2,  __exception_entry   # prepare to enter the uart irq handler.
@@ -227,29 +194,18 @@ END(__cpu_init)
     nop
 	
     # display alternating one-zeros on board LEDs
-    #li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    #li      k1, 0x5555          # alternating one-zeros
-    #sw      k1, 0(k0)           # Write pattern to LEDs
-	li      s0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    li      s1, 0x5555          # alternating one-zeros
-    sw      s1, 0(s0)           # Write pattern to LEDs
+    li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
+    li      k1, 0x5555          # alternating one-zeros
+    sw      k1, 0(k0)           # Write pattern to LEDs
     eret
     nop
 
 .org 0x400    /* General interrupt. */
     # display alternating one-zeros on board LEDs
-    #li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    #li      k1, 0x7777          # alternating one-zeros
-    #sw      k1, 0(k0)           # Write pattern to LEDs
-	li      s0, BOARD_16_LEDS_ADDR  # Board LEDs display
-    li      s1, 0x7777          # alternating one-zeros
-    sw      s1, 0(s0)           # Write pattern to LEDs
+    li      k0, BOARD_16_LEDS_ADDR  # Board LEDs display
+    li      k1, 0x7777          # alternating one-zeros
+    sw      k1, 0(k0)           # Write pattern to LEDs
     eret
-    nop
-	#la a2,  __exception_entry   # prepare to enter the uart irq handler.
-    #jr a2
-    #nop
-	sdbbp                       # This has the effect of starting the debugger
     nop
 	
 
